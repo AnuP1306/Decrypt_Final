@@ -1,0 +1,766 @@
+[
+    {
+      "domain": "AI",
+      "title": "OpenAI Just Dropped a Smarter GPT — And It Actually Gets You",
+      "desc": "OpenAI has launched a new GPT model with dramatically improved reasoning abilities. It handles complex questions with greater accuracy, generates clearer explanations, and makes fewer embarrassing mistakes than its predecessors.",
+      "image": "/static/news-image/GPT-new.png",
+      "slides": {
+        "beginner": [
+          {
+            "title": "So What Even Is GPT?",
+            "desc": "GPT is a type of AI that can read your question and write back a helpful answer — kind of like texting a really smart friend who knows about almost everything. OpenAI, the company behind it, just released a newer, smarter version. Think of it like an app update, except this one actually makes a massive difference in how well it understands what you're asking."
+          },
+          {
+            "title": "Why This New Version Is a Big Deal",
+            "desc": "The old versions of GPT sometimes gave wrong answers or got confused by tricky questions. This new one is much better at thinking through problems step by step before answering. Whether you're asking it to explain a concept, help with homework, or write something for you — it now does all of that more accurately and with less nonsense in the response."
+          },
+          {
+            "title": "How This Affects Your Daily Life",
+            "desc": "Tools like ChatGPT, Microsoft Copilot, and many study apps all run on GPT under the hood. As this new version rolls out, those tools will get smarter without you doing anything. Students can use it to understand tough subjects, professionals can use it to write reports faster, and pretty much anyone can use it to get better, clearer answers to everyday questions."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "Improved Reasoning Is the Core Upgrade",
+            "desc": "The latest GPT release focuses heavily on chain-of-thought reasoning — the model's ability to break a problem into logical steps before generating an answer. This reduces hallucinations (confidently wrong answers) and improves accuracy on tasks like coding, math, and multi-step analysis. It also shows better contextual awareness across long conversations."
+          },
+          {
+            "title": "Real-World Applications Getting Smarter",
+            "desc": "Businesses that have integrated GPT into their products — from customer service bots to content tools — will benefit automatically as OpenAI rolls out updates. Developers using the API will notice better instruction-following and fewer prompt engineering workarounds needed. This also opens the door for more reliable AI agents that can complete multi-step tasks autonomously."
+          },
+          {
+            "title": "The Competitive Pressure Behind This Release",
+            "desc": "OpenAI isn't operating in a vacuum — Google's Gemini, Anthropic's Claude, and Meta's Llama are all competing for the same users and enterprise contracts. This release is partly a technical milestone and partly a market signal. Each upgrade in the AI race pushes all players to move faster, which ultimately benefits end users with better tools at lower costs."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Architecture and Reasoning Enhancements",
+            "desc": "The new model builds on transformer architecture with refined attention mechanisms that improve long-context retention and reduce positional degradation over extended token windows. Enhanced RLHF (Reinforcement Learning from Human Feedback) pipelines have been used to align outputs more precisely with user intent, reducing both hallucination frequency and instruction drift in multi-turn conversations."
+          },
+          {
+            "title": "Inference Efficiency and Deployment",
+            "desc": "OpenAI has optimized the model for lower inference latency without proportional quality loss — a significant engineering challenge at scale. Quantization and speculative decoding techniques allow faster token generation, making real-time applications like coding assistants and interactive agents more viable. API users will see reduced response times alongside quality improvements."
+          },
+          {
+            "title": "Implications for the AI Ecosystem",
+            "desc": "Each GPT generation raises the capability floor for the entire industry. Fine-tuned versions of this model will replace older ones across enterprise deployments, raising baseline performance for vertical AI applications in legal, medical, and financial domains. Open-source competitors will benchmark against this release, accelerating the broader research community's progress on reasoning-optimised language models."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "AI",
+      "title": "Google's Gemini Can See, Hear, and Think — All at Once",
+      "desc": "Google has introduced Gemini, a powerful multimodal AI system capable of understanding text, images, audio, and video simultaneously. It is designed to compete with leading AI models and enhance productivity across Google's entire product ecosystem.",
+      "image": "/static/news-image/gemini-ai.png",
+      "slides": {
+        "beginner": [
+          {
+            "title": "What Makes Gemini Different From Regular AI?",
+            "desc": "Most AI tools you've used can only handle text — you type something, it types back. Gemini is different because it can understand pictures, videos, and spoken words at the same time as text. So you could show it a photo of your notes and ask it to explain what's written, or describe a scene in a video. It's like giving AI actual eyes and ears, not just a keyboard."
+          },
+          {
+            "title": "Where You'll Actually See This in Your Life",
+            "desc": "Google is adding Gemini to products millions of people already use — Google Search, Gmail, Google Docs, and even the camera on Android phones. This means when you search for something, you might get a smarter, more complete answer. When you're writing an email, it could suggest what to say next. The AI is quietly getting built into tools you already open every single day."
+          },
+          {
+            "title": "Why Google Needed to Release This Now",
+            "desc": "ChatGPT became incredibly popular very quickly, and Google — despite being one of the original inventors of the technology behind modern AI — felt like it was falling behind. Gemini is Google's way of showing the world that it's still one of the leaders in this space. More competition between big companies means better, cheaper AI tools for regular users."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "Multimodal AI — What It Actually Means",
+            "desc": "Gemini is built as a natively multimodal model, meaning it was trained on text, images, audio, and video together — not as separate systems bolted together afterward. This architectural choice gives it stronger cross-modal reasoning, allowing it to answer questions that require understanding relationships between different types of information simultaneously."
+          },
+          {
+            "title": "Google's Ecosystem Advantage",
+            "desc": "Unlike standalone AI products, Gemini is deeply integrated into Google's existing platforms — Search, Workspace, Android, and Cloud. This gives it access to real-time information and user context that most standalone models lack. For developers, Gemini is available via Google AI Studio and Vertex AI, with competitive pricing on the API compared to OpenAI."
+          },
+          {
+            "title": "The Race Google Is Trying to Win",
+            "desc": "Google faces a unique threat from AI search — if people ask ChatGPT questions instead of Googling them, Google's core ad revenue model is disrupted. Gemini is both a product and a defensive strategy. By embedding AI deeply into Search and Chrome, Google is betting that its distribution advantages will outweigh any temporary quality gaps with competitors."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Native Multimodality vs. Retrofitted Systems",
+            "desc": "Gemini's key architectural differentiator is its native multimodal training — the model processes and reasons across modalities using a unified transformer backbone rather than routing inputs through separate encoders that feed a language model. This enables true cross-modal attention and reduces the information loss that occurs when modality boundaries are hard-coded into the system design."
+          },
+          {
+            "title": "Infrastructure and TPU Optimisation",
+            "desc": "Gemini is trained and served on Google's custom TPU v5 infrastructure, giving it significant cost and throughput advantages over GPU-trained models at comparable scale. The deep integration with Google Cloud's data centers means inference can be distributed globally with low latency, and the model benefits from continuous learning pipelines tied to Google's search index for knowledge freshness."
+          },
+          {
+            "title": "Strategic and Research Implications",
+            "desc": "Gemini represents Google's consolidation of its DeepMind and Google Brain research divisions into a unified applied AI effort. The model's performance on multimodal benchmarks like MMMU and video QA tasks signals a meaningful step toward universal perception models. For the broader research community, it validates the scalability of joint multimodal pre-training and sets a new benchmark for what production-grade foundation models should be capable of."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "AI",
+      "title": "Microsoft Put AI Inside Word and Excel — Your Office Life Just Changed",
+      "desc": "Microsoft is deeply integrating Copilot AI into tools like Word, Excel, PowerPoint, and Teams, enabling users to generate content, analyse data, and automate workflows directly inside the apps they use for work every day.",
+      "image": "/static/news-image/copilot-ai.png",
+      "slides": {
+        "beginner": [
+          {
+            "title": "AI Is Now Living Inside Microsoft Office",
+            "desc": "You know Microsoft Word, Excel, and PowerPoint — the apps used for writing documents, making spreadsheets, and building presentations? Microsoft has added an AI assistant called Copilot into all of them. Instead of switching to a separate AI tool, you can now just ask Copilot to write a paragraph, create a chart from your data, or summarise a long document — all without leaving the app you're already in."
+          },
+          {
+            "title": "What Copilot Actually Does for You",
+            "desc": "Imagine you have a spreadsheet full of sales numbers and you need to find patterns in it. Normally you'd spend an hour doing that manually. With Copilot in Excel, you can just ask 'What are the top-performing products this month?' and it'll analyse the data and tell you instantly. In Word, you can ask it to draft an email or expand a bullet point into a full paragraph. It's like having an intern who works at the speed of light."
+          },
+          {
+            "title": "Why Companies Are Very Interested in This",
+            "desc": "Businesses pay a lot of money for employees to do tasks that AI can now handle in seconds — writing reports, formatting data, creating presentations. Microsoft is charging extra for Copilot access, but companies are finding that the time it saves makes it worth the cost. For students and young professionals, learning to use AI tools like this is quickly becoming as important as knowing how to use Word itself."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "How Deep Is the Integration Really?",
+            "desc": "Copilot in Microsoft 365 isn't a chatbot layered on top of Office — it's woven into the core editing experience. In Word it can draft, rewrite, and summarise documents with full context of the file. In Excel it generates formulas, identifies trends, and creates visualisations from natural language prompts. In Teams it transcribes meetings and generates action item summaries in real time."
+          },
+          {
+            "title": "The Enterprise Adoption Story",
+            "desc": "Microsoft has signed Copilot deals with thousands of enterprise customers across finance, healthcare, and technology sectors. The pricing model — an add-on per user per month — creates a significant new revenue stream on top of Microsoft's existing 365 subscriptions. Early enterprise reports show productivity gains of 20-30% on documentation and data-heavy tasks, which is driving rapid adoption."
+          },
+          {
+            "title": "Privacy and Data Concerns in the Workplace",
+            "desc": "One important nuance: Copilot processes data inside Microsoft's enterprise cloud, meaning it can theoretically access company documents to provide context-aware answers. This raises real data governance questions — can Copilot see confidential HR files or financial projections? Microsoft has introduced permission boundaries, but IT departments are still navigating what controls are necessary before full deployment."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Retrieval-Augmented Generation in a Productivity Context",
+            "desc": "Microsoft Copilot combines GPT-4 class language model capabilities with retrieval-augmented generation over the Microsoft Graph — a unified API that indexes emails, documents, calendar events, and Teams messages within an organisation. This allows Copilot to generate outputs grounded in company-specific context rather than just general world knowledge, dramatically improving relevance for enterprise use cases."
+          },
+          {
+            "title": "Architecture of Real-Time Collaboration AI",
+            "desc": "The technical challenge in integrating Copilot into collaborative tools like Teams and SharePoint is managing concurrent document state, user permissions, and model context simultaneously. Microsoft uses a session-based context window that dynamically loads relevant graph data — filtered by the user's access rights — before each inference call, ensuring both contextual accuracy and compliance with access control policies."
+          },
+          {
+            "title": "Competitive Moat and Platform Strategy",
+            "desc": "Microsoft's distribution advantage — 300M+ active Microsoft 365 users — makes Copilot the most widely deployed enterprise AI product by reach, even if not by sophistication. The strategic bet is on platform lock-in: as workflows become dependent on AI-assisted features within Microsoft's ecosystem, switching costs for enterprises increase significantly. This positions Microsoft more as an AI infrastructure layer than a standalone model provider."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "AI",
+      "title": "Meta Is Quietly Building AI Into Every App You Scroll Through",
+      "desc": "Meta is making massive investments in artificial intelligence to personalise user experiences on Instagram, Facebook, and WhatsApp — while simultaneously building the AI foundations for its long-term metaverse ambitions.",
+      "image": "/static/news-image/meta-ai.png",
+      "slides": {
+        "beginner": [
+          {
+            "title": "The AI Behind Your Instagram Feed",
+            "desc": "Every time you open Instagram or Facebook and see posts you actually want to watch, that's AI working in the background. Meta has spent years building AI systems that study what you like, how long you watch certain videos, what you skip, and what you search for — then use all of that to show you more of what keeps you engaged. The more you scroll, the smarter it gets about you specifically."
+          },
+          {
+            "title": "Meta Is Now Putting AI Chatbots Everywhere",
+            "desc": "Meta has released its own AI assistant — called Meta AI — that's now built into WhatsApp, Instagram DMs, and Facebook Messenger. You can ask it questions, have it help you write captions, or use it to search for things. It's powered by Meta's own AI model called Llama, which is different from ChatGPT but works in a similar way. Meta is betting that people will use AI more if it lives inside apps they already have open."
+          },
+          {
+            "title": "What Does This Have to Do With the Metaverse?",
+            "desc": "Meta (the company formerly known as Facebook) is spending billions building virtual reality experiences. AI is what will make those experiences feel real — AI can generate realistic virtual environments, create characters that talk and respond naturally, and personalise the virtual world for each user. Even if the metaverse is still years away from going mainstream, AI is the technology that has to be perfected first."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "Recommendation Algorithms Are Meta's Core Product",
+            "desc": "Meta's business model depends on keeping users on platform as long as possible to show them ads. Its AI recommendation systems — which rank content across Reels, Feed, and Stories — are the most commercially critical AI infrastructure the company owns. Recent updates to these systems have prioritised AI-generated content recommendations over purely social connections, shifting Instagram further toward a TikTok-style discovery model."
+          },
+          {
+            "title": "Llama Models and Open-Source Strategy",
+            "desc": "Unlike OpenAI and Google, Meta has chosen to open-source its Llama language models. This is both ideological and strategic — by releasing powerful free models, Meta gains goodwill from the developer community, encourages adoption of its AI ecosystem, and creates competitive pressure on closed-source providers. Llama 3 now powers Meta AI across all its apps and is available for developers to fine-tune and deploy independently."
+          },
+          {
+            "title": "AI Infrastructure Investment at Scale",
+            "desc": "Meta has committed to spending tens of billions of dollars on AI infrastructure — GPU clusters, data centres, and research talent — over the next several years. This is a direct response to falling behind in the generative AI race despite being an early leader in AI research. The company is trying to close the gap with OpenAI and Google while maintaining its advantage in social graph data and advertising AI."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Recommendation Systems Architecture",
+            "desc": "Meta's content ranking systems use a multi-stage retrieval and ranking pipeline. Candidate generation uses approximate nearest-neighbour search over embedding spaces trained on user interaction graphs. Ranking models use gradient-boosted trees and deep neural networks with thousands of real-time features including session context, social graph signals, and content embeddings. The final stage applies a contextual bandit framework to balance exploitation of known preferences with exploration of new content types."
+          },
+          {
+            "title": "Llama Architecture and Open-Source Implications",
+            "desc": "Llama 3 uses a standard decoder-only transformer with grouped query attention (GQA) for inference efficiency and RoPE positional embeddings for extended context windows. Meta's decision to release weights publicly has meaningful implications for the AI ecosystem — it enables fine-tuning at organisations that cannot afford proprietary API costs and creates a competitive reference point that forces closed-source providers to justify their pricing with performance differentiation."
+          },
+          {
+            "title": "Metaverse AI: The Long-Term Technical Thesis",
+            "desc": "Meta's metaverse requires AI to solve several hard problems simultaneously: real-time 3D scene generation, natural language driven avatar animation, spatial audio processing, and personalised world-state management at millions of concurrent users. Current foundation models are not adequate for this — Meta's research investments in codec avatars, neural radiance fields, and embodied AI agents represent bets on capabilities that don't yet exist at production quality but will be required for the metaverse to function as envisioned."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "AI",
+      "title": "AI Is Catching Diseases Before Doctors Even Notice the Symptoms",
+      "desc": "Artificial intelligence is transforming medical diagnostics by detecting early signs of diseases like cancer, diabetes, and heart conditions through the analysis of medical images, lab results, and patient history — often with greater accuracy than traditional methods.",
+      "image": "/static/news-image/healthcare.png",
+      "slides": {
+        "beginner": [
+          {
+            "title": "How Can AI Help Doctors?",
+            "desc": "Doctors have to look at thousands of X-rays, scans, and test results to figure out what's wrong with a patient. It's a lot of work, and even the best doctors can miss something when they're tired or overloaded. AI systems can be trained to look at medical images and spot tiny warning signs that a human eye might miss — like the early stages of a tumour or unusual patterns in a heartbeat. It works as a second pair of eyes that never gets tired."
+          },
+          {
+            "title": "Real Examples of AI Saving Lives",
+            "desc": "AI tools are already being used in hospitals to detect diabetic eye disease from retina photos, find early-stage skin cancer from smartphone pictures, and flag abnormal ECG readings that might signal a heart attack is coming. In some studies, these AI tools have matched or even outperformed experienced specialists in catching these conditions early. Earlier detection almost always means better chances of survival and easier treatment."
+          },
+          {
+            "title": "Will AI Replace Doctors?",
+            "desc": "The short answer is no — at least not anytime soon, and most experts don't think that's the right goal anyway. AI is being used as a tool to help doctors make better decisions, not as a replacement for human judgement and empathy. The realistic future is one where AI handles the time-consuming pattern recognition tasks, freeing doctors to focus on communicating with patients, making complex decisions, and providing care that requires human connection."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "Where AI Diagnostics Is Having the Most Impact",
+            "desc": "The strongest early results for AI in medicine have come in medical imaging — radiology, pathology, and ophthalmology — where the task of identifying patterns in images is well-suited to computer vision models. FDA-cleared AI tools for detecting diabetic retinopathy, pulmonary nodules, and stroke signs from CT scans are now deployed in hospitals across the US and UK, reducing reporting times and catching cases that might otherwise have been delayed."
+          },
+          {
+            "title": "Predictive AI: Moving From Diagnosis to Prevention",
+            "desc": "Beyond diagnosing existing conditions, AI is being applied to predict which patients are at elevated risk of developing serious illness in the future. Models trained on electronic health records, genomic data, and lifestyle factors can flag high-risk patients for preventive interventions before symptoms appear. This shift from reactive to predictive medicine represents a fundamental change in how healthcare can be delivered at population scale."
+          },
+          {
+            "title": "The Barriers to Widespread Adoption",
+            "desc": "Despite promising results, scaling AI diagnostics is complicated by data privacy regulations, hospital IT infrastructure limitations, and the need for clinical validation across diverse patient populations. Many AI models trained primarily on data from Western hospitals perform less accurately on patients from different ethnic backgrounds — a bias issue the field is actively working to address through more diverse training datasets."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Deep Learning Architecture in Medical Imaging",
+            "desc": "State-of-the-art medical imaging AI uses convolutional neural networks (CNNs) and increasingly vision transformers (ViTs) trained on large curated datasets of labelled medical images. Architectures like U-Net and its variants are standard for segmentation tasks — isolating tumours, organs, or lesions within scans. Self-supervised pre-training on large unlabelled medical image corpora has significantly reduced the annotation burden required for downstream fine-tuning on rare conditions."
+          },
+          {
+            "title": "Multimodal Clinical AI and EHR Integration",
+            "desc": "The most powerful diagnostic AI systems combine imaging data with structured EHR data — lab values, medications, ICD codes — and unstructured clinical notes using transformer-based NLP. Fusion architectures that jointly attend over multiple data modalities allow the model to capture clinical context that imaging alone cannot provide. Federated learning frameworks are being adopted to train on distributed hospital data without centralising sensitive patient records."
+          },
+          {
+            "title": "Regulatory, Bias, and Deployment Challenges",
+            "desc": "FDA approval for AI as a medical device (SaMD) requires prospective clinical trials demonstrating performance across demographically diverse populations — a high bar that slows deployment of even genuinely effective tools. Algorithmic bias remains a critical unresolved issue: models trained predominantly on data from large academic medical centres underperform in community hospitals and on underrepresented patient demographics. Continuous post-market surveillance requirements further complicate commercial deployment at scale."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "IT",
+      "title": "Hackers Are Getting Smarter — And Most People Still Aren't Prepared",
+      "desc": "Cyber attacks are increasing in frequency and sophistication globally, with ransomware, phishing, and AI-assisted hacking targeting individuals, businesses, and critical infrastructure at an unprecedented scale.",
+      "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87",
+      "slides": {
+        "beginner": [
+          {
+            "title": "What Is a Cyber Attack and Why Should You Care?",
+            "desc": "A cyber attack is when someone tries to break into a computer, phone, or online account to steal information, money, or cause damage. You've probably heard of things like 'phishing emails' — those fake messages pretending to be from your bank or a delivery company — or 'ransomware,' where hackers lock all your files and demand payment to unlock them. These attacks happen to regular people, not just big companies, and they're becoming far more common every year."
+          },
+          {
+            "title": "How Easy Is It to Become a Victim?",
+            "desc": "Scarily easy. Most successful attacks don't require sophisticated hacking skills — they rely on people making small mistakes like clicking a suspicious link, using the same password everywhere, or connecting to public Wi-Fi without protection. Hackers now use AI tools to send more convincing fake emails and messages, making it harder to tell what's real. The number one defence is simply being aware of what to look out for and developing a few basic security habits."
+          },
+          {
+            "title": "Simple Things You Can Do Right Now to Stay Safe",
+            "desc": "You don't need to be a tech expert to protect yourself. Using a strong, unique password for each account (a password manager helps with this), turning on two-factor authentication (the code sent to your phone when you log in), keeping your apps and phone updated, and being suspicious of unsolicited messages are all habits that dramatically reduce your risk. Security experts say most successful attacks could have been prevented by these basic steps."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "The Evolving Threat Landscape",
+            "desc": "Cyber threats have moved beyond opportunistic attacks to highly targeted, multi-stage campaigns. Ransomware-as-a-Service (RaaS) platforms now allow non-technical criminals to launch sophisticated attacks by licensing malware from developers, dramatically lowering the skill barrier for attackers. Meanwhile, nation-state actors target critical infrastructure — power grids, hospitals, financial systems — as instruments of geopolitical pressure."
+          },
+          {
+            "title": "AI Is Being Used by Both Sides",
+            "desc": "Security teams are using machine learning to detect anomalous behaviour and automate threat response. But attackers are using AI too — to generate convincing phishing emails at scale, identify vulnerabilities in code, and automate credential stuffing attacks. This AI arms race is raising the stakes for security teams who must now defend against more sophisticated and high-volume attacks with the same or fewer resources."
+          },
+          {
+            "title": "Why Human Error Remains the Biggest Vulnerability",
+            "desc": "Despite massive investment in technical security tools, the majority of successful breaches still exploit human error — someone clicking a malicious link, a misconfigured cloud storage bucket, or an employee reusing a compromised password. Organisations are responding with mandatory security awareness training, simulated phishing tests, and zero-trust architecture frameworks that assume no user or system is inherently trustworthy, regardless of location or credentials."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Advanced Persistent Threats and Kill Chain Analysis",
+            "desc": "Modern sophisticated attacks follow the MITRE ATT&CK framework — a structured progression through initial access, execution, persistence, privilege escalation, lateral movement, and exfiltration. APTs (Advanced Persistent Threats), often state-sponsored, maintain long-term undetected presence within target networks through living-off-the-land techniques that abuse legitimate system tools like PowerShell and WMI to avoid signature-based detection."
+          },
+          {
+            "title": "Defensive Architecture: Zero Trust and XDR",
+            "desc": "The perimeter-based security model is obsolete in cloud-native and hybrid work environments. Zero Trust Architecture (ZTA) enforces continuous verification of identity and device posture for every access request, regardless of network location. Extended Detection and Response (XDR) platforms aggregate telemetry across endpoints, networks, and cloud workloads into a unified detection pipeline, using behavioural analytics and ML-driven anomaly detection to identify threats that evade point solutions."
+          },
+          {
+            "title": "Supply Chain Attacks and Software Integrity",
+            "desc": "The SolarWinds and XZ Utils attacks demonstrated that compromising a trusted dependency in the software supply chain can propagate malicious code to thousands of downstream organisations simultaneously. Defences now focus on Software Bill of Materials (SBOM) requirements, sigstore-based cryptographic signing of build artefacts, and dependency scanning integrated into CI/CD pipelines. SLSA (Supply Chain Levels for Software Artefacts) provides a framework for verifying provenance at each stage of the build process."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "IT",
+      "title": "Cloud Computing Is No Longer Optional — It's the Foundation of Everything",
+      "desc": "Cloud computing has become the backbone of modern digital infrastructure, enabling businesses of all sizes to scale operations, reduce costs, and deploy global services without owning physical hardware.",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+      "slides": {
+        "beginner": [
+          {
+            "title": "What Is the Cloud and Where Is It Actually Located?",
+            "desc": "When people say 'the cloud,' they're talking about massive buildings full of computers — called data centres — owned by companies like Amazon, Google, and Microsoft. These computers store and process data for millions of apps and websites. When you save a photo to Google Photos, stream Netflix, or use Gmail, all of that is happening on computers in these data centres somewhere in the world. You don't need to own the hardware — you just pay to use it."
+          },
+          {
+            "title": "Why Businesses Love Cloud Computing",
+            "desc": "Before the cloud, if a company wanted to run a website, they had to buy expensive servers, set them up in an office, and hire people to maintain them. If suddenly lots of people visited the site, it would crash. With cloud services, a company can rent computing power that automatically scales up when needed and scales down when quiet — paying only for what they use. This is why most apps and websites you use today run on cloud infrastructure."
+          },
+          {
+            "title": "How This Affects You as a User",
+            "desc": "Cloud computing is why you can access your files from any device, why apps update automatically, and why streaming services can serve millions of people simultaneously without crashing. It's also why apps can be built faster — developers don't spend months setting up hardware anymore. As more services move to the cloud, the apps you use will get more features, become more reliable, and reach you faster regardless of where in the world you are."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "The Three Cloud Models: IaaS, PaaS, and SaaS",
+            "desc": "Cloud services operate at different levels of abstraction. Infrastructure-as-a-Service (IaaS) provides raw compute, storage, and networking — you manage everything above the hardware layer. Platform-as-a-Service (PaaS) abstracts the OS and runtime, letting developers focus on application code. Software-as-a-Service (SaaS) delivers complete applications over the internet — Gmail, Slack, and Salesforce are all SaaS. Most organisations use a mix of all three depending on the workload."
+          },
+          {
+            "title": "Multi-Cloud Strategy Is Now Standard Practice",
+            "desc": "Organisations are increasingly adopting multi-cloud strategies — using AWS for one workload, Azure for another, and Google Cloud for a third — to avoid vendor lock-in, optimise costs, and leverage each provider's unique strengths. This adds complexity but reduces risk. Tools like Kubernetes for container orchestration and Terraform for infrastructure-as-code have become essential for managing workloads consistently across multiple cloud environments."
+          },
+          {
+            "title": "The Economics of Cloud vs. On-Premises",
+            "desc": "The total cost of ownership comparison between cloud and on-premises infrastructure is more nuanced than it first appears. While cloud eliminates capital expenditure on hardware, operational costs (egress fees, reserved instances, storage tiers) can accumulate significantly at scale. Many large enterprises are now pursuing 'cloud repatriation' — moving some workloads back to owned hardware — for predictable, high-volume workloads where the economics favour ownership."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Distributed Systems Design in Cloud Architecture",
+            "desc": "Modern cloud applications are designed around distributed systems principles — horizontal scaling, eventual consistency, and failure isolation through circuit breakers and bulkheads. Microservices architectures decompose applications into independently deployable services communicating via event buses or REST/gRPC APIs. Service mesh technologies like Istio provide observability, traffic management, and mTLS encryption for inter-service communication without requiring application-level changes."
+          },
+          {
+            "title": "Serverless Computing and Edge Deployment",
+            "desc": "Serverless functions (AWS Lambda, Google Cloud Run, Azure Functions) abstract infrastructure management entirely, executing code in response to events with per-millisecond billing. This dramatically reduces operational overhead but introduces cold start latency and statelessness constraints. The edge computing paradigm extends this further — deploying compute to CDN nodes geographically close to users to reduce latency for latency-sensitive workloads like real-time personalisation and IoT data processing."
+          },
+          {
+            "title": "FinOps, Sustainability, and the Cost of Scale",
+            "desc": "As cloud spend becomes a major line item for technology organisations, FinOps (Cloud Financial Operations) has emerged as a discipline focused on unit economics, chargeback models, and continuous cost optimisation. Simultaneously, hyperscaler data centres account for significant global energy consumption, driving investment in renewable energy procurement and custom silicon (AWS Graviton, Google TPUs) designed for better performance per watt. The intersection of cost efficiency and sustainability is increasingly shaping infrastructure architecture decisions."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "IT",
+      "title": "Building Software Is Faster Than Ever — Here's What's Actually Changed",
+      "desc": "A new wave of AI-assisted development tools, modern frameworks, and automated deployment pipelines is fundamentally changing how software gets built — compressing timelines that once took months into days.",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "slides": {
+        "beginner": [
+          {
+            "title": "Why Apps Are Being Built So Much Faster Now",
+            "desc": "Building an app used to mean writing thousands of lines of code from scratch. Today, developers have access to powerful tools that do a lot of the repetitive work automatically. Frameworks give them ready-made building blocks so they don't reinvent the wheel every time. And now, AI coding assistants like GitHub Copilot can suggest entire chunks of code as you type — kind of like autocomplete for programming. What took a team months a few years ago can now take weeks."
+          },
+          {
+            "title": "What Is an 'App' Really Made Of?",
+            "desc": "Most apps have two main parts: the frontend (what you see and interact with — buttons, screens, menus) and the backend (the invisible part that stores data, processes requests, and handles the logic behind the scenes). There are also databases where information is stored and APIs that let different apps communicate with each other. Modern development tools make all these parts easier to build and connect, which is why new apps seem to launch constantly."
+          },
+          {
+            "title": "Why This Matters for Jobs and Learning",
+            "desc": "The fact that software development is becoming faster and more AI-assisted doesn't mean fewer developer jobs — it means developers can build more ambitious things in the same time. However, the skills being valued are shifting. Knowing how to work with AI tools, understand system design, and debug complex issues is becoming more important than memorising syntax. For students thinking about tech careers, learning fundamentals and adaptability matters more than mastering any single tool."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "AI Coding Assistants Are Reshaping Developer Workflows",
+            "desc": "Tools like GitHub Copilot, Cursor, and Amazon CodeWhisperer use large language models trained on code to provide in-editor suggestions, complete functions, generate unit tests, and explain unfamiliar code. Surveys show developers using AI coding assistants report 30-55% productivity gains on routine tasks. The shift isn't just in speed — it's changing what kinds of projects individual developers can take on solo."
+          },
+          {
+            "title": "DevOps and the Move Toward Platform Engineering",
+            "desc": "DevOps — the practice of combining software development and operations into unified workflows — has matured into platform engineering: building internal developer platforms that abstract infrastructure complexity and provide standardised, self-service development environments. CI/CD pipelines now automate testing, security scanning, and deployment at every code commit, dramatically reducing the time from writing code to getting it in front of users."
+          },
+          {
+            "title": "Low-Code and No-Code: Real Tool or Hype?",
+            "desc": "Low-code platforms like Retool, OutSystems, and Microsoft Power Apps allow non-developers to build functional internal tools and simple applications visually. They're genuinely useful for automating business processes and building internal dashboards without developer involvement. Their limitations show at scale — complex logic, performance requirements, and custom integrations often require hand-written code — but for their intended use cases, they're eliminating backlogs of requests that would otherwise never be built."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "CI/CD Pipeline Architecture and Shift-Left Security",
+            "desc": "Modern continuous integration pipelines automate compilation, unit testing, integration testing, static analysis, and container image building triggered by every code push. Shift-left security integrates SAST (Static Application Security Testing), dependency vulnerability scanning (via tools like Snyk or Dependabot), and secrets detection into the pipeline, catching vulnerabilities before they reach production rather than discovering them post-deployment."
+          },
+          {
+            "title": "Distributed System Complexity and Observability",
+            "desc": "Microservices architectures distribute application functionality across dozens or hundreds of independently deployed services, significantly increasing system complexity. Observability — the ability to understand system state from its outputs — has become a core engineering discipline, relying on the three pillars: structured logging, distributed tracing (OpenTelemetry), and metrics. Without comprehensive observability, debugging failures in distributed systems becomes exponentially harder."
+          },
+          {
+            "title": "AI-Augmented Development and the Future of the Software Engineer",
+            "desc": "LLM-based coding tools are changing the nature of software engineering work rather than simply automating it. The abstraction level at which engineers operate is rising — the valuable skill is now system design, evaluating AI-generated code for correctness and security, and understanding complex failure modes, rather than writing boilerplate. This mirrors how high-level programming languages didn't eliminate programmers but shifted what competent programmers focus on."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "IT",
+      "title": "Data Is the New Oil — And Companies Are Racing to Refine It",
+      "desc": "Data analytics has become one of the most critical capabilities for modern organisations, enabling businesses to uncover hidden patterns, predict future outcomes, and make decisions grounded in evidence rather than intuition.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      "slides": {
+        "beginner": [
+          {
+            "title": "What Does 'Data Analytics' Actually Mean?",
+            "desc": "Every time you use an app, buy something online, or even just walk past a store, data gets collected about your behaviour. Data analytics is the process of gathering all that information and finding useful patterns in it. For example, a streaming service uses analytics to figure out which shows to recommend to you, and a supermarket uses it to decide which products to stock in which stores. It turns raw numbers into useful decisions."
+          },
+          {
+            "title": "Why Businesses Obsess Over Data",
+            "desc": "Imagine running a clothing store and having no idea which products sell best, which sizes run out fastest, or what time of year people buy the most. You'd make a lot of expensive guesses. Data analytics gives businesses answers to all these questions — and more. Companies that use data well can reduce waste, serve customers better, and spot problems before they become disasters. That's why being a 'data-driven company' has become such a big deal in modern business."
+          },
+          {
+            "title": "Data Skills Are Becoming One of the Most Valuable Things to Learn",
+            "desc": "You don't have to become a data scientist to benefit from understanding data. Basic skills like reading charts, working with spreadsheets, and understanding what statistics mean are increasingly expected in almost every professional field. Jobs in marketing, finance, healthcare, government, and even sports all increasingly require people who can look at data and figure out what it's telling them. Learning to work with data is quickly becoming as important as learning to write clearly."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "The Data Analytics Stack",
+            "desc": "Modern data analytics involves multiple layers: data ingestion pipelines that collect from various sources, data warehouses (like Snowflake, BigQuery, or Redshift) that store and organise large datasets, transformation layers (dbt is standard) that clean and model raw data, and visualisation tools (Tableau, Looker, Power BI) that make findings accessible to non-technical stakeholders. Understanding this stack end-to-end is increasingly expected of data analysts, not just engineers."
+          },
+          {
+            "title": "Predictive Analytics: From Descriptive to Forecasting",
+            "desc": "Basic analytics tells you what happened — descriptive analytics. Advanced analytics tries to tell you what will happen — predictive analytics. Machine learning models trained on historical data can forecast customer churn, predict inventory demand, flag fraudulent transactions, and estimate maintenance failures before they occur. The shift from reactive to predictive decision-making is creating significant competitive advantages for early adopters in every industry."
+          },
+          {
+            "title": "Data Quality: The Hidden Problem Nobody Talks About Enough",
+            "desc": "The most common failure mode in data projects isn't the algorithm or the visualisation — it's the data itself. Inconsistent formats, missing values, duplicates, and stale records can make even sophisticated models produce useless or actively misleading results. Data quality, governance, and lineage tracking have become major areas of investment, with 'data mesh' architectures emerging to give domain teams ownership and accountability over the data they produce."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Distributed Data Processing Frameworks",
+            "desc": "Processing analytics workloads at scale requires distributed computation frameworks. Apache Spark's resilient distributed dataset model enables fault-tolerant parallel processing of petabyte-scale datasets across commodity hardware clusters. Streaming analytics platforms like Apache Flink and Kafka Streams enable sub-second processing of event streams for real-time analytics use cases. The lakehouse architecture — combining data lake flexibility with data warehouse performance guarantees using open table formats like Delta Lake, Iceberg, or Hudi — is becoming the dominant pattern for large-scale analytics infrastructure."
+          },
+          {
+            "title": "ML Ops and Production ML Systems",
+            "desc": "Deploying machine learning models into production analytics pipelines introduces operational challenges beyond those of traditional software. Feature stores centralise feature computation and ensure training-serving consistency. Model registries track versions, lineage, and performance metrics. Online/offline feature skew — where model inputs at training time differ from those at inference time — is a major source of production degradation that automated monitoring pipelines must detect and alert on."
+          },
+          {
+            "title": "Privacy-Preserving Analytics and Regulatory Compliance",
+            "desc": "GDPR, CCPA, and sector-specific regulations impose strict constraints on what data can be stored, for how long, and how it can be used for analytics. Privacy-preserving techniques — differential privacy (adding calibrated noise to query outputs), federated learning (training models on distributed data without centralisation), and synthetic data generation — are enabling analytics on sensitive datasets that would otherwise be off-limits. These approaches represent a fundamental shift in how organisations must architect analytics systems as regulatory requirements tighten globally."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "IT",
+      "title": "The Web Is Getting Rebuilt From Scratch — And It's Way Faster This Time",
+      "desc": "A new generation of web development frameworks, edge computing, and performance-first architectures is transforming how websites and web applications are built, making them faster, more interactive, and more capable than ever before.",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      "slides": {
+        "beginner": [
+          {
+            "title": "Why Do Some Websites Load Instantly and Others Feel Slow?",
+            "desc": "When you visit a website, your browser is downloading files from a computer server somewhere in the world. The speed depends on how far away that server is, how big the files are, and how efficiently the website is coded. Modern web developers use tools and techniques specifically designed to make websites load as fast as possible — compressing files, loading only what's needed immediately, and storing copies of the site closer to where you are in the world."
+          },
+          {
+            "title": "Websites Have Become Full-On Applications",
+            "desc": "Ten years ago, most websites were basically just documents with text and images. Today, websites like Figma (a design tool), Notion (a note-taking app), and Google Docs are fully functional applications that run entirely in your browser — no downloads required. Building these web apps uses JavaScript frameworks like React, Vue, and Angular that allow developers to create rich, interactive experiences. The line between 'website' and 'app' has almost completely disappeared."
+          },
+          {
+            "title": "Why Web Development Is One of the Best Skills to Learn",
+            "desc": "Web development skills are in very high demand because every business — from a tiny local shop to a multinational corporation — needs a web presence, and most need a proper web application. The learning path is more accessible than almost any other programming field: you can see results in a browser immediately, free tutorials are abundant, and the community is enormous. It's also the one skill where you can build something people actually use relatively quickly after starting to learn."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "The Modern JavaScript Framework Landscape",
+            "desc": "React remains the dominant choice for large-scale web applications, backed by Meta and an enormous ecosystem. Vue offers a gentler learning curve with comparable capability. Svelte and SolidJS have gained traction by moving reactivity to compile time, producing smaller and faster runtime bundles. On the full-stack side, Next.js (built on React) and Nuxt (built on Vue) have become the go-to choices by combining server-side rendering, static generation, and API routes in a single framework."
+          },
+          {
+            "title": "Performance Has Become a First-Class Concern",
+            "desc": "Google's Core Web Vitals — measurable metrics covering loading speed, interactivity, and visual stability — directly affect search ranking, pushing performance from nice-to-have to business-critical. Techniques like code splitting, lazy loading, image optimisation, and prefetching are now standard practice. The rise of edge functions allows dynamic logic to execute in CDN nodes geographically close to the user, dramatically reducing time to first byte."
+          },
+          {
+            "title": "The API Economy and Headless Architecture",
+            "desc": "Modern web applications are increasingly decoupled from their data and content sources. The JAMstack architecture — JavaScript, APIs, and pre-built Markup — separates the presentation layer (frontend) from the data layer (backend APIs, CMS, databases), allowing both to evolve independently. Headless CMS platforms like Contentful and Sanity expose content via APIs, enabling the same content to be delivered to websites, mobile apps, and smart devices from a single source."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Rendering Strategies: SSR, SSG, ISR, and RSC",
+            "desc": "Modern frameworks support multiple rendering strategies that can be mixed within a single application. Server-Side Rendering (SSR) generates HTML on request for dynamic, personalised content. Static Site Generation (SSG) pre-renders at build time for maximum CDN cacheability. Incremental Static Regeneration (ISR) revalidates static pages on a time or on-demand basis. React Server Components (RSC) enable fine-grained server/client boundary control, reducing client JavaScript bundle size by keeping data-fetching logic exclusively on the server."
+          },
+          {
+            "title": "Web Assembly and the Browser as a Runtime",
+            "desc": "WebAssembly (WASM) enables near-native performance execution of code compiled from C++, Rust, Go, and other languages in the browser sandbox. This is enabling applications previously impossible in the browser — Figma's rendering engine, video editing tools, and scientific computing applications. The WASI (WebAssembly System Interface) standard is extending WASM beyond the browser into server-side and edge runtimes, positioning it as a universal, portable execution format."
+          },
+          {
+            "title": "Edge Computing, Distributed State, and the Future Web Architecture",
+            "desc": "The serverless edge paradigm — running JavaScript or WASM at CDN edge nodes via platforms like Cloudflare Workers or Vercel Edge Functions — reduces latency by executing dynamic logic milliseconds from the user. The unsolved challenge is distributed state management at the edge: without a centralised database, coordinating state across geographically distributed edge nodes requires CRDTs (Conflict-free Replicated Data Types) or careful API design to maintain consistency. This remains an active area of architectural innovation."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "Electronics",
+      "title": "The Global Chip Shortage Taught the World One Thing: Semiconductors Run Everything",
+      "desc": "Semiconductors — the tiny chips that power everything from smartphones to cars to AI systems — are at the centre of a massive global expansion, with governments and corporations investing hundreds of billions to secure domestic supply chains.",
+      "image": "/static/news-image/semiconductor.png",
+      "slides": {
+        "beginner": [
+          {
+            "title": "What Is a Semiconductor and Why Does Everyone Keep Talking About It?",
+            "desc": "A semiconductor is a tiny chip — smaller than your fingernail — that acts like the brain of electronic devices. Your phone has one, your laptop has one, your car has dozens, and modern home appliances have them too. They process information, store data, and control everything electronic does. Without semiconductors, basically no modern technology works. When there aren't enough of them — like during the global shortage a few years ago — cars don't get built, phones get delayed, and prices rise everywhere."
+          },
+          {
+            "title": "Why Are They So Hard to Make?",
+            "desc": "Semiconductor manufacturing is one of the most complex industrial processes that exists. Making a modern chip requires drawing circuits that are thousands of times thinner than a human hair onto silicon wafers, using machines called EUV lithography systems that cost over a billion dollars each and are made by only one company in the world (a Dutch company called ASML). Only a handful of companies — primarily TSMC in Taiwan, and Samsung in South Korea — can make the most advanced chips. This concentration is why the global shortage was such a big problem."
+          },
+          {
+            "title": "Why Countries Are Now Treating Chip-Making Like a National Security Issue",
+            "desc": "Governments around the world have realised that depending on chips made in one region — particularly Taiwan, which sits in a geopolitically sensitive area — is a huge vulnerability. The US passed the CHIPS Act to fund domestic chip manufacturing. India, Japan, and EU countries are also offering massive incentives to attract chip factories. For young people interested in technology careers, semiconductor engineering and supply chain roles are becoming some of the most strategically important jobs in the world."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "The Semiconductor Value Chain",
+            "desc": "The global semiconductor industry is divided into design, fabrication, and packaging — a chain that rarely sits in one company. Fabless companies like Qualcomm, Apple, and Nvidia design chips but outsource manufacturing to foundries. TSMC and Samsung are the dominant foundries. Materials suppliers, equipment makers (ASML, Applied Materials), and packaging specialists form the rest of the chain. The extreme specialisation at each node creates interdependency and vulnerability to supply disruptions."
+          },
+          {
+            "title": "The Race to 2nm and Below",
+            "desc": "Process nodes — measured in nanometres — describe the size of transistors on a chip. Smaller transistors mean more processing power per unit area and lower power consumption. TSMC's 3nm process is now in production for Apple's latest chips, with 2nm in development. Each node shrink becomes exponentially harder and more expensive to achieve. Intel's struggles with its 10nm and 7nm transitions illustrate that falling behind in process technology has severe consequences for competitiveness."
+          },
+          {
+            "title": "Geopolitics Is Now a Semiconductor Story",
+            "desc": "The US has imposed sweeping export controls restricting the sale of advanced chips and chip-making equipment to China, explicitly targeting AI computing capabilities. China is investing massively in domestic semiconductor development in response, though it remains years behind on leading-edge processes. TSMC's geographical location in Taiwan — claimed by China — means that geopolitical instability in the Taiwan Strait represents a systemic risk to the global electronics supply chain."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "EUV Lithography and Physical Limits of Scaling",
+            "desc": "Extreme Ultraviolet (EUV) lithography uses 13.5nm wavelength light — generated by converting tin plasma to photons — to pattern transistors at sub-7nm nodes. ASML holds a complete monopoly on EUV systems, creating a critical single point in the global supply chain that is subject to export controls. High-NA EUV, required for 2nm and below, multiplies the numerical aperture to 0.55, enabling smaller feature resolution but requiring entirely new mask architectures and photoresist chemistry."
+          },
+          {
+            "title": "3D Packaging and Chiplet Architecture",
+            "desc": "As planar scaling approaches physical limits, the industry is pursuing performance gains through 3D integration and chiplet architectures. TSMC's SoIC (System on Integrated Chips) and Intel's Foveros technologies stack dies vertically with through-silicon vias or hybrid bonding, reducing interconnect latency and increasing bandwidth density. Chiplet disaggregation — splitting monolithic SoCs into smaller dies manufactured at optimal process nodes and integrated in a package — is becoming the dominant architecture for high-performance compute chips."
+          },
+          {
+            "title": "Post-CMOS Computing and Long-Term Research Directions",
+            "desc": "Beyond silicon CMOS, the research community is exploring alternative computing substrates: GaN and SiC for power electronics, III-V semiconductors for RF and photonics, carbon nanotube FETs for potential scaling beyond silicon, and neuromorphic chip architectures that implement sparse, event-driven computation inspired by biological neural networks. Gate-all-around (GAA) nanosheet transistors are the near-term successor to FinFETs, with production planned at 2nm nodes, offering superior electrostatic control and reduced leakage current."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "Electronics",
+      "title": "Robots Are Taking Over Factories — And That's Actually Good News",
+      "desc": "Advances in robotics hardware, AI-driven control systems, and cost reductions are rapidly expanding robot deployment across manufacturing, logistics, healthcare, and agriculture — transforming how physical work gets done.",
+      "image": "/static/news-image/robotics.png",
+      "slides": {
+        "beginner": [
+          {
+            "title": "What Kind of Robots Are We Actually Talking About?",
+            "desc": "When people say robots are taking over jobs, they're mostly talking about industrial robot arms in factories, not humanoid walking robots (though those are coming too). These arms can pick up parts, weld metal, assemble products, and package goods faster and more consistently than humans can. Companies like Amazon use thousands of warehouse robots to move shelves to human pickers, dramatically speeding up order fulfilment. The robots doing most of today's automation look nothing like robots in movies."
+          },
+          {
+            "title": "Why Are Robots Being Deployed So Rapidly Now?",
+            "desc": "Three things happened at once: robots got cheaper, smarter, and more flexible. A robot arm that cost hundreds of thousands of dollars a decade ago now costs a fraction of that. AI has made robots better at handling unpredictable situations rather than just repeating the same motion. And collaborative robots ('cobots') are designed to work safely alongside humans rather than in caged-off sections of factories. The combination makes automation viable for far more businesses and tasks than before."
+          },
+          {
+            "title": "Will Robots Take Human Jobs?",
+            "desc": "This is the big question, and the honest answer is: some jobs, yes — but it's more complicated than a simple yes or no. Historically, automation has eliminated certain tasks while creating new ones. Jobs that involve repetitive physical tasks in controlled environments are most at risk. Jobs requiring adaptability, judgement, human connection, or creative problem-solving in unpredictable environments are much harder to automate. The challenge is that the new jobs created often require different skills than the ones eliminated, which creates a real transition problem."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "AI Is What Makes Modern Robots Different",
+            "desc": "Classical industrial robots follow pre-programmed instructions precisely — they're fast and consistent but brittle. Modern AI-driven robots can learn from demonstration, adapt to variations in object position or shape, and recover from errors. Computer vision enables robots to identify and grasp objects they've never seen before. Reinforcement learning allows them to improve performance through simulated practice. This shift from programmed to learned behaviour is what's enabling robotics deployment in unstructured environments like warehouses and kitchens."
+          },
+          {
+            "title": "Humanoid Robots: Moving From Lab to Deployment",
+            "desc": "Companies including Tesla (Optimus), Figure AI, Boston Dynamics, and Agility Robotics are racing to commercialise bipedal humanoid robots designed to operate in human-built environments. The case for the humanoid form factor is that existing factories, warehouses, and tools are designed for human bodies — a humanoid robot can use the same infrastructure without modification. Early deployments in controlled warehouse settings are beginning, with broader commercial availability expected over the next several years."
+          },
+          {
+            "title": "The Economics of Robot Deployment",
+            "desc": "The decision to automate a task is fundamentally an economic calculation: robot capital cost plus maintenance versus ongoing human labour cost. As robot hardware becomes cheaper and software becomes more capable, the break-even point drops. Labour market tightness in developed economies — particularly in manufacturing, logistics, and agriculture — is accelerating adoption timelines. The ROI for well-chosen robotics deployments is now typically measured in months rather than years."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Robot Learning: Imitation, RL, and Foundation Models",
+            "desc": "Modern robot manipulation systems increasingly use imitation learning from human demonstrations combined with reinforcement learning fine-tuning to acquire dexterous manipulation skills. The emerging paradigm is training robot foundation models on large heterogeneous datasets across embodiments — similar to how LLMs are pre-trained on diverse text — and then adapting them to specific robot hardware and tasks. Google's RT-2 and Physical Intelligence's π0 are examples of vision-language-action models that combine semantic reasoning with motor control."
+          },
+          {
+            "title": "Perception, State Estimation, and SLAM",
+            "desc": "Mobile robotic systems require simultaneous localisation and mapping (SLAM) to navigate unknown environments without GPS. Modern SLAM systems fuse IMU, LiDAR, and camera data using probabilistic filtering (factor graphs, EKF variants) or end-to-end neural approaches. For manipulation, 6-DoF pose estimation of novel objects under occlusion and variable lighting remains a difficult open problem, with depth cameras, structured light, and tactile sensors all contributing to robust state estimation pipelines."
+          },
+          {
+            "title": "Safety, Certification, and the Path to Unstructured Deployment",
+            "desc": "Deploying robots alongside humans in unstructured environments requires formal safety guarantees that current learning-based systems cannot yet provide. ISO 10218 and TS 15066 standards govern collaborative robot safety, but these were designed for classical programmed robots with predictable behaviour envelopes. Certifying AI-driven robots with learned policies for proximity to humans requires new frameworks for runtime monitoring, uncertainty quantification, and formal verification of safety properties — an unsolved regulatory and technical challenge."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "Electronics",
+      "title": "Your Home Is Getting Smarter — The IoT Revolution Is Already Here",
+      "desc": "The Internet of Things now connects billions of devices — from smart thermostats and fitness trackers to industrial sensors and city infrastructure — creating intelligent systems that collect data, automate decisions, and reshape daily life.",
+      "image": "/static/news-image/iot.png",
+      "slides": {
+        "beginner": [
+          {
+            "title": "What Is the Internet of Things?",
+            "desc": "The 'Internet of Things' just means everyday objects that are connected to the internet and can send or receive data. Your smartwatch that tracks your steps, the thermostat that automatically adjusts your home's temperature, the doorbell that sends video to your phone, the fridge that notifies you when you're low on milk — all of these are IoT devices. Basically, if it's a physical object with an internet connection and some kind of sensor or function, it's part of the IoT."
+          },
+          {
+            "title": "Why Is IoT Such a Big Deal?",
+            "desc": "Before IoT, getting information from the physical world required a person to go and check something. Now sensors can automatically monitor and report: how much power a building is using, whether a machine in a factory is about to break down, how fast traffic is moving, the humidity level in a greenhouse, or whether elderly patients are taking their medication. This automatic monitoring generates enormous amounts of useful data and allows systems to respond to real-world conditions instantly without human intervention."
+          },
+          {
+            "title": "Smart Cities: Where IoT Gets Really Big",
+            "desc": "Imagine traffic lights that adjust timing based on actual real-time traffic flow rather than a fixed schedule — reducing commute times and emissions. Street lights that dim when no one is around and brighten when people approach. Waste collection trucks routed only to bins that are actually full. Water pipes that alert maintenance teams before they burst. These 'smart city' applications are already deployed in cities around the world and represent IoT at urban scale, with significant potential to improve quality of life and reduce resource waste."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "IoT Architecture: From Sensor to Cloud",
+            "desc": "IoT systems follow a layered architecture. Perception layer: physical sensors and actuators collect and act on data. Network layer: data is transmitted via Wi-Fi, Bluetooth, Zigbee, LoRaWAN, or cellular (NB-IoT) depending on bandwidth and power constraints. Edge layer: gateways or edge devices perform initial processing close to the source. Cloud layer: data is aggregated, stored, and analysed at scale. Application layer: user-facing dashboards, alerts, and automation logic deliver business value."
+          },
+          {
+            "title": "Edge Computing Is Reshaping IoT Architecture",
+            "desc": "Sending all IoT sensor data to the cloud for processing introduces latency that's unacceptable for time-critical applications — a self-driving car or industrial robot can't wait 100ms for a cloud response. Edge computing processes data locally on gateways or on-device, reducing latency, bandwidth costs, and cloud dependency. The tradeoff is increased complexity in managing distributed processing nodes and synchronising them with central systems."
+          },
+          {
+            "title": "Security Is IoT's Biggest Unsolved Problem",
+            "desc": "IoT devices are notoriously difficult to secure. Many run stripped-down embedded operating systems with no update mechanism, default passwords that are never changed, and insufficient processing power for strong encryption. Botnets like Mirai have demonstrated that large numbers of compromised IoT devices can be weaponised for massive distributed denial-of-service attacks. As IoT devices proliferate into critical infrastructure, healthcare, and industrial control systems, the security implications become increasingly serious."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Communication Protocols and LPWAN Trade-offs",
+            "desc": "IoT connectivity choices involve complex trade-offs between power consumption, range, bandwidth, and cost. LPWAN (Low-Power Wide Area Network) protocols are designed for battery-powered devices sending small infrequent payloads. LoRaWAN operates in unlicensed spectrum with star-of-stars topology and spread-spectrum modulation for range. NB-IoT uses licensed cellular spectrum with better indoor penetration and QoS guarantees but higher device costs. Zigbee and Thread use IEEE 802.15.4 mesh networking for home automation, offering self-healing topology at the cost of limited range per node."
+          },
+          {
+            "title": "TinyML and On-Device Intelligence",
+            "desc": "TinyML enables machine learning inference on microcontrollers with kilobytes of RAM and milliwatts of power — bringing AI to the extreme edge of IoT. Techniques like post-training quantisation (INT8, INT4), pruning, and knowledge distillation compress models for deployment on devices like the ARM Cortex-M series. Frameworks like TensorFlow Lite Micro and Edge Impulse provide optimised inference runtimes. Use cases include keyword spotting, anomaly detection in sensor data, and vision-based quality control at the sensor node."
+          },
+          {
+            "title": "Digital Twins and IoT at Industrial Scale",
+            "desc": "Industrial IoT (IIoT) deployments are increasingly paired with digital twin technology — real-time virtual replicas of physical systems fed by sensor telemetry. Digital twins enable predictive maintenance through anomaly detection on equipment telemetry, simulation of operational scenarios without risking physical assets, and optimisation of complex systems like power grids or manufacturing lines. Standards like OPC-UA provide the semantic data modelling layer for industrial equipment interoperability, while platforms like Azure Digital Twins and AWS IoT TwinMaker provide the cloud infrastructure."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "Electronics",
+      "title": "The Battery Breakthrough That Could Change Electric Vehicles Forever",
+      "desc": "New advances in battery chemistry, solid-state technology, and manufacturing processes are pushing energy density higher and costs lower, accelerating the transition to electric vehicles and enabling new applications in grid-scale energy storage.",
+      "image": "/static/news-image/battery.png",
+      "slides": {
+        "beginner": [
+          {
+            "title": "Why Do Batteries Matter So Much Right Now?",
+            "desc": "Everything that's becoming wireless or electric — from your phone to an electric car to a home solar system — depends on batteries to store energy. The problem is that current batteries have limitations: they can only store so much energy for their size and weight, they take time to charge, and they can degrade and lose capacity over years. Improving battery technology is one of the most important engineering challenges right now because it directly determines how far electric cars can go, how long your phone lasts, and whether renewable energy like solar can actually power cities at night."
+          },
+          {
+            "title": "What Makes the New Battery Technologies Different?",
+            "desc": "Current lithium-ion batteries use a liquid electrolyte — the material that allows charged particles to move between the battery's two ends. New 'solid-state' batteries replace that liquid with a solid material, which can store more energy, charge faster, and is much less likely to catch fire. Another breakthrough involves new materials for the battery's electrodes — the positive and negative ends — that can hold more charge. These improvements sound technical, but the practical result is electric cars that can travel 500+ miles on a single charge and charge in under 10 minutes."
+          },
+          {
+            "title": "Beyond Cars: Why Better Batteries Change Everything",
+            "desc": "Electric cars get most of the attention, but better batteries have implications for far more. Grid-scale battery storage — giant banks of batteries storing electricity from solar and wind farms — becomes viable when batteries are cheap enough. Drones can fly longer. Laptops could last all day on a single charge for years without degrading. Rural areas could have reliable power without expensive grid connections. Battery technology is one of those foundational improvements that has ripple effects across almost every aspect of modern life."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "Solid-State Batteries: Promise vs. Current Reality",
+            "desc": "Solid-state batteries replace liquid electrolytes with solid ceramic, polymer, or sulphide-based materials, offering higher theoretical energy density, improved safety (no flammable liquid), wider operating temperature range, and longer cycle life. The challenge is manufacturing at scale — solid electrolytes have poor ionic conductivity at room temperature and suffer from interfacial resistance between the solid electrolyte and electrodes. Toyota, Samsung SDI, and QuantumScape are targeting commercial production, but timelines have repeatedly slipped."
+          },
+          {
+            "title": "Lithium Iron Phosphate: The Practical Winner",
+            "desc": "While solid-state gets the headlines, lithium iron phosphate (LFP) chemistry — an older technology — is winning on cost and cycle life. LFP cells are less energy-dense than NMC (nickel manganese cobalt) chemistries but far cheaper to manufacture, safer, and maintain capacity through more charge-discharge cycles. BYD's blade battery and CATL's use of LFP in base-model Teslas demonstrate that cost-optimised LFP is often the right choice for applications where energy density is less critical than total cost of ownership."
+          },
+          {
+            "title": "Battery Recycling: The Environmental Equation",
+            "desc": "The environmental credentials of electric vehicles depend heavily on what happens to batteries at end of life. Lithium, cobalt, nickel, and manganese are valuable and energy-intensive to mine — recovering them through recycling is both economically and environmentally important. Hydrometallurgical recycling processes can recover 95%+ of lithium and cobalt from spent cells. Regulatory pressure is increasing: the EU's Battery Regulation requires minimum recycled content in new batteries by 2030, creating significant investment in recycling infrastructure."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "Electrochemistry of High-Energy-Density Anodes",
+            "desc": "Graphite anodes in conventional lithium-ion cells have a theoretical specific capacity of 372 mAh/g. Silicon anodes offer 3579 mAh/g but suffer from ~300% volumetric expansion during lithiation, causing mechanical degradation and solid-electrolyte interface (SEI) instability. Current approaches include silicon-graphite composite anodes (10-20% silicon content), silicon nanostructures that accommodate expansion, and pre-lithiation techniques to compensate for irreversible capacity loss in the first cycle. Lithium metal anodes — used in solid-state designs — theoretically offer 3860 mAh/g but require suppression of lithium dendrite formation that causes short circuits."
+          },
+          {
+            "title": "Solid Electrolyte Materials and Interface Engineering",
+            "desc": "Solid electrolytes must simultaneously achieve high ionic conductivity (>1 mS/cm at room temperature), low electronic conductivity, and electrochemical stability at both anode and cathode potentials. Oxide-based electrolytes (LLZO garnet) offer good stability but poor room-temperature conductivity. Sulphide-based electrolytes (LGPS, Li6PS5Cl argyrodite) have conductivities approaching liquid electrolytes but react with moisture and have narrow electrochemical windows. Polymer electrolytes offer mechanical flexibility but require elevated temperatures for adequate conductivity. Hybrid approaches combining sulphide and oxide materials aim to capture advantages of each."
+          },
+          {
+            "title": "Battery Management Systems and State Estimation",
+            "desc": "Advanced BMS algorithms must accurately estimate state of charge (SoC) and state of health (SoH) under varying temperature, aging, and load conditions — tasks complicated by the nonlinear and hysteretic behaviour of battery electrochemistry. Extended Kalman Filters and unscented variants are standard for SoC estimation from voltage, current, and temperature measurements. Physics-based models (Single Particle Model, Doyle-Fuller-Newman) are increasingly being incorporated into real-time estimation to improve accuracy under dynamic conditions. Digital twin approaches that maintain a parallel electrochemical model of each cell enable predictive degradation management and thermal runway early warning."
+          }
+        ]
+      }
+    },
+  
+    {
+      "domain": "Electronics",
+      "title": "5G Is Finally Here — And It's About to Enable Things We Couldn't Even Imagine With 4G",
+      "desc": "5G networks are expanding rapidly across the globe, delivering gigabit-speed wireless connectivity and millisecond response times that are enabling a new wave of applications — from real-time AR to remote surgery to fully autonomous vehicles.",
+      "image": "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc",
+      "slides": {
+        "beginner": [
+          {
+            "title": "What's the Actual Difference Between 4G and 5G?",
+            "desc": "You've been using 4G on your phone for years — it's what lets you stream videos and use apps on the go. 5G is the next generation of mobile networks that's being built to replace 4G over time. The most obvious difference you'd notice is speed: 5G can download things up to 100 times faster than 4G in the best conditions. But the speed isn't even the most important part — 5G also responds much faster (lower 'latency') and can handle many more devices connected at once without slowing down."
+          },
+          {
+            "title": "Why Does Faster Response Time Matter More Than Speed?",
+            "desc": "Latency is the delay between when you tell something to happen and when it actually does. On 4G, that delay is around 50 milliseconds. On 5G, it drops to 1-5 milliseconds — that's nearly instant from a practical standpoint. This matters enormously for applications where delay is dangerous or disruptive: a surgeon using a robot to operate on a patient in another city needs the movements to be transmitted with zero noticeable lag. So does a self-driving car that needs to react to sudden obstacles. Fast response time is what makes 5G transformative, not just faster video downloads."
+          },
+          {
+            "title": "When Will 5G Actually Affect Your Daily Life?",
+            "desc": "If you live in a major city and have a modern smartphone, you're probably already on 5G some of the time. But the applications that will make 5G feel genuinely transformative — augmented reality glasses that overlay information on the real world, truly autonomous vehicles, factories operated remotely, immersive multiplayer gaming without any lag — are still being developed. 5G is the infrastructure being laid now so those applications can exist in the coming years. Think of it like building highways before the cars that would use them were invented."
+          }
+        ],
+        "intermediate": [
+          {
+            "title": "The Three Spectrum Bands and Their Trade-offs",
+            "desc": "5G operates across three frequency bands with distinct characteristics. Sub-6GHz (600MHz-6GHz) offers broad coverage similar to 4G with moderate speed improvements — this is what most users experience. mmWave (24-100GHz) delivers gigabit speeds and 1ms latency but has extremely limited range (hundreds of metres) and poor building penetration. Mid-band (2.5-4.9GHz) strikes the best balance of coverage and capacity and is driving most meaningful 5G deployment. Network operators must carefully plan spectrum allocation to deliver consistent experience."
+          },
+          {
+            "title": "5G's Real Value Is Industrial and Enterprise, Not Consumer",
+            "desc": "While 5G is marketed around faster phone speeds, its most significant economic impact will be in enterprise and industrial applications. Private 5G networks deployed within factories provide reliable, low-latency connectivity for robotic systems, automated guided vehicles, and real-time quality inspection — without the interference and latency variability of Wi-Fi. Network slicing allows operators to guarantee specific latency and bandwidth parameters for critical applications, a capability 4G cannot offer."
+          },
+          {
+            "title": "The Infrastructure Challenge and Deployment Pace",
+            "desc": "5G requires significantly denser base station infrastructure than 4G, particularly for mmWave deployment. The capital expenditure requirements are massive — global telecom operators have collectively committed trillions of dollars in spectrum licences and network build-out. Geopolitical tensions around Huawei equipment have complicated deployments in Western markets, forcing operators to replace or avoid Chinese network equipment while managing cost pressures. Rural 5G deployment remains years behind urban coverage in most markets."
+          }
+        ],
+        "advanced": [
+          {
+            "title": "5G NR Architecture: Massive MIMO and Beamforming",
+            "desc": "5G New Radio (NR) relies on massive MIMO arrays — base stations equipped with 64 to 256 antenna elements — to serve multiple users simultaneously through spatial multiplexing. Digital beamforming steers multiple narrow beams independently toward different users using precoding matrices derived from channel state information fed back by user equipment. Hybrid beamforming architectures combine digital precoding with analogue phase shifters to reduce the prohibitive hardware cost of fully digital mmWave MIMO systems while maintaining beamforming flexibility."
+          },
+          {
+            "title": "Network Slicing and the Service-Based Architecture",
+            "desc": "5G core (5GC) is designed around a Service-Based Architecture (SBA) that decomposes network functions into modular microservices communicating via HTTP/2 APIs — a cloud-native design that enables flexible deployment on COTS hardware. Network slicing virtualises the radio access and core network to create logically isolated end-to-end network instances with guaranteed SLA parameters. Each slice can have dedicated resources for latency (URLLC use cases), throughput (eMBB), or device density (mMTC), running simultaneously on shared physical infrastructure."
+          },
+          {
+            "title": "Open RAN, Disaggregation, and the Vendor Ecosystem",
+            "desc": "Open RAN (O-RAN) disaggregates the traditional monolithic base station into open, interoperable components — the Radio Unit (RU), Distributed Unit (DU), and Centralised Unit (CU) — connected via standardised interfaces (eCPRI, F1, E1). This enables multi-vendor deployments and operator customisation of the radio access network using AI/ML-driven RAN Intelligent Controllers (RICs). While O-RAN reduces vendor lock-in and enables innovation, achieving the performance parity with integrated vendor solutions at scale remains a major technical challenge operators are actively working through."
+          }
+        ]
+      }
+    }
+  ]

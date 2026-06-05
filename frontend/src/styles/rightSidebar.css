@@ -1,0 +1,302 @@
+/* ===== RIGHT SIDEBAR ===== */
+.right-sidebar {
+    border-left: 1px solid #dddee0;
+    margin-left: 5px;
+    padding-left: 35px;
+    width: 300px;
+    padding-right: 30px;
+    padding-top:0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+
+    /* align-self: flex-start; */
+    position: fixed;
+    top: 70px;
+    right: 20px; 
+    height: fit-content;
+}
+
+
+
+/* CARD */
+.rs-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    padding: 14px;
+}
+
+/* HEADER */
+.rs-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.rs-header img {
+    width: 18px;
+}
+
+/* CHAT */
+.chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 140px;
+    overflow-y: auto;
+    
+}
+
+.chat-msg {
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    max-width: 85%;
+}
+
+.chat-msg.bot {
+    background: #f1f1f1;
+}
+
+.chat-msg.user {
+    background: #3f38e8;
+    color: white;
+    align-self: flex-end;
+}
+
+/* INPUT */
+.chat-input {
+    display: flex;
+    margin-top: 10px;
+    gap: 6px;
+}
+
+.chat-input input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 999px;
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+.chat-input button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #3f38e8;
+    border: none;
+}
+
+.chat-input img {
+    width: 14px;
+}
+
+/* EMPTY */
+.rs-empty {
+    font-size: 13px;
+    color: #6a6a6a;
+}
+
+/* LINK */
+.rs-link {
+    color: #3f38e8;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* TOOLS */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.tool {
+    background: #f3f3f3;
+    border-radius: 12px;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tool span {
+    display: block;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+
+/* ===== RIGHT SIDEBAR ===== */                                         
+
+/* CARD */
+.rs-card {
+    background: #ffffff;
+    border: 1px solid #e6e8f0;
+    border-radius: 18px;
+    padding: 16px;
+    transition: 0.25s ease;
+}
+
+/* .chatbot-card{
+    background: #3e38e810;
+} */
+
+.rs-card:hover {
+    border-color: #3f38e8; /* your primary */
+}
+
+/* HEADER */
+.rs-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #2a2a2a; /* softer black */
+    margin-bottom: 12px;
+}
+
+.rs-header img {
+    width: 18px;
+}
+
+/* CHAT */
+.chat-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 140px;
+    overflow-y: auto;
+}
+
+.chat-msg {
+    padding: 10px 12px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.4;
+    max-width: 85%;
+}
+
+.chat-msg.bot {
+    /* background: #c8f54c99; */
+    background: #7ff54c30;
+    color: #333;
+}
+
+.chat-msg.user {
+    background: #3f38e8;
+    color: white;
+    align-self: flex-end;
+}
+
+/* INPUT */
+.chat-input {
+    display: flex;
+    margin-top: 10px;
+    gap: 6px;
+}
+
+.chat-input input {
+    flex: 1;
+    border: 1px solid #e6e8f0;
+    border-radius: 999px;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-family: 'Space Grotesk', sans-serif;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* 🔥 FIX BLACK BORDER ISSUE */
+.chat-input input:focus {
+    border-color: #3f38e8;
+    box-shadow: 0 0 0 2px rgba(63, 56, 232, 0.15);
+}
+
+.chat-input button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #3f38e8;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chat-input button:hover {
+    transform: scale(1.05);
+}
+
+.chat-input img {
+    width: 14px;
+}
+
+/* EMPTY TEXT */
+.rs-empty {
+    font-size: 13px;
+    color: #6b6f76;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* LINK */
+.rs-link {
+    color: #3f38e8;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    margin-top: 6px;
+    display: inline-block;
+}
+
+.rs-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== TOOLS ===== */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* 🔥 TOOL CARD IMPROVED */
+.tool {
+    background: #7ff54c30; /* light blue */
+    border-radius: 14px;
+    text-align: center;
+    padding: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    cursor: pointer;
+    transition: 0.25s ease;
+    border: 1px solid transparent;
+}
+
+/* ICON LETTER */
+.tool {
+    font-weight: 600;
+    color: #3f38e8;
+}
+
+/* TOOL NAME */
+.tool span {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+    color: #333;
+}
+
+/* 🔥 HOVER UX */
+.tool:hover {
+    transform: translateY(-3px);
+    border-color: #3f38e8;
+    /* background: #c8f54cb9; */
+    background: #c8f54c;
+}

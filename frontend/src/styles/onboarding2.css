@@ -1,0 +1,201 @@
+body {
+  margin: 0;
+  background: #F7F3F0;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* WRAPPER */
+.onboard-wrapper {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px 10px;
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-row img {
+  width: 42px;
+}
+
+.logo-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 750;
+  font-size: 18px;
+}
+
+.progress-info {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* PROGRESS */
+.progress-bar {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 0 60px;
+  border-radius: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #3F38E8;
+  border-radius: 10px;
+}
+
+.progress-fill.step2 {
+  width: 66%;
+}
+
+/* CONTENT */
+.content {
+  max-width: 820px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+/* STEP */
+.step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  background: rgba(255, 140, 0, 0.12);
+  color: #FF8C00;
+  border: 1.5px solid #FF8C00;
+
+  padding: 8px 16px;
+  border-radius: 22px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  margin-bottom: 15px;
+}
+
+/* TITLE */
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+/* SUBTITLE */
+.subtitle {
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 40px;
+}
+
+/* OPTIONS */
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 40px;
+}
+
+/* OPTION */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 18px 22px;
+  border-radius: 18px;
+
+  background: white;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.option:hover {
+  border-color: #3F38E8;
+  transform: translateY(-2px);
+}
+
+.option span {
+  font-size: 26px;
+}
+
+/* ACTIVE */
+.option.active {
+  background: linear-gradient(135deg, #4f46e5, #4338ca) !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.option.active * {
+  color: #ffffff !important;
+}
+
+/* ACTIONS */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* BACK */
+.back-link {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+/* 🔥 HOVER FIX */
+.back-link:hover {
+  color: #000;
+  /* turns black */
+  transform: translateX(-2px);
+  /* subtle movement like login */
+}
+
+/* BUTTON */
+.continue-btn {
+  background: #A7A4E8;
+  opacity: 0.7;
+  pointer-events: none;
+
+  color: white;
+  border: none;
+
+  padding: 16px 36px;
+  border-radius: 20px;
+
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+
+  transition: 0.2s ease;
+}
+
+.continue-btn.enabled {
+  opacity: 1;
+  background: linear-gradient(135deg, #4C46E5, #3F38E8);
+  pointer-events: auto;
+  cursor: pointer;
+  border: 2px solid #30312C;
+}
+
+.continue-btn.enabled:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px #30312C;
+}
