@@ -26,7 +26,7 @@ SLIDES_CACHE = {}
 
 # create app FIRST
 app = Flask(__name__)
-app.secret_key = "AIzaSyDfVRHh1CyuAaflxyiN4tBhb3K0LbzoWHg"   # 🔥 REQUIRED for session
+app.secret_key = os.getenv("SECRET_KEY")   # 🔥 REQUIRED for session
 
 def call_gemini_with_retry(model, prompt, retries=3, delay=2):
     for attempt in range(retries):
