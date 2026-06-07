@@ -74,6 +74,7 @@
 }
 
 .opp-mini-text {
+  font-family: "Space Grotesk", sans-serif;
   font-size: 13px;
   font-weight: 700;
   color: rgba(48,49,44,0.5);
@@ -100,15 +101,17 @@
 
 /* DESCRIPTION */
 .opp-container p {
+  font-family: "Space Grotesk", sans-serif;
   color: rgba(48,49,44,0.6);
-  font-size: 15px;
-  max-width: 700px;
+  font-size: 16px;
+  max-width: 900px;
   line-height: 1.6;
   margin-bottom: 16px;
 }
 
 /* BANNER */
 .opp-banner {
+  font-family: "Space Grotesk", sans-serif;
   border: 2px solid #D0F248;
   background: rgba(208,242,72,0.15);
   padding: 14px 18px;
@@ -135,6 +138,7 @@
 }
 
 .opp-filters button {
+  font-family: "Space Grotesk", sans-serif;
   padding: 8px 16px;
   border-radius: 999px;
   border: 2px solid rgba(48,49,44,0.2);
@@ -215,6 +219,7 @@ align-items: stretch; /* 🔥 THIS is key */
 
 /* CONTROLLED SPACING */
 .desc {
+  font-family: "Space Grotesk", sans-serif;
    font-size: 16px;
   color: rgba(48,49,44,0.65);
   margin-top: 6px;
@@ -257,6 +262,7 @@ align-items: stretch; /* 🔥 THIS is key */
 }
 
 .tags span {
+  font-family: "Space Grotesk", sans-serif;
   font-size: 10px;
   padding: 5px 10px;
   border-radius: 999px;
@@ -275,6 +281,7 @@ align-items: stretch; /* 🔥 THIS is key */
 }
 
 .opp-content .company {
+  font-family: "Space Grotesk", sans-serif;
   font-size: 16px;
   color: #3F38E8 !important;  /* 🔥 force override */
   font-weight: 500;
@@ -283,6 +290,7 @@ align-items: stretch; /* 🔥 THIS is key */
 
 
 .meta {
+  font-family: "Space Grotesk", sans-serif;
   display: flex;
   gap: 16px;
   font-size: 14px;
