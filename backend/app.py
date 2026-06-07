@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 from routes.home_routes import home_bp
 from routes.opportunities_routes import opportunities   # samiksha ✅ added
 from routes.auth_routes import auth_bp   # ✅ ADD THIS
@@ -21,11 +22,18 @@ from routes.saved_routes import saved_bp
 with open("static/data/fallback_news.json", "r") as f:
     FALLBACK_DATA = json.load(f)
 
-SLIDES_CACHE = {}
+CACHE_FILE = "cache/slides_cache.json"
+
+try:
+    with open(CACHE_FILE, "r", encoding="utf-8") as f:
+        SLIDES_CACHE = json.load(f)
+except:
+    SLIDES_CACHE = {}
 
 
 # create app FIRST
 app = Flask(__name__)
+CORS(app)
 app.secret_key = os.getenv("SECRET_KEY")   # 🔥 REQUIRED for session
 
 def call_gemini_with_retry(model, prompt, retries=3, delay=2):
@@ -98,73 +106,99 @@ def chat():
 
 # ================= FETCH NEWS =================
 
-# this version will only show fallback data
-@app.route("/get-news", methods=["GET"])
-def get_news():
-    print("⚠️ Using FALLBACK NEWS (API limit hit)")
+# this version will only show fallback data and doesn't work with react
+# @app.route("/get-news", methods=["GET"])
+# def get_news():
+#     print("⚠️ Using FALLBACK NEWS (API limit hit)")
 
-    return jsonify({
-        "articles": FALLBACK_DATA
-    })
+#     return jsonify({
+#         "articles": FALLBACK_DATA
+#     })
 
-# temporarily removing otherwise works (shows data from API)
-
+# only fallback data (works properly)
 # @app.route("/get-news", methods=["GET"])
 # def get_news():
 
-#     # ✅ Use user topics if provided
-#     user_topics = request.args.get("topics", "")
-#     topic_list = [t.strip() for t in user_topics.split(",") if t.strip()]
+#     print("⚠️ Using FALLBACK NEWS (API limit hit)")
 
-#     # Map topics to query terms
-#     TOPIC_MAP = {
-#         "Machine Learning": "machine learning OR deep learning OR neural networks",
-#         "Web Dev": "web development OR frontend OR backend OR JavaScript",
-#         "Robotics": "robotics OR automation OR robot",
-#         "Cloud Computing": "cloud computing OR AWS OR Azure OR Google Cloud",
-#         "Quantum Computing": "quantum computing OR qubit",
-#         "Space Technology": "space technology OR NASA OR SpaceX OR satellite",
-#         "IOT": "Internet of Things OR IoT OR smart devices",
-#         "Cybersecurity": "cybersecurity OR hacking OR ransomware OR data breach",
-#     }
+#     fixed_articles = []
 
-#     DEFAULT_QUERIES = {
-#         "AI": "artificial intelligence OR machine learning OR deep learning",
-#         "IT": "software OR programming OR cybersecurity OR web development",
-#         "Electronics": "electronics OR semiconductor OR robotics OR IoT"
-#     }
+#     for article in FALLBACK_DATA:
 
-#     if topic_list:
-#         queries = {}
-#         for topic in topic_list[:4]:  # max 4 API calls
-#             if topic in TOPIC_MAP:
-#                 queries[topic] = TOPIC_MAP[topic]
-#         if not queries:
-#             queries = DEFAULT_QUERIES
-#     else:
-#         queries = DEFAULT_QUERIES
+#         article_copy = article.copy()
 
-#     all_articles = []
+#         if article_copy.get("image", "").startswith("/static/news-image/"):
 
-#     for domain, query in queries.items():
-#         url = f"https://gnews.io/api/v4/search?q={query}&lang=en&max=5&from={today}&sortby=publishedAt&apikey={GNEWS_API_KEY}"
+#             article_copy["image"] = article_copy["image"].replace(
+#                 "/static/news-image/",
+#                 "/news-image/"
+#             )
 
-#         res = requests.get(url)
-#         data = res.json()
+#         fixed_articles.append(article_copy)
 
-#         if "articles" in data:
-#             for art in data["articles"]:
-#                 all_articles.append({
-#                     "title": art.get("title", ""),
-#                     "desc": art.get("description", ""),
-#                     "content": art.get("content", ""),
-#                     "image": art.get("image"),
-#                     "domain": domain
-#                 })
+#     return jsonify({
+#         "articles": fixed_articles
+#     })
 
-#     # random.shuffle(all_articles)
 
-#     return jsonify({"articles": all_articles})
+# temporarily removing otherwise works (shows data from API)
+
+@app.route("/get-news", methods=["GET"])
+def get_news():
+
+    # ✅ Use user topics if provided
+    user_topics = request.args.get("topics", "")
+    topic_list = [t.strip() for t in user_topics.split(",") if t.strip()]
+
+    # Map topics to query terms
+    TOPIC_MAP = {
+        "Machine Learning": "machine learning OR deep learning OR neural networks",
+        "Web Dev": "web development OR frontend OR backend OR JavaScript",
+        "Robotics": "robotics OR automation OR robot",
+        "Cloud Computing": "cloud computing OR AWS OR Azure OR Google Cloud",
+        "Quantum Computing": "quantum computing OR qubit",
+        "Space Technology": "space technology OR NASA OR SpaceX OR satellite",
+        "IOT": "Internet of Things OR IoT OR smart devices",
+        "Cybersecurity": "cybersecurity OR hacking OR ransomware OR data breach",
+    }
+
+    DEFAULT_QUERIES = {
+        "AI": "artificial intelligence OR machine learning OR deep learning",
+        "IT": "software OR programming OR cybersecurity OR web development",
+        "Electronics": "electronics OR semiconductor OR robotics OR IoT"
+    }
+
+    if topic_list:
+        queries = {}
+        for topic in topic_list[:4]:  # max 4 API calls
+            if topic in TOPIC_MAP:
+                queries[topic] = TOPIC_MAP[topic]
+        if not queries:
+            queries = DEFAULT_QUERIES
+    else:
+        queries = DEFAULT_QUERIES
+
+    all_articles = []
+
+    for domain, query in queries.items():
+        url = f"https://gnews.io/api/v4/search?q={query}&lang=en&max=2&from={today}&sortby=publishedAt&apikey={GNEWS_API_KEY}"
+
+        res = requests.get(url)
+        data = res.json()
+
+        if "articles" in data:
+            for art in data["articles"]:
+                all_articles.append({
+                    "title": art.get("title", ""),
+                    "desc": art.get("description", ""),
+                    "content": art.get("content", ""),
+                    "image": art.get("image"),
+                    "domain": domain
+                })
+
+    # random.shuffle(all_articles)
+
+    return jsonify({"articles": all_articles})
 
 # ================= GENERATE SLIDES =================
 @app.route("/generate-slides", methods=["POST"])
@@ -175,7 +209,11 @@ def generate_slides():
 
     title = data.get("title", "")
 
-    cache_key = title.strip().lower()
+    cache_key = (
+        title.strip()
+        .lower()
+        .replace("’", "'")
+    )
 
     # 🔥 CHECK CACHE FIRST
     if cache_key in SLIDES_CACHE:
@@ -231,6 +269,13 @@ def generate_slides():
 
         slides = json.loads(raw_text)
         SLIDES_CACHE[cache_key] = slides
+        with open(CACHE_FILE, "w", encoding="utf-8") as f:
+            json.dump(
+                SLIDES_CACHE,
+                f,
+                ensure_ascii=False,
+                indent=2
+            )
         print(f"🔵 CACHE SAVED for: {title}")
 
         return jsonify({
