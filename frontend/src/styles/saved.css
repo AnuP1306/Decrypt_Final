@@ -110,11 +110,11 @@ margin: 0 auto;   /* keep this */
     border: 2px solid #D0F248;
     background: rgba(208,242,72,0.15);
 
-    padding: 14px 20px;   /* 🔥 FIXED (was 70px = fake centering) */
+    padding: 14px 18px;   /* 🔥 FIXED (was 70px = fake centering) */
 
     border-radius: 16px;
-
-    font-size: 17px;
+     font-family: "Space Grotesk", sans-serif;
+    font-size: 16px;
     color: #30312C;
 
     max-width: 830px;
