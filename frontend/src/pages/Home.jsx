@@ -9,8 +9,46 @@ import RightSidebar from "../components/RightSidebar";
 function Home() {
 
   const [articles, setArticles] = useState([]);
+  const [visibleCount, setVisibleCount] =
+  useState(2);
   const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
 
+    function handleScroll() {
+  
+      if (
+  
+        window.innerHeight +
+        window.scrollY >=
+  
+        document.body.offsetHeight - 300
+  
+      ) {
+  
+        setVisibleCount(prev =>
+          Math.min(
+            prev + 2,
+            articles.length
+          )
+        );
+  
+      }
+  
+    }
+  
+    window.addEventListener(
+      "scroll",
+      handleScroll
+    );
+  
+    return () =>
+      window.removeEventListener(
+        "scroll",
+        handleScroll
+      );
+  
+  }, [articles]);
   useEffect(() => {
 
     async function fetchNews() {
@@ -42,7 +80,9 @@ function Home() {
     fetchNews();
 
   }, []);
-
+  console.log("Articles:", articles);
+console.log("Count:", articles.length);
+console.log("Visible:", visibleCount);
   return (
     <>
       <Navbar />
@@ -121,12 +161,15 @@ function Home() {
                 </button>
               </div>
 
-              {loading ? null : articles.map(
+              {loading ? null : articles
+                  .slice(0, visibleCount)
+                  .map(
                 (article, index) => (
                   <NewsCard
                     key={index}
                     article={article}
                     index={index}
+                    visible={index < visibleCount}
                   />
                 )
               )}

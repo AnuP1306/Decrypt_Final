@@ -11,13 +11,12 @@ from google import genai
 import json
 from datetime import datetime
 import random
+import hashlib
 
 import time
 import json
 from groq import Groq
 from routes.saved_routes import saved_bp
-
-
 
 with open("static/data/fallback_news.json", "r") as f:
     FALLBACK_DATA = json.load(f)
@@ -29,6 +28,21 @@ try:
         SLIDES_CACHE = json.load(f)
 except:
     SLIDES_CACHE = {}
+
+NEWS_CACHE_FILE = "cache/news_cache.json"
+
+try:
+    with open(
+        NEWS_CACHE_FILE,
+        "r",
+        encoding="utf-8"
+    ) as f:
+
+        NEWS_CACHE = json.load(f)
+
+except:
+
+    NEWS_CACHE = {}
 
 
 # create app FIRST
@@ -68,8 +82,11 @@ client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 GNEWS_API_KEY = os.getenv("GNEWS_API_KEY")
 groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
+def generate_article_id(title):
 
-today = datetime.utcnow().strftime('%Y-%m-%d')
+    return hashlib.md5(
+        title.lower().strip().encode()
+    ).hexdigest()
 
 
 # ================= CHATBOT =================
@@ -141,65 +158,368 @@ def chat():
 #     })
 
 
-# temporarily removing otherwise works (shows data from API)
+def prune_news_cache():
+
+    global NEWS_CACHE
+    
+    today = datetime.utcnow().strftime(
+        "%Y-%m-%d"
+    )
+
+    fresh_cache = {}
+
+    for article_id, article in NEWS_CACHE.items():
+
+        article_date = article.get("date")
+
+        if article_date == today:
+
+            fresh_cache[article_id] = article
+
+    NEWS_CACHE = fresh_cache
+
+    print(
+        f"🧹 Cache pruned. Remaining:"
+        f" {len(NEWS_CACHE)} articles"
+    )
 
 @app.route("/get-news", methods=["GET"])
 def get_news():
+    today = datetime.utcnow().strftime(
+        "%Y-%m-%d"
+    )
+    prune_news_cache()
 
-    # ✅ Use user topics if provided
     user_topics = request.args.get("topics", "")
-    topic_list = [t.strip() for t in user_topics.split(",") if t.strip()]
 
-    # Map topics to query terms
+    topic_list = [
+        t.strip()
+        for t in user_topics.split(",")
+        if t.strip()
+    ]
+
     TOPIC_MAP = {
-        "Machine Learning": "machine learning OR deep learning OR neural networks",
-        "Web Dev": "web development OR frontend OR backend OR JavaScript",
-        "Robotics": "robotics OR automation OR robot",
-        "Cloud Computing": "cloud computing OR AWS OR Azure OR Google Cloud",
-        "Quantum Computing": "quantum computing OR qubit",
-        "Space Technology": "space technology OR NASA OR SpaceX OR satellite",
-        "IOT": "Internet of Things OR IoT OR smart devices",
-        "Cybersecurity": "cybersecurity OR hacking OR ransomware OR data breach",
+        "Machine Learning":
+            "machine learning OR deep learning OR neural networks",
+
+        "Web Dev":
+            "web development OR frontend OR backend OR JavaScript",
+
+        "Robotics":
+            "robotics OR automation OR robot",
+
+        "Cloud Computing":
+            "AWS OR Azure OR Google Cloud OR cloud computing",
+
+        "Quantum Computing":
+            "quantum computing OR qubit",
+
+        "Space Technology":
+            "NASA OR SpaceX OR satellite OR space technology",
+
+        "IOT":
+            "Internet of Things OR IoT OR smart devices",
+
+        "Cybersecurity":
+            "cybersecurity OR ransomware OR data breach"
     }
 
     DEFAULT_QUERIES = {
-        "AI": "artificial intelligence OR machine learning OR deep learning",
-        "IT": "software OR programming OR cybersecurity OR web development",
-        "Electronics": "electronics OR semiconductor OR robotics OR IoT"
+
+        "AI":
+            (
+                "artificial intelligence OR generative AI "
+                "OR machine learning OR deep learning "
+                "OR LLM OR ChatGPT OR Gemini OR Claude"
+            ),
+
+        "IT":
+            (
+                "cybersecurity OR software development "
+                "OR programming OR cloud computing "
+                "OR DevOps OR networking "
+                "OR data science "
+                "OR database"
+            ),
+
+        "Electronics":
+            (
+                "semiconductor OR VLSI "
+                "OR embedded systems "
+                "OR IoT hardware "
+                "OR microcontroller "
+                "OR processor OR GPU "
+                "OR chip manufacturing "
+                "OR electronics"
+            )
     }
 
     if topic_list:
+
         queries = {}
-        for topic in topic_list[:4]:  # max 4 API calls
+
+        for topic in topic_list[:4]:
+
             if topic in TOPIC_MAP:
+
                 queries[topic] = TOPIC_MAP[topic]
+
         if not queries:
+
             queries = DEFAULT_QUERIES
+
     else:
+
         queries = DEFAULT_QUERIES
+
+    # =====================================
+    # LOAD TODAY CACHE
+    # =====================================
 
     all_articles = []
 
+    today_articles = []
+
+    for article_id, article in NEWS_CACHE.items():
+
+        if article.get("date") == today:
+
+            today_articles.append(article)
+
+    all_articles.extend(today_articles)
+
+    print(
+        f"🟢 Loaded {len(today_articles)} articles from cache"
+    )
+
+    # =====================================
+    # RETURN CACHE IF ALREADY 15+
+    # =====================================
+
+    if len(today_articles) >= 15:
+
+        print(
+            "⚡ Serving entirely from cache"
+        )
+
+        return jsonify({
+            "articles": today_articles[:15]
+        })
+
+    # =====================================
+    # FETCH FROM GNEWS
+    # =====================================
+
+    needed_articles = max(
+        0,
+        15 - len(all_articles)
+    )
+
+    print(
+        f"📰 Need {needed_articles} more articles"
+    )
+
+    articles_per_domain = max(
+        1,
+        (needed_articles // len(queries)) + 1
+    )
+
     for domain, query in queries.items():
-        url = f"https://gnews.io/api/v4/search?q={query}&lang=en&max=2&from={today}&sortby=publishedAt&apikey={GNEWS_API_KEY}"
 
-        res = requests.get(url)
-        data = res.json()
+        url = (
+            f"https://gnews.io/api/v4/search?"
+            f"q={query}"
+            f"&lang=en"
+            f"&max={articles_per_domain}"
+            f"&from={today}"
+            f"&sortby=publishedAt"
+            f"&apikey={GNEWS_API_KEY}"
+        )
 
-        if "articles" in data:
+        try:
+
+            res = requests.get(url)
+
+            data = res.json()
+
+            if "articles" not in data:
+                continue
+
             for art in data["articles"]:
-                all_articles.append({
-                    "title": art.get("title", ""),
-                    "desc": art.get("description", ""),
-                    "content": art.get("content", ""),
-                    "image": art.get("image"),
-                    "domain": domain
-                })
 
-    # random.shuffle(all_articles)
+                article = {
 
-    return jsonify({"articles": all_articles})
+                    "id":
+                        generate_article_id(
+                            art.get(
+                                "title",
+                                ""
+                            )
+                        ),
 
+                    "title":
+                        art.get(
+                            "title",
+                            ""
+                        ),
+
+                    "desc":
+                        art.get(
+                            "description",
+                            ""
+                        ),
+
+                    "content":
+                        art.get(
+                            "content",
+                            ""
+                        ),
+
+                    "image":
+                        art.get(
+                            "image"
+                        ),
+
+                    "domain":
+                        domain,
+
+                    "date":
+                        today
+                }
+
+                if article["id"] not in NEWS_CACHE:
+
+                    NEWS_CACHE[
+                        article["id"]
+                    ] = article
+
+                    all_articles.append(
+                        article
+                    )
+
+        except Exception as e:
+
+            print(
+                f"❌ Failed fetching {domain}:",
+                e
+            )
+
+    # =====================================
+    # FALLBACK IF STILL BELOW 15
+    # =====================================
+
+    if len(all_articles) < 15:
+
+        print(
+            f"⚠️ Only {len(all_articles)} articles. "
+            f"Loading fallback news."
+        )
+
+        existing_ids = {
+
+            article["id"]
+
+            for article in all_articles
+
+            if "id" in article
+
+        }
+
+        for item in FALLBACK_DATA:
+
+            fallback_id = generate_article_id(
+                item.get("title", "")
+            )
+
+            if fallback_id in existing_ids:
+
+                continue
+
+            fallback_article = {
+
+                "id":
+                    fallback_id,
+
+                "title":
+                    item.get(
+                        "title",
+                        ""
+                    ),
+
+                "desc":
+                    item.get(
+                        "desc",
+                        ""
+                    ),
+
+                "content":
+                    item.get(
+                        "content",
+                        ""
+                    ),
+
+                "image":
+                    item.get(
+                        "image",
+                        ""
+                    ),
+
+                "domain":
+                    item.get(
+                        "domain",
+                        "AI"
+                    ),
+
+                "date":
+                    today
+            }
+
+            all_articles.append(
+                fallback_article
+            )
+
+            NEWS_CACHE[
+                fallback_id
+            ] = fallback_article
+
+            if len(all_articles) >= 15:
+
+                break
+
+    # =====================================
+    # SAVE CACHE
+    # =====================================
+
+    with open(
+        NEWS_CACHE_FILE,
+        "w",
+        encoding="utf-8"
+    ) as f:
+
+        json.dump(
+            NEWS_CACHE,
+            f,
+            ensure_ascii=False,
+            indent=2
+        )
+
+    print(
+        f"🔵 Saved {len(NEWS_CACHE)} cached articles"
+    )
+
+    # =====================================
+    # RETURN EXACTLY 15
+    # =====================================
+
+    all_articles = all_articles[:15]
+
+    print(
+        f"✅ Returning {len(all_articles)} articles"
+    )
+
+    return jsonify({
+        "articles": all_articles
+    })
 # ================= GENERATE SLIDES =================
 @app.route("/generate-slides", methods=["POST"])
 def generate_slides():
@@ -340,23 +660,16 @@ def generate_slides():
 
 
 # ================= ARTICLE CHAT =================
+
 @app.route("/ask-article", methods=["POST"])
 def ask_article():
 
     data = request.json
 
     question = data.get("question", "")
-    # article = data.get("article", {})
-
-    # title = article.get("title", "")
-    # desc = article.get("desc", "")
-    # content = article.get("content", "")
-
     article = data.get("article", "")
 
     full_text = article
-
-    # full_text = f"{title}. {desc}. {content}"
 
     prompt = f"""
     You are a smart assistant.
@@ -370,21 +683,44 @@ def ask_article():
     {question}
     """
 
+    # =====================================
+    # GEMINI FIRST
+    # =====================================
+
     try:
+
         response = client.models.generate_content(
             model="gemini-2.5-flash",
             contents=prompt
         )
 
-        return jsonify({"reply": response.text})
+        print("🟢 ARTICLE BOT ANSWERED BY GEMINI")
+
+        return jsonify({
+            "reply": response.text,
+            "source": "gemini"
+        })
+
+    except Exception as e:
+
+        print("❌ Gemini failed:", e)
+        print("🟡 Switching to Groq...")
+
+    # =====================================
+    # GROQ FALLBACK
+    # =====================================
+
+    try:
 
         response = groq_client.chat.completions.create(
+
             model="llama-3.1-8b-instant",
+
             messages=[
                 {
                     "role": "system",
-                    # "content": "You are a smart news assistant. Answer only based on the given article. Be clear, simple, and helpful."
-                     "content": """
+
+                    "content": """
                     You are an intelligent and helpful news assistant.
 
                     - Use the provided article as your MAIN context.
@@ -400,20 +736,32 @@ def ask_article():
                 },
                 {
                     "role": "user",
-                    "content": f"ARTICLE:\n{full_text}\n\nQUESTION:\n{question}"
+
+                    "content":
+                        f"ARTICLE:\n{full_text}\n\nQUESTION:\n{question}"
                 }
             ],
+
             temperature=0.7,
         )
-    
+
         reply = response.choices[0].message.content
 
-        return jsonify({"reply": reply})
+        print("🔵 ARTICLE BOT ANSWERED BY GROQ")
+
+        return jsonify({
+            "reply": reply,
+            "source": "groq"
+        })
 
     except Exception as e:
-        print("❌ Groq failed:", e)
-        return jsonify({"reply": "AI is currently unavailable."})
 
+        print("❌ Groq failed:", e)
+
+        return jsonify({
+            "reply": "AI is currently unavailable.",
+            "source": "none"
+        })
 # ================= RUN =================
 if __name__ == "__main__":
     app.run(debug=True)

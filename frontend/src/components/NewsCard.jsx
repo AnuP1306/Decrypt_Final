@@ -1,12 +1,31 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function NewsCard({ article, index }) {
+function NewsCard({ article, index, visible }) {
 
-  const [level, setLevel] = useState("beginner");
+  const [level, setLevel] =
+  useState(
+    localStorage.getItem(
+      "userLevel"
+    ) || "beginner"
+  );
 
   const [slides, setSlides] = useState(
     article.slides || null
   );
+  
+  useEffect(() => {
+
+    if (
+      visible &&
+      !slides &&
+      !loadingSlides
+    ) {
+  
+      generateSlides();
+  
+    }
+  
+  }, [visible]);
 
   const [currentSlide, setCurrentSlide] =
     useState(0);
@@ -219,6 +238,11 @@ function NewsCard({ article, index }) {
       const data =
         await response.json();
 
+        console.log(
+          "🤖 Article Bot Source:",
+          data.source
+        );
+
       setChatMessages(prev => [
         ...prev,
         {
@@ -408,9 +432,6 @@ function NewsCard({ article, index }) {
                       : ""
                   }`}
                   onClick={async () => {
-
-                    if (!slides)
-                      await generateSlides();
 
                     setLevel(item);
 
