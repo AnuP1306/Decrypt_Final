@@ -322,7 +322,7 @@ align-items: stretch; /* 🔥 THIS is key */
 }
 
 /* CTA */
-.opp-cta {
+/* .opp-cta {
   margin-top: 40px;
   padding: 28px;
   border-radius: 24px;
@@ -332,14 +332,64 @@ align-items: stretch; /* 🔥 THIS is key */
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+} */
+ .opp-cta {
+  margin-top: 40px;
+  padding: 36px 32px;
+
+  border-radius: 24px;
+  background: #30312C;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.opp-cta button {
+.opp-cta h3 {
+  margin: 0;
+
+  font-family: "Syne", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+
+  color: white;
+}
+
+.opp-cta p {
+  margin: 10px 0 0 0;
+  margin-left: 4px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+
+  color: rgba(255,255,255,0.7);
+}
+
+/* .opp-cta button {
   background: #D0F248;
   border: none;
   padding: 12px 20px;
   border-radius: 16px;
   font-weight: 700;
+} */
+ .opp-cta button {
+  background: #D0F248;
+
+  border: none;
+  border-radius: 16px;
+
+  padding: 14px 24px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.opp-cta button:hover {
+  transform: translateY(-2px);
 }
 
 .toast {
@@ -347,10 +397,11 @@ align-items: stretch; /* 🔥 THIS is key */
   bottom: 30px;
   right: 30px;
 
-  background: #30312C;
+  background: #3F38E8;
   color: white;
   padding: 12px 18px;
   border-radius: 12px;
+  border: 2px solid #726dff;
 
   font-size: 14px;
   font-weight: 500;
