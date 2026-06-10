@@ -275,9 +275,13 @@ function NewsCard({ article, index, visible }) {
           alt=""
         />
 
-        <span className="domain-pill">
-          {article.domain}
-        </span>
+<span
+  className={`domain-pill ${
+    article.domain?.toLowerCase()
+  }`}
+>
+  {article.domain}
+</span>
 
         <div
           className={`save-btn ${

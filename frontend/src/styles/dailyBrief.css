@@ -1,21 +1,18 @@
 /* ===== PAGE BASE ===== */
-html, body {
+.daily-brief-page html, body {
   height: 100%;
   overflow-x: hidden;
    background: #F7F3F0;
 }
-/* body {
- 
-} */
 
-.brief-container {
+.daily-brief-page .brief-container {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
   background: #F7F3F0;
 }
 
-.main-content {
+.daily-brief-page .main-content {
   margin-left: 260px;
   padding: 20px 40px;
 
@@ -27,7 +24,7 @@ html, body {
 }
 
 /* ===== NAVBAR ===== */
-.navbar {
+.daily-brief-page .navbar {
   position: sticky;
   top: 0;
   z-index: 999;
@@ -35,30 +32,30 @@ html, body {
   border-bottom: 2px solid rgba(48,49,44,0.1);
 }
 
-.layout {
+.daily-brief-page .layout {
   display: flex;
 }
 
 /* ===== HEADER SECTION ===== */
-.brief-top {
+.daily-brief-page .brief-top {
   margin-bottom: 30px;
 }
 
-.feed-title{
+.daily-brief-page .feed-title{
   font-family: 'Syne', sans-serif;
   font-size: 42px;
   color: #30312c;
   margin: 0;
 }
 
-.highlight-pill {
+.daily-brief-page .highlight-pill {
   background: #D0F248;
   padding: 10px 16px;
   border-radius: 12px;
   display: inline-block;
 }
 
-.brief-tag {
+.daily-brief-page .brief-tag {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -67,42 +64,42 @@ html, body {
   font-family: "Space Grotesk", sans-serif;
 }
 
-.brief-tag img {
+.daily-brief-page .brief-tag img {
   width: 14px;
 }
 
-.brief-header-row {
+.daily-brief-page .brief-header-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 /* COUNT */
-.card-count {
+.daily-brief-page .card-count {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   font-family: 'Space Grotesk', sans-serif;
 }
 
-.count-text {
+.daily-brief-page .count-text {
   font-size: 28px;
   font-weight: 700;
   color: #4f46e5;
 }
 
-.count-label {
+.daily-brief-page .count-label {
   font-size: 14px;
   color: #888;
   margin-top: 4px;
 }
 
 /* ===== PROGRESS ===== */
-.brief-progress-wrapper {
+.daily-brief-page .brief-progress-wrapper {
   margin-top: 12px;
 }
 
-.progress-bar {
+.daily-brief-page .progress-bar {
   width: 100%;
   height: 8px;
   background: #e5e5e5;
@@ -110,7 +107,7 @@ html, body {
   overflow: hidden;
 }
 
-.progress-fill {
+.daily-brief-page .progress-fill {
   height: 100%;
   width: 10%;
   background: #c7f044;
@@ -118,7 +115,7 @@ html, body {
   transition: width 0.4s ease;
 }
 
-.progress-labels {
+.daily-brief-page .progress-labels {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
@@ -126,51 +123,48 @@ html, body {
   margin-top: 6px;
 }
 
-/* ===== CARD (MATCH HOME EXACTLY) ===== */
-.news-card {
+/* ===== CARD ===== */
+.daily-brief-page .news-card {
   width: 800px;
   margin: 0 auto 20px auto;
   background: #f4f1ee;
 
   border-radius: 28px;
 
-  /* 🔥 OUTER BLACK BORDER */
   border: 2px solid #000;
 
-  /* 🔥 INNER STROKE (like your image) */
   box-shadow: inset 0 0 0 4px #d9d6d2;
 
   overflow: hidden;
 
-   /* 🔥 ADD THIS */
   min-height: 410px;
   transition: transform 0.35s ease, opacity 0.35s ease;
 }
 
 /* OUT */
-.news-card.slide-out-left {
+.daily-brief-page .news-card.slide-out-left {
   transform: translateX(-120px) scale(0.95);
   opacity: 0;
 }
 
-.news-card.slide-out-right {
+.daily-brief-page .news-card.slide-out-right {
   transform: translateX(120px) scale(0.95);
   opacity: 0;
 }
 
 /* IN */
-.news-card.slide-in {
+.daily-brief-page .news-card.slide-in {
   transform: translateX(0) scale(1);
   opacity: 1;
 }
 
-.news-card:hover {
+.daily-brief-page .news-card:hover {
   transform: translateY(-6px);
   box-shadow: 5px 5px 0px #3f38e8;
 }
 
 /* IMAGE */
-.card-image {
+.daily-brief-page .card-image {
   position: relative;
   height: 160px;
   margin: 16px;
@@ -182,14 +176,14 @@ html, body {
   border: 2px solid #000;
 }
 
-.card-image img {
+.daily-brief-page .card-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 /* CATEGORY PILL */
-.domain-pill {
+.daily-brief-page .domain-pill {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -203,7 +197,7 @@ html, body {
   color: white;
 }
 
- .save-btn {
+.daily-brief-page .save-btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -218,64 +212,64 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-    z-index: 2;
-     transition: all 0.2s ease;
+  z-index: 2;
+  transition: all 0.2s ease;
 }
 
-.save-btn img {
+.daily-brief-page .save-btn img {
   width: 16px;
   height: 16px;
-  filter: brightness(0) contrast(1000%);  /* 🔥 makes it black */
+  filter: brightness(0) contrast(1000%);
 }
 
-.save-btn.saved {
+.daily-brief-page .save-btn.saved {
   background: black;
 }
 
-.save-btn.saved img {
-  filter: brightness(0) invert(1); /* turns icon white */
+.daily-brief-page .save-btn.saved img {
+  filter: brightness(0) invert(1);
 }
-.save-btn:active {
+
+.daily-brief-page .save-btn:active {
   transform: scale(0.9);
 }
 
 /* ===== CONTENT ===== */
-.card-content {
-    padding: 24px;   /* was 18px */
-  gap: 16px;       /* more spacing */
+.daily-brief-page .card-content {
+  padding: 24px;
+  gap: 16px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.card-body {
+.daily-brief-page .card-body {
   display: flex;
   flex-direction: column;
   gap: 12px;
 
-  align-items: center;     /* horizontal center */
-  text-align: center;      /* text center */
+  align-items: center;
+  text-align: center;
 }
 
-.card-title {
+.daily-brief-page .card-title {
   font-family: 'Syne', sans-serif;
-   font-size: 28px;   /* slightly bigger */
-   letter-spacing: 0.2px;
-   font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 0.2px;
+  font-weight: 900;
   color: #30312c;
   margin: 0;
 }
 
-.card-desc {
+.daily-brief-page .card-desc {
   font-family: 'Space Grotesk', sans-serif;
-   font-size: 16px;
+  font-size: 16px;
   line-height: 1.7;
   color: #6a6a6a;
-  
 }
 
 /* ===== ACTIONS ===== */
-.card-actions {
+.daily-brief-page .card-actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -283,12 +277,12 @@ html, body {
 }
 
 /* LEVEL BUTTONS */
-.level-toggle {
+.daily-brief-page .level-toggle {
   display: flex;
   gap: 6px;
 }
 
-.level-btn {
+.daily-brief-page .level-btn {
   background: #3f38e8;
   color: white;
   border: 2px solid black;
@@ -299,14 +293,13 @@ html, body {
   cursor: pointer;
 }
 
-/* 🔥 ACTIVE = BLACK */
-.level-btn.active {
+.daily-brief-page .level-btn.active {
   background: black;
   color: white;
 }
 
 /* BOT BUTTON */
-.chatbot-btn {
+.daily-brief-page .chatbot-btn {
   border: 2px solid black;
   background: #c7f044;
   border-radius: 999px;
@@ -316,8 +309,20 @@ html, body {
   color: #30312c;
 }
 
+.daily-brief-page .chatbot-btn img {
+  /* placeholder for any img styles inside chatbot-btn */
+}
+
+.daily-brief-page .chatbot-btn.active {
+  /* placeholder for active state */
+}
+
+.daily-brief-page .chatbot-btn.active img {
+  /* placeholder for active img state */
+}
+
 /* ===== BOT ===== */
-.article-bot {
+.daily-brief-page .article-bot {
   display: none;
   margin-top: 12px;
   border-radius: 16px;
@@ -326,11 +331,11 @@ html, body {
   background: white;
 }
 
-.article-bot.show {
+.daily-brief-page .article-bot.show {
   display: block;
 }
 
-.bot-header {
+.daily-brief-page .bot-header {
   background: #3f38e8;
   color: white;
   padding: 10px 14px;
@@ -339,12 +344,24 @@ html, body {
   align-items: center;
 }
 
-.bot-body {
+.daily-brief-page .bot-title {
+  /* placeholder */
+}
+
+.daily-brief-page .bot-title img {
+  /* placeholder */
+}
+
+.daily-brief-page .close-bot {
+  /* placeholder */
+}
+
+.daily-brief-page .bot-body {
   padding: 14px;
   background: #fafafa;
 }
 
-.bot-message {
+.daily-brief-page .bot-message {
   background: #2e2e2e;
   color: white;
   padding: 10px;
@@ -352,25 +369,25 @@ html, body {
   font-size: 13px;
 }
 
-.bot-chat {
+.daily-brief-page .bot-chat {
   max-height: 120px;
   overflow-y: auto;
   margin: 10px 0;
 }
 
-.bot-input {
+.daily-brief-page .bot-input {
   display: flex;
   gap: 8px;
 }
 
-.bot-input input {
+.daily-brief-page .bot-input input {
   flex: 1;
   padding: 10px;
   border-radius: 999px;
   border: 1px solid #ddd;
 }
 
-.bot-input button {
+.daily-brief-page .bot-input button {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -378,17 +395,52 @@ html, body {
   border: none;
 }
 
-/* ===== CONTROLS (FIXED) ===== */
-.brief-controls {
+.daily-brief-page .bot-input button img {
+  /* placeholder */
+}
+
+/* ===== BOT MESSAGES ===== */
+.daily-brief-page .bot-chat .msg {
+  /* placeholder */
+}
+
+.daily-brief-page .bot-chat .msg.user {
+  /* placeholder */
+}
+
+.daily-brief-page .bot-chat .msg.ai {
+  /* placeholder */
+}
+
+/* ===== SUGGESTIONS ===== */
+.daily-brief-page .bot-suggestions {
+  /* placeholder */
+}
+
+.daily-brief-page .bot-suggestions span {
+  /* placeholder */
+}
+
+/* ===== SCROLLBAR ===== */
+.daily-brief-page .bot-chat::-webkit-scrollbar {
+  /* placeholder */
+}
+
+.daily-brief-page .bot-chat::-webkit-scrollbar-thumb {
+  /* placeholder */
+}
+
+/* ===== CONTROLS ===== */
+.daily-brief-page .brief-controls {
   display: flex;
   justify-content: space-between;
   align-items: center;
-   width: 800px;
+  width: 800px;
   margin: 20px auto 40px auto;
   width: 100%;
 }
 
-.brief-btn {
+.daily-brief-page .brief-btn {
   padding: 12px 24px;
   border-radius: 12px;
   font-size: 15px;
@@ -399,7 +451,7 @@ html, body {
 }
 
 /* PREV */
-.brief-btn.prev {
+.daily-brief-page .brief-btn.prev {
   background: #e6e3df;
   border: 2px solid black;
   border-radius: 12px;
@@ -407,13 +459,13 @@ html, body {
   margin-left: 5px;
 }
 
-.brief-btn.prev:hover {
+.daily-brief-page .brief-btn.prev:hover {
   background: #30312c;
   color: #F7F3F0;
 }
 
 /* NEXT */
-.brief-btn.next {
+.daily-brief-page .brief-btn.next {
   background: #3f38e8;
   color: #F7F3F0;
   border: 2px solid black;
@@ -422,37 +474,36 @@ html, body {
   margin-right: -16px;
 }
 
-.brief-btn.next:hover {
+.daily-brief-page .brief-btn.next:hover {
   box-shadow: 3px 3px 0px #323232;
 }
 
-.news-card,
-.news-card:hover,
-.news-card:focus,
-.news-card:active {
+.daily-brief-page .news-card,
+.daily-brief-page .news-card:hover,
+.daily-brief-page .news-card:focus,
+.daily-brief-page .news-card:active {
   transform: none !important;
   box-shadow: none !important;
 }
 
-/* ===== CARD TRANSITION ===== */
-
-.news-card.slide-out-left {
+/* ===== CARD TRANSITION (consolidated) ===== */
+.daily-brief-page .news-card.slide-out-left {
   transform: translateX(-80px);
   opacity: 0;
 }
 
-.news-card.slide-out-right {
+.daily-brief-page .news-card.slide-out-right {
   transform: translateX(80px);
   opacity: 0;
 }
 
-.news-card.slide-in {
+.daily-brief-page .news-card.slide-in {
   transform: translateX(0);
   opacity: 1;
 }
 
 /* ===== COMPLETION MODAL ===== */
-.completion-modal {
+.daily-brief-page .completion-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -465,10 +516,10 @@ html, body {
   z-index: 9999;
 }
 
-.completion-box {
+.daily-brief-page .completion-box {
   background: #F7F3F0;
-  padding: 60px;              /* 🔥 bigger */
-  width: 420px;              /* 🔥 fixed width */
+  padding: 60px;
+  width: 420px;
   border-radius: 24px;
   text-align: center;
   border: 2px solid black;

@@ -288,7 +288,7 @@ font-family: var(--font-body);
 
 /* MAIN CONTENT SHIFT */
 .sidebar.collapsed ~ .main-content {
-  margin-left: 80px;
+  margin-left: 220px;
 }
 
 /* HIDE TEXT */

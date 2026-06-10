@@ -1,26 +1,51 @@
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 function Sidebar() {
+  const user =
+  JSON.parse(
+    localStorage.getItem("user")
+  ) || {
+    name: "Explorer",
+    domain: "AI",
+    level: "Beginner"
+  };
 
   const location = useLocation();
+  const [collapsed, setCollapsed] =
+    useState(false);
 
   return (
-    <div className="sidebar" id="sidebar">
+    <div
+    className={`sidebar ${
+      collapsed
+        ? "collapsed"
+        : ""
+    }`}
+    id="sidebar"
+  >
 
       <div className="sidebar-top">
 
         <div className="user-info">
 
-          <div className="user-avatar">E</div>
+        <div className="user-avatar">
+  {user.name[0].toUpperCase()}
+</div>
 
           <div className="user-text">
-            <p className="user-name">Explorer</p>
+            <p className="user-name">{user.name}</p>
             <span className="user-role">
-              AI · Beginner
+            {user.domain} · {user.level}
             </span>
           </div>
 
-          <button className="menu-toggle">
+          <button
+  className="menu-toggle"
+  onClick={() =>
+    setCollapsed(!collapsed)
+  }
+>
             <img src="/images/menu.png" alt="" />
           </button>
 

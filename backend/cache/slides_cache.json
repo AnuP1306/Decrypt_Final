@@ -746,5 +746,49 @@
         "desc": "While the Nasdaq Composite and S&P 500 demonstrated impressive resilience by holding their initial gains throughout the day, the comparatively weaker performance of the blue-chip Dow Jones Industrial Average signals a nuanced market landscape. This divergence points to a leadership shift, where technology and growth-oriented sectors, heavily weighted in the Nasdaq and S&P 500, are currently driving market momentum. The Dow, with its greater exposure to traditional industrials and financials, may reflect a more cautious outlook on broader economic growth, highlighting differing sectoral reactions to current market forces."
       }
     ]
+  },
+  "iit roorkee opens admissions for the 11th batch of its post graduate certificate in data science, machine learning & generative ai": {
+    "beginner": [
+      {
+        "title": "Learn AI at IIT Roorkee!",
+        "desc": "IIT Roorkee is now accepting applications for its special program. This program teaches about Data Science, Machine Learning, and Generative AI. It's the 11th time they are offering this course, showing how popular and useful it is for many students who want to learn new skills in technology and innovation."
+      },
+      {
+        "title": "What You'll Study",
+        "desc": "In this course, you will learn how to work with data and build smart computer programs. You will cover important topics like understanding data, making computers learn, and creating new things with AI. This helps people create smart solutions for businesses and solve real-world problems using technology."
+      },
+      {
+        "title": "Who is it for?",
+        "desc": "This program is for anyone who wants to deeply understand artificial intelligence and data technology. It focuses on practical applications, so you learn by doing and building projects. It helps you get ready to use these advanced skills in real-world jobs and solve modern business challenges with AI tools."
+      }
+    ],
+    "intermediate": [
+      {
+        "title": "IIT Roorkee's AI Program Admissions Open",
+        "desc": "The Indian Institute of Technology Roorkee has opened admissions for the 11th cohort of its Post Graduate Certificate in Data Science, Machine Learning & Generative AI. This advanced professional program is designed for individuals seeking a comprehensive and application-driven understanding of cutting-edge artificial intelligence and data technologies in the industry today."
+      },
+      {
+        "title": "Comprehensive Curriculum Details",
+        "desc": "The program's curriculum brings together foundational and advanced topics crucial for today's tech landscape. Participants will delve into data science, machine learning, deep learning, Generative AI, and MLOps. This ensures a holistic learning experience across various essential domains, preparing them for diverse technical challenges in contemporary business environments effectively."
+      },
+      {
+        "title": "Develop Key AI Solution Skills",
+        "desc": "This certificate program aims to equip participants with the capabilities needed to design, build, and deploy intelligent solutions. By focusing on practical, application-led understanding, learners will be able to apply their knowledge directly to contemporary business environments, fostering innovation and problem-solving with advanced data-led technologies and artificial intelligence techniques."
+      }
+    ],
+    "advanced": [
+      {
+        "title": "IIT Roorkee Launches 11th Batch for Advanced AI Program",
+        "desc": "IIT Roorkee has announced the commencement of admissions for the 11th batch of its Post Graduate Certificate in Data Science, Machine Learning & Generative AI. This program is specifically crafted as an advanced professional offering, targeting learners who demand a rigorous and deeply application-led understanding of complex artificial intelligence and data-led technologies. It reflects a sustained demand for skilled professionals capable of navigating and innovating within this rapidly evolving domain, providing significant career advancement opportunities."
+      },
+      {
+        "title": "Integrated Curriculum: From Foundations to Generative AI & MLOps",
+        "desc": "The meticulously designed curriculum integrates several critical components, including the robust foundations of data science, advanced machine learning techniques, and the intricacies of deep learning. Crucially, it incorporates the latest advancements in Generative AI and MLOps. This comprehensive structure ensures participants not only grasp theoretical concepts but also understand the operational aspects of deploying intelligent solutions effectively in real-world scenarios, thereby bridging the crucial gap between academic research and industrial application for practical impact."
+      },
+      {
+        "title": "Empowering Professionals for Intelligent Solution Deployment",
+        "desc": "A primary objective of this post-graduate certificate is to empower participants with the sophisticated capabilities required to architect, develop, and successfully deploy intelligent solutions within contemporary business environments. By fostering a strong grasp of data analysis, algorithmic implementation, and AI model management, the program prepares professionals to drive innovation, optimize operations, and solve complex challenges using state-of-the-art data and AI technologies. This deep expertise will enable them to contribute significantly to organizational growth and technological advancement in a competitive landscape."
+      }
+    ]
   }
 }

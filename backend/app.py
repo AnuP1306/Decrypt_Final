@@ -17,6 +17,7 @@ import time
 import json
 from groq import Groq
 from routes.saved_routes import saved_bp
+from routes.brief_routes import brief_bp
 
 with open("static/data/fallback_news.json", "r") as f:
     FALLBACK_DATA = json.load(f)
@@ -75,6 +76,7 @@ app.register_blueprint(opportunities)   # samiksha ✅ added
 app.register_blueprint(auth_bp)   # ✅ ADD THIS
 app.register_blueprint(tools_bp)
 app.register_blueprint(saved_bp)
+app.register_blueprint(brief_bp)
 
 # app.register_blueprint(opportunities)
 
