@@ -280,20 +280,44 @@ def generate_brief_card():
 Write THREE clearly DIFFERENT explanations of the news article below.
 Each must be genuinely different in vocabulary, depth and assumed knowledge.
 
-BEGINNER (40-55 words):
-- Zero jargon. Imagine explaining to a curious 16-year-old.
-- Use everyday words and relatable comparisons.
-- Focus on: what happened and why anyone should care.
+IMPORTANT:
 
-INTERMEDIATE (55-70 words):
-- Some terminology is fine.
-- Assume reader follows news casually.
-- Include: what happened, key context, and why it matters.
+Use the article as the primary source.
+If the article is short, incomplete, vague, or missing context, intelligently use your general knowledge to fill in the background.
+Never say "the article does not provide enough information".
+Never leave explanations empty.
+Never repeat the same wording across levels.
+Each level should feel written for a different audience.
+Focus on helping the reader understand WHY the story matters.
 
-ADVANCED (65-80 words):
-- Technical depth welcome.
-- Assume reader understands policy, finance, geopolitics or tech.
-- Include: implications, nuance, stakeholder dynamics.
+BEGINNER (40–60 words):
+
+Explain like you're talking to a curious teenager.
+Avoid jargon completely.
+Use simple language.
+Focus on what happened and why people should care.
+
+INTERMEDIATE (60–80 words):
+
+Assume the reader follows technology, business, science or world news occasionally.
+Include useful context.
+Explain why this development matters.
+
+ADVANCED (75–100 words):
+
+Assume the reader understands industry trends, economics, policy, geopolitics or technology.
+Include implications, trade-offs, strategic impact and stakeholder effects.
+Add relevant context not explicitly present in the article when necessary.
+
+QUALITY RULES:
+
+Every field must contain meaningful text.
+Every field must meet its target length.
+Use complete sentences.
+Do not copy article text verbatim.
+Return valid JSON only.
+No markdown.
+No explanations outside JSON.
 
 STRICT OUTPUT FORMAT — return ONLY this JSON, no extra text, no markdown fences:
 {{"beginner": "your beginner text here", "intermediate": "your intermediate text here", "advanced": "your advanced text here"}}

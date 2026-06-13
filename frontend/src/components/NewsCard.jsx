@@ -39,8 +39,10 @@ function NewsCard({ article, index, visible }) {
   const [likeCount, setLikeCount] =
     useState(32);
 
-  const [saved, setSaved] =
-    useState(false);
+    const [saved, setSaved] = useState(() => {
+      const existing = JSON.parse(localStorage.getItem("savedArticles") || "[]");
+      return existing.some(a => a.id === index.toString());
+    });
 
   const [showComments, setShowComments] =
     useState(false);
@@ -136,44 +138,28 @@ function NewsCard({ article, index, visible }) {
   }
 
   function toggleSave() {
-
-    const key =
-      "savedArticles";
-
-    const item = {
-      id: index,
-      title: article.title,
-      desc: article.desc,
-      image: article.image,
-      domain: article.domain
-    };
-
-    let savedArticles =
-      JSON.parse(
-        localStorage.getItem(key) ||
-        "[]"
-      );
-
+    const key = "savedArticles";
+    const id  = index.toString();
+    let savedArticles = JSON.parse(localStorage.getItem(key) || "[]");
+  
     if (!saved) {
-
-      savedArticles.push(item);
-
+      // Only add if not already saved (prevents duplicates)
+      if (!savedArticles.find(a => a.id === id)) {
+        savedArticles.push({
+          id,
+          title:  article.title,
+          desc:   article.desc,
+          image:  article.image,
+          domain: article.domain
+        });
+      }
       setSaved(true);
-
     } else {
-
-      savedArticles =
-        savedArticles.filter(
-          x => x.id !== index
-        );
-
+      savedArticles = savedArticles.filter(a => a.id !== id);
       setSaved(false);
     }
-
-    localStorage.setItem(
-      key,
-      JSON.stringify(savedArticles)
-    );
+  
+    localStorage.setItem(key, JSON.stringify(savedArticles));
   }
 
   function addComment() {
