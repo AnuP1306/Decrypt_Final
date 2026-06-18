@@ -1,0 +1,852 @@
+{
+  "date": "2026-06-18",
+  "tools": [
+    {
+      "id": "ph-1171217",
+      "name": "Slashy",
+      "tagline": "The AI assistant that does email for you",
+      "description": "The AI assistant that does email for you",
+      "url": "https://www.producthunt.com/r/723Q6GNIWDBMQM?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/aa3daced-0112-40c9-8dc8-ebc708ca30d3.png?auto=format",
+      "favicon": "",
+      "category": "AI Agents",
+      "is_free": true,
+      "votes": 474,
+      "source": "producthunt",
+      "tags": [
+        "#AIAgents",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1157109",
+      "name": "Journey Now",
+      "tagline": "Learning copilot for human ambition",
+      "description": "Learning copilot for human ambition",
+      "url": "https://www.producthunt.com/r/TM6F4IDMAQBU2P?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/bd217cdf-2563-4b12-ac2f-618b5b9271a7.gif?auto=format",
+      "favicon": "",
+      "category": "AI Agents",
+      "is_free": true,
+      "votes": 416,
+      "source": "producthunt",
+      "tags": [
+        "#AIAgents",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1161568",
+      "name": "MakersClaw",
+      "tagline": "Hire AI employees that live in your Slack, Teams, Telegram",
+      "description": "Hire AI employees that live in your Slack, Teams, Telegram",
+      "url": "https://www.producthunt.com/r/7T4D2IUJO2CB3U?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/9e1bef12-7d7a-4f2b-8931-71f4ac94bbc5.png?auto=format",
+      "favicon": "",
+      "category": "AI Agents",
+      "is_free": true,
+      "votes": 406,
+      "source": "producthunt",
+      "tags": [
+        "#AIAgents",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "hn-43331582",
+      "name": "Factorio Learning Environment",
+      "tagline": "Agents Build Factories",
+      "description": "Agents Build Factories",
+      "url": "https://jackhopkins.github.io/factorio-learning-environment/",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://jackhopkins.github.io&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://jackhopkins.github.io&size=64",
+      "category": "AI Agents",
+      "is_free": true,
+      "votes": 749,
+      "source": "hackernews",
+      "tags": [
+        "#AIAgents",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-ai-1",
+      "name": "Perplexity AI",
+      "tagline": "AI-powered answer engine",
+      "description": "Ask anything and get cited, real-time answers. Think Google but it actually explains things.",
+      "url": "https://perplexity.ai",
+      "image": "",
+      "favicon": "",
+      "category": "AI Agents",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#AIAgents",
+        "#Search",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-ai-2",
+      "name": "Krea AI",
+      "tagline": "Real-time AI image canvas",
+      "description": "Draw rough shapes, watch AI render it live as you edit. Free daily credits, zero friction.",
+      "url": "https://krea.ai",
+      "image": "",
+      "favicon": "",
+      "category": "AI Agents",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#AIAgents",
+        "#Image",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-35543668",
+      "name": "GPT-4-powered web searches for developers",
+      "tagline": "GPT-4-powered web searches for developers",
+      "description": "GPT-4-powered web searches for developers",
+      "url": "https://www.phind.com",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://phind.com&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://phind.com&size=64",
+      "category": "LLMs",
+      "is_free": true,
+      "votes": 1401,
+      "source": "hackernews",
+      "tags": [
+        "#LLMs",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-43905942",
+      "name": "Clippy",
+      "tagline": "90s UI for local LLMs",
+      "description": "90s UI for local LLMs",
+      "url": "https://felixrieseberg.github.io/clippy/",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://felixrieseberg.github.io&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://felixrieseberg.github.io&size=64",
+      "category": "LLMs",
+      "is_free": true,
+      "votes": 1122,
+      "source": "hackernews",
+      "tags": [
+        "#LLMs",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-34635352",
+      "name": "I trained an AI model on 120M+ songs from iTunes",
+      "tagline": "I trained an AI model on 120M+ songs from iTunes",
+      "description": "I trained an AI model on 120M+ songs from iTunes",
+      "url": "https://maroofy.com/?hn=v3",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://maroofy.com&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://maroofy.com&size=64",
+      "category": "LLMs",
+      "is_free": true,
+      "votes": 753,
+      "source": "hackernews",
+      "tags": [
+        "#LLMs",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-llm-1",
+      "name": "OpenRouter",
+      "tagline": "One API for every frontier model",
+      "description": "Single unified API key to access Claude, GPT-4, Mistral, Llama 3, Gemini and 50+ models. Pay per token.",
+      "url": "https://openrouter.ai",
+      "image": "",
+      "favicon": "",
+      "category": "LLMs",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#LLMs",
+        "#API",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-llm-2",
+      "name": "LM Studio",
+      "tagline": "Run LLMs locally on your laptop",
+      "description": "Download and run Llama 3, Mistral, Phi-3 and hundreds of models entirely on your machine. No cloud.",
+      "url": "https://lmstudio.ai",
+      "image": "",
+      "favicon": "",
+      "category": "LLMs",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#LLMs",
+        "#Local",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-llm-3",
+      "name": "Msty",
+      "tagline": "Local AI chat with split-screen comparison",
+      "description": "Chat with local or cloud models side by side. Compare Claude vs GPT-4 vs Llama in the same window.",
+      "url": "https://msty.app",
+      "image": "",
+      "favicon": "",
+      "category": "LLMs",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#LLMs",
+        "#Local",
+        "#Free"
+      ]
+    },
+    {
+      "id": "ph-1165274",
+      "name": "Respan Gateway",
+      "tagline": "One AI gateway with built-in observability and evals",
+      "description": "One AI gateway with built-in observability and evals",
+      "url": "https://www.producthunt.com/r/PZT5PPTBVKBPVT?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/a12a5753-1d75-46f7-99d1-1c1ad7e46b0c.png?auto=format",
+      "favicon": "",
+      "category": "Developer Tools",
+      "is_free": true,
+      "votes": 453,
+      "source": "producthunt",
+      "tags": [
+        "#DeveloperTools",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1169612",
+      "name": "Novu Connect",
+      "tagline": "Ship agents where your users already work",
+      "description": "Ship agents where your users already work",
+      "url": "https://www.producthunt.com/r/YKCLFF3LPLDFWW?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/7694839e-5f8b-4ac5-8bf5-655afe6e151d.png?auto=format",
+      "favicon": "",
+      "category": "Developer Tools",
+      "is_free": true,
+      "votes": 408,
+      "source": "producthunt",
+      "tags": [
+        "#DeveloperTools",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1166716",
+      "name": "Firma.dev",
+      "tagline": "E-signatures API for your app averaging ~3¢ per envelope",
+      "description": "E-signatures API for your app averaging ~3¢ per envelope",
+      "url": "https://www.producthunt.com/r/MJGLBAKR5ANIUY?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/741ce787-5548-4b55-b7e4-679665893bfc.png?auto=format",
+      "favicon": "",
+      "category": "Developer Tools",
+      "is_free": true,
+      "votes": 365,
+      "source": "producthunt",
+      "tags": [
+        "#DeveloperTools",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1170857",
+      "name": "Swytchcode CLI",
+      "tagline": "Give agents reliable access to 2,000+ APIs w/ durable state",
+      "description": "Give agents reliable access to 2,000+ APIs w/ durable state",
+      "url": "https://www.producthunt.com/r/XGLQDUQRILY2VD?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/34d8f65f-417b-412c-8068-2567903f0814.png?auto=format",
+      "favicon": "",
+      "category": "Developer Tools",
+      "is_free": true,
+      "votes": 357,
+      "source": "producthunt",
+      "tags": [
+        "#DeveloperTools",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1170110",
+      "name": "Kimi K2.7 Code",
+      "tagline": "Kimi’s most capable coding model yet",
+      "description": "Kimi’s most capable coding model yet",
+      "url": "https://www.producthunt.com/r/AOIRMB5BYBIQUR?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/be76baa0-d4e9-4f86-ae51-cb94d9b86787.png?auto=format",
+      "favicon": "",
+      "category": "Developer Tools",
+      "is_free": true,
+      "votes": 348,
+      "source": "producthunt",
+      "tags": [
+        "#DeveloperTools",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "hn-26271117",
+      "name": "Redbean",
+      "tagline": "Single-file distributable web server",
+      "description": "Single-file distributable web server",
+      "url": "https://justine.lol/redbean/index.html",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://justine.lol&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://justine.lol&size=64",
+      "category": "Developer Tools",
+      "is_free": true,
+      "votes": 1998,
+      "source": "hackernews",
+      "tags": [
+        "#DeveloperTools",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "ph-1173151",
+      "name": "Framer 3.0",
+      "tagline": "With Agents, Branching, Community, and an all-new design",
+      "description": "With Agents, Branching, Community, and an all-new design",
+      "url": "https://www.producthunt.com/r/64HL7FCICRJ4CQ?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/f3557b68-8d59-4347-9646-d0a5eac2a333.png?auto=format",
+      "favicon": "",
+      "category": "Design & Creative",
+      "is_free": true,
+      "votes": 436,
+      "source": "producthunt",
+      "tags": [
+        "#DesignCreative",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1170971",
+      "name": "Taste Lab",
+      "tagline": "Extract any website's design DNA",
+      "description": "Extract any website's design DNA",
+      "url": "https://www.producthunt.com/r/KOJGXLNJOQGWQI?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/9993bd80-1673-4915-baf9-40e87d20df11.png?auto=format",
+      "favicon": "",
+      "category": "Design & Creative",
+      "is_free": true,
+      "votes": 388,
+      "source": "producthunt",
+      "tags": [
+        "#DesignCreative",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "hn-48445554",
+      "name": "Performative-UI",
+      "tagline": "A react component library of design tropes",
+      "description": "A react component library of design tropes",
+      "url": "https://vorpus.github.io/performativeUI/",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://vorpus.github.io&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://vorpus.github.io&size=64",
+      "category": "Design & Creative",
+      "is_free": true,
+      "votes": 1179,
+      "source": "hackernews",
+      "tags": [
+        "#DesignCreative",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-41853810",
+      "name": "Graphite, a Blender-inspired 2D procedural design Rust app",
+      "tagline": "Graphite, a Blender-inspired 2D procedural design Rust app",
+      "description": "Graphite, a Blender-inspired 2D procedural design Rust app",
+      "url": "https://graphite.rs/",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://graphite.rs&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://graphite.rs&size=64",
+      "category": "Design & Creative",
+      "is_free": true,
+      "votes": 785,
+      "source": "hackernews",
+      "tags": [
+        "#DesignCreative",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-des-1",
+      "name": "Penpot",
+      "tagline": "Open-source Figma alternative",
+      "description": "Design and prototype tool that stores files as SVG. Self-hostable, free forever, works in the browser.",
+      "url": "https://penpot.app",
+      "image": "",
+      "favicon": "",
+      "category": "Design & Creative",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Design",
+        "#OpenSource",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-des-2",
+      "name": "Spline",
+      "tagline": "3D design for the web",
+      "description": "Create interactive 3D scenes that run in the browser. Export as embeddable iframes or React components.",
+      "url": "https://spline.design",
+      "image": "",
+      "favicon": "",
+      "category": "Design & Creative",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Design",
+        "#3D",
+        "#Web"
+      ]
+    },
+    {
+      "id": "ph-1168743",
+      "name": "Bond",
+      "tagline": "The AI to-do list that does itself",
+      "description": "The AI to-do list that does itself",
+      "url": "https://www.producthunt.com/r/7SFOLQBBWUEQXW?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/c2f45b4d-48ee-4f11-8c1b-8c873f032545.png?auto=format",
+      "favicon": "",
+      "category": "Productivity",
+      "is_free": true,
+      "votes": 711,
+      "source": "producthunt",
+      "tags": [
+        "#Productivity",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1153772",
+      "name": "Goldfish",
+      "tagline": "Press Option. It knows your work and replies like you",
+      "description": "Press Option. It knows your work and replies like you",
+      "url": "https://www.producthunt.com/r/P4WFRWL26YL6CK?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/c42a4d06-2035-4c13-b95d-02f34f14ba7c.png?auto=format",
+      "favicon": "",
+      "category": "Productivity",
+      "is_free": true,
+      "votes": 613,
+      "source": "producthunt",
+      "tags": [
+        "#Productivity",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1167625",
+      "name": "Asmi AI",
+      "tagline": "AI that handles your personal chores in the real world",
+      "description": "AI that handles your personal chores in the real world",
+      "url": "https://www.producthunt.com/r/Y5YVSLCZJ7BZ6I?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/00f62138-58b0-4b21-a8e0-8d0006c51ee8.png?auto=format",
+      "favicon": "",
+      "category": "Productivity",
+      "is_free": true,
+      "votes": 480,
+      "source": "producthunt",
+      "tags": [
+        "#Productivity",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1170432",
+      "name": "Vercel Drop",
+      "tagline": "Drop it. It's live.",
+      "description": "Drop it. It's live.",
+      "url": "https://www.producthunt.com/r/RY26DNHYWZFE45?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/593ff5e2-9d11-491c-ab63-9e929e894214.jpeg?auto=format",
+      "favicon": "",
+      "category": "Productivity",
+      "is_free": true,
+      "votes": 457,
+      "source": "producthunt",
+      "tags": [
+        "#Productivity",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1162447",
+      "name": "Invoko",
+      "tagline": "A little hand on your Mac",
+      "description": "A little hand on your Mac",
+      "url": "https://www.producthunt.com/r/CKKHYA5Y262PSX?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/40e88728-ef87-4f3e-930f-c3d1c184ef89.svg?auto=format",
+      "favicon": "",
+      "category": "Productivity",
+      "is_free": true,
+      "votes": 422,
+      "source": "producthunt",
+      "tags": [
+        "#Productivity",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1168506",
+      "name": "Terminal Mode by Even Realities",
+      "tagline": "Keep coding agents always in sight",
+      "description": "Keep coding agents always in sight",
+      "url": "https://www.producthunt.com/r/JP725UN73VRUJN?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/67815f4b-9cf3-4310-ad62-3d6ed3d6850f.png?auto=format",
+      "favicon": "",
+      "category": "Productivity",
+      "is_free": true,
+      "votes": 412,
+      "source": "producthunt",
+      "tags": [
+        "#Productivity",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1163285",
+      "name": "AutoEdit",
+      "tagline": "Your Claude AI Video Editor for Premiere Pro",
+      "description": "Your Claude AI Video Editor for Premiere Pro",
+      "url": "https://www.producthunt.com/r/FKEBR24CKXQXUO?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/4d0cbe49-80b9-44d8-8147-a1d76f114090.png?auto=format",
+      "favicon": "",
+      "category": "Marketing & Sales",
+      "is_free": true,
+      "votes": 302,
+      "source": "producthunt",
+      "tags": [
+        "#MarketingSales",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "hn-18024277",
+      "name": "I made a privacy-first minimalist Google Analytics",
+      "tagline": "I made a privacy-first minimalist Google Analytics",
+      "description": "I made a privacy-first minimalist Google Analytics",
+      "url": "https://simpleanalytics.io",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://simpleanalytics.io&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://simpleanalytics.io&size=64",
+      "category": "Marketing & Sales",
+      "is_free": true,
+      "votes": 968,
+      "source": "hackernews",
+      "tags": [
+        "#MarketingSales",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-43328095",
+      "name": "Seven39, a social media app that is only open for 3 hours every evenin",
+      "tagline": "Seven39, a social media app that is only open for 3 hours every evening",
+      "description": "Seven39, a social media app that is only open for 3 hours every evening",
+      "url": "https://www.seven39.com",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://seven39.com&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://seven39.com&size=64",
+      "category": "Marketing & Sales",
+      "is_free": true,
+      "votes": 735,
+      "source": "hackernews",
+      "tags": [
+        "#MarketingSales",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-mkt-1",
+      "name": "Exploding Topics",
+      "tagline": "Trends before they explode",
+      "description": "Finds fast-growing topics before they go mainstream. Great for startup ideas and marketing research.",
+      "url": "https://explodingtopics.com",
+      "image": "",
+      "favicon": "",
+      "category": "Marketing & Sales",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Marketing",
+        "#Trends",
+        "#Research"
+      ]
+    },
+    {
+      "id": "fb-mkt-2",
+      "name": "Beehiiv",
+      "tagline": "Newsletter platform built for growth",
+      "description": "Launch, grow, and monetize your newsletter. Built-in referral program, ad network, and analytics.",
+      "url": "https://beehiiv.com",
+      "image": "",
+      "favicon": "",
+      "category": "Marketing & Sales",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Marketing",
+        "#Newsletter",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-mkt-3",
+      "name": "Taplio",
+      "tagline": "AI-powered LinkedIn growth tool",
+      "description": "Schedule posts, get AI content ideas, track analytics, and build your LinkedIn audience on autopilot.",
+      "url": "https://taplio.com",
+      "image": "",
+      "favicon": "",
+      "category": "Marketing & Sales",
+      "is_free": false,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Marketing",
+        "#LinkedIn",
+        "#AI"
+      ]
+    },
+    {
+      "id": "hn-36662655",
+      "name": "Workout.lol",
+      "tagline": "a web app to easily create a workout routine",
+      "description": "a web app to easily create a workout routine",
+      "url": "https://workout.lol",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://workout.lol&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://workout.lol&size=64",
+      "category": "Health & Wellness",
+      "is_free": true,
+      "votes": 993,
+      "source": "hackernews",
+      "tags": [
+        "#HealthWellness",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-health-1",
+      "name": "Cronometer",
+      "tagline": "Precise nutrition tracking",
+      "description": "Track micronutrients, not just calories. Obsessively accurate food database loved by biohackers.",
+      "url": "https://cronometer.com",
+      "image": "",
+      "favicon": "",
+      "category": "Health & Wellness",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Health",
+        "#Nutrition",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-health-2",
+      "name": "Huberman Lab",
+      "tagline": "Science-backed health protocols",
+      "description": "Free protocols from Stanford neuroscientist Andrew Huberman on sleep, focus, fitness, and stress.",
+      "url": "https://hubermanlab.com",
+      "image": "",
+      "favicon": "",
+      "category": "Health & Wellness",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Health",
+        "#Science",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-health-3",
+      "name": "Bearable",
+      "tagline": "Track everything that affects your health",
+      "description": "Log symptoms, mood, energy, sleep, meds, and habits. Automatically finds correlations.",
+      "url": "https://bearable.app",
+      "image": "",
+      "favicon": "",
+      "category": "Health & Wellness",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Health",
+        "#Tracking",
+        "#Symptoms"
+      ]
+    },
+    {
+      "id": "fb-health-4",
+      "name": "Welltory",
+      "tagline": "HRV-based stress and energy scanner",
+      "description": "Measure your HRV using just your phone camera, get a stress and energy score. Free tier is solid.",
+      "url": "https://welltory.com",
+      "image": "",
+      "favicon": "",
+      "category": "Health & Wellness",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Health",
+        "#HRV",
+        "#Biohacking"
+      ]
+    },
+    {
+      "id": "fb-health-5",
+      "name": "Examine.com",
+      "tagline": "Unbiased supplement research database",
+      "description": "Massive database of human research on supplements and nutrition. No sponsored content, no brand deals.",
+      "url": "https://examine.com",
+      "image": "",
+      "favicon": "",
+      "category": "Health & Wellness",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Health",
+        "#Supplements",
+        "#Research"
+      ]
+    },
+    {
+      "id": "hn-18030446",
+      "name": "Sublime Merge",
+      "tagline": "A Git client from the makers of Sublime Text",
+      "description": "A Git client from the makers of Sublime Text",
+      "url": "https://www.sublimemerge.com",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://sublimemerge.com&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://sublimemerge.com&size=64",
+      "category": "Engineering & Development",
+      "is_free": true,
+      "votes": 935,
+      "source": "hackernews",
+      "tags": [
+        "#EngineeringDevelopment",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-42814110",
+      "name": "Cs16.css",
+      "tagline": "CSS library based on Counter Strike 1.6 UI",
+      "description": "CSS library based on Counter Strike 1.6 UI",
+      "url": "https://cs16.samke.me",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cs16.samke.me&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://cs16.samke.me&size=64",
+      "category": "Engineering & Development",
+      "is_free": true,
+      "votes": 819,
+      "source": "hackernews",
+      "tags": [
+        "#EngineeringDevelopment",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-43543241",
+      "name": "Nue",
+      "tagline": "Apps lighter than a React button",
+      "description": "Apps lighter than a React button",
+      "url": "https://nuejs.org/blog/large-scale-apps/",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://nuejs.org&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://nuejs.org&size=64",
+      "category": "Engineering & Development",
+      "is_free": true,
+      "votes": 756,
+      "source": "hackernews",
+      "tags": [
+        "#EngineeringDevelopment",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-34610686",
+      "name": "We built a developer-first open-source Zapier alternative",
+      "tagline": "We built a developer-first open-source Zapier alternative",
+      "description": "We built a developer-first open-source Zapier alternative",
+      "url": "https://trigger.dev",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://trigger.dev&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://trigger.dev&size=64",
+      "category": "Engineering & Development",
+      "is_free": true,
+      "votes": 745,
+      "source": "hackernews",
+      "tags": [
+        "#EngineeringDevelopment",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-19772097",
+      "name": "1MB",
+      "tagline": "Free and easy static website hosting and database",
+      "description": "Free and easy static website hosting and database",
+      "url": "https://1mb.site",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://1mb.site&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://1mb.site&size=64",
+      "category": "Engineering & Development",
+      "is_free": true,
+      "votes": 744,
+      "source": "hackernews",
+      "tags": [
+        "#EngineeringDevelopment",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "fb-eng-1",
+      "name": "Warp",
+      "tagline": "The terminal for the 21st century",
+      "description": "AI-powered terminal with autocomplete, natural language commands, and team workflows built in.",
+      "url": "https://warp.dev",
+      "image": "",
+      "favicon": "",
+      "category": "Engineering & Development",
+      "is_free": true,
+      "votes": 0,
+      "source": "curated",
+      "tags": [
+        "#Engineering",
+        "#Terminal",
+        "#AI"
+      ]
+    }
+  ]
+}

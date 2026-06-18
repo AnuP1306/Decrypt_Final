@@ -8,10 +8,14 @@ function Saved() {
 
   const [savedArticles,   setSavedArticles]   = useState([]);
   const [savedFlashcards, setSavedFlashcards] = useState([]);
+  const [savedTools, setSavedTools] = useState([]);
 
   useEffect(() => {
     setSavedArticles(JSON.parse(localStorage.getItem("savedArticles")  || "[]"));
     setSavedFlashcards(JSON.parse(localStorage.getItem("savedFlashcards") || "[]"));
+    setSavedTools(
+      JSON.parse(localStorage.getItem("savedTools") || "[]")
+    );
   }, []);
 
   // ── Remove with fade-out animation ──────────────────────────────────────
@@ -34,6 +38,23 @@ function Saved() {
       const updated = savedFlashcards.filter(a => a.id !== id);
       setSavedFlashcards(updated);
       localStorage.setItem("savedFlashcards", JSON.stringify(updated));
+    }, 250);
+  }
+
+  function removeTool(id, el) {
+    el.style.transform = "scale(0.92)";
+    el.style.opacity = "0";
+    el.style.transition = "all 0.25s ease";
+  
+    setTimeout(() => {
+      const updated = savedTools.filter(t => t.id !== id);
+  
+      setSavedTools(updated);
+  
+      localStorage.setItem(
+        "savedTools",
+        JSON.stringify(updated)
+      );
     }, 250);
   }
 
@@ -172,6 +193,92 @@ function Saved() {
                 }
               </div>
             </section>
+            <section className="saved-section">
+
+  <div className="saved-section-header">
+    <h2 className="saved-section-title">
+      Saved Tools
+    </h2>
+
+    <span className="saved-count">
+      {savedTools.length} saved
+    </span>
+  </div>
+
+  <div className="saved-scroll-row">
+
+    {savedTools.length === 0 ? (
+
+      <div className="saved-empty-state">
+        <div className="empty-icon">🛠️</div>
+
+        <p>
+          No saved tools yet.
+          <br />
+          Bookmark tools from Tools Library.
+        </p>
+      </div>
+
+    ) : (
+
+      savedTools.map(tool => (
+
+        <div
+          className="saved-card saved-tool-card"
+          key={tool.id}
+          onClick={() => window.open(tool.url, "_blank")}
+          style={{ cursor: "pointer" }}
+        >
+
+          <div className="sc-image">
+
+            {tool.image && (
+              <img
+                src={tool.image}
+                alt={tool.name}
+              />
+            )}
+
+            <span className="sc-domain-pill">
+              {tool.category}
+            </span>
+
+            <button
+              className="sc-unbookmark-btn"
+              onClick={(e) =>
+                removeTool(
+                  tool.id,
+                  e.currentTarget.closest(".saved-card")
+                )
+              }
+            >
+              <img
+                src="/images/briefbookmark.png"
+                alt=""
+              />
+            </button>
+
+          </div>
+
+          <div className="sc-content">
+            <h3 className="sc-title">
+              {tool.name}
+            </h3>
+
+            <p className="sc-desc">
+              {tool.description}
+            </p>
+          </div>
+
+        </div>
+
+      ))
+
+    )}
+
+  </div>
+
+</section>
 
           </div>
         </main>

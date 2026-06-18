@@ -388,3 +388,21 @@ margin: 0 auto;   /* keep this */
 .sidebar.collapsed ~ .saved-main {
     margin-left: 80px;
 }
+
+.saved-tool-card {
+    min-width: 250px;
+    width: 250px;
+  }
+  
+ .sc-image {
+    height: 150px;
+  }
+  
+  
+  .saved-tool-card .sc-title {
+    font-size: 18px;
+  }
+  
+  .saved-tool-card .sc-desc {
+    min-height: 60px;
+  }

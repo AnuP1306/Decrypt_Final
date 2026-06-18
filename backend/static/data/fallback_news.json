@@ -3,7 +3,7 @@
       "domain": "AI",
       "title": "OpenAI Just Dropped a Smarter GPT — And It Actually Gets You",
       "desc": "OpenAI has launched a new GPT model with dramatically improved reasoning abilities. It handles complex questions with greater accuracy, generates clearer explanations, and makes fewer embarrassing mistakes than its predecessors.",
-      "image": "/static/news-image/GPT-new.png",
+      "image": "/news-image/GPT-new.png",
       "slides": {
         "beginner": [
           {
@@ -54,7 +54,7 @@
       "domain": "AI",
       "title": "Google's Gemini Can See, Hear, and Think — All at Once",
       "desc": "Google has introduced Gemini, a powerful multimodal AI system capable of understanding text, images, audio, and video simultaneously. It is designed to compete with leading AI models and enhance productivity across Google's entire product ecosystem.",
-      "image": "/static/news-image/gemini-ai.png",
+      "image": "/news-image/gemini-ai.png",
       "slides": {
         "beginner": [
           {
@@ -105,7 +105,7 @@
       "domain": "AI",
       "title": "Microsoft Put AI Inside Word and Excel — Your Office Life Just Changed",
       "desc": "Microsoft is deeply integrating Copilot AI into tools like Word, Excel, PowerPoint, and Teams, enabling users to generate content, analyse data, and automate workflows directly inside the apps they use for work every day.",
-      "image": "/static/news-image/copilot-ai.png",
+      "image": "/news-image/copilot-ai.png",
       "slides": {
         "beginner": [
           {
@@ -156,7 +156,7 @@
       "domain": "AI",
       "title": "Meta Is Quietly Building AI Into Every App You Scroll Through",
       "desc": "Meta is making massive investments in artificial intelligence to personalise user experiences on Instagram, Facebook, and WhatsApp — while simultaneously building the AI foundations for its long-term metaverse ambitions.",
-      "image": "/static/news-image/meta-ai.png",
+      "image": "/news-image/meta-ai.png",
       "slides": {
         "beginner": [
           {
@@ -207,7 +207,7 @@
       "domain": "AI",
       "title": "AI Is Catching Diseases Before Doctors Even Notice the Symptoms",
       "desc": "Artificial intelligence is transforming medical diagnostics by detecting early signs of diseases like cancer, diabetes, and heart conditions through the analysis of medical images, lab results, and patient history — often with greater accuracy than traditional methods.",
-      "image": "/static/news-image/healthcare.png",
+      "image": "/news-image/healthcare.png",
       "slides": {
         "beginner": [
           {
@@ -513,7 +513,7 @@
       "domain": "Electronics",
       "title": "The Global Chip Shortage Taught the World One Thing: Semiconductors Run Everything",
       "desc": "Semiconductors — the tiny chips that power everything from smartphones to cars to AI systems — are at the centre of a massive global expansion, with governments and corporations investing hundreds of billions to secure domestic supply chains.",
-      "image": "/static/news-image/semiconductor.png",
+      "image": "/news-image/semiconductor.png",
       "slides": {
         "beginner": [
           {
@@ -564,7 +564,7 @@
       "domain": "Electronics",
       "title": "Robots Are Taking Over Factories — And That's Actually Good News",
       "desc": "Advances in robotics hardware, AI-driven control systems, and cost reductions are rapidly expanding robot deployment across manufacturing, logistics, healthcare, and agriculture — transforming how physical work gets done.",
-      "image": "/static/news-image/robotics.png",
+      "image": "/news-image/robotics.png",
       "slides": {
         "beginner": [
           {
@@ -615,7 +615,7 @@
       "domain": "Electronics",
       "title": "Your Home Is Getting Smarter — The IoT Revolution Is Already Here",
       "desc": "The Internet of Things now connects billions of devices — from smart thermostats and fitness trackers to industrial sensors and city infrastructure — creating intelligent systems that collect data, automate decisions, and reshape daily life.",
-      "image": "/static/news-image/iot.png",
+      "image": "/news-image/iot.png",
       "slides": {
         "beginner": [
           {
@@ -666,7 +666,7 @@
       "domain": "Electronics",
       "title": "The Battery Breakthrough That Could Change Electric Vehicles Forever",
       "desc": "New advances in battery chemistry, solid-state technology, and manufacturing processes are pushing energy density higher and costs lower, accelerating the transition to electric vehicles and enabling new applications in grid-scale energy storage.",
-      "image": "/static/news-image/battery.png",
+      "image": "/news-image/battery.png",
       "slides": {
         "beginner": [
           {

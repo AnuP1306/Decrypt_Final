@@ -236,7 +236,7 @@
 
 /* ===== CONTENT ===== */
 .daily-brief-page .card-content {
-  padding: 24px;
+  padding: 15px;
   gap: 16px;
   display: flex;
   flex-direction: column;
@@ -254,7 +254,7 @@
 
 .daily-brief-page .card-title {
   font-family: 'Syne', sans-serif;
-  font-size: 28px;
+  font-size: 26px;
   letter-spacing: 0.2px;
   font-weight: 900;
   color: #30312c;
@@ -273,7 +273,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 70px;
+  margin-top: 0px;
 }
 
 /* LEVEL BUTTONS */
@@ -320,7 +320,12 @@
 .daily-brief-page .chatbot-btn.active img {
   /* placeholder for active img state */
 }
-
+.daily-brief-page .card-body p {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  -webkit-box-orient: unset;
+}
 /* ===== BOT ===== */
 .daily-brief-page .article-bot {
   display: none;

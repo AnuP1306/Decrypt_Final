@@ -1,351 +1,580 @@
-import { useState } from "react";
+// import { useState, useEffect } from "react";
+// import { useNavigate } from "react-router-dom";
+// import Navbar from "../components/Navbar";
+// import Sidebar from "../components/Sidebar";
+// import "../styles/tools.css";
+
+// const FILTERS = [
+//   { label: "All",             value: "all"              },
+//   { label: "AI",              value: "AI"               },
+//   { label: "Developer Tools", value: "Developer Tools"  },
+//   { label: "Design",          value: "Design"           },
+//   { label: "Productivity",    value: "Productivity"     },
+//   { label: "Security",        value: "Security"         },
+//   { label: "Finance",         value: "Finance"          },
+//   { label: "Health",          value: "Health & Wellness"},
+//   { label: "Education",       value: "Education"        },
+// ];
+
+// const CAT_GRADIENTS = {
+//   "AI":               "linear-gradient(135deg,#3f38e8,#7c3aed)",
+//   "Developer Tools":  "linear-gradient(135deg,#0f172a,#1e40af)",
+//   "Design":           "linear-gradient(135deg,#db2777,#f97316)",
+//   "Productivity":     "linear-gradient(135deg,#059669,#0891b2)",
+//   "Security":         "linear-gradient(135deg,#1e293b,#334155)",
+//   "Finance":          "linear-gradient(135deg,#047857,#065f46)",
+//   "Health & Wellness":"linear-gradient(135deg,#0d9488,#10b981)",
+//   "Education":        "linear-gradient(135deg,#7c3aed,#4f46e5)",
+// };
+
+// // ── Single card ───────────────────────────────────────────────────────────────
+// function ToolCard({ tool }) {
+//   const [saved, setSaved] = useState(() => {
+//     try {
+//       const list = JSON.parse(localStorage.getItem("savedTools") || "[]");
+//       return list.some(t => t.id === tool.id);
+//     } catch { return false; }
+//   });
+
+//   // Only treat image as present if it's a non-empty string
+//   const hasBannerImage = typeof tool.image === "string" && tool.image.trim() !== "";
+
+//   // Source badge label
+//   const sourceBadge =
+//     tool.source === "producthunt" ? "PH" :
+//     tool.source === "hackernews"  ? "HN" :
+//     null;
+
+//   function toggleSave(e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+//     try {
+//       let list = JSON.parse(localStorage.getItem("savedTools") || "[]");
+//       if (saved) {
+//         list = list.filter(t => t.id !== tool.id);
+//       } else {
+//         if (!list.find(t => t.id === tool.id)) list.push(tool);
+//       }
+//       localStorage.setItem("savedTools", JSON.stringify(list));
+//     } catch {}
+//     setSaved(s => !s);
+//   }
+
+//   return (
+//     <div className="card" data-category={tool.category}>
+
+//       <div
+//         className="card-img"
+//         style={!hasBannerImage
+//           ? { background: CAT_GRADIENTS[tool.category] || CAT_GRADIENTS["AI"] }
+//           : {}}
+//       >
+//         {hasBannerImage && (
+//           <img
+//             src={tool.image}
+//             alt={tool.name}
+//             onError={e => {
+//               e.target.style.display = "none";
+//               e.target.parentElement.style.background =
+//                 CAT_GRADIENTS[tool.category] || CAT_GRADIENTS["AI"];
+//               const fi = e.target.parentElement.querySelector(".card-favicon");
+//               if (fi) fi.style.display = "flex";
+//             }}
+//           />
+//         )}
+
+//         {/* Favicon — shown on gradient (no image) or as image fallback */}
+//         <div
+//           className="card-favicon"
+//           style={{ display: hasBannerImage ? "none" : "flex" }}
+//         >
+//           {tool.favicon ? (
+//             <img
+//               src={tool.favicon}
+//               alt=""
+//               onError={e => {
+//                 const src = e.target.src;
+//                 if (src.includes("duckduckgo")) {
+//                   // DDG also failed — give up and hide
+//                   e.target.style.display = "none";
+//                 } else {
+//                   // Google failed — extract domain from either URL format:
+//                   // google: ?domain=example.com  OR  ?url=http://example.com
+//                   const byDomain = src.match(/[?&]domain=([^&]+)/)?.[1];
+//                   const byUrl    = src.match(/[?&]url=https?:\/\/([^&/]+)/)?.[1];
+//                   const domain   = byDomain || byUrl;
+//                   if (domain) {
+//                     e.target.src = `https://icons.duckduckgo.com/ip3/${domain}.ico`;
+//                   } else {
+//                     e.target.style.display = "none";
+//                   }
+//                 }
+//               }}
+//             />
+//           ) : null}
+//         </div>
+
+//         {/* Save button */}
+//         <button
+//           className={`save-icon-btn ${saved ? "saved" : ""}`}
+//           onClick={toggleSave}
+//           title={saved ? "Unsave" : "Save"}
+//         >
+//           <svg viewBox="0 0 24 24" fill={saved ? "currentColor" : "none"}
+//                stroke="currentColor" strokeWidth="2.2" width="15" height="15">
+//             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+//           </svg>
+//         </button>
+
+//         {/* FREE/PAID + category pills */}
+//         <div className="tags-top">
+//           <span className="tag free">{tool.is_free ? "FREE" : "PAID"}</span>
+//           <span className="tag category">{tool.category}</span>
+//           {sourceBadge && (
+//             <span className="tag category" style={{ opacity: 0.75 }}>
+//               {sourceBadge}
+//             </span>
+//           )}
+//         </div>
+//       </div>
+
+//       <div className="card-body">
+//         <h3>{tool.name}</h3>
+//         <p>{tool.description}</p>
+
+//         <div className="hashtags">
+//           {(tool.tags || []).filter(Boolean).map(tag => (
+//             <span key={tag}>{tag}</span>
+//           ))}
+//         </div>
+
+//         <a href={tool.url} target="_blank" rel="noreferrer" className="btn">
+//           Check it out ↗
+//         </a>
+//       </div>
+
+//     </div>
+//   );
+// }
+
+// // ── Main page ─────────────────────────────────────────────────────────────────
+// export default function Tools() {
+//   const navigate = useNavigate();
+//   const [tools,   setTools]   = useState([]);
+//   const [loading, setLoading] = useState(true);
+//   const [error,   setError]   = useState(false);
+//   const [filter,  setFilter]  = useState("all");
+//   const [search,  setSearch]  = useState("");
+
+//   useEffect(() => {
+//     fetch("http://127.0.0.1:5000/get-tools")
+//       .then(r => {
+//         if (!r.ok) throw new Error(`HTTP ${r.status}`);
+//         return r.json();
+//       })
+//       .then(d => {
+//         setTools(Array.isArray(d.tools) ? d.tools : []);
+//         setError(false);
+//       })
+//       .catch(err => {
+//         console.error("Failed to load tools:", err);
+//         setError(true);
+//         setTools([]);
+//       })
+//       .finally(() => setLoading(false));
+//   }, []);
+
+//   const visible = tools.filter(t => {
+//     const matchCat    = filter === "all" || t.category === filter;
+//     const q           = search.toLowerCase().trim();
+//     const matchSearch = !q
+//       || (t.name        || "").toLowerCase().includes(q)
+//       || (t.description || "").toLowerCase().includes(q)
+//       || (t.category    || "").toLowerCase().includes(q)
+//       || (t.tags        || []).some(tag => tag.toLowerCase().includes(q));
+//     return matchCat && matchSearch;
+//   });
+
+//   const totalTools  = tools.length;
+//   const freeCount   = tools.filter(t => t.is_free).length;
+//   const freePercent = totalTools > 0 ? Math.round((freeCount / totalTools) * 100) : 0;
+
+//   // Source breakdown for stats
+//   const liveCount = tools.filter(
+//     t => t.source === "producthunt" || t.source === "hackernews"
+//   ).length;
+
+//   return (
+//     <>
+//       <Navbar />
+//       <div className="layout">
+//         <Sidebar />
+
+//         <main className="main-content">
+//           <div className="tools-page">
+//             <div className="tools-header">
+
+//               <button className="back-btn" onClick={() => navigate("/home")}>← Back</button>
+
+//               <div className="top-label">
+//                 <span className="icon">
+//                   <img src="/images/wrench.png" alt="tool" />
+//                 </span>
+//                 TOOLS LIBRARY
+//               </div>
+
+//               <h1 className="page-title">
+//                 AI tools that actually <span className="heighlight">go hard</span>
+//               </h1>
+//               <p className="page-subtitle">
+//                 The lesser-known, criminally underrated AI tools and sites. Free stuff
+//                 prioritized. Your LinkedIn bio is about to level up.
+//               </p>
+
+//               <div className="stats">
+//                 <div className="card2">
+//                   <h2>{loading ? "..." : `${totalTools}+`}</h2>
+//                   <p>Tools Listed</p>
+//                 </div>
+//                 <div className="card2">
+//                   <h2>{loading ? "..." : `${freePercent}%`}</h2>
+//                   <p>Free Tools</p>
+//                 </div>
+//                 <div className="card2">
+//                   <h2>{loading ? "..." : liveCount > 0 ? `${liveCount}` : "Daily"}</h2>
+//                   <p>{liveCount > 0 ? "Live Picks" : "Updated"}</p>
+//                 </div>
+//               </div>
+
+//               <div className="search-box">
+//                 <input
+//                   type="text"
+//                   placeholder="Search tools..."
+//                   value={search}
+//                   onChange={e => setSearch(e.target.value)}
+//                 />
+//               </div>
+
+//               <div className="categories">
+//                 {FILTERS.map(f => (
+//                   <button
+//                     key={f.value}
+//                     className={filter === f.value ? "active" : ""}
+//                     onClick={() => setFilter(f.value)}
+//                   >
+//                     {f.label}
+//                   </button>
+//                 ))}
+//               </div>
+
+//             </div>
+
+//             {loading ? (
+//               <div className="tools-loading">
+//                 <div className="tools-spinner" />
+//                 <p>Fetching today's tools...</p>
+//               </div>
+//             ) : error ? (
+//               <div className="tools-empty">
+//                 <p>Couldn't connect to the server. Make sure Flask is running on port 5000.</p>
+//               </div>
+//             ) : visible.length === 0 ? (
+//               <div className="tools-empty">
+//                 <p>No tools found{search ? ` for "${search}"` : ""}.</p>
+//               </div>
+//             ) : (
+//               <div className="tools-list">
+//                 {visible.map(tool => <ToolCard key={tool.id} tool={tool} />)}
+//               </div>
+//             )}
+
+//           </div>
+//         </main>
+//       </div>
+//     </>
+//   );
+// }
+
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import "../styles/tools.css";
 
-const tools = [
-  // ── Research ────────────────────────────────────────────────────────────
-  {
-    id: 1,
-    name: "Elicit",
-    description: "AI research assistant that finds and summarizes academic papers. Much easier than traditional research tools.",
-    category: "research",
-    rating: "4.8",
-    price: "FREE",
-    tags: ["#Research", "#AI", "#Papers"],
-    url: "https://elicit.com",
-    image: "/images/elicit api.jpeg",
-  },
-  {
-    id: 2,
-    name: "Scite",
-    description: "Shows whether research papers are supported or contradicted by other studies.",
-    category: "research",
-    rating: "4.6",
-    price: "FREE",
-    tags: ["#Citations", "#Research", "#AI"],
-    url: "https://scite.ai",
-    image: "/images/scite.ai.jpeg",
-  },
-  {
-    id: 3,
-    name: "Consensus",
-    description: "Answers questions using only scientific studies and research-backed evidence.",
-    category: "research",
-    rating: "4.7",
-    price: "FREE",
-    tags: ["#Science", "#Research", "#Facts"],
-    url: "https://consensus.app",
-    image: "/images/consensus.jpeg",
-  },
-
-  // ── Design ──────────────────────────────────────────────────────────────
-  {
-    id: 4,
-    name: "Visily",
-    description: "AI UI design tool that converts text into app screens. Beginner-friendly alternative to Figma.",
-    category: "design",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#UI", "#Design", "#AI"],
-    url: "https://visily.ai",
-    image: "/images/visily.jpeg",
-  },
-  {
-    id: 5,
-    name: "Uizard",
-    description: "Transforms sketches into real app designs instantly using AI.",
-    category: "design",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Prototype", "#Design", "#AI"],
-    url: "https://uizard.io",
-    image: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
-  },
-  {
-    id: 6,
-    name: "Shots.so",
-    description: "Create stunning mockups instantly for your UI screenshots and portfolios.",
-    category: "design",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Design", "#Mockup", "#UI"],
-    url: "https://shots.so",
-    image: "https://cdn-icons-png.flaticon.com/512/1006/1006771.png",
-  },
-
-  // ── Coding ──────────────────────────────────────────────────────────────
-  {
-    id: 7,
-    name: "Codeium",
-    description: "Free AI coding assistant similar to GitHub Copilot with powerful autocomplete.",
-    category: "coding",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Coding", "#AI", "#Dev"],
-    url: "https://codeium.com",
-    image: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
-  },
-  {
-    id: 8,
-    name: "Mutable AI",
-    description: "AI that edits, improves and explains your code directly inside your editor.",
-    category: "coding",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Code", "#AI", "#Productivity"],
-    url: "https://mutable.ai",
-    image: "https://cdn-icons-png.flaticon.com/512/2103/2103633.png",
-  },
-  {
-    id: 9,
-    name: "Pieces",
-    description: "Automatically saves useful code snippets so you never lose important code again.",
-    category: "coding",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Snippets", "#Dev", "#Tools"],
-    url: "https://pieces.app",
-    image: "https://cdn-icons-png.flaticon.com/512/906/906334.png",
-  },
-
-  // ── Visualization ───────────────────────────────────────────────────────
-  {
-    id: 10,
-    name: "Flourish",
-    description: "Create interactive charts and storytelling dashboards easily.",
-    category: "visualization",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Data", "#Charts", "#Visualization"],
-    url: "https://flourish.studio",
-    image: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-  },
-  {
-    id: 11,
-    name: "RAWGraphs",
-    description: "Advanced open-source tool for creating unique and complex data visualizations.",
-    category: "visualization",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Graphs", "#Data", "#OpenSource"],
-    url: "https://rawgraphs.io",
-    image: "https://cdn-icons-png.flaticon.com/512/2920/2920349.png",
-  },
-  {
-    id: 12,
-    name: "ChartAI",
-    description: "Generate charts instantly by simply describing your data in text.",
-    category: "visualization",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#AI", "#Charts", "#Data"],
-    url: "#",
-    image: "https://cdn-icons-png.flaticon.com/512/2721/2721273.png",
-  },
-
-  // ── Audio ───────────────────────────────────────────────────────────────
-  {
-    id: 13,
-    name: "Adobe Podcast AI",
-    description: "Enhance your voice to studio-quality audio using AI.",
-    category: "audio",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Audio", "#AI", "#Podcast"],
-    url: "https://podcast.adobe.com",
-    image: "https://cdn-icons-png.flaticon.com/512/5968/5968520.png",
-  },
-  {
-    id: 14,
-    name: "Krisp",
-    description: "Removes background noise from calls and recordings in real time.",
-    category: "audio",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Audio", "#NoiseCancel", "#Meetings"],
-    url: "https://krisp.ai",
-    image: "https://cdn-icons-png.flaticon.com/512/727/727269.png",
-  },
-  {
-    id: 15,
-    name: "Auphonic",
-    description: "Automatically balances audio levels for professional-quality sound.",
-    category: "audio",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Audio", "#Editing", "#Podcast"],
-    url: "https://auphonic.com",
-    image: "https://cdn-icons-png.flaticon.com/512/727/727245.png",
-  },
-
-  // ── Presentation ────────────────────────────────────────────────────────
-  {
-    id: 16,
-    name: "Gamma",
-    description: "Create beautiful AI-powered presentations faster than PowerPoint.",
-    category: "presentation",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Presentation", "#AI", "#Slides"],
-    url: "https://gamma.app",
-    image: "https://cdn-icons-png.flaticon.com/512/1828/1828919.png",
-  },
-  {
-    id: 17,
-    name: "Tome",
-    description: "Story-based AI presentation tool focused on narrative storytelling.",
-    category: "presentation",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Storytelling", "#Slides", "#AI"],
-    url: "https://tome.app",
-    image: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
-  },
-  {
-    id: 18,
-    name: "Decktopus",
-    description: "Auto-generates complete presentations with design and content.",
-    category: "presentation",
-    rating: "4.9",
-    price: "FREE",
-    tags: ["#Slides", "#AI", "#Productivity"],
-    url: "https://decktopus.com",
-    image: "https://cdn-icons-png.flaticon.com/512/1828/1828817.png",
-  },
-];
+// const FILTERS = [
+//   { label: "All",             value: "all"              },
+//   { label: "AI",              value: "AI"               },
+//   { label: "Developer Tools", value: "Developer Tools"  },
+//   { label: "Design",          value: "Design"           },
+//   { label: "Productivity",    value: "Productivity"     },
+//   { label: "Security",        value: "Security"         },
+//   { label: "Finance",         value: "Finance"          },
+//   { label: "Health",          value: "Health & Wellness"},
+//   { label: "Education",       value: "Education"        },
+// ];
 
 const FILTERS = [
-  { label: "All",            value: "all"           },
-  { label: "Research",       value: "research"      },
-  { label: "Visualization",  value: "visualization" },
-  { label: "Audio",          value: "audio"         },
-  { label: "Presentation",   value: "presentation"  },
-  { label: "Design",         value: "design"        },
-  { label: "Coding",         value: "coding"        },
+  { label: "All", value: "all" },
+  { label: "AI Agents", value: "AI Agents" },
+  { label: "LLMs", value: "LLMs" },
+  { label: "Developer Tools", value: "Developer Tools" },
+  { label: "Engineering", value: "Engineering & Development" },
+  { label: "Design", value: "Design & Creative" },
+  { label: "Productivity", value: "Productivity" },
+  { label: "Marketing", value: "Marketing & Sales" },
+  { label: "Health", value: "Health & Wellness" },
 ];
 
-function Tools() {
-  const navigate = useNavigate();
-  const [currentFilter, setCurrentFilter] = useState("all");
-  const [searchQuery, setSearchQuery]     = useState("");
+const CAT_GRADIENTS = {
+  "AI":                "linear-gradient(135deg,#3f38e8,#7c3aed)",
+  "Developer Tools":   "linear-gradient(135deg,#0f172a,#1e40af)",
+  "Design":            "linear-gradient(135deg,#db2777,#f97316)",
+  "Productivity":      "linear-gradient(135deg,#059669,#0891b2)",
+  "Security":          "linear-gradient(135deg,#1e293b,#334155)",
+  "Finance":           "linear-gradient(135deg,#047857,#065f46)",
+  "Health & Wellness": "linear-gradient(135deg,#0d9488,#10b981)",
+  "Education":         "linear-gradient(135deg,#7c3aed,#4f46e5)",
+};
 
-  const filtered = tools.filter(tool => {
-    const matchesFilter =
-      currentFilter === "all" || tool.category === currentFilter;
+const SOURCE_LABEL = {
+  producthunt: "PH",
+  hackernews:  "HN",
+};
 
-    const q = searchQuery.toLowerCase();
-    const matchesSearch =
-      tool.name.toLowerCase().includes(q) ||
-      tool.description.toLowerCase().includes(q);
+// ── Single card ───────────────────────────────────────────────────────────────
+function ToolCard({ tool }) {
+  const [imgFailed, setImgFailed] = useState(false);
 
-    return matchesFilter && matchesSearch;
+  const [saved, setSaved] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("savedTools") || "[]")
+        .some(t => t.id === tool.id);
+    } catch { return false; }
   });
+
+  const hasBanner = typeof tool.image === "string"
+    && tool.image.trim() !== ""
+    && !imgFailed;
+
+  const gradient = CAT_GRADIENTS[tool.category] || CAT_GRADIENTS["AI"];
+  const initial  = (tool.name || "?")[0].toUpperCase();
+  const badge    = SOURCE_LABEL[tool.source] || null;
+
+  function toggleSave(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    try {
+      let list = JSON.parse(localStorage.getItem("savedTools") || "[]");
+      if (saved) {
+        list = list.filter(t => t.id !== tool.id);
+      } else {
+        if (!list.find(t => t.id === tool.id)) list.push({
+          id: tool.id,
+          name: tool.name,
+          description: tool.description,
+          image: tool.image,
+          favicon: tool.favicon,
+          category: tool.category,
+          url: tool.url
+        });;
+      }
+      localStorage.setItem("savedTools", JSON.stringify(list));
+    } catch {}
+    setSaved(s => !s);
+  }
+
+  return (
+    <div className="card" data-category={tool.category}>
+
+      {/* ── Image / gradient header ── */}
+      <div
+        className="card-img"
+        style={hasBanner ? {} : { background: gradient }}
+      >
+        {hasBanner && (
+          <img
+            src={tool.image}
+            alt={tool.name}
+            onError={() => setImgFailed(true)}
+          />
+        )}
+
+        {/* Shown when no banner: big initial letter on gradient */}
+        {/* {!hasBanner && (
+          <div className="card-initial">{initial}</div>
+        )} */}
+
+{!hasBanner && tool.favicon ? (
+  <div className="card-favicon">
+    <img
+      src={tool.favicon}
+      alt=""
+      onError={(e) => {
+        e.target.style.display = "none";
+      }}
+    />
+  </div>
+) : !hasBanner ? (
+  <div className="card-initial">{initial}</div>
+) : null}
+
+        {/* Save icon — top right */}
+        <button
+          className={`save-icon-btn ${saved ? "saved" : ""}`}
+          onClick={toggleSave}
+          title={saved ? "Unsave" : "Save"}
+        >
+          <svg viewBox="0 0 24 24"
+               fill={saved ? "currentColor" : "none"}
+               stroke="currentColor" strokeWidth="2.2"
+               width="15" height="15">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+          </svg>
+        </button>
+
+        {/* Pills — bottom left */}
+        <div className="tags-top">
+          <span className="tag free">{tool.is_free ? "FREE" : "PAID"}</span>
+          <span className="tag category">{tool.category}</span>
+          {badge && (
+            <span className="tag source-badge">{badge}</span>
+          )}
+        </div>
+      </div>
+
+      {/* ── Body ── */}
+      <div className="card-body">
+        <h3>{tool.name}</h3>
+        <p>{tool.description}</p>
+
+        <div className="hashtags">
+          {(tool.tags || []).filter(Boolean).map(tag => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
+
+        <a href={tool.url} target="_blank" rel="noreferrer" className="btn">
+          Check it out ↗
+        </a>
+      </div>
+
+    </div>
+  );
+}
+
+// ── Main page ─────────────────────────────────────────────────────────────────
+export default function Tools() {
+  const navigate = useNavigate();
+  const [tools,   setTools]   = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error,   setError]   = useState(false);
+  const [filter,  setFilter]  = useState("all");
+  const [search,  setSearch]  = useState("");
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:5000/get-tools")
+      .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+      .then(d => { setTools(Array.isArray(d.tools) ? d.tools : []); setError(false); })
+      .catch(() => { setError(true); setTools([]); })
+      .finally(() => setLoading(false));
+  }, []);
+
+  const visible = tools.filter(t => {
+    const matchCat    = filter === "all" || t.category === filter;
+    const q           = search.toLowerCase().trim();
+    const matchSearch = !q
+      || (t.name        || "").toLowerCase().includes(q)
+      || (t.description || "").toLowerCase().includes(q)
+      || (t.category    || "").toLowerCase().includes(q)
+      || (t.tags        || []).some(tag => tag.toLowerCase().includes(q));
+    return matchCat && matchSearch;
+  });
+
+  const totalTools  = tools.length;
+  const freeCount   = tools.filter(t => t.is_free).length;
+  const freePercent = totalTools > 0 ? Math.round((freeCount / totalTools) * 100) : 0;
+  const liveCount   = tools.filter(t => t.source === "producthunt" || t.source === "hackernews").length;
 
   return (
     <>
       <Navbar />
-
       <div className="layout">
         <Sidebar />
-
         <main className="main-content">
           <div className="tools-page">
+            <div className="tools-header">
 
-            {/* Back button */}
-            <button className="back-btn" onClick={() => navigate("/home")}>
-              ← Back
-            </button>
+              <button className="back-btn" onClick={() => navigate("/home")}>← Back</button>
 
-            {/* Top label */}
-           <div className="opp-mini-header">
-              <div className="tools-icon-box">
-                <img src="/images/wrench.png" alt="tool" />
+              <div className="top-label">
+                <span className="icon"><img src="/images/wrench.png" alt="tool" /></span>
+                TOOLS LIBRARY
               </div>
-              <span className="opp-mini-text">TOOLS LIBRARY</span>
-            </div>
 
-            {/* Heading */}
-            <h1 className="page-title">
-              AI tools that actually{" "}
-              <span className="heighlight">go hard</span>
-            </h1>
-            <p className="page-subtitle">
-              The lesser-known, criminally underrated AI tools and sites. Free stuff
-              prioritized. Your LinkedIn bio is about to level up.
-            </p>
+              <h1 className="page-title">
+                AI tools that actually <span className="heighlight">go hard</span>
+              </h1>
+              <p className="page-subtitle">
+                The lesser-known, criminally underrated AI tools and sites. Free stuff
+                prioritized. Your LinkedIn bio is about to level up.
+              </p>
 
-            {/* Stats */}
-            <div className="stats">
-              <div className="card2">
-                <h2>200+</h2>
-                <p>Tools Listed</p>
-              </div>
-              <div className="card2">
-                <h2>80%</h2>
-                <p>Free Tools</p>
-              </div>
-              <div className="card2">
-                <h2>Weekly</h2>
-                <p>Updated</p>
-              </div>
-            </div>
-
-            {/* Search */}
-            <div className="search-box">
-              <input
-                type="text"
-                placeholder="Search tools..."
-                value={searchQuery}
-                onChange={e => setSearchQuery(e.target.value)}
-              />
-            </div>
-
-            {/* Filter buttons */}
-            <div className="categories">
-              {FILTERS.map(f => (
-                <button
-                  key={f.value}
-                  data-filter={f.value}
-                  className={currentFilter === f.value ? "active" : ""}
-                  onClick={() => setCurrentFilter(f.value)}
-                >
-                  {f.label}
-                </button>
-              ))}
-            </div>
-
-            {/* Tool cards */}
-            <div className="tools-list">
-              {filtered.map(tool => (
-                <div key={tool.id} className="card" data-category={tool.category}>
-
-                  <div className="card-img">
-                    <img src={tool.image} alt={tool.name} />
-                    <div className="rating">⭐ {tool.rating}</div>
-                    <div className="tags-top">
-                      <span className="tag free">{tool.price}</span>
-                      <span className="tag category">{tool.category}</span>
-                    </div>
-                  </div>
-
-                  <div className="card-body">
-                    <h3>{tool.name}</h3>
-                    <p>{tool.description}</p>
-                    <div className="hashtags">
-                      {tool.tags.map(tag => (
-                        <span key={tag}>{tag}</span>
-                      ))}
-                    </div>
-                    <a href={tool.url} target="_blank" rel="noreferrer" className="btn">
-                      Check it out ↗
-                    </a>
-                  </div>
-
+              <div className="stats">
+                <div className="card2">
+                  <h2>{loading ? "..." : `${totalTools}+`}</h2>
+                  <p>Tools Listed</p>
                 </div>
-              ))}
-            </div>
+                <div className="card2">
+                  <h2>{loading ? "..." : `${freePercent}%`}</h2>
+                  <p>Free Tools</p>
+                </div>
+                <div className="card2">
+                  <h2>{loading ? "..." : liveCount > 0 ? liveCount : "Daily"}</h2>
+                  <p>{liveCount > 0 ? "Live Picks" : "Updated"}</p>
+                </div>
+              </div>
+
+              <div className="search-box">
+                <input
+                  type="text"
+                  placeholder="Search tools..."
+                  value={search}
+                  onChange={e => setSearch(e.target.value)}
+                />
+              </div>
+
+              <div className="categories">
+                {FILTERS.map(f => (
+                  <button
+                    key={f.value}
+                    className={filter === f.value ? "active" : ""}
+                    onClick={() => setFilter(f.value)}
+                  >
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+
+            </div>{/* end tools-header */}
+
+            {loading ? (
+              <div className="tools-loading">
+                <div className="tools-spinner" />
+                <p>Fetching today's tools...</p>
+              </div>
+            ) : error ? (
+              <div className="tools-empty">
+                <p>Couldn't connect to the server. Make sure Flask is running on port 5000.</p>
+              </div>
+            ) : visible.length === 0 ? (
+              <div className="tools-empty">
+                <p>No tools found{search ? ` for "${search}"` : ""}.</p>
+              </div>
+            ) : (
+              <div className="tools-list">
+                {visible.map(tool => <ToolCard key={tool.id} tool={tool} />)}
+              </div>
+            )}
 
           </div>
         </main>
@@ -353,5 +582,3 @@ function Tools() {
     </>
   );
 }
-
-export default Tools;
