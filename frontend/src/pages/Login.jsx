@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 import "../styles/Login.css";
-import logo from "../assets/images/logo.svg";
-import thunder from "../assets/images/thunder.png";
+
 
 function Login() {
   const navigate = useNavigate();
@@ -70,22 +69,22 @@ function Login() {
       {/* LEFT PANEL */}
       <div className="login-left">
         <div className="login-left-content">
-          <img src={logo} alt="Decrypt Logo" className="login-logo" />
+          <img src="/images/logo.svg" alt="Decrypt Logo" className="login-logo" />
           <h1>DECRYPT</h1>
           <p className="tagline">
             "the tech news platform for people who actually want to know what's going on"
           </p>
           <div className="features">
             <div className="feature-item">
-              <div className="icon-circle"><img src={thunder} alt="icon" /></div>
+              <div className="icon-circle"><img src="/images/thunder.png" alt="icon" /></div>
               <span>Smart summaries, no fluff</span>
             </div>
             <div className="feature-item">
-              <div className="icon-circle"><img src={thunder} alt="icon" /></div>
+              <div className="icon-circle"><img src="/images/thunder.png" alt="icon" /></div>
               <span>AI bot on every article</span>
             </div>
             <div className="feature-item">
-              <div className="icon-circle"><img src={thunder} alt="icon" /></div>
+              <div className="icon-circle"><img src="/images/thunder.png" alt="icon" /></div>
               <span>Student perks unlocked</span>
             </div>
           </div>
@@ -106,7 +105,7 @@ function Login() {
           {/* Error box - only shows if there's an error */}
           {error && <div className="error-box">{error}</div>}
 
-          <form onSubmit={handleLogin}>
+          <form className="login-form" onSubmit={handleLogin}>
             <label>Email</label>
             <input
               type="email"

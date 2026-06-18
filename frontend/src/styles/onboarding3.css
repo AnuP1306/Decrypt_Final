@@ -27,10 +27,18 @@ body {
   width: 42px;
 }
 
-.logo-text {
+/* .logo-text {
   font-family: 'Syne', sans-serif;
   font-weight: 750;
   font-size: 18px;
+} */
+
+.logo-text {
+  font-family: 'Syne', sans-serif;
+  font-weight: 740;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  color: #30312c;
 }
 
 .progress-info {

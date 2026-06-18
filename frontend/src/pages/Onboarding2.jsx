@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/images/logo.svg";
 
 const styles = {
   wrapper: {
@@ -182,7 +181,7 @@ function Onboarding2() {
       {/* TOP BAR */}
       <div style={styles.topBar}>
         <div style={styles.logoRow}>
-          <img src={logo} alt="Decrypt logo" style={styles.logoImg} />
+          <img src="/images/logo.svg" alt="Decrypt logo" style={styles.logoImg} />
           <span style={styles.logoText}>DECRYPT</span>
         </div>
         <div style={styles.progressInfo}>2 of 3</div>

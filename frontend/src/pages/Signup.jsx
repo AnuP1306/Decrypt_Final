@@ -3,9 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 import "../styles/Signup.css";
-import logo from "../assets/images/logo.svg";
-import thunder from "../assets/images/thunder.png";
-import technewz from "../assets/images/Technewz.png";
 
 function Signup() {
   const navigate = useNavigate();
@@ -56,7 +53,7 @@ function Signup() {
 
         <div className="signup-container">
           <div className="logo-row">
-            <img src={logo} alt="Decrypt Logo" />
+            <img src="/images/logo.svg" alt="Decrypt Logo" />
             <span className="logo-text">DECRYPT</span>
           </div>
 
@@ -135,23 +132,23 @@ function Signup() {
       {/* RIGHT SIDE */}
       <div className="signup-right">
         <div className="right-content">
-          <img src={technewz} alt="Technewz" className="Technewz-img" />
+          <img src="/images/Technewz.png" alt="Technewz" className="Technewz-img" />
           <p className="right-tag">Built for the Locked-in generation</p>
           <div className="features">
             <div className="feature-item">
-              <div className="icon-circle"><img src={thunder} alt="icon" /></div>
+              <div className="icon-circle"><img src="/images/thunder.png" alt="icon" /></div>
               <span>50+ news articles daily</span>
             </div>
             <div className="feature-item">
-              <div className="icon-circle"><img src={thunder} alt="icon" /></div>
+              <div className="icon-circle"><img src="/images/thunder.png" alt="icon" /></div>
               <span>AI tools for students</span>
             </div>
             <div className="feature-item">
-              <div className="icon-circle"><img src={thunder} alt="icon" /></div>
+              <div className="icon-circle"><img src="/images/thunder.png" alt="icon" /></div>
               <span>Free student opportunities</span>
             </div>
             <div className="feature-item">
-              <div className="icon-circle"><img src={thunder} alt="icon" /></div>
+              <div className="icon-circle"><img src="/images/thunder.png" alt="icon" /></div>
               <span>10-min daily flashcards</span>
             </div>
           </div>

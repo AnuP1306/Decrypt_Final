@@ -59,7 +59,7 @@ h2, h3 {
 
 .logo-text {
   font-family: 'Syne', sans-serif;
-  font-weight: 740;
+  font-weight: 740 ; 
   font-size: 22px;
   letter-spacing: -0.5px;
   color: #30312c;
