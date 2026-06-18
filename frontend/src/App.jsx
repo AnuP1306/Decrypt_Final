@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 
 // Pages
 import Landing from "./pages/Landing";
@@ -20,67 +21,33 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    // AuthProvider MUST wrap BrowserRouter so every page/component
+    // in the whole app can access currentUser, login, logout etc.
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
 
-        {/* Public Routes */}
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+          {/* Public Routes */}
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
 
-        {/* Onboarding */}
-        <Route path="/onboarding-1" element={<Onboarding1 />} />
-        <Route path="/onboarding-2" element={<Onboarding2 />} />
-        <Route path="/onboarding-3" element={<Onboarding3 />} />
+          {/* Onboarding - auth required (user just signed up) but
+              onboardingCompleted check is skipped here intentionally */}
+          <Route path="/onboarding-1" element={<Onboarding1 />} />
+          <Route path="/onboarding-2" element={<Onboarding2 />} />
+          <Route path="/onboarding-3" element={<Onboarding3 />} />
 
-        {/* Protected Routes */}
-        <Route
-          path="/home"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        />
+          {/* Protected Routes */}
+          <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/daily-brief" element={<ProtectedRoute><DailyBrief /></ProtectedRoute>} />
+          <Route path="/tools" element={<ProtectedRoute><Tools /></ProtectedRoute>} />
+          <Route path="/opportunities" element={<ProtectedRoute><Opportunities /></ProtectedRoute>} />
+          <Route path="/saved" element={<ProtectedRoute><Saved /></ProtectedRoute>} />
 
-        <Route
-          path="/daily-brief"
-          element={
-            <ProtectedRoute>
-              <DailyBrief />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/tools"
-          element={
-            <ProtectedRoute>
-              <Tools />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/opportunities"
-          element={
-            <ProtectedRoute>
-              <Opportunities />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="/saved"
-          element={
-            <ProtectedRoute>
-              <Saved />
-            </ProtectedRoute>
-          }
-        />
-
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 

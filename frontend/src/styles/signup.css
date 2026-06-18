@@ -2,13 +2,15 @@ body {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
   overflow-y: auto;
-  background: #F7F3F0; /* 🔥 fixes white gap */
+  background: #F7F3F0;
+  /* 🔥 fixes white gap */
 }
 
 /* LAYOUT */
 .signup-wrapper {
   display: flex;
-  min-height: 100vh;   /* 🔥 FIX: prevents bottom white gap */
+  min-height: 100vh;
+  /* 🔥 FIX: prevents bottom white gap */
 }
 
 /* ================= LEFT ================= */
@@ -19,15 +21,18 @@ body {
 
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* 🔥 better top alignment */
+  align-items: flex-start;
+  /* 🔥 better top alignment */
 
-  padding: 60px 60px 40px; /* 🔥 balanced spacing */
+  padding: 60px 60px 40px;
+  /* 🔥 balanced spacing */
 }
 
 .signup-container {
   width: 100%;
   max-width: 560px;
-  margin-top: 20px;   /* 🔥 reduced from 60 → moves UP */
+  margin-top: 20px;
+  /* 🔥 reduced from 60 → moves UP */
 }
 
 /* 🔥 LOGO ROW FIX */
@@ -35,9 +40,11 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
- 
-  margin-bottom: 16px;  /* slightly tighter */
-  transform: translateY(14px);   /* 🔥 moves ONLY logo down */
+
+  margin-bottom: 16px;
+  /* slightly tighter */
+  transform: translateY(14px);
+  /* 🔥 moves ONLY logo down */
 }
 
 .logo-row img {
@@ -56,17 +63,19 @@ body {
   top: 50px;
   left: 55px;
 
-  font-size: 16px;     /* 🔥 bigger */
+  font-size: 16px;
+  /* 🔥 bigger */
   font-weight: 500;
 
-  color: rgba(48,49,44,0.6);
+  color: rgba(48, 49, 44, 0.6);
   text-decoration: none;
 
   transition: 0.2s ease;
 }
 
 .back:hover {
-  color: #000;          /* 🔥 turns black */
+  color: #000;
+  /* 🔥 turns black */
   transform: translateX(-2px);
 }
 
@@ -75,14 +84,16 @@ h1 {
   font-family: 'Syne', sans-serif;
   font-size: 44px;
   font-weight: 800;
-  margin-bottom: 12px;  /* 🔥 tighter */
+  margin-bottom: 12px;
+  /* 🔥 tighter */
 }
 
 /* SUBTITLE (closer now) */
 .subtitle {
   font-size: 17px;
-  color: rgba(48,49,44,0.6);
-  margin-bottom: 20px;  /* 🔥 reduced gap */
+  color: rgba(48, 49, 44, 0.6);
+  margin-bottom: 20px;
+  /* 🔥 reduced gap */
 }
 
 /* ================= FORM ================= */
@@ -110,7 +121,8 @@ h1 {
   width: 100%;
   padding: 18px;
   border-radius: 16px;
-  border: 2px solid rgba(48,49,44,0.25);  /* 🔥 darker */
+  border: 2px solid rgba(48, 49, 44, 0.25);
+  /* 🔥 darker */
   font-size: 15px;
   background: #ffffff;
   box-sizing: border-box;
@@ -148,7 +160,8 @@ h1 {
   background: white;
   cursor: pointer;
   position: relative;
-  margin-top: 2px;   /* 🔥 aligns with text */
+  margin-top: 2px;
+  /* 🔥 aligns with text */
 }
 
 /* checked state */
@@ -202,7 +215,8 @@ h1 {
 .login-link a {
   color: #3F38E8;
   font-weight: 600;
-  text-decoration: none;   /* 🔥 removes underline */
+  text-decoration: none;
+  /* 🔥 removes underline */
 }
 
 /* ================= RIGHT ================= */
@@ -213,7 +227,8 @@ h1 {
 
   display: flex;
   justify-content: center;
-  align-items: center;   /* 🔥 center base */
+  align-items: center;
+  /* 🔥 center base */
 
   padding: 50px;
   color: white;
@@ -225,11 +240,13 @@ h1 {
   max-width: 420px;
   text-align: center;
 
-  margin-top: 2px;   /* 🔥 PUSH DOWN CLEANLY */
+  margin-top: 2px;
+  /* 🔥 PUSH DOWN CLEANLY */
 }
 
 .Technewz-img {
-  width: 420px;   /* 🔥 increased size */
+  width: 420px;
+  /* 🔥 increased size */
   max-width: 100%;
   margin-bottom: 6px;
 
@@ -258,7 +275,7 @@ h1 {
   align-items: center;
   gap: 12px;
 
-  background: rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.08);
   padding: 14px 16px;
   border-radius: 14px;
 
@@ -284,4 +301,14 @@ h1 {
 /* TEXT */
 .feature-item span {
   font-size: 14px;
+}
+
+.error-box {
+  background-color: #fff0f0;
+  border: 1px solid #ffcccc;
+  color: #cc0000;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  margin-bottom: 16px;
 }
