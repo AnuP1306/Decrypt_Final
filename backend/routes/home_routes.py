@@ -23,9 +23,15 @@ import os
 home_bp = Blueprint('home', __name__)
 
 # ✅ Home Page
+# @home_bp.route('/')
+# def landing():
+#     return render_template("landing.html")
 @home_bp.route('/')
 def landing():
-    return render_template("landing.html")
+    return {
+        "status": "success",
+        "message": "Decrypt Backend Running"
+    }
 
 # ✅ HOME PAGE (after explore)
 @home_bp.route('/home')
