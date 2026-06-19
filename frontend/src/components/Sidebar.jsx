@@ -1,19 +1,52 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useAuth } from "../context/AuthContext";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 function Sidebar() {
-  const user =
-  JSON.parse(
-    localStorage.getItem("user")
-  ) || {
-    name: "Explorer",
-    domain: "AI",
-    level: "Beginner"
-  };
+  // const user =
+  // JSON.parse(
+  //   localStorage.getItem("user")
+  // ) || {
+  //   name: "Explorer",
+  //   domain: "AI",
+  //   level: "Beginner"
+  // };
+  const { currentUser } = useAuth();
+
+const [user, setUser] = useState({
+  name: "Explorer",
+  domain: "AI",
+  level: "Beginner"
+});
 
   const location = useLocation();
   const [collapsed, setCollapsed] =
     useState(false);
+
+    useEffect(() => {
+      async function loadUser() {
+        if (!currentUser) return;
+    
+        const userRef = doc(db, "users", currentUser.uid);
+        const snap = await getDoc(userRef);
+    
+        if (snap.exists()) {
+          const data = snap.data();
+    
+          setUser({
+            name: data.name || "Explorer",
+            domain: data.personalization?.vibe || "AI",
+            level:
+              data.personalization?.knowledgeLevel?.split("—")[0]?.trim() ||
+              "Beginner"
+          });
+        }
+      }
+    
+      loadUser();
+    }, [currentUser]);
 
   return (
     <div

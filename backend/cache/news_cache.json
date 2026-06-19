@@ -1,58 +1,4 @@
 {
-  "57b1970d2373e515c8f5d0c8527668e6": {
-    "id": "57b1970d2373e515c8f5d0c8527668e6",
-    "title": "India's School Leaders Gather in Lucknow This Week to Push Back on AI",
-    "desc": "Lucknow (Uttar Pradesh) [India], June 15: As artificial intelligence pours into classrooms worldwide, one of India's largest gatherings of school leaders opens in Lucknow this week with a deliberately countercultural message: the purpose of school is not to make children faster than machines, but more human than ever. The 17th Ed Leadership International Roundtable runs June 18-20, 2026 at the World Unity Convention Centre, City Montessori School, taking up the unfinished promise of India's National Education Policy (NEP) 2020--moving classrooms from teaching to learning, from passive to active, and from academics alone to holistic, inclusive education--under the theme 'Growing the Inner Life in the Age of AI.'",
-    "content": "VMPL\nLucknow (Uttar Pradesh) [India], June 15: As artificial intelligence pours into classrooms worldwide, one of India's largest gatherings of school leaders opens in Lucknow this week with a deliberately countercultural message: the purpose of scho... [4837 chars]",
-    "image": "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYTE1ODE1YjMwLTY4YmUtMTFmMS1hZmFlLTJkNzNlMTMwYzExYi5qcGc=",
-    "domain": "AI",
-    "date": "2026-06-16"
-  },
-  "d73b01f0447486d5096bea3d892f2ee5": {
-    "id": "d73b01f0447486d5096bea3d892f2ee5",
-    "title": "NASA Trains AI on Billions of Earth Observations to Accelerate Climate Research",
-    "desc": "NASA is using artificial intelligence and machine learning to analyse billions of Earth observation records, helping scientists accelerate climate research, improve environmental monitoring, uncover hidden patterns, and transform satellite data into actionable scientific insights.",
-    "content": "Synopsis\nNASA is expanding its AI strategy to transform decades of Earth observation data into actionable scientific insights. By combining artificial intelligence, machine learning, climate research, satellite imagery, and Earth science, the agency ... [5274 chars]",
-    "image": "https://img.etimg.com/thumb/msid-131746509,width-1200,height-630,imgsize-18276247,overlay-economictimes/articleshow.jpg",
-    "domain": "AI",
-    "date": "2026-06-16"
-  },
-  "3ff39d094145798778a574737111143a": {
-    "id": "3ff39d094145798778a574737111143a",
-    "title": "WormSORT: A detection-based multiple object tracking model for individual silkworms in breeding environments",
-    "desc": "Author summary Artificial intelligence (AI) has achieved remarkable progress in computational biology, with notable success in tasks such as protein structure prediction, molecular property modeling, and drug discovery. In the field of silkworm breeding, AI also shows great potential to accelerate research and production processes, enabling large-scale counting, behavior recognition, and health condition assessment. This study focuses on leveraging deep learning techniques to extract crawling trajectories of silkworms through multiple object tracking. Accurate trajectory information provides essential support for analyzing individual movement patterns, modeling group interactions, and evaluating traits related to growth and health conditions. Therefore, it serves as a fundamental tool that bridges counting, behavior analysis, and health assessment tasks. However, most existing multiple object tracking methods are designed for pedestrians or vehicles. In contrast, silkworm tracking presents unique challenges, including dense distributions, highly non-linear motion patterns, and strong visual similarity among individuals, which limit the direct applicability of existing approaches. To address these challenges, this work proposes a multiple object tracking method tailored for silkworm scenarios and constructs a dedicated silkworm tracking dataset to validate its effectiveness.",
-    "content": "3.2. WormSORT for silkworm MOT\nTo enable precise tracking of individual silkworms in a breeding environment, we propose a multiple object tracking (MOT) method based on a tracking-by-detection (TBD) framework, termed WormSORT. As illustrated in Fig 2... [23590 chars]",
-    "image": "https://journals.plos.org/ploscompbiol/article/figure/image?id=10.1371/journal.pcbi.1014410.g009&size=inline",
-    "domain": "AI",
-    "date": "2026-06-16"
-  },
-  "a9ab9c70a5452e9cf8db0d988299e3cb": {
-    "id": "a9ab9c70a5452e9cf8db0d988299e3cb",
-    "title": "Oracle to Train 3 Lakh Students, Professionals Across Uttar Pradesh in AI, Cloud, Cybersecurity",
-    "desc": "Oracle partners with Uttar Pradesh State Skill Development Mission to train 300,000 students and professionals in AI, cloud, cybersecurity and data science by 2029, offering 300+ hours of free digital learning via Oracle MyLearn with badges and professional certifications to boost employability and build a future-ready tech workforce.",
-    "content": "Oracle on Monday announced a partnership with Uttar Pradesh State Skill Development Mission (UPSDM) to deliver skills training in AI, cloud, cybersecurity and data science to three lakh students and professionals by 2029.\nThe move aims to bolster emp... [741 chars]",
-    "image": "https://media.assettype.com/outlookbusiness/2026-06-15/uyrbqi4f/shortstories520251001.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
-    "domain": "IT",
-    "date": "2026-06-16"
-  },
-  "f1c9ceddbd69b3cfb8c8b7ec54651da4": {
-    "id": "f1c9ceddbd69b3cfb8c8b7ec54651da4",
-    "title": "Oracle to train 300,000 professionals across Uttar Pradesh in AI, cloud, cybersecurity",
-    "desc": "Oracle is launching an impactful initiative alongside the Uttar Pradesh State Skill Development Mission! This strategic collaboration will offer invaluable training resources focusing on AI, cloud services, cybersecurity, and data science. By the year 2029, around 300,000 students and professionals are set to benefit from more than 300 hours of skill-building courses.",
-    "content": "Synopsis\nOracle is launching an impactful initiative alongside the Uttar Pradesh State Skill Development Mission! This strategic collaboration will offer invaluable training resources focusing on AI, cloud services, cybersecurity, and data science. B... [1577 chars]",
-    "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-43816,resizemode-75,msid-131738629/tech/technology/oracle-to-train-300000-professionals-across-uttar-pradesh-in-ai-cloud-cybersecurity.jpg",
-    "domain": "IT",
-    "date": "2026-06-16"
-  },
-  "9ba8563dfab30946e639927b7596fcc2": {
-    "id": "9ba8563dfab30946e639927b7596fcc2",
-    "title": "Applied Materials Unveils Deposition and Selective Etch Systems to Advance 3D Chip Scaling",
-    "desc": "New systems enable precision materials engineering in high-aspect-ratio 3D logic and memory chip structuresCentris™ Spectral™ SiN ALD leverages innovative microwave plasma technology to deliver uniform silicon nitride deposition in challenging 3D structuresProducer™ Selectra™ Mo Etch selectively removes molybdenum for wordline separation to enable 3D NAND scalingThe new systems are being used by leading logic and memory chipmakers for advanced node manufacturing SANTA CLARA, Calif., June 15, 2026 (GLOBE NEWSWIRE) -- Applied Materials, Inc., the leader in materials engineering for the semiconductor industry, today introduced two new chipmaking systems designed to solve an emerging challenge in leading-edge semiconductor manufacturing: achieving precision processing in increasingly deep and narrow 3D structures. The new deposition and etch systems help chipmakers extend scaling in logic and memory to deliver higher performance, improved energy efficiency, and better manufacturing yield for next-generation AI chips.",
-    "content": "New systems enable precision materials engineering in high-aspect-ratio 3D logic and memory chip structures\nCentris™ Spectral™ SiN ALD leverages innovative microwave plasma technology to deliver uniform silicon nitride deposition in challenging 3D st... [6818 chars]",
-    "image": "https://manilatimes.net/manilatimes/uploads/images/2026/06/16/1100141.jpg",
-    "domain": "Electronics",
-    "date": "2026-06-16"
-  },
   "4048ef655aab6bbff99086c3606ba444": {
     "id": "4048ef655aab6bbff99086c3606ba444",
     "title": "IITM Pravartak Announces Batch 03 of Applied Artificial Intelligence and Deep Learning Programme to Build Enterprise",
@@ -169,5 +115,32 @@
     "image": "https://blog.tipranks.com/wp-content/uploads/2026/06/image-1740.png?utm_source=markets.businessinsider.com&utm_medium=referral",
     "domain": "Electronics",
     "date": "2026-06-18"
+  },
+  "a9ab9c70a5452e9cf8db0d988299e3cb": {
+    "id": "a9ab9c70a5452e9cf8db0d988299e3cb",
+    "title": "Oracle to Train 3 Lakh Students, Professionals Across Uttar Pradesh in AI, Cloud, Cybersecurity",
+    "desc": "Oracle partners with Uttar Pradesh State Skill Development Mission to train 300,000 students and professionals in AI, cloud, cybersecurity and data science by 2029, offering 300+ hours of free digital learning via Oracle MyLearn with badges and professional certifications to boost employability and build a future-ready tech workforce.",
+    "content": "Oracle on Monday announced a partnership with Uttar Pradesh State Skill Development Mission (UPSDM) to deliver skills training in AI, cloud, cybersecurity and data science to three lakh students and professionals by 2029.\nThe move aims to bolster emp... [741 chars]",
+    "image": "https://media.assettype.com/outlookbusiness/2026-06-15/uyrbqi4f/shortstories520251001.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+    "domain": "IT",
+    "date": "2026-06-19"
+  },
+  "f1c9ceddbd69b3cfb8c8b7ec54651da4": {
+    "id": "f1c9ceddbd69b3cfb8c8b7ec54651da4",
+    "title": "Oracle to train 300,000 professionals across Uttar Pradesh in AI, cloud, cybersecurity",
+    "desc": "Oracle is launching an impactful initiative alongside the Uttar Pradesh State Skill Development Mission! This strategic collaboration will offer invaluable training resources focusing on AI, cloud services, cybersecurity, and data science. By the year 2029, around 300,000 students and professionals are set to benefit from more than 300 hours of skill-building courses.",
+    "content": "Synopsis\nOracle is launching an impactful initiative alongside the Uttar Pradesh State Skill Development Mission! This strategic collaboration will offer invaluable training resources focusing on AI, cloud services, cybersecurity, and data science. B... [1621 chars]",
+    "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-43816,resizemode-75,msid-131738629/tech/technology/oracle-to-train-300000-professionals-across-uttar-pradesh-in-ai-cloud-cybersecurity.jpg",
+    "domain": "IT",
+    "date": "2026-06-19"
+  },
+  "9ba8563dfab30946e639927b7596fcc2": {
+    "id": "9ba8563dfab30946e639927b7596fcc2",
+    "title": "Applied Materials Unveils Deposition and Selective Etch Systems to Advance 3D Chip Scaling",
+    "desc": "New systems enable precision materials engineering in high-aspect-ratio 3D logic and memory chip structuresCentris™ Spectral™ SiN ALD leverages innovative microwave plasma technology to deliver uniform silicon nitride deposition in challenging 3D structuresProducer™ Selectra™ Mo Etch selectively removes molybdenum for wordline separation to enable 3D NAND scalingThe new systems are being used by leading logic and memory chipmakers for advanced node manufacturing SANTA CLARA, Calif., June 15, 2026 (GLOBE NEWSWIRE) -- Applied Materials, Inc., the leader in materials engineering for the semiconductor industry, today introduced two new chipmaking systems designed to solve an emerging challenge in leading-edge semiconductor manufacturing: achieving precision processing in increasingly deep and narrow 3D structures. The new deposition and etch systems help chipmakers extend scaling in logic and memory to deliver higher performance, improved energy efficiency, and better manufacturing yield for next-generation AI chips.",
+    "content": "New systems enable precision materials engineering in high-aspect-ratio 3D logic and memory chip structures\nCentris™ Spectral™ SiN ALD leverages innovative microwave plasma technology to deliver uniform silicon nitride deposition in challenging 3D st... [6818 chars]",
+    "image": "https://manilatimes.net/manilatimes/uploads/images/2026/06/16/1100141.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-19"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-18",
+  "date": "2026-06-19",
   "tools": [
     {
       "id": "ph-1171217",
@@ -11,24 +11,7 @@
       "favicon": "",
       "category": "AI Agents",
       "is_free": true,
-      "votes": 474,
-      "source": "producthunt",
-      "tags": [
-        "#AIAgents",
-        "#ProductHunt"
-      ]
-    },
-    {
-      "id": "ph-1157109",
-      "name": "Journey Now",
-      "tagline": "Learning copilot for human ambition",
-      "description": "Learning copilot for human ambition",
-      "url": "https://www.producthunt.com/r/TM6F4IDMAQBU2P?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/bd217cdf-2563-4b12-ac2f-618b5b9271a7.gif?auto=format",
-      "favicon": "",
-      "category": "AI Agents",
-      "is_free": true,
-      "votes": 416,
+      "votes": 478,
       "source": "producthunt",
       "tags": [
         "#AIAgents",
@@ -45,7 +28,24 @@
       "favicon": "",
       "category": "AI Agents",
       "is_free": true,
-      "votes": 406,
+      "votes": 411,
+      "source": "producthunt",
+      "tags": [
+        "#AIAgents",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1172037",
+      "name": "Kickbacks.ai",
+      "tagline": "Get paid to wait for Claude Code to finish",
+      "description": "Get paid to wait for Claude Code to finish",
+      "url": "https://www.producthunt.com/r/6UFCMNIYCIPIVY?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/10d192dc-20b6-44b4-8589-2b0578ef9908.jpeg?auto=format",
+      "favicon": "",
+      "category": "AI Agents",
+      "is_free": true,
+      "votes": 298,
       "source": "producthunt",
       "tags": [
         "#AIAgents",
@@ -215,16 +215,16 @@
       ]
     },
     {
-      "id": "ph-1165274",
-      "name": "Respan Gateway",
-      "tagline": "One AI gateway with built-in observability and evals",
-      "description": "One AI gateway with built-in observability and evals",
-      "url": "https://www.producthunt.com/r/PZT5PPTBVKBPVT?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/a12a5753-1d75-46f7-99d1-1c1ad7e46b0c.png?auto=format",
+      "id": "ph-1170857",
+      "name": "Swytchcode CLI",
+      "tagline": "Give agents reliable access to 2,000+ APIs w/ durable state",
+      "description": "Give agents reliable access to 2,000+ APIs w/ durable state",
+      "url": "https://www.producthunt.com/r/XGLQDUQRILY2VD?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/34d8f65f-417b-412c-8068-2567903f0814.png?auto=format",
       "favicon": "",
       "category": "Developer Tools",
       "is_free": true,
-      "votes": 453,
+      "votes": 417,
       "source": "producthunt",
       "tags": [
         "#DeveloperTools",
@@ -241,7 +241,7 @@
       "favicon": "",
       "category": "Developer Tools",
       "is_free": true,
-      "votes": 408,
+      "votes": 414,
       "source": "producthunt",
       "tags": [
         "#DeveloperTools",
@@ -258,24 +258,7 @@
       "favicon": "",
       "category": "Developer Tools",
       "is_free": true,
-      "votes": 365,
-      "source": "producthunt",
-      "tags": [
-        "#DeveloperTools",
-        "#ProductHunt"
-      ]
-    },
-    {
-      "id": "ph-1170857",
-      "name": "Swytchcode CLI",
-      "tagline": "Give agents reliable access to 2,000+ APIs w/ durable state",
-      "description": "Give agents reliable access to 2,000+ APIs w/ durable state",
-      "url": "https://www.producthunt.com/r/XGLQDUQRILY2VD?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/34d8f65f-417b-412c-8068-2567903f0814.png?auto=format",
-      "favicon": "",
-      "category": "Developer Tools",
-      "is_free": true,
-      "votes": 357,
+      "votes": 366,
       "source": "producthunt",
       "tags": [
         "#DeveloperTools",
@@ -292,7 +275,7 @@
       "favicon": "",
       "category": "Developer Tools",
       "is_free": true,
-      "votes": 348,
+      "votes": 354,
       "source": "producthunt",
       "tags": [
         "#DeveloperTools",
@@ -300,21 +283,37 @@
       ]
     },
     {
-      "id": "hn-26271117",
-      "name": "Redbean",
-      "tagline": "Single-file distributable web server",
-      "description": "Single-file distributable web server",
-      "url": "https://justine.lol/redbean/index.html",
-      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://justine.lol&size=64",
-      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://justine.lol&size=64",
+      "id": "ph-1173475",
+      "name": "Tabstack Dev Tools",
+      "tagline": "Ditch your scraper. Make one API call with any tool.",
+      "description": "Ditch your scraper. Make one API call with any tool.",
+      "url": "https://www.producthunt.com/r/BTEFHM3YD7BEYD?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/a1e8c483-7b8f-44d3-8a73-32c0a5be8a0a.png?auto=format",
+      "favicon": "",
       "category": "Developer Tools",
       "is_free": true,
-      "votes": 1998,
-      "source": "hackernews",
+      "votes": 329,
+      "source": "producthunt",
       "tags": [
         "#DeveloperTools",
-        "#ShowHN",
-        "#Free"
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1166106",
+      "name": "PandaProbe Cloud",
+      "tagline": "Agent Engineering, Fully Managed.",
+      "description": "Agent Engineering, Fully Managed.",
+      "url": "https://www.producthunt.com/r/EFZITJ632XZJX3?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/a1ce51ed-2cf6-44d5-b0e8-3a89ec627a55.png?auto=format",
+      "favicon": "",
+      "category": "Developer Tools",
+      "is_free": true,
+      "votes": 291,
+      "source": "producthunt",
+      "tags": [
+        "#DeveloperTools",
+        "#ProductHunt"
       ]
     },
     {
@@ -327,7 +326,7 @@
       "favicon": "",
       "category": "Design & Creative",
       "is_free": true,
-      "votes": 436,
+      "votes": 516,
       "source": "producthunt",
       "tags": [
         "#DesignCreative",
@@ -344,7 +343,7 @@
       "favicon": "",
       "category": "Design & Creative",
       "is_free": true,
-      "votes": 388,
+      "votes": 392,
       "source": "producthunt",
       "tags": [
         "#DesignCreative",
@@ -361,7 +360,7 @@
       "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://vorpus.github.io&size=64",
       "category": "Design & Creative",
       "is_free": true,
-      "votes": 1179,
+      "votes": 1180,
       "source": "hackernews",
       "tags": [
         "#DesignCreative",
@@ -424,23 +423,6 @@
       ]
     },
     {
-      "id": "ph-1168743",
-      "name": "Bond",
-      "tagline": "The AI to-do list that does itself",
-      "description": "The AI to-do list that does itself",
-      "url": "https://www.producthunt.com/r/7SFOLQBBWUEQXW?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/c2f45b4d-48ee-4f11-8c1b-8c873f032545.png?auto=format",
-      "favicon": "",
-      "category": "Productivity",
-      "is_free": true,
-      "votes": 711,
-      "source": "producthunt",
-      "tags": [
-        "#Productivity",
-        "#ProductHunt"
-      ]
-    },
-    {
       "id": "ph-1153772",
       "name": "Goldfish",
       "tagline": "Press Option. It knows your work and replies like you",
@@ -450,7 +432,7 @@
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 613,
+      "votes": 641,
       "source": "producthunt",
       "tags": [
         "#Productivity",
@@ -458,16 +440,16 @@
       ]
     },
     {
-      "id": "ph-1167625",
-      "name": "Asmi AI",
-      "tagline": "AI that handles your personal chores in the real world",
-      "description": "AI that handles your personal chores in the real world",
-      "url": "https://www.producthunt.com/r/Y5YVSLCZJ7BZ6I?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/00f62138-58b0-4b21-a8e0-8d0006c51ee8.png?auto=format",
+      "id": "ph-1150612",
+      "name": "Upstream",
+      "tagline": "The inbox designed for humans and agents",
+      "description": "The inbox designed for humans and agents",
+      "url": "https://www.producthunt.com/r/RWE7MKUX4XZRYA?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/b5e8c870-d74a-4b7a-9bd0-30ffb55d8895.png?auto=format",
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 480,
+      "votes": 575,
       "source": "producthunt",
       "tags": [
         "#Productivity",
@@ -484,7 +466,7 @@
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 457,
+      "votes": 463,
       "source": "producthunt",
       "tags": [
         "#Productivity",
@@ -501,7 +483,7 @@
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 422,
+      "votes": 430,
       "source": "producthunt",
       "tags": [
         "#Productivity",
@@ -509,19 +491,70 @@
       ]
     },
     {
-      "id": "ph-1168506",
-      "name": "Terminal Mode by Even Realities",
-      "tagline": "Keep coding agents always in sight",
-      "description": "Keep coding agents always in sight",
-      "url": "https://www.producthunt.com/r/JP725UN73VRUJN?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/67815f4b-9cf3-4310-ad62-3d6ed3d6850f.png?auto=format",
+      "id": "ph-1169842",
+      "name": "Qursor",
+      "tagline": "Point at any UI to send exact context to your AI",
+      "description": "Point at any UI to send exact context to your AI",
+      "url": "https://www.producthunt.com/r/UZAN2BZTEQ2HT3?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/41374a23-2540-407e-91b6-bb05dbb86c61.png?auto=format",
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 412,
+      "votes": 334,
       "source": "producthunt",
       "tags": [
         "#Productivity",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1166979",
+      "name": "Wobo - AI Job Search",
+      "tagline": "Tinder for jobs: swipe right and AI applies for you",
+      "description": "Tinder for jobs: swipe right and AI applies for you",
+      "url": "https://www.producthunt.com/r/4YVEDAOI6CJSFN?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/d99d307b-b661-406e-ac91-700523243d04.png?auto=format",
+      "favicon": "",
+      "category": "Productivity",
+      "is_free": true,
+      "votes": 319,
+      "source": "producthunt",
+      "tags": [
+        "#Productivity",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1173208",
+      "name": "Honestly",
+      "tagline": "See what Reddit and TikTok honestly think about your product",
+      "description": "See what Reddit and TikTok honestly think about your product",
+      "url": "https://www.producthunt.com/r/K3BBXOWI6EMJ53?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/2704d5b4-f4b5-48a3-a47f-252a26fea769.png?auto=format",
+      "favicon": "",
+      "category": "Marketing & Sales",
+      "is_free": true,
+      "votes": 451,
+      "source": "producthunt",
+      "tags": [
+        "#MarketingSales",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1167122",
+      "name": "Jesse",
+      "tagline": "Stop building Apollo/Clay lists. Search the live internet.",
+      "description": "Stop building Apollo/Clay lists. Search the live internet.",
+      "url": "https://www.producthunt.com/r/5ZOJC6SLGDVPKM?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/1bb6b29d-c5d2-4640-abcb-c0809d33efc5.png?auto=format",
+      "favicon": "",
+      "category": "Marketing & Sales",
+      "is_free": true,
+      "votes": 322,
+      "source": "producthunt",
+      "tags": [
+        "#MarketingSales",
         "#ProductHunt"
       ]
     },
@@ -535,7 +568,7 @@
       "favicon": "",
       "category": "Marketing & Sales",
       "is_free": true,
-      "votes": 302,
+      "votes": 306,
       "source": "producthunt",
       "tags": [
         "#MarketingSales",
@@ -594,42 +627,6 @@
         "#Marketing",
         "#Trends",
         "#Research"
-      ]
-    },
-    {
-      "id": "fb-mkt-2",
-      "name": "Beehiiv",
-      "tagline": "Newsletter platform built for growth",
-      "description": "Launch, grow, and monetize your newsletter. Built-in referral program, ad network, and analytics.",
-      "url": "https://beehiiv.com",
-      "image": "",
-      "favicon": "",
-      "category": "Marketing & Sales",
-      "is_free": true,
-      "votes": 0,
-      "source": "curated",
-      "tags": [
-        "#Marketing",
-        "#Newsletter",
-        "#Free"
-      ]
-    },
-    {
-      "id": "fb-mkt-3",
-      "name": "Taplio",
-      "tagline": "AI-powered LinkedIn growth tool",
-      "description": "Schedule posts, get AI content ideas, track analytics, and build your LinkedIn audience on autopilot.",
-      "url": "https://taplio.com",
-      "image": "",
-      "favicon": "",
-      "category": "Marketing & Sales",
-      "is_free": false,
-      "votes": 0,
-      "source": "curated",
-      "tags": [
-        "#Marketing",
-        "#LinkedIn",
-        "#AI"
       ]
     },
     {

@@ -173,36 +173,49 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import NewsCard from "../components/NewsCard";
 import RightSidebar from "../components/RightSidebar";
+import { useAuth } from "../context/AuthContext";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 const MINS_PER_CARD = 1.5;
 
-// Map signup domain values → filter values used by the feed.
-// Adjust keys to match whatever your auth flow stores in localStorage.
-const DOMAIN_FILTER_MAP = {
-  ai:          "ai",
-  it:          "it",
-  electronics: "electronics",
-  AI:          "ai",
-  IT:          "it",
-  Electronics: "electronics",
+const VIBE_TO_FILTER = {
+  "Artificial Intelligence": "ai",
+  "Technology": "it",
+  "Electronics": "electronics",
 };
 
-function getDefaultFilter() {
-  // Respect the domain the user chose at signup (stored by auth flow)
-  const userDomain = localStorage.getItem("userDomain");
-  if (userDomain && DOMAIN_FILTER_MAP[userDomain]) {
-    return DOMAIN_FILTER_MAP[userDomain];
-  }
-  // Guest users see only AI domain 
-  return "ai";
-}
+
+// Map signup domain values → filter values used by the feed.
+// Adjust keys to match whatever your auth flow stores in localStorage.
+// const DOMAIN_FILTER_MAP = {
+//   ai:          "ai",
+//   it:          "it",
+//   electronics: "electronics",
+//   AI:          "ai",
+//   IT:          "it",
+//   Electronics: "electronics",
+// };
+
+// function getDefaultFilter() {
+//   // Respect the domain the user chose at signup (stored by auth flow)
+//   const userDomain = localStorage.getItem("userDomain");
+//   if (userDomain && DOMAIN_FILTER_MAP[userDomain]) {
+//     return DOMAIN_FILTER_MAP[userDomain];
+//   }
+//   // Guest users see only AI domain 
+//   return "ai";
+// }
 
 function Home() {
 
   const [articles, setArticles]           = useState([]);
   const [visibleCount, setVisibleCount]   = useState(2);
   const [loading, setLoading]             = useState(true);
-  const [currentFilter, setCurrentFilter] = useState(getDefaultFilter);
+  const { currentUser } = useAuth();
+  // const [currentFilter, setCurrentFilter] = useState(getDefaultFilter);
+  const [currentFilter, setCurrentFilter] =
+  useState("all");
 
   // ── Brief card counts (fetched separately from /get-brief) ──────────────
   const [briefCount, setBriefCount] = useState(null); // null = not loaded yet
@@ -252,6 +265,29 @@ function Home() {
     }
     fetchBriefCount();
   }, []);
+
+  useEffect(() => {
+    async function loadPreference() {
+      if (!currentUser) return;
+  
+      const userRef = doc(db, "users", currentUser.uid);
+      const snap = await getDoc(userRef);
+  
+      if (!snap.exists()) return;
+  
+      const vibe =
+        snap.data()?.personalization?.vibe;
+  
+      const filter =
+        VIBE_TO_FILTER[vibe];
+  
+      if (filter) {
+        setCurrentFilter(filter);
+      }
+    }
+  
+    loadPreference();
+  }, [currentUser]);
 
   // ── Derived ──────────────────────────────────────────────────────────────
   // Normalize domain to lowercase for comparison so "AI", "ai", "Ai" all match
