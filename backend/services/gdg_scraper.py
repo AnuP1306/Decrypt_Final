@@ -1,4 +1,5 @@
 import requests
+from datetime import datetime
 
 
 def fetch_gdg_events():
@@ -29,7 +30,30 @@ def fetch_gdg_events():
 
         results = data.get("results", [])
 
-        for event in results[:10]:
+        for event in results:
+
+            try:
+
+                start_date = event.get(
+                    "start_date"
+                )
+
+                if start_date:
+
+                    event_date = datetime.fromisoformat(
+                        start_date
+                    )
+
+                    # Skip expired events
+                    if (
+                        event_date.date()
+                        <
+                        datetime.now().date()
+                    ):
+                        continue
+
+            except Exception:
+                continue
 
             print("\n========== EVENT ==========")
             print(event.get("title"))
@@ -56,9 +80,12 @@ def fetch_gdg_events():
                     ),
 
                 "desc":
-                    event.get(
-                        "description_short",
-                        "GDG Community Event"
+                    (   
+                        event.get(
+                            "description_short",
+                            "GDG Community Event"
+                        )[:140]
+                        + "..."
                     ),
 
                 "image":
@@ -105,7 +132,7 @@ def fetch_gdg_events():
                     event.get(
                         "tags",
                         []
-                    ),
+                    )[:4],
 
                 "type":
                     "Workshops",
@@ -113,6 +140,10 @@ def fetch_gdg_events():
                 "source":
                     "live"
             })
+
+            # Stop after 10 valid events
+            if len(opportunities) >= 10:
+                break
 
         print(
             f"GDG Events Found: {len(opportunities)}"
