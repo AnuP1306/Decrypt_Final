@@ -14,6 +14,10 @@ function Opportunities() {
   const [searchTerm, setSearchTerm] = useState("");
   const [showToast, setShowToast] = useState(false);
 
+  const [savedOpportunities, setSavedOpportunities] = useState(() =>
+  JSON.parse(localStorage.getItem("savedOpportunities") || "[]")
+);
+
   const filters = ["All", "Student Perks", "Courses", "Workshops"];
   const formatDate = (dateString) => {
 
@@ -74,6 +78,35 @@ useEffect(() => {
 
     return matchesFilter && matchesSearch;
   });
+
+  const toggleSaveOpportunity = (opp) => {
+  let saved = JSON.parse(
+    localStorage.getItem("savedOpportunities") || "[]"
+  );
+
+  const exists = saved.some(item => item.id === opp.id);
+
+  if (exists) {
+    saved = saved.filter(item => item.id !== opp.id);
+  } else {
+    saved.push({
+      id: opp.id,
+      title: opp.title,
+      company: opp.company,
+      desc: opp.desc,
+      image: opp.image,
+      type: opp.type,
+      link: opp.link
+    });
+  }
+
+  localStorage.setItem(
+    "savedOpportunities",
+    JSON.stringify(saved)
+  );
+
+  setSavedOpportunities(saved);
+  };
 
   const handleAlerts = () => {
     setShowToast(true);
@@ -178,6 +211,21 @@ useEffect(() => {
                       </div>
 
                       <div className="opp-content">
+                        <div
+                          className={`opp-save-btn ${
+                            savedOpportunities.some(
+                              item => item.id === opp.id
+                            )
+                              ? "saved"
+                              : ""
+                          }`}
+                          onClick={() => toggleSaveOpportunity(opp)}
+                        >
+                          <img
+                            src="/images/save.svg"
+                            alt="save"
+                          />
+                        </div>
                         <div className="opp-tags">
                           <span className="tag primary">
                           {opp.type}

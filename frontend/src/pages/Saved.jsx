@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/saved.css";
 import Navbar from "../components/Navbar";
@@ -6,13 +6,17 @@ import Sidebar from "../components/Sidebar";
 
 function Saved() {
 
-  const [savedArticles,   setSavedArticles]   = useState([]);
-  const [savedFlashcards, setSavedFlashcards] = useState([]);
+  const [savedArticles, setSavedArticles] = useState(() =>
+  JSON.parse(localStorage.getItem("savedArticles") || "[]")
+);
 
-  useEffect(() => {
-    setSavedArticles(JSON.parse(localStorage.getItem("savedArticles")  || "[]"));
-    setSavedFlashcards(JSON.parse(localStorage.getItem("savedFlashcards") || "[]"));
-  }, []);
+const [savedFlashcards, setSavedFlashcards] = useState(() =>
+  JSON.parse(localStorage.getItem("savedFlashcards") || "[]")
+);
+
+const [savedOpportunities, setSavedOpportunities] = useState(() =>
+  JSON.parse(localStorage.getItem("savedOpportunities") || "[]")
+);
 
   // ── Remove with fade-out animation ──────────────────────────────────────
   function removeArticle(id, el) {
@@ -36,6 +40,25 @@ function Saved() {
       localStorage.setItem("savedFlashcards", JSON.stringify(updated));
     }, 250);
   }
+
+  function removeOpportunity(id, el) {
+  el.style.transform = "scale(0.92)";
+  el.style.opacity = "0";
+  el.style.transition = "all 0.25s ease";
+
+  setTimeout(() => {
+    const updated = savedOpportunities.filter(
+      item => item.id !== id
+    );
+
+    setSavedOpportunities(updated);
+
+    localStorage.setItem(
+      "savedOpportunities",
+      JSON.stringify(updated)
+    );
+  }, 250);
+}
 
   return (
     <>
@@ -172,7 +195,99 @@ function Saved() {
                 }
               </div>
             </section>
+            <section className="saved-section">
 
+              <div className="saved-section-header">
+                <h2 className="saved-section-title">
+                  Saved Opportunities
+                </h2>
+
+                <span className="saved-count">
+                  {savedOpportunities.length} saved
+                </span>
+              </div>
+
+              <div className="saved-scroll-row">
+
+                {savedOpportunities.length === 0 ? (
+
+                  <div className="saved-empty-state">
+                    <div className="empty-icon">🎓</div>
+                    <p>
+                      No saved opportunities yet.
+                      <br />
+                      Bookmark opportunities from the
+                      Opportunities page.
+                    </p>
+                  </div>
+
+                ) : (
+
+                  savedOpportunities.map((opp) => (
+
+                    <div
+                      className="saved-card"
+                      key={opp.id}
+                    >
+
+                      <div className="sc-image">
+
+                        {opp.image && (
+                          <img
+                            src={opp.image}
+                            alt={opp.title}
+                            onError={(e) => {
+                              e.target.style.display = "none";
+                            }}
+                          />
+                        )}
+
+                        <span className="sc-domain-pill">
+                          {opp.type}
+                        </span>
+
+                        <button
+                          className="sc-unbookmark-btn"
+                          onClick={(e) =>
+                            removeOpportunity(
+                              opp.id,
+                              e.currentTarget.closest(".saved-card")
+                            )
+                          }
+                        >
+                          <img
+                            src="/images/briefbookmark.png"
+                            alt=""
+                          />
+                        </button>
+
+                      </div>
+
+                      <div className="sc-content">
+
+                        <h3 className="sc-title">
+                          {opp.title}
+                        </h3>
+
+                        <p className="sc-desc">
+                          {opp.company}
+                        </p>
+
+                        <span className="sc-flash-badge">
+                          🎯 Opportunity
+                        </span>
+
+                      </div>
+
+                    </div>
+
+                  ))
+
+                )}
+
+              </div>
+
+            </section>
           </div>
         </main>
       </div>

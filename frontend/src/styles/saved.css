@@ -223,6 +223,9 @@ margin: 0 auto;   /* keep this */
 .saved-card {
     flex: 0 0 260px;          /* fixed width, no shrink */
     width: 260px;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
     background: #f4f1ee;
     border-radius: 20px;
     border: 2px solid #000;
@@ -310,6 +313,7 @@ margin: 0 auto;   /* keep this */
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 1;
 }
  
 .sc-title {
