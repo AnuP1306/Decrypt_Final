@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function RightSidebar() {
 
   const [message, setMessage] = useState("");
+  const [sidebarTools, setSidebarTools] = useState([]);
 
   const [chatMessages, setChatMessages] = useState([
     {
@@ -64,6 +65,69 @@ function RightSidebar() {
     }
 
   };
+
+  useEffect(() => {
+    async function loadTools() {
+      try {
+        const res = await fetch("http://127.0.0.1:5000/get-tools");
+        const data = await res.json();
+  
+        if (!data.tools) return;
+  
+        // Only fresh tools
+        const liveTools = data.tools.filter(
+          tool =>
+            tool.source === "producthunt" ||
+            tool.source === "hackernews"
+        );
+
+        const categories = new Set();
+const selected = [];
+
+for (const tool of liveTools) {
+
+  if (!categories.has(tool.category)) {
+
+    categories.add(tool.category);
+    selected.push(tool);
+
+  }
+
+  if (selected.length === 6) break;
+}
+
+if (selected.length < 6) {
+
+  for (const tool of data.tools) {
+
+    if (selected.find(t => t.id === tool.id))
+      continue;
+
+    selected.push(tool);
+
+    if (selected.length === 6)
+      break;
+  }
+
+}
+
+setSidebarTools(selected);
+  
+        // If not enough live tools, fill with fallback
+        // const tools =
+        //   liveTools.length >= 6
+        //     ? liveTools.slice(0, 6)
+        //     : data.tools.slice(0, 6);
+  
+        // setSidebarTools(tools);
+  
+      } catch (err) {
+        console.error("Couldn't load sidebar tools", err);
+      }
+    }
+  
+    loadTools();
+  }, []);
 
   return (
     <div className="right-sidebar">
@@ -136,37 +200,28 @@ function RightSidebar() {
 
         <div className="tools-grid">
 
-          <div className="tool">
-            E
-            <span>Elicit</span>
-          </div>
+  {sidebarTools.map(tool => (
 
-          <div className="tool">
-            U
-            <span>Uizard</span>
-          </div>
+    <div
+      key={tool.id}
+      className="tool"
+      onClick={() => window.open(tool.url, "_blank")}
+      title={tool.name}
+    >
 
-          <div className="tool">
-            C
-            <span>Codeium</span>
-          </div>
+      {tool.name.charAt(0).toUpperCase()}
 
-          <div className="tool">
-            F
-            <span>Flourish</span>
-          </div>
+      <span>
+  {tool.name.length > 18
+    ? tool.name.substring(0, 18) + "..."
+    : tool.name}
+</span>
 
-          <div className="tool">
-            A
-            <span>Adobe Podcast</span>
-          </div>
+    </div>
 
-          <div className="tool">
-            T
-            <span>Tome</span>
-          </div>
+  ))}
 
-        </div>
+</div>
 
       </div>
 

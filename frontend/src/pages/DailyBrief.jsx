@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import { useAuth } from "../context/AuthContext";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 import "../styles/dailyBrief.css";
 
 const MINS_PER_CARD = 1.5;
@@ -12,21 +15,48 @@ function DailyBrief() {
   // ── Data ──────────────────────────────────────────────────────────────────
   const [briefData,     setBriefData]     = useState([]);
   const [loading,       setLoading]       = useState(true);
-  // Separate map: articleId → { beginner, intermediate, advanced }
-  // Updates per-card as each enrichment completes — fixes B/I/A lag
   const [descriptions,  setDescriptions]  = useState({});
   const [enrichingIds,  setEnrichingIds]  = useState(new Set());
 
   // ── Navigation ────────────────────────────────────────────────────────────
   const [currentIndex,  setCurrentIndex]  = useState(0);
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
 
   // ── Level — auto-select from signup preference ────────────────────────────
-  const savedLevel = (localStorage.getItem("userLevel") || "beginner").toLowerCase();
-  const normalizedLevel =
-    savedLevel.includes("intermediate") ? "intermediate" :
-    savedLevel.includes("advanced")     ? "advanced"     : "beginner";
-  const [currentLevel, setCurrentLevel] = useState(normalizedLevel);
+  // const savedLevel = (localStorage.getItem("userLevel") || "beginner").toLowerCase();
+  // const normalizedLevel =
+  //   savedLevel.includes("intermediate") ? "intermediate" :
+  //   savedLevel.includes("advanced")     ? "advanced"     : "beginner";
+  // const [currentLevel, setCurrentLevel] = useState(normalizedLevel);
+
+  const [currentLevel, setCurrentLevel] = useState("beginner");
+
+  useEffect(() => {
+    async function loadLevelPreference() {
+      if (!currentUser) return;
+
+      const userRef = doc(db, "users", currentUser.uid);
+      const snap = await getDoc(userRef);
+
+      if (!snap.exists()) return;
+
+      const knowledgeLevel = (snap.data()?.personalization?.knowledgeLevel || "").toLowerCase();
+
+      if (knowledgeLevel.includes("intermediate")) {
+        setCurrentLevel("intermediate");
+      } else if (knowledgeLevel.includes("advanced")) {
+        setCurrentLevel("advanced");
+      } else if (knowledgeLevel.includes("beginner")) {
+        setCurrentLevel("beginner");
+      }
+      // If knowledgeLevel is empty/unrecognized, currentLevel stays at
+      // its "beginner" default rather than being forced — same
+      // graceful-fallback behavior as before, just sourced correctly.
+    }
+
+    loadLevelPreference();
+  }, [currentUser]);
 
   // ── Bot ───────────────────────────────────────────────────────────────────
   const [botOpen,     setBotOpen]     = useState(false);
@@ -56,6 +86,21 @@ function DailyBrief() {
       botChatRef.current.scrollTop = botChatRef.current.scrollHeight;
   }, [botMessages]);
 
+  // async function fetchBrief() {
+  //   setLoading(true);
+  //   try {
+  //     const res  = await fetch("http://127.0.0.1:5000/get-brief");
+  //     const data = await res.json();
+  //     const articles = data.articles || [];
+  //     setBriefData(articles);
+  //     setLoading(false);
+  //     articles.forEach(article => enrichOne(article));
+  //   } catch (err) {
+  //     console.error("Brief fetch failed:", err);
+  //     setLoading(false);
+  //   }
+  // }
+
   async function fetchBrief() {
     setLoading(true);
     try {
@@ -64,15 +109,21 @@ function DailyBrief() {
       const articles = data.articles || [];
       setBriefData(articles);
       setLoading(false);
-      // Enrich each card individually so B/I/A is ready as soon as possible
-      articles.forEach(article => enrichOne(article));
+
+      // Enrich the first card immediately (so it's ready the instant
+      // the user sees it), then stagger the rest with a small delay
+      // between each. Firing all 10 enrichment calls at once overloads
+      // Gemini/Groq (causing 503s) and the backend cache (causing
+      // race-condition crashes on concurrent saves).
+      articles.forEach((article, i) => {
+        setTimeout(() => enrichOne(article), i * 400);
+      });
     } catch (err) {
       console.error("Brief fetch failed:", err);
       setLoading(false);
     }
   }
 
-  // Enrich a single article — updates descriptions map the moment it's done
   async function enrichOne(article) {
     const id = article.id || article.title;
 
@@ -89,12 +140,8 @@ function DailyBrief() {
         }),
       });
       const data = await res.json();
-
-      // ✅ Update just this card's descriptions immediately
       setDescriptions(prev => ({ ...prev, [id]: data.card }));
-
     } catch {
-      // Fallback: all levels show raw desc
       setDescriptions(prev => ({
         ...prev,
         [id]: {
@@ -121,11 +168,9 @@ function DailyBrief() {
     let   stored = JSON.parse(localStorage.getItem(key) || "[]");
 
     if (savedIds.has(id)) {
-      // Remove
       stored = stored.filter(a => a.id !== id);
       setSavedIds(prev => { const n = new Set(prev); n.delete(id); return n; });
     } else {
-      // Add — store current level description so saved page shows real content
       const cardDesc = descriptions[id]?.[currentLevel] || article.desc;
       stored.push({
         id,
@@ -133,7 +178,7 @@ function DailyBrief() {
         desc:   cardDesc,
         image:  article.image  || "",
         domain: article.domain || "Brief",
-        type:   "flashcard",   // ← lets Saved page put it in the right section
+        type:   "flashcard",
       });
       setSavedIds(prev => new Set(prev).add(id));
     }
@@ -164,7 +209,7 @@ function DailyBrief() {
   }
 
   // ==========================================================================
-  // BOT — same /ask-article as home page (Gemini → Groq fallback)
+  // BOT
   // ==========================================================================
   async function sendBotMessage() {
     if (!botInput.trim()) return;
@@ -208,7 +253,6 @@ function DailyBrief() {
   const articleId    = article?.id || article?.title;
   const isEnriching  = enrichingIds.has(articleId);
   const cardDescs    = descriptions[articleId];
-  // ✅ Instant switch — reads directly from descriptions map
   const currentDesc  = cardDescs?.[currentLevel] || article?.desc || "";
   const isSaved      = savedIds.has(articleId);
 
@@ -259,13 +303,28 @@ function DailyBrief() {
 
             {/* ── LOADING ─────────────────────────────────────────────────── */}
             {loading && (
-              <div className="news-card" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <p style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#888", fontSize: "16px" }}>
-                  Fetching today's news...
+              <div style={{ textAlign: "center", padding: "4rem 0" }}>
+                <div
+                  style={{
+                    width: "32px",
+                    height: "32px",
+                    margin: "0 auto 14px auto",
+                    borderRadius: "50%",
+                    border: "3px solid #ece9ff",
+                    borderTopColor: "#5b4fe9",
+                    animation: "decrypt-spin 0.8s linear infinite",
+                  }}
+                />
+                <p style={{ color: "#888", fontSize: "16px", fontFamily: "'Space Grotesk', sans-serif", margin: 0 }}>
+                  Loading today's news...
                 </p>
+                <style>{`
+                  @keyframes decrypt-spin {
+                    to { transform: rotate(360deg); }
+                  }
+                `}</style>
               </div>
             )}
-
             {/* ── CARD ────────────────────────────────────────────────────── */}
             {!loading && article && (
               <div className={`news-card ${cardAnim}`} id="briefCard">
@@ -273,12 +332,11 @@ function DailyBrief() {
                 {/* Image */}
                 <div className="card-image">
                   {article.image
-                    ? <img src={article.image} alt="" />
-                    : <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#3f38e8,#5a54ff)" }} />
+                    ? <img key={articleId} src={article.image} alt="" />
+                    : <div key={articleId} style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#3f38e8,#5a54ff)" }} />
                   }
                   <span className="domain-pill">{article.domain}</span>
 
-                  {/* ✅ SAVE BUTTON */}
                   <div
                     className={`save-btn ${isSaved ? "saved" : ""}`}
                     onClick={() => toggleSave(article)}
@@ -293,7 +351,6 @@ function DailyBrief() {
                   <div className="card-body">
                     <h2 className="card-title">{article.title}</h2>
 
-                    {/* ✅ Shows enriching hint only for THIS card, switches instantly when ready */}
                     {isEnriching
                       ? <p className="card-desc" style={{ color: "#aaa", fontStyle: "italic" }}>
                           Generating explanation...
@@ -305,7 +362,6 @@ function DailyBrief() {
                   {/* ── ACTIONS ───────────────────────────────────────────── */}
                   <div className="card-actions">
 
-                    {/* B / I / A */}
                     <div className="level-toggle">
                       {["beginner", "intermediate", "advanced"].map(level => (
                         <button
@@ -319,7 +375,6 @@ function DailyBrief() {
                       ))}
                     </div>
 
-                    {/* Ask Bot */}
                     <button
                       className={`chatbot-btn ${botOpen ? "active" : ""}`}
                       onClick={() => setBotOpen(!botOpen)}

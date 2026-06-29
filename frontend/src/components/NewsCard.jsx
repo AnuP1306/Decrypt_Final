@@ -621,12 +621,46 @@
 // export default NewsCard;
 
 import { useState, useEffect, useRef } from "react";
+import { useAuth } from "../context/AuthContext";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../firebase";
 
 function NewsCard({ article, index, visible }) {
 
-  const [level, setLevel] = useState(
-    localStorage.getItem("userLevel") || "beginner"
-  );
+  const { currentUser } = useAuth();
+
+  const [level, setLevel] = useState("beginner");
+
+  useEffect(() => {
+    async function loadUserLevel() {
+  
+      if (!currentUser) return;
+  
+      const userRef = doc(db, "users", currentUser.uid);
+      const snap = await getDoc(userRef);
+  
+      if (!snap.exists()) return;
+  
+      const knowledge =
+        snap.data()?.personalization?.knowledgeLevel || "";
+  
+      if (knowledge.toLowerCase().includes("beginner")) {
+        setLevel("beginner");
+      }
+      else if (knowledge.toLowerCase().includes("intermediate")) {
+        setLevel("intermediate");
+      }
+      else if (knowledge.toLowerCase().includes("advanced")) {
+        setLevel("advanced");
+      }
+    }
+  
+    loadUserLevel();
+  }, [currentUser]);
+
+  // const [level, setLevel] = useState(
+  //   localStorage.getItem("userLevel") || "beginner"
+  // );
 
   const [slides, setSlides] = useState(article.slides || null);
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -868,7 +902,7 @@ function NewsCard({ article, index, visible }) {
                   className={`level-btn ${level === item ? "active" : ""}`}
                   onClick={() => {
                     setLevel(item);
-                    localStorage.setItem("userLevel", item);
+                    
                     setCurrentSlide(0);
                   }}
                 >

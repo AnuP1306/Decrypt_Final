@@ -1,172 +1,4 @@
-// import { useState, useEffect } from "react";
-// import { useNavigate } from "react-router-dom";
-
-// import Navbar from "../components/Navbar";
-// import Sidebar from "../components/Sidebar";
-// import NewsCard from "../components/NewsCard";
-// import RightSidebar from "../components/RightSidebar";
-
-// const MINS_PER_CARD = 1.5;
-
-// function Home() {
-
-//   const [articles, setArticles]           = useState([]);
-//   const [visibleCount, setVisibleCount]   = useState(2);
-//   const [loading, setLoading]             = useState(true);
-//   const [currentFilter, setCurrentFilter] = useState("all");
-
-//   // ── Brief card counts (fetched separately from /get-brief) ──────────────
-//   const [briefCount, setBriefCount] = useState(null); // null = not loaded yet
-//   const navigate = useNavigate();
-
-//   // ── Infinite scroll ──────────────────────────────────────────────────────
-//   useEffect(() => {
-//     function handleScroll() {
-//       if (
-//         window.innerHeight + window.scrollY >=
-//         document.body.offsetHeight - 300
-//       ) {
-//         setVisibleCount(prev => Math.min(prev + 2, articles.length));
-//       }
-//     }
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, [articles]);
-
-//   // ── Fetch home page news ─────────────────────────────────────────────────
-//   useEffect(() => {
-//     async function fetchNews() {
-//       try {
-//         const response = await fetch("http://127.0.0.1:5000/get-news");
-//         const data = await response.json();
-//         setArticles(data.articles || []);
-//       } catch (error) {
-//         console.error("News fetch failed:", error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     }
-//     fetchNews();
-//   }, []);
-
-//   // ── Fetch brief count for the "Today's Brief" card ──────────────────────
-//   // We only need the count — a lightweight call that hits the cache on Flask
-//   useEffect(() => {
-//     async function fetchBriefCount() {
-//       try {
-//         const res  = await fetch("http://127.0.0.1:5000/get-brief");
-//         const data = await res.json();
-//         setBriefCount((data.articles || []).length);
-//       } catch {
-//         setBriefCount(10); // safe fallback
-//       }
-//     }
-//     fetchBriefCount();
-//   }, []);
-
-//   // ── Derived ──────────────────────────────────────────────────────────────
-//   const filteredArticles =
-//     currentFilter === "all"
-//       ? articles
-//       : articles.filter(
-//           a => a.domain?.toLowerCase() === currentFilter
-//         );
-
-//   const storyCount = briefCount ?? 10;
-//   const estMins    = Math.round(storyCount * MINS_PER_CARD);
-
-//   // ── Render ───────────────────────────────────────────────────────────────
-//   return (
-//     <>
-//       <Navbar />
-
-//       <div className="layout">
-//         <Sidebar />
-
-//         <main className="main-content">
-//           <div className="home-layout">
-
-//             <div className="feed-container">
-
-//               <div className="feed-intro">
-//                 <h1 className="feed-title">
-//                   News that actually{" "}
-//                   <span className="highlight-text">makes sense</span>
-//                 </h1>
-//                 <p className="feed-subtext">
-//                   No jargon. No confusion. Just what's happening in the world — explained your way.
-//                 </p>
-//               </div>
-
-//               {/* ── TODAY'S BRIEF CARD ──────────────────────────────────── */}
-//               <div className="brief-card">
-//                 <div className="brief-left">
-//                   <img src="/images/logo.svg" className="brief-icon" alt="" />
-//                   <div>
-//                     <p className="brief-title">Today's Brief</p>
-//                     {/* Dynamic count and read time */}
-//                     <span className="brief-sub">
-//                       {briefCount === null
-//                         ? "Loading stories..."
-//                         : `${String(storyCount).padStart(2, "0")} stories for you · Est. ${estMins} min read`
-//                       }
-//                     </span>
-//                   </div>
-//                 </div>
-
-//                 <button
-//                   className="brief-btn"
-//                   onClick={() => navigate("/daily-brief")}
-//                 >
-//                   Start Reading →
-//                 </button>
-//               </div>
-
-//               {/* ── FILTERS ─────────────────────────────────────────────── */}
-//               <div className="feed-filters">
-//                 {[
-//                   { label: "All",         value: "all"         },
-//                   { label: "AI",          value: "ai"          },
-//                   { label: "IT",          value: "it"          },
-//                   { label: "Electronics", value: "electronics" },
-//                 ].map(({ label, value }) => (
-//                   <button
-//                     key={value}
-//                     className={`filter ${currentFilter === value ? "active" : ""}`}
-//                     onClick={() => setCurrentFilter(value)}
-//                   >
-//                     {label}
-//                   </button>
-//                 ))}
-//               </div>
-
-//               {/* ── NEWS CARDS ──────────────────────────────────────────── */}
-//               {!loading && filteredArticles
-//                 .slice(0, visibleCount)
-//                 .map((article, index) => (
-//                   <NewsCard
-//                     key={index}
-//                     article={article}
-//                     index={index}
-//                     visible={index < visibleCount}
-//                   />
-//                 ))
-//               }
-
-//             </div>
-
-//             <RightSidebar />
-
-//           </div>
-//         </main>
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Home;
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
@@ -185,80 +17,125 @@ const VIBE_TO_FILTER = {
   "Electronics": "electronics",
 };
 
-
-// Map signup domain values → filter values used by the feed.
-// Adjust keys to match whatever your auth flow stores in localStorage.
-// const DOMAIN_FILTER_MAP = {
-//   ai:          "ai",
-//   it:          "it",
-//   electronics: "electronics",
-//   AI:          "ai",
-//   IT:          "it",
-//   Electronics: "electronics",
-// };
-
-// function getDefaultFilter() {
-//   // Respect the domain the user chose at signup (stored by auth flow)
-//   const userDomain = localStorage.getItem("userDomain");
-//   if (userDomain && DOMAIN_FILTER_MAP[userDomain]) {
-//     return DOMAIN_FILTER_MAP[userDomain];
-//   }
-//   // Guest users see only AI domain 
-//   return "ai";
-// }
-
 function Home() {
 
   const [articles, setArticles]           = useState([]);
   const [visibleCount, setVisibleCount]   = useState(2);
   const [loading, setLoading]             = useState(true);
   const { currentUser } = useAuth();
-  // const [currentFilter, setCurrentFilter] = useState(getDefaultFilter);
-  const [currentFilter, setCurrentFilter] =
-  useState("all");
+  const [currentFilter, setCurrentFilter] = useState("all");
 
-  // ── Brief card counts (fetched separately from /get-brief) ──────────────
+  // ── Brief card counts (fetched separately, count-only) ──────────────────
   const [briefCount, setBriefCount] = useState(null); // null = not loaded yet
+  const [showCaughtUpModal, setShowCaughtUpModal] = useState(false);
+  const [hasShownCaughtUp, setHasShownCaughtUp] = useState(false);
+  // const [dismissedCaughtUp, setDismissedCaughtUp] = useState(false);
   const navigate = useNavigate();
 
   // ── Infinite scroll ──────────────────────────────────────────────────────
+
+  const feedContainerRef = useRef(null);
+
   useEffect(() => {
     function handleScroll() {
-      if (
-        window.innerHeight + window.scrollY >=
-        document.body.offsetHeight - 300
-      ) {
-        setVisibleCount(prev => Math.min(prev + 2, filteredArticles.length));
-      }
+      // Already shown once for this filter — never re-trigger,
+      // even if the user is still sitting at/near the bottom.
+      if (hasShownCaughtUp) return;
+
+      const container = feedContainerRef.current;
+      if (!container) return;
+
+      const containerBottom = container.getBoundingClientRect().bottom;
+      const nearBottomOfRenderedCards = containerBottom <= window.innerHeight + 50;
+
+      if (!nearBottomOfRenderedCards) return;
+
+      setVisibleCount(prev => {
+        if (prev >= filteredArticles.length && filteredArticles.length > 0) {
+          setShowCaughtUpModal(true);
+          setHasShownCaughtUp(true);
+          return prev;
+        }
+
+        return Math.min(prev + 2, filteredArticles.length);
+      });
     }
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [articles, currentFilter]);
+  }, [articles, currentFilter, hasShownCaughtUp]);
 
   // ── Fetch home page news ─────────────────────────────────────────────────
+  // /get-news always returns instantly now (backend never blocks on
+  // GNews). We poll /get-refresh-status briefly after load to detect
+  // if a background refresh completes shortly after — if it does, we
+  // silently re-fetch the article list so newly-fresh content appears
+  // without the user needing to navigate away and back.
   useEffect(() => {
+    let pollCount = 0;
+    const MAX_POLLS = 6;
+    const POLL_INTERVAL_MS = 10000; // 10 seconds
+    let lastKnownFinishTime = null;
+
     async function fetchNews() {
       try {
         const response = await fetch("http://127.0.0.1:5000/get-news");
         const data = await response.json();
         setArticles(data.articles || []);
+        lastKnownFinishTime = data.refresh_state?.last_run_finished || null;
       } catch (error) {
         console.error("News fetch failed:", error);
       } finally {
         setLoading(false);
       }
     }
-    fetchNews();
+
+    async function pollForRefresh() {
+      if (pollCount >= MAX_POLLS) return;
+      pollCount++;
+
+      try {
+        const res = await fetch("http://127.0.0.1:5000/get-refresh-status");
+        const status = await res.json();
+
+        const finishedNow = status.last_run_finished;
+        const somethingNewArrived =
+          finishedNow && finishedNow !== lastKnownFinishTime;
+
+        if (somethingNewArrived) {
+          lastKnownFinishTime = finishedNow;
+          // A background refresh completed since our last fetch —
+          // pull the updated article list.
+          const newsRes = await fetch("http://127.0.0.1:5000/get-news");
+          const newsData = await newsRes.json();
+          setArticles(newsData.articles || []);
+        }
+
+        if (!status.in_progress && pollCount < MAX_POLLS) {
+          setTimeout(pollForRefresh, POLL_INTERVAL_MS);
+        } else if (status.in_progress) {
+          setTimeout(pollForRefresh, POLL_INTERVAL_MS);
+        }
+      } catch {
+        // Status check failing is non-critical — just stop polling silently.
+      }
+    }
+
+    fetchNews().then(() => {
+      setTimeout(pollForRefresh, POLL_INTERVAL_MS);
+    });
   }, []);
 
   // ── Fetch brief count for the "Today's Brief" card ──────────────────────
+  // Uses a lightweight count-only endpoint — does NOT trigger GNews,
+  // so opening Home never clashes with Daily Brief's fetch logic.
   useEffect(() => {
     async function fetchBriefCount() {
       try {
-        const res  = await fetch("http://127.0.0.1:5000/get-brief");
+        const res  = await fetch("http://127.0.0.1:5000/get-brief-count");
         const data = await res.json();
-        setBriefCount((data.articles || []).length);
+        setBriefCount(data.count ?? 10);
       } catch {
         setBriefCount(10); // safe fallback
       }
@@ -269,28 +146,24 @@ function Home() {
   useEffect(() => {
     async function loadPreference() {
       if (!currentUser) return;
-  
+
       const userRef = doc(db, "users", currentUser.uid);
       const snap = await getDoc(userRef);
-  
+
       if (!snap.exists()) return;
-  
-      const vibe =
-        snap.data()?.personalization?.vibe;
-  
-      const filter =
-        VIBE_TO_FILTER[vibe];
-  
+
+      const vibe = snap.data()?.personalization?.vibe;
+      const filter = VIBE_TO_FILTER[vibe];
+
       if (filter) {
         setCurrentFilter(filter);
       }
     }
-  
+
     loadPreference();
   }, [currentUser]);
 
   // ── Derived ──────────────────────────────────────────────────────────────
-  // Normalize domain to lowercase for comparison so "AI", "ai", "Ai" all match
   const filteredArticles =
     currentFilter === "all"
       ? articles
@@ -298,19 +171,16 @@ function Home() {
           a => a.domain?.toLowerCase() === currentFilter.toLowerCase()
         );
 
-  const allCaughtUp =
-    !loading &&
-    filteredArticles.length > 0 &&
-    visibleCount >= filteredArticles.length;
+  function handleFilterChange(value) {
+    setCurrentFilter(value);
+    setVisibleCount(2);
+    setShowCaughtUpModal(false);
+    setHasShownCaughtUp(false);
+  }
 
   const storyCount = briefCount ?? 10;
   const estMins    = Math.round(storyCount * MINS_PER_CARD);
 
-  // ── Reset visible count whenever filter changes ───────────────────────────
-  function handleFilterChange(value) {
-    setCurrentFilter(value);
-    setVisibleCount(2);
-  }
 
   // ── Render ───────────────────────────────────────────────────────────────
   return (
@@ -323,7 +193,7 @@ function Home() {
         <main className="main-content">
           <div className="home-layout">
 
-            <div className="feed-container">
+            <div className="feed-container" ref={feedContainerRef}>
 
               <div className="feed-intro">
                 <h1 className="feed-title">
@@ -376,6 +246,31 @@ function Home() {
                 ))}
               </div>
 
+              {/* ── LOADING STATE ───────────────────────────────────────── */}
+              {loading && (
+                <div style={{ textAlign: "center", padding: "3rem 0" }}>
+                  <div
+                    style={{
+                      width: "32px",
+                      height: "32px",
+                      margin: "0 auto 14px auto",
+                      borderRadius: "50%",
+                      border: "3px solid #ece9ff",
+                      borderTopColor: "#5b4fe9",
+                      animation: "decrypt-spin 0.8s linear infinite",
+                    }}
+                  />
+                  <p style={{ color: "#888", fontSize: "14px", fontFamily: "'Space Grotesk', sans-serif", margin: 0 }}>
+                    Fetching today's news...
+                  </p>
+                  <style>{`
+                    @keyframes decrypt-spin {
+                      to { transform: rotate(360deg); }
+                    }
+                  `}</style>
+                </div>
+              )}
+
               {/* ── EMPTY STATE ─────────────────────────────────────────── */}
               {!loading && filteredArticles.length === 0 && (
                 <div className="empty-state" style={{ textAlign: "center", padding: "2rem", color: "var(--color-text-secondary)" }}>
@@ -399,21 +294,28 @@ function Home() {
                 ))
               }
 
-              {/* ── ALL CAUGHT UP ───────────────────────────────────────── */}
-              {allCaughtUp && (
-                <div className="caught-up-card">
-                  <div className="caught-up-icon">🎉</div>
-                  <h3 className="caught-up-title">You're all caught up!</h3>
-                  <p className="caught-up-sub">
-                    You've seen all the {currentFilter !== "all" ? currentFilter.toUpperCase() + " " : ""}
-                    stories we have for today. Check back later for more.
-                  </p>
-                  <button
-                    className="caught-up-btn"
-                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                  >
-                    Back to top
-                  </button>
+              {/* ── ALL CAUGHT UP ─────────────────────────────────────── */}
+              {showCaughtUpModal && (
+                <div className="completion-modal">
+                  <div className="completion-box">
+                    <div style={{ fontSize: "40px" }}>🎉</div>
+                    <h2 style={{ fontFamily: "'Syne', sans-serif", fontSize: "35px", fontWeight: 900, margin: "10px 0" }}>
+                      You're all caught up!
+                    </h2>
+                    <p style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "16px", color: "#555", marginTop: "10px" }}>
+                      You've seen all the {currentFilter !== "all" ? currentFilter.toUpperCase() + " " : ""}
+                      stories we have for today. New ones drop soon.
+                    </p>
+                    <button
+                      onClick={() => {
+                        setShowCaughtUpModal(false);
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }}
+                      style={{ marginTop: "25px", padding: "12px 26px", border: "2px solid black", borderRadius: "12px", background: "#D0F248", cursor: "pointer", fontWeight: 600, fontFamily: "'Syne', sans-serif" }}
+                    >
+                      Back to top
+                    </button>
+                  </div>
                 </div>
               )}
 

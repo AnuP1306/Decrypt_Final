@@ -10,6 +10,7 @@ load_dotenv()
 
 brief_bp = Blueprint("brief_bp", __name__)
 
+
 # =============================================
 # CLIENTS — lazy helpers so keys are always
 # read after dotenv has loaded
@@ -17,17 +18,21 @@ brief_bp = Blueprint("brief_bp", __name__)
 def _get_gemini():
     return genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
+
 def _get_groq():
     return Groq(api_key=os.getenv("GROQ_API_KEY"))
+
 
 def _gnews_key():
     return os.getenv("GNEWS_API_KEY")
 
+
 # =============================================
 # CACHE FILES (separate from home page cache)
 # =============================================
-BRIEF_NEWS_CACHE_FILE   = "cache/brief_news_cache.json"
-BRIEF_CARDS_CACHE_FILE  = "cache/brief_cards_cache.json"
+BRIEF_NEWS_CACHE_FILE = "cache/brief_news_cache.json"
+BRIEF_CARDS_CACHE_FILE = "cache/brief_cards_cache.json"
+
 
 def _load_json(path):
     try:
@@ -36,11 +41,14 @@ def _load_json(path):
     except:
         return {}
 
+
 def _save_json(path, data):
+    snapshot = dict(data)
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-BRIEF_NEWS_CACHE  = _load_json(BRIEF_NEWS_CACHE_FILE)
+
+BRIEF_NEWS_CACHE = _load_json(BRIEF_NEWS_CACHE_FILE)
 BRIEF_CARDS_CACHE = _load_json(BRIEF_CARDS_CACHE_FILE)
 
 # =============================================
@@ -49,63 +57,211 @@ BRIEF_CARDS_CACHE = _load_json(BRIEF_CARDS_CACHE_FILE)
 # =============================================
 DOMAIN_KEYWORDS = {
     "World Affairs": [
-        "war", "conflict", "diplomacy", "government", "election",
-        "president", "prime minister", "parliament", "treaty",
-        "sanctions", "protest", "military", "nato", "united nations",
-        "geopolit", "refugee", "coup"
+        "war",
+        "conflict",
+        "diplomacy",
+        "government",
+        "election",
+        "president",
+        "prime minister",
+        "parliament",
+        "treaty",
+        "sanctions",
+        "protest",
+        "military",
+        "nato",
+        "united nations",
+        "geopolit",
+        "refugee",
+        "coup",
     ],
     "Finance": [
-        "stock", "market", "economy", "inflation", "gdp", "crypto",
-        "bitcoin", "ethereum", "investment", "fund", "bank", "fed",
-        "interest rate", "recession", "trade", "currency", "ipo",
-        "revenue", "profit", "debt", "fiscal"
+        "stock",
+        "market",
+        "economy",
+        "inflation",
+        "gdp",
+        "crypto",
+        "bitcoin",
+        "ethereum",
+        "investment",
+        "fund",
+        "bank",
+        "fed",
+        "interest rate",
+        "recession",
+        "trade",
+        "currency",
+        "ipo",
+        "revenue",
+        "profit",
+        "debt",
+        "fiscal",
     ],
     "Science": [
-        "nasa", "spacex", "rocket", "planet", "asteroid", "galaxy",
-        "research", "study", "discovery", "experiment", "physics",
-        "chemistry", "biology", "genome", "particle", "quantum",
-        "telescope", "satellite", "orbit"
+        "nasa",
+        "spacex",
+        "rocket",
+        "planet",
+        "asteroid",
+        "galaxy",
+        "research",
+        "study",
+        "discovery",
+        "experiment",
+        "physics",
+        "chemistry",
+        "biology",
+        "genome",
+        "particle",
+        "quantum",
+        "telescope",
+        "satellite",
+        "orbit",
     ],
     "Health": [
-        "health", "disease", "cancer", "virus", "vaccine", "hospital",
-        "medicine", "drug", "mental health", "therapy", "diet",
-        "fitness", "obesity", "diabetes", "covid", "fda", "clinical",
-        "doctor", "patient", "surgery"
+        "health",
+        "disease",
+        "cancer",
+        "virus",
+        "vaccine",
+        "hospital",
+        "medicine",
+        "drug",
+        "mental health",
+        "therapy",
+        "diet",
+        "fitness",
+        "obesity",
+        "diabetes",
+        "covid",
+        "fda",
+        "clinical",
+        "doctor",
+        "patient",
+        "surgery",
     ],
     "Environment": [
-        "climate", "carbon", "emission", "renewable", "solar", "wind",
-        "fossil fuel", "deforestation", "biodiversity", "ocean",
-        "glacier", "wildfire", "flood", "drought", "pollution",
-        "sustainable", "green energy", "net zero", "paris agreement"
+        "climate",
+        "carbon",
+        "emission",
+        "renewable",
+        "solar",
+        "wind",
+        "fossil fuel",
+        "deforestation",
+        "biodiversity",
+        "ocean",
+        "glacier",
+        "wildfire",
+        "flood",
+        "drought",
+        "pollution",
+        "sustainable",
+        "green energy",
+        "net zero",
+        "paris agreement",
     ],
     "Tech": [
-        "ai", "artificial intelligence", "machine learning", "startup",
-        "cybersecurity", "hack", "software", "app", "gadget",
-        "smartphone", "chip", "semiconductor", "cloud", "robot",
-        "automation", "openai", "google", "meta", "microsoft", "apple"
+        "ai",
+        "artificial intelligence",
+        "machine learning",
+        "startup",
+        "cybersecurity",
+        "hack",
+        "software",
+        "app",
+        "gadget",
+        "smartphone",
+        "chip",
+        "semiconductor",
+        "cloud",
+        "robot",
+        "automation",
+        "openai",
+        "google",
+        "meta",
+        "microsoft",
+        "apple",
     ],
     "Culture": [
-        "social media", "viral", "trend", "influencer", "tiktok",
-        "instagram", "youtube", "celebrity", "music", "film", "movie",
-        "series", "gaming", "fashion", "art", "meme", "pop culture"
+        "social media",
+        "viral",
+        "trend",
+        "influencer",
+        "tiktok",
+        "instagram",
+        "youtube",
+        "celebrity",
+        "music",
+        "film",
+        "movie",
+        "series",
+        "gaming",
+        "fashion",
+        "art",
+        "meme",
+        "pop culture",
     ],
     "Sports": [
-        "football", "soccer", "cricket", "tennis", "basketball",
-        "olympics", "world cup", "tournament", "athlete", "match",
-        "championship", "league", "player", "goal", "medal", "formula 1",
-        "f1", "nba", "fifa", "ipl"
+        "football",
+        "soccer",
+        "cricket",
+        "tennis",
+        "basketball",
+        "olympics",
+        "world cup",
+        "tournament",
+        "athlete",
+        "match",
+        "championship",
+        "league",
+        "player",
+        "goal",
+        "medal",
+        "formula 1",
+        "f1",
+        "nba",
+        "fifa",
+        "ipl",
     ],
     "Business": [
-        "company", "acquisition", "merger", "ceo", "layoff", "hiring",
-        "entrepreneur", "venture capital", "unicorn", "ecommerce",
-        "amazon", "tesla", "nvidia", "valuation", "brand", "product launch"
+        "company",
+        "acquisition",
+        "merger",
+        "ceo",
+        "layoff",
+        "hiring",
+        "entrepreneur",
+        "venture capital",
+        "unicorn",
+        "ecommerce",
+        "amazon",
+        "tesla",
+        "nvidia",
+        "valuation",
+        "brand",
+        "product launch",
     ],
     "Education": [
-        "university", "student", "school", "degree", "scholarship",
-        "career", "skill", "course", "learning", "graduation",
-        "college", "exam", "tuition", "literacy", "teacher"
+        "university",
+        "student",
+        "school",
+        "degree",
+        "scholarship",
+        "career",
+        "skill",
+        "course",
+        "learning",
+        "graduation",
+        "college",
+        "exam",
+        "tuition",
+        "literacy",
+        "teacher",
     ],
 }
+
 
 def detect_domain(title: str, desc: str) -> str:
     """Return the best-matching domain label for an article."""
@@ -119,8 +275,10 @@ def detect_domain(title: str, desc: str) -> str:
     # If nothing matched at all, default to Tech
     return best if scores[best] > 0 else "Tech"
 
+
 def generate_article_id(title: str) -> str:
     return hashlib.md5(title.lower().strip().encode()).hexdigest()
+
 
 # =============================================
 # GNEWS BROAD QUERIES
@@ -132,14 +290,14 @@ BRIEF_GNEWS_QUERIES = [
         "q": (
             "politics OR government OR election OR war OR conflict "
             "OR diplomacy OR economy OR finance OR inflation OR trade"
-        )
+        ),
     },
     {
         "label": "Science & Planet",
         "q": (
             "climate change OR environment OR space OR NASA OR SpaceX "
             "OR health OR medicine OR vaccine OR science discovery OR mental health"
-        )
+        ),
     },
     {
         "label": "Tech & Future",
@@ -147,9 +305,10 @@ BRIEF_GNEWS_QUERIES = [
             "artificial intelligence OR cybersecurity OR startup "
             "OR electric vehicle OR renewable energy OR social media "
             "OR sports championship OR education OR career"
-        )
+        ),
     },
 ]
+
 
 # =============================================
 # /get-brief  — main news endpoint for Daily Brief
@@ -158,19 +317,17 @@ BRIEF_GNEWS_QUERIES = [
 def get_brief():
     global BRIEF_NEWS_CACHE
 
-    today     = datetime.utcnow().strftime("%Y-%m-%d")
+    today = datetime.utcnow().strftime("%Y-%m-%d")
     yesterday = (datetime.utcnow() - timedelta(days=1)).strftime("%Y-%m-%d")
 
     # ── 1. Collect today's cached articles ──────────────────────────────
-    today_articles = [
-        a for a in BRIEF_NEWS_CACHE.values()
-        if a.get("date") == today
-    ]
+    today_articles = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today]
 
     # ── 2. If enough cached articles exist, return immediately ───────────
     if len(today_articles) >= 10:
         print(f"⚡ Brief: serving {len(today_articles)} articles from cache")
         import random
+
         random.shuffle(today_articles)
         return jsonify({"articles": today_articles[:10], "source": "cache"})
 
@@ -189,26 +346,26 @@ def get_brief():
             f"&apikey={_gnews_key()}"
         )
         try:
-            res  = requests.get(url, timeout=10)
+            res = requests.get(url, timeout=6)
             data = res.json()
 
             for art in data.get("articles", []):
                 title = art.get("title", "")
-                desc  = art.get("description", "") or ""
+                desc = art.get("description", "") or ""
                 art_id = generate_article_id(title)
 
                 if art_id in BRIEF_NEWS_CACHE:
                     continue  # already cached
 
                 article = {
-                    "id":      art_id,
-                    "title":   title,
-                    "desc":    desc,
+                    "id": art_id,
+                    "title": title,
+                    "desc": desc,
                     "content": art.get("content", "") or "",
-                    "image":   art.get("image") or "",
-                    "domain":  detect_domain(title, desc),
-                    "date":    today,
-                    "url":     art.get("url", "")
+                    "image": art.get("image") or "",
+                    "domain": detect_domain(title, desc),
+                    "date": today,
+                    "url": art.get("url", ""),
                 }
 
                 BRIEF_NEWS_CACHE[art_id] = article
@@ -217,29 +374,116 @@ def get_brief():
         except Exception as e:
             print(f"❌ Brief GNews query failed ({query_obj['label']}):", e)
 
-    # ── 4. Midnight edge case — if today still empty, use yesterday ──────
-    all_today = [
-        a for a in BRIEF_NEWS_CACHE.values()
-        if a.get("date") == today
-    ]
+    # # ── 4. Midnight edge case — if today still empty, use yesterday ──────
+    # all_today = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today]
 
-    if len(all_today) == 0:
-        print("⚠️  Brief: no today articles yet, silently falling back to yesterday")
-        all_today = [
-            a for a in BRIEF_NEWS_CACHE.values()
-            if a.get("date") == yesterday
+    # if len(all_today) == 0:
+    #     print("⚠️  Brief: no today articles yet, silently falling back to yesterday")
+    #     all_today = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == yesterday]
+
+    # # ── 5. Save updated cache ────────────────────────────────────────────
+    # _save_json(BRIEF_NEWS_CACHE_FILE, BRIEF_NEWS_CACHE)
+    # print(f"🔵 Brief cache saved: {len(BRIEF_NEWS_CACHE)} total articles")
+
+    # # ── 6. Return 10 shuffled articles ──────────────────────────────────
+    # import random
+
+    # random.shuffle(all_today)
+    # result = all_today[:10]
+    # print(f"✅ Brief: returning {len(result)} articles")
+    # return jsonify({"articles": result, "source": "fresh"})
+
+    # ── 4. Top up to 10: today's articles first, then yesterday's ────────
+    # Fixes the case where some (but not all) GNews queries succeed —
+    # previously a partial fetch (e.g. 5 articles) just got returned as-is
+    # instead of being topped up to the full 10.
+    BRIEF_TARGET = 10
+
+    all_today = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today]
+
+    combined = list(all_today)
+    seen_ids = {a.get("id") for a in combined}
+
+    if len(combined) < BRIEF_TARGET:
+        print(
+            f"⚠️  Brief: only {len(combined)} today, topping up with yesterday's cache"
+        )
+        yesterday_articles = [
+            a
+            for a in BRIEF_NEWS_CACHE.values()
+            if a.get("date") == yesterday and a.get("id") not in seen_ids
         ]
+        for a in yesterday_articles:
+            if len(combined) >= BRIEF_TARGET:
+                break
+            combined.append(a)
+            seen_ids.add(a.get("id"))
+
+    # If STILL short (very first run ever, empty cache) — nothing more to
+    # pull from; brief doesn't have its own fallback.json, so this is the
+    # honest floor. Logged clearly so it's never a silent mystery.
+    if len(combined) < BRIEF_TARGET:
+        print(
+            f"⚠️  Brief: only {len(combined)} articles available total (today+yesterday), returning what we have"
+        )
 
     # ── 5. Save updated cache ────────────────────────────────────────────
     _save_json(BRIEF_NEWS_CACHE_FILE, BRIEF_NEWS_CACHE)
     print(f"🔵 Brief cache saved: {len(BRIEF_NEWS_CACHE)} total articles")
 
-    # ── 6. Return 10 shuffled articles ──────────────────────────────────
+    # ── 6. Return up to 10 shuffled articles ──────────────────────────────
     import random
-    random.shuffle(all_today)
-    result = all_today[:10]
+
+    random.shuffle(combined)
+    result = combined[:BRIEF_TARGET]
     print(f"✅ Brief: returning {len(result)} articles")
     return jsonify({"articles": result, "source": "fresh"})
+
+
+# =============================================
+# /get-brief-count — lightweight count-only check
+# Used by the Home page teaser card. Does NOT call
+# GNews — just reports what's already cached so Home
+# never triggers Daily Brief's fetch logic.
+# =============================================
+# @brief_bp.route("/get-brief-count", methods=["GET"])
+# def get_brief_count():
+#     today = datetime.utcnow().strftime("%Y-%m-%d")
+#     today_count = len([a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today])
+#     # If nothing fetched yet today, report a safe default of 10
+#     # rather than 0 — Home shouldn't say "0 stories" before
+#     # Daily Brief has ever been opened today.
+#     count = today_count if today_count > 0 else 10
+#     return jsonify({"count": min(count, 10)})
+
+
+@brief_bp.route("/get-brief-count", methods=["GET"])
+def get_brief_count():
+    """
+    Mirrors get_brief()'s own topup logic (today's articles, then
+    yesterday's as a fallback) so the count Home displays always
+    matches what /get-brief would actually deliver right now — instead
+    of an optimistic guess that later gets corrected downward and looks
+    like a regression.
+    """
+    today = datetime.utcnow().strftime("%Y-%m-%d")
+    yesterday = (datetime.utcnow() - timedelta(days=1)).strftime("%Y-%m-%d")
+
+    today_count = len([a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today])
+
+    if today_count >= 10:
+        count = today_count
+    else:
+        # Same topup logic as get_brief(): pad with yesterday's cache
+        # to estimate what the real number would be if /get-brief ran now.
+        yesterday_count = len(
+            [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == yesterday]
+        )
+        count = min(today_count + yesterday_count, 10)
+
+    return jsonify(
+        {"count": max(count, 1)}
+    )  # never show 0 — at minimum, fallback content exists
 
 
 # =============================================
@@ -250,9 +494,9 @@ def get_brief():
 def generate_brief_card():
     global BRIEF_CARDS_CACHE
 
-    data    = request.json
-    title   = data.get("title", "").strip()
-    desc    = data.get("desc",  "").strip()
+    data = request.json
+    title = data.get("title", "").strip()
+    desc = data.get("desc", "").strip()
     content = data.get("content", "").strip()
 
     cache_key = hashlib.md5(title.lower().encode()).hexdigest()
@@ -269,7 +513,9 @@ def generate_brief_card():
             return jsonify({"card": cached, "source": "cache"})
         else:
             # Bad cache — all same, delete and regenerate
-            print(f"⚠️  Brief card cache had identical B/I/A, regenerating: {title[:50]}")
+            print(
+                f"⚠️  Brief card cache had identical B/I/A, regenerating: {title[:50]}"
+            )
             del BRIEF_CARDS_CACHE[cache_key]
 
     full_text = f"{title}. {desc}. {content}"
@@ -334,7 +580,7 @@ NEWS ARTICLE:
                 raw = raw[4:]
         # Find first { and last } in case there's surrounding text
         start = raw.find("{")
-        end   = raw.rfind("}") + 1
+        end = raw.rfind("}") + 1
         if start == -1 or end == 0:
             raise ValueError("No JSON object found in response")
         return json.loads(raw[start:end])
@@ -345,17 +591,18 @@ NEWS ARTICLE:
         i = card.get("intermediate", "")
         a = card.get("advanced", "")
         return (
-            bool(b) and bool(i) and bool(a)
-            and not (b == i == a)           # all identical = bad
-            and len(b) > 30                 # too short = bad
+            bool(b)
+            and bool(i)
+            and bool(a)
+            and not (b == i == a)  # all identical = bad
+            and len(b) > 30  # too short = bad
         )
 
     # ── Try Gemini first ─────────────────────────────────────────────────
     card = None
     try:
         response = _get_gemini().models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
+            model="gemini-2.5-flash", contents=prompt
         )
         card = _parse_card(response.text)
         if not _is_valid(card):
@@ -380,9 +627,9 @@ NEWS ARTICLE:
                             "Each value must be a meaningfully DIFFERENT paragraph "
                             "explaining the same news at different knowledge levels. "
                             "No markdown. No extra text. Just the JSON object."
-                        )
+                        ),
                     },
-                    {"role": "user", "content": prompt}
+                    {"role": "user", "content": prompt},
                 ],
                 temperature=0.7,
             )
@@ -397,9 +644,9 @@ NEWS ARTICLE:
             # At least make them different lengths so switching feels different
             words = (desc or title).split()
             card = {
-                "beginner":     " ".join(words[:min(30, len(words))]),
+                "beginner": " ".join(words[: min(30, len(words))]),
                 "intermediate": desc or title,
-                "advanced":     f"{desc or title} This story is still developing.",
+                "advanced": f"{desc or title} This story is still developing.",
             }
 
     # ── Only cache if valid — prevents bad data persisting ───────────────
