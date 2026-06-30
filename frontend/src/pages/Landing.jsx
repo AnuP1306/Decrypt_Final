@@ -1,8 +1,3 @@
-// function Landing() {
-//     return <h1>Landing page</h1>;
-//   }
-  
-//   export default Landing;
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../styles/landing.css";

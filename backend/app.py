@@ -729,19 +729,83 @@ def get_refresh_status():
 
 
 # ================= GENERATE SLIDES =================
+import re
+
+
+def normalize_title_for_slides(title):
+    """
+    Same normalization family used for news dedup — strips punctuation/
+    quote variants, collapses whitespace — so cosmetically different
+    headlines for the same story map to the SAME slide cache entry.
+    """
+    t = title.strip().lower()
+    t = re.sub(r"[\"'\u2018\u2019\u201c\u201d\u2013\u2014\-,.:;!?()]", "", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
+
+
+def find_cached_slides(article_id, title):
+    """
+    Two-tier lookup against SLIDES_CACHE:
+      1. Exact article_id match — fast path for the common case.
+      2. Normalized-title match — catches the SAME story re-arriving
+         under a different article_id (happens whenever the background
+         refresh re-fetches/re-hashes a near-duplicate headline), so we
+         never burn a fresh Gemini call for a story we've already
+         explained, even if its id changed underneath us.
+    Returns (slides_dict, matched_via) — matched_via is "id", "title",
+    or None if nothing was found.
+    """
+    if article_id in SLIDES_CACHE:
+        entry = SLIDES_CACHE[article_id]
+        return entry.get("slides"), "id"
+
+    norm = normalize_title_for_slides(title)
+    for cached_id, entry in SLIDES_CACHE.items():
+        if entry.get("normalized_title") == norm:
+            return entry.get("slides"), "title"
+
+    return None, None
+
+
+def prune_slides_cache():
+    """
+    Keep slides_cache.json from growing unbounded. Unlike NEWS_CACHE,
+    slide entries don't carry a natural "date" — so we cap by COUNT,
+    dropping the oldest entries once the cache exceeds the limit. Dict
+    insertion order is preserved in Python 3.7+, so the oldest entries
+    are simply the first N keys.
+    """
+    MAX_SLIDES_CACHE_SIZE = 500
+    if len(SLIDES_CACHE) > MAX_SLIDES_CACHE_SIZE:
+        excess = len(SLIDES_CACHE) - MAX_SLIDES_CACHE_SIZE
+        oldest_keys = list(SLIDES_CACHE.keys())[:excess]
+        for k in oldest_keys:
+            del SLIDES_CACHE[k]
+        print(
+            f"🧹 Slides cache pruned: removed {excess} oldest entries (cap: {MAX_SLIDES_CACHE_SIZE})"
+        )
+
+
 @app.route("/generate-slides", methods=["POST"])
 def generate_slides():
-
     data = request.json
     index = data.get("index", 0)
     title = data.get("title", "")
 
-    cache_key = title.strip().lower().replace("'", "'")
+    # article_id is the SAME id generate_article_id() produces for this
+    # article in NEWS_CACHE — passed from the frontend so slides_cache.json
+    # and news_cache.json share identical IDs for the same story, making
+    # the two files trivially matchable.
+    article_id = data.get("article_id", "")
 
-    # 🔥 CHECK CACHE FIRST
-    if cache_key in SLIDES_CACHE:
-        print(f"🟢 CACHE HIT for: {title}")
-        return jsonify({"slides": SLIDES_CACHE[cache_key], "source": "cache"})
+    # ── CHECK CACHE FIRST — id match, then title-fallback match ──────────
+    cached_slides, matched_via = find_cached_slides(article_id, title)
+    if cached_slides:
+        print(f"🟢 CACHE HIT ({matched_via}-match) for: {title[:60]}")
+        return jsonify({"slides": cached_slides, "source": f"cache-{matched_via}"})
+
+    print(f"🟡 CACHE MISS — calling Gemini for: {title[:60]}")
 
     desc = data.get("desc", "")
     content = data.get("content", "")
@@ -781,31 +845,24 @@ def generate_slides():
         if raw_text.startswith("```"):
             raw_text = raw_text.replace("```json", "").replace("```", "").strip()
 
-        # slides = json.loads(raw_text)
-        # SLIDES_CACHE[cache_key] = slides
-        # with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        #     json.dump(SLIDES_CACHE, f, ensure_ascii=False, indent=2)
-        # print(f"🔵 CACHE SAVED for: {title}")
-
         slides = json.loads(raw_text)
-        SLIDES_CACHE[cache_key] = slides
 
-        # ── Trim cache once it gets too large ────────────────────────────
-        # Dicts preserve insertion order in Python 3.7+, so the oldest
-        # entries are simply the first N keys.
-        MAX_SLIDES_CACHE_SIZE = 500
-        if len(SLIDES_CACHE) > MAX_SLIDES_CACHE_SIZE:
-            excess = len(SLIDES_CACHE) - MAX_SLIDES_CACHE_SIZE
-            oldest_keys = list(SLIDES_CACHE.keys())[:excess]
-            for k in oldest_keys:
-                del SLIDES_CACHE[k]
-            print(
-                f"🧹 Trimmed {excess} oldest slide cache entries (cap: {MAX_SLIDES_CACHE_SIZE})"
-            )
+        # Store keyed by article_id (so news_cache.json <-> slides_cache.json
+        # IDs match 1:1), but ALSO store the normalized title alongside it,
+        # so a future request for the same story under a DIFFERENT
+        # article_id can still find this entry via find_cached_slides().
+        cache_key = article_id if article_id else normalize_title_for_slides(title)
+        SLIDES_CACHE[cache_key] = {
+            "slides": slides,
+            "normalized_title": normalize_title_for_slides(title),
+            "title": title,
+        }
+
+        prune_slides_cache()
 
         with open(CACHE_FILE, "w", encoding="utf-8") as f:
             json.dump(SLIDES_CACHE, f, ensure_ascii=False, indent=2)
-        print(f"🔵 CACHE SAVED for: {title}")
+        print(f"🔵 CACHE SAVED ({cache_key}) for: {title[:60]}")
 
         return jsonify({"slides": slides, "source": "gemini"})
 
@@ -822,7 +879,6 @@ def generate_slides():
         except:
             print(f"⚠️ Fallback index missing: {index}")
 
-        # 🛟 LAST RESORT
         print(f"⚠️ No fallback match, using minimal safe fallback: {title}")
         safe_text = desc if desc else content if content else title
 
@@ -840,7 +896,8 @@ def generate_slides():
                             ),
                         }
                     ],
-                }
+                },
+                "source": "minimal-fallback",
             }
         )
 
@@ -883,7 +940,7 @@ def ask_article():
     # ── GROQ FALLBACK ─────────────────────────────────────────────────────
     try:
         response = groq_client.chat.completions.create(
-            model="llama-3.1-8b-instant",
+            model="openai/gpt-oss-20b",
             messages=[
                 {
                     "role": "system",

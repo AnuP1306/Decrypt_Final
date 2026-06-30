@@ -1,5 +1,5 @@
 {
-  "date": "2026-06-29",
+  "date": "2026-06-30",
   "tools": [
     {
       "id": "ph-1173176",
@@ -11,7 +11,7 @@
       "favicon": "",
       "category": "AI Agents",
       "is_free": true,
-      "votes": 731,
+      "votes": 732,
       "source": "producthunt",
       "tags": [
         "#AIAgents",
@@ -28,7 +28,7 @@
       "favicon": "",
       "category": "AI Agents",
       "is_free": true,
-      "votes": 670,
+      "votes": 673,
       "source": "producthunt",
       "tags": [
         "#AIAgents",
@@ -36,16 +36,16 @@
       ]
     },
     {
-      "id": "ph-1086254",
-      "name": "HAQQ Legal AI on Mobile",
-      "tagline": "Bringing legal understanding to anyone with a phone",
-      "description": "Bringing legal understanding to anyone with a phone",
-      "url": "https://www.producthunt.com/r/ICAKRVUKEN25TG?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/113427cb-3935-4888-bbba-693fbbcf8574.jpeg?auto=format",
+      "id": "ph-1182365",
+      "name": "Agent Mode by Receiptor AI",
+      "tagline": "Bookkeeping assistant that runs receipt workflows end-to-end",
+      "description": "Bookkeeping assistant that runs receipt workflows end-to-end",
+      "url": "https://www.producthunt.com/r/DVSAWE2SN72E2P?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/51efb7c4-522f-4ca5-b984-6b55574c4200.gif?auto=format",
       "favicon": "",
       "category": "AI Agents",
       "is_free": true,
-      "votes": 319,
+      "votes": 402,
       "source": "producthunt",
       "tags": [
         "#AIAgents",
@@ -215,40 +215,6 @@
       ]
     },
     {
-      "id": "ph-1177141",
-      "name": "AgentX",
-      "tagline": "Evaluate AI agent, pinpoint issues, and fix with one click.",
-      "description": "Evaluate AI agent, pinpoint issues, and fix with one click.",
-      "url": "https://www.producthunt.com/r/MAKIXB6C4DMJG6?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/3569abf9-5c75-44f2-8b6e-d7af7caaad97.gif?auto=format",
-      "favicon": "",
-      "category": "Developer Tools",
-      "is_free": true,
-      "votes": 585,
-      "source": "producthunt",
-      "tags": [
-        "#DeveloperTools",
-        "#ProductHunt"
-      ]
-    },
-    {
-      "id": "ph-1162357",
-      "name": "Skybridge",
-      "tagline": "The full-stack open source React framework for MCP Apps",
-      "description": "The full-stack open source React framework for MCP Apps",
-      "url": "https://www.producthunt.com/r/WYDUMMA2RJODS7?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/6b3e2d43-65bb-4aca-acac-bcd622430f4b.gif?auto=format",
-      "favicon": "",
-      "category": "Developer Tools",
-      "is_free": true,
-      "votes": 570,
-      "source": "producthunt",
-      "tags": [
-        "#DeveloperTools",
-        "#ProductHunt"
-      ]
-    },
-    {
       "id": "ph-1169408",
       "name": "Oxlo.ai",
       "tagline": "Scale across AI models without scaling your bill",
@@ -258,7 +224,7 @@
       "favicon": "",
       "category": "Developer Tools",
       "is_free": true,
-      "votes": 514,
+      "votes": 516,
       "source": "producthunt",
       "tags": [
         "#DeveloperTools",
@@ -275,7 +241,7 @@
       "favicon": "",
       "category": "Developer Tools",
       "is_free": true,
-      "votes": 389,
+      "votes": 392,
       "source": "producthunt",
       "tags": [
         "#DeveloperTools",
@@ -292,7 +258,7 @@
       "favicon": "",
       "category": "Developer Tools",
       "is_free": true,
-      "votes": 325,
+      "votes": 329,
       "source": "producthunt",
       "tags": [
         "#DeveloperTools",
@@ -318,6 +284,42 @@
       ]
     },
     {
+      "id": "hn-36296695",
+      "name": "Non.io, a Reddit-like platform Ive been working on for the last 4 year",
+      "tagline": "Non.io, a Reddit-like platform Ive been working on for the last 4 years",
+      "description": "Non.io, a Reddit-like platform Ive been working on for the last 4 years",
+      "url": "https://non.io",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://non.io&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://non.io&size=64",
+      "category": "Developer Tools",
+      "is_free": true,
+      "votes": 1943,
+      "source": "hackernews",
+      "tags": [
+        "#DeveloperTools",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
+      "id": "hn-33357197",
+      "name": "I 3D scanned the interior of the Great Pyramid at Giza",
+      "tagline": "I 3D scanned the interior of the Great Pyramid at Giza",
+      "description": "I 3D scanned the interior of the Great Pyramid at Giza",
+      "url": "https://giza.mused.org/en/guided/266/inside-the-great-pyramid",
+      "image": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://giza.mused.org&size=64",
+      "favicon": "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://giza.mused.org&size=64",
+      "category": "Developer Tools",
+      "is_free": true,
+      "votes": 1752,
+      "source": "hackernews",
+      "tags": [
+        "#DeveloperTools",
+        "#ShowHN",
+        "#Free"
+      ]
+    },
+    {
       "id": "ph-1167541",
       "name": "OpenArt Director",
       "tagline": "Direct cinematic videos through chat",
@@ -327,7 +329,7 @@
       "favicon": "",
       "category": "Design & Creative",
       "is_free": true,
-      "votes": 457,
+      "votes": 459,
       "source": "producthunt",
       "tags": [
         "#DesignCreative",
@@ -344,7 +346,7 @@
       "favicon": "",
       "category": "Design & Creative",
       "is_free": true,
-      "votes": 348,
+      "votes": 349,
       "source": "producthunt",
       "tags": [
         "#DesignCreative",
@@ -352,16 +354,16 @@
       ]
     },
     {
-      "id": "ph-1176880",
-      "name": "Alai 2.0",
-      "tagline": "AI design partner for presentations, social posts, and more",
-      "description": "AI design partner for presentations, social posts, and more",
-      "url": "https://www.producthunt.com/r/FXYXCM6UIMQ5YE?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
-      "image": "https://ph-files.imgix.net/154efba0-d61f-4be9-a054-a0573d18fadf.png?auto=format",
+      "id": "ph-1180511",
+      "name": "Figma Motion",
+      "tagline": "Your Figma canvas now has a timeline",
+      "description": "Your Figma canvas now has a timeline",
+      "url": "https://www.producthunt.com/r/C6LLLKAB7X3YN2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/db00a7a1-6778-4e51-a953-de5a9a339bc9.jpeg?auto=format",
       "favicon": "",
       "category": "Design & Creative",
       "is_free": true,
-      "votes": 320,
+      "votes": 314,
       "source": "producthunt",
       "tags": [
         "#DesignCreative",
@@ -432,7 +434,7 @@
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 608,
+      "votes": 615,
       "source": "producthunt",
       "tags": [
         "#Productivity",
@@ -449,7 +451,7 @@
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 539,
+      "votes": 541,
       "source": "producthunt",
       "tags": [
         "#Productivity",
@@ -466,7 +468,7 @@
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 469,
+      "votes": 472,
       "source": "producthunt",
       "tags": [
         "#Productivity",
@@ -483,7 +485,7 @@
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 397,
+      "votes": 399,
       "source": "producthunt",
       "tags": [
         "#Productivity",
@@ -500,7 +502,7 @@
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 368,
+      "votes": 382,
       "source": "producthunt",
       "tags": [
         "#Productivity",
@@ -517,10 +519,27 @@
       "favicon": "",
       "category": "Productivity",
       "is_free": true,
-      "votes": 348,
+      "votes": 349,
       "source": "producthunt",
       "tags": [
         "#Productivity",
+        "#ProductHunt"
+      ]
+    },
+    {
+      "id": "ph-1175520",
+      "name": "Spira for Product Hunt Makers",
+      "tagline": "Social media growth agents that build your momentum",
+      "description": "Social media growth agents that build your momentum",
+      "url": "https://www.producthunt.com/r/T7AK4DSW7OYURG?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Decrypt++%28ID%3A+288048%29",
+      "image": "https://ph-files.imgix.net/94a9cb15-ed22-4f83-89e8-1d99ea0b9025.png?auto=format",
+      "favicon": "",
+      "category": "Marketing & Sales",
+      "is_free": true,
+      "votes": 407,
+      "source": "producthunt",
+      "tags": [
+        "#MarketingSales",
         "#ProductHunt"
       ]
     },
@@ -534,7 +553,7 @@
       "favicon": "",
       "category": "Marketing & Sales",
       "is_free": true,
-      "votes": 368,
+      "votes": 372,
       "source": "producthunt",
       "tags": [
         "#MarketingSales",
@@ -551,7 +570,7 @@
       "favicon": "",
       "category": "Marketing & Sales",
       "is_free": true,
-      "votes": 335,
+      "votes": 337,
       "source": "producthunt",
       "tags": [
         "#MarketingSales",
@@ -610,24 +629,6 @@
         "#Marketing",
         "#Trends",
         "#Research"
-      ]
-    },
-    {
-      "id": "fb-mkt-2",
-      "name": "Beehiiv",
-      "tagline": "Newsletter platform built for growth",
-      "description": "Launch, grow, and monetize your newsletter. Built-in referral program, ad network, and analytics.",
-      "url": "https://beehiiv.com",
-      "image": "",
-      "favicon": "",
-      "category": "Marketing & Sales",
-      "is_free": true,
-      "votes": 0,
-      "source": "curated",
-      "tags": [
-        "#Marketing",
-        "#Newsletter",
-        "#Free"
       ]
     },
     {

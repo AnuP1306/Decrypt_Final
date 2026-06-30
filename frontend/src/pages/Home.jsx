@@ -103,13 +103,40 @@ function Home() {
         const somethingNewArrived =
           finishedNow && finishedNow !== lastKnownFinishTime;
 
+        // if (somethingNewArrived) {
+        //   lastKnownFinishTime = finishedNow;
+        //   // A background refresh completed since our last fetch —
+        //   // pull the updated article list.
+        //   const newsRes = await fetch("http://127.0.0.1:5000/get-news");
+        //   const newsData = await newsRes.json();
+        //   setArticles(newsData.articles || []);
+        // }
+
         if (somethingNewArrived) {
           lastKnownFinishTime = finishedNow;
-          // A background refresh completed since our last fetch —
-          // pull the updated article list.
           const newsRes = await fetch("http://127.0.0.1:5000/get-news");
           const newsData = await newsRes.json();
-          setArticles(newsData.articles || []);
+          const freshArticles = newsData.articles || [];
+
+          // Merge by ID instead of replacing the array wholesale. Any
+          // article ID already present keeps its EXISTING object
+          // reference (and therefore its React key + mounted NewsCard
+          // instance + already-generated slides) — only genuinely new
+          // article IDs get appended. This is what stops a background
+          // refresh from silently re-triggering Gemini calls for cards
+          // the user is already looking at.
+          setArticles(prevArticles => {
+            const existingIds = new Set(prevArticles.map(a => a.id));
+            const newOnes = freshArticles.filter(a => !existingIds.has(a.id));
+
+            if (newOnes.length > 0) {
+              console.log(`📥 ${newOnes.length} genuinely new articles merged in (existing cards untouched)`);
+            } else {
+              console.log("📥 Background refresh completed — no new articles to merge, nothing re-rendered");
+            }
+
+            return [...prevArticles, ...newOnes];
+          });
         }
 
         if (!status.in_progress && pollCount < MAX_POLLS) {

@@ -81,25 +81,25 @@ function DailyBrief() {
   // ==========================================================================
   useEffect(() => { fetchBrief(); }, []);
 
+  // Lazily enrich only the card currently being viewed. Runs once per
+// card change — never preloads future cards.
+useEffect(() => {
+  if (!briefData.length) return;
+  const current = briefData[currentIndex];
+  if (!current) return;
+
+  const id = current.id || current.title;
+  console.log(`👀 User viewing card ${currentIndex + 1}`);
+
+  if (descriptions[id] || enrichingIds.has(id)) return; // already cached or in-flight
+  enrichOne(current);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [currentIndex, briefData]);
+
   useEffect(() => {
     if (botChatRef.current)
       botChatRef.current.scrollTop = botChatRef.current.scrollHeight;
   }, [botMessages]);
-
-  // async function fetchBrief() {
-  //   setLoading(true);
-  //   try {
-  //     const res  = await fetch("http://127.0.0.1:5000/get-brief");
-  //     const data = await res.json();
-  //     const articles = data.articles || [];
-  //     setBriefData(articles);
-  //     setLoading(false);
-  //     articles.forEach(article => enrichOne(article));
-  //   } catch (err) {
-  //     console.error("Brief fetch failed:", err);
-  //     setLoading(false);
-  //   }
-  // }
 
   async function fetchBrief() {
     setLoading(true);
@@ -109,15 +109,8 @@ function DailyBrief() {
       const articles = data.articles || [];
       setBriefData(articles);
       setLoading(false);
-
-      // Enrich the first card immediately (so it's ready the instant
-      // the user sees it), then stagger the rest with a small delay
-      // between each. Firing all 10 enrichment calls at once overloads
-      // Gemini/Groq (causing 503s) and the backend cache (causing
-      // race-condition crashes on concurrent saves).
-      articles.forEach((article, i) => {
-        setTimeout(() => enrichOne(article), i * 400);
-      });
+      // No enrichment loop here anymore — enrichment is lazy,
+      // triggered per-card by the currentIndex effect below.
     } catch (err) {
       console.error("Brief fetch failed:", err);
       setLoading(false);
@@ -134,6 +127,7 @@ function DailyBrief() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          id:      article.id || "",
           title:   article.title,
           desc:    article.desc,
           content: article.content || "",

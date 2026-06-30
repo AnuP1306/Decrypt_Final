@@ -1,0 +1,358 @@
+{
+  "last_updated": "2026-06-29T17:33:36.523673",
+  "opportunities": [
+    {
+      "id": "gdg-126673",
+      "title": "IDEABAAZ Startup Goa Day 2026",
+      "company": "GDG Goa",
+      "desc": "Hello Vibrant Goan Innovators!From Goa to the World – Your Startup Journey Starts Here!IDEABAAZ Startup Goa Day 2026 is ......",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://gdg.community.dev/events/details/google-gdg-goa-presents-ideabaaz-startup-goa-day-2026/",
+      "deadline": "2026-07-01T09:30:00+05:30",
+      "location": "Panaji",
+      "stipend": "",
+      "tags": [
+        "AI",
+        "AI - Gemini",
+        "Community Building",
+        "Google Cloud"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "gdg-126692",
+      "title": "Build With AI: Code For Communities",
+      "company": "GDG Udaipur",
+      "desc": "Build with AI: Code For Communities events are community-led technical workshops hosted by Google Developer Groups (GDG). Events aim to help...",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/BWAI26-EventThumb_qI7jJYD.png",
+      "link": "https://gdg.community.dev/events/details/google-gdg-udaipur-presents-build-with-ai-code-for-communities/",
+      "deadline": "2026-07-05T10:00:00+05:30",
+      "location": "Udaipur",
+      "stipend": "",
+      "tags": [
+        "AI",
+        "AI - Gemini",
+        "AI - Vertex AI",
+        "Build with AI"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "gdg-126748",
+      "title": "Blaze 5.0",
+      "company": "GDG Kolachi",
+      "desc": "Blaze 5.0 is a women-exclusive tech conference dedicated to celebrating and amplifying the journeys of women in technolo......",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/GDG_Bevy_DefaultEventThumbnail_2_MF2GjYZ.png",
+      "link": "https://gdg.community.dev/events/details/google-gdg-kolachi-presents-blaze-50/",
+      "deadline": "2026-07-04T09:00:00+05:00",
+      "location": "Karachi",
+      "stipend": "",
+      "tags": [
+        "AI",
+        "AI - Gemini",
+        "Conference",
+        "Tech Talk / Meetup"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "gdg-125230",
+      "title": "Cloud Under the Hood",
+      "company": "GDG Cloud Bengaluru",
+      "desc": "Dive deep into production-hardened Google Cloud engineering, high-performance GKE, and resilient architecture at scale this July 4th at Nasd...",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_Vi2D0c3",
+      "link": "https://gdg.community.dev/events/details/google-gdg-cloud-bengaluru-presents-cloud-under-the-hood/",
+      "deadline": "2026-07-04T09:30:00+05:30",
+      "location": "Bangalore",
+      "stipend": "",
+      "tags": [],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "gdg-126923",
+      "title": "Build with AI: Cloud For Communities - Hands-On Session - Cloud Agentic AI & Antigravity",
+      "company": "GDG Vijayawada",
+      "desc": "Join us for an exciting 'Cloud Agentic AI & Antigravity Hands-On Session' where we dive into the innovative world of......",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://gdg.community.dev/events/details/google-gdg-vijayawada-presents-build-with-ai-cloud-for-communities-hands-on-session-cloud-agentic-ai-amp-antigravity/",
+      "deadline": "2026-07-03T10:00:16+05:30",
+      "location": "Vijayawada",
+      "stipend": "",
+      "tags": [],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "gdg-126997",
+      "title": "Build With AI: Code For Communities - From Data to Intelligence",
+      "company": "GDG Kozhikode",
+      "desc": "Join us for an engaging evening as we dive into the transformative power of AI in modern data pipelines. Discover how DB......",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://gdg.community.dev/events/details/google-gdg-kozhikode-presents-build-with-ai-code-for-communities-from-data-to-intelligence/",
+      "deadline": "2026-07-04T09:00:00+05:30",
+      "location": "Kozhikode",
+      "stipend": "",
+      "tags": [
+        "AI",
+        "AI - Gemini",
+        "Build with AI",
+        "Workshop / hands-on session"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "gdg-118386",
+      "title": "Unlock Efficiency: Master Antigravity skills & Gemini",
+      "company": "GDG Kanpur",
+      "desc": "Join us for an exciting workshop where we explore the groundbreaking concepts of Antigravity skills and Gemini....",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://gdg.community.dev/events/details/google-gdg-kanpur-presents-unlock-efficiency-master-antigravity-skills-amp-gemini/",
+      "deadline": "2026-07-04T18:00:00+05:30",
+      "location": "Kanpur",
+      "stipend": "",
+      "tags": [
+        "AI",
+        "AI - Gemini"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "gdg-127055",
+      "title": "Build with AI: Code for Communities",
+      "company": "GDG Cloud Noida",
+      "desc": "Build with AI: Code for Communities is a hackathon where every problem statement was submitted by a sitting Member of Pa......",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/GDG_Bevy_DefaultEventThumbnail_2_MF2GjYZ.png",
+      "link": "https://gdg.community.dev/events/details/google-gdg-cloud-noida-presents-build-with-ai-code-for-communities/",
+      "deadline": "2026-07-04T10:00:00+05:30",
+      "location": "Noida",
+      "stipend": "",
+      "tags": [
+        "AI - Gemini",
+        "Build with AI",
+        "Google Cloud",
+        "Workshop / hands-on session"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "gdg-126808",
+      "title": "Gemini DevDive",
+      "company": "GDG Cochin",
+      "desc": "Ready to build the future with Google's most capable AI?Join us for Gemini DevDive, an immersive, half-day event designe......",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://gdg.community.dev/events/details/google-gdg-cochin-presents-gemini-devdive/",
+      "deadline": "2026-07-04T09:30:00+05:30",
+      "location": "Kochi",
+      "stipend": "",
+      "tags": [],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "gdg-124098",
+      "title": "Wonder of Wonders 2026: Andhra Pradesh",
+      "company": "GDG Vizag",
+      "desc": "Welcome to WOW 2026, the annual flagship developer conference hosted by GDG on Campus Andhra Pradesh. We are bringing the latest in Google t...",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/event_banners/GDG_Bevy_DefaultEventThumbnail_2_MF2GjYZ.png",
+      "link": "https://gdg.community.dev/events/details/google-gdg-vizag-presents-wonder-of-wonders-2026-andhra-pradesh/",
+      "deadline": "2026-07-04T20:00:00+05:30",
+      "location": "Visakhapatnam",
+      "stipend": "",
+      "tags": [
+        "AI",
+        "AI - Gemini",
+        "AI - Gemma",
+        "AI - Vertex AI"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27398",
+      "title": "VS Code Live: June Recap of Releases",
+      "company": "Microsoft Reactor",
+      "desc": "VS Code ships every week. Once a month, the VS Code and GitHub Copilot product teams pick the updates worth a closer look, demo them live, a...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27398",
+      "deadline": "2026-07-09T15:00:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27383",
+      "title": "Build Connections. Grow Your Career. Start Here for Your Community in India",
+      "company": "Microsoft Reactor",
+      "desc": "Everyone talks about community. This session shows you how to turn connections into real career opportunities.\nLearn from data leaders and i...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27383",
+      "deadline": "2026-07-14T06:00:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27331",
+      "title": "So You Want to Become a Microsoft MVP?",
+      "company": "Microsoft Reactor",
+      "desc": "Join us for an exciting journey into the Microsoft MVP Program!\nWhether you’re a tech enthusiast, a community leader, or someone passionate ...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27331",
+      "deadline": "2026-07-14T15:00:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27363",
+      "title": "Inside the Mind of a Dataviz World Champion",
+      "company": "Microsoft Reactor",
+      "desc": "What does a Dataviz World Champion actually do differently? It’s not just design skills. It’s how they think, how they spot the story, and h...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27363",
+      "deadline": "2026-07-14T15:00:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27358",
+      "title": "Financial Audit Automation Using Microsoft Copilot Studio & Code Interpreter",
+      "company": "Microsoft Reactor",
+      "desc": "In this session, participants will learn how to leverage Microsoft Copilot Studio and Code Interpreter to automate financial audit processes...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27358",
+      "deadline": "2026-07-15T09:30:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27367",
+      "title": "Get Certified SQL+AI (DP-800): Design and Develop SQL Solutions Like a Pro (EMEA/US)",
+      "company": "Microsoft Reactor",
+      "desc": "This session is all about the “build it” portion of DP-800: how to design and develop database solutions that stand up in real workloads and...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27367",
+      "deadline": "2026-07-15T15:00:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27039",
+      "title": "Building secure access in OneLake with roles, endpoints and data controls",
+      "company": "Microsoft Reactor",
+      "desc": "This session explains how secure access is built and managed in OneLake. It covers an overview of OneLake security, the data access control ...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27039",
+      "deadline": "2026-07-15T16:00:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27281",
+      "title": "Inside Fabric Runtime 2.0: Spark 4 and Delta 4 in Action",
+      "company": "Microsoft Reactor",
+      "desc": "Fabric Runtime 2.0 is a major leap forward for running Spark at scale in Microsoft Fabric.\nJoin members of the Microsoft product team for a ...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27281",
+      "deadline": "2026-07-15T23:00:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27373",
+      "title": "Let's Learn GitHub Copilot App",
+      "company": "Microsoft Reactor",
+      "desc": "Join these beginner-friendly virtual sessions to get started with the GitHub Copilot app, your all-in-one control center for managing softwa...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27373",
+      "deadline": "2026-07-16T14:00:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    },
+    {
+      "id": "reactor-27240",
+      "title": "Designing Better Data Models with an AI Coding Agent",
+      "company": "Microsoft Reactor",
+      "desc": "Data modeling is one of the hardest parts of building distributed applications, and it's easy to get wrong early. This session explores how ...",
+      "image": "/images/opportunitiescard6.png",
+      "link": "https://developer.microsoft.com/reactor/events/27240",
+      "deadline": "2026-07-16T15:00:00",
+      "location": "Online",
+      "stipend": "",
+      "tags": [
+        "microsoft",
+        "reactor",
+        "workshop"
+      ],
+      "type": "Workshops",
+      "source": "live"
+    }
+  ]
+}

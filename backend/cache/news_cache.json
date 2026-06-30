@@ -1,111 +1,12 @@
 {
-  "cd5e00261c8585bb08ae942b807c324a": {
-    "id": "cd5e00261c8585bb08ae942b807c324a",
-    "title": "Workshop on 'AI in Education' organsied for Chandigarh teachers",
-    "desc": "The Mount Carmel School, Chandigarh, organised a CBSE capacity building workshop for teachers on the topic “Artificial Intelligence and Digital Innovation in Education”. The workshop aimed at empowering educators with modern technological skills and innovative teaching practices suited for 21st-century classrooms. The workshop was conducted by Janhvi Kohli, a certified professional in generative AI and cyber security, who shared valuable insights on the practical applications of artificial intelligence, digital tools, and technology integration in education. The session focused on making classroom teaching more engaging, effective, and future-ready through the use of modern digital innovations. Organised in collaboration with Orange Publications, the workshop encouraged teachers to explore learner-centred approaches, digital confidence, and creative teaching methodologies that align with the changing educational landscape. The interactive session enabled educators to understand how technology can enhance both teaching and learning experiences. Principal Dr Parveena John Singh appreciated the significance of such professional development initiatives in preparing educators for the evolving demands of education and promoting innovation in classrooms. The workshop proved to be highly informative, interactive, and enriching, leaving the participants inspired to integrate artificial intelligence and digital innovation meaningfully into their teaching practices.",
-    "content": "The Mount Carmel School, Chandigarh, organised a CBSE capacity building workshop for teachers on the topic “Artificial Intelligence and Digital Innovation in Education”. The workshop aimed at empowering educators with modern technological skills and ... [1229 chars]",
-    "image": "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYWE3OTU5OGIwLTcyODItMTFmMS1hZmFlLTJkNzNlMTMwYzExYi5qcGc=",
+  "7194a88dac6eb386bbcb5cb626e61619": {
+    "id": "7194a88dac6eb386bbcb5cb626e61619",
+    "title": "Alternatives to OpenAI, Anthropic: With US prime AI off the table, India opts for fine China",
+    "desc": "Chinese open-source models, which were already popular among startups due to lower costs, may now make their way to large enterprises looking to avoid disruptions to top-dollar artificial intelligence projects. “The choice is pragmatic, not political,” said Nipun Kalra, managing director and senior partner at BCG.",
+    "content": "Synopsis\nChinese open-source models, which were already popular among startups due to lower costs, may now make their way to large enterprises looking to avoid disruptions to top-dollar artificial intelligence projects. “The choice is pragmatic, not ... [4224 chars]",
+    "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-1396916,resizemode-75,msid-132057030/tech/artificial-intelligence/alternatives-to-openai-anthropic-with-us-prime-ai-off-the-table-india-opts-for-fine-china.jpg",
     "domain": "AI",
-    "date": "2026-06-28"
-  },
-  "486fbe04c53cee17a097f3c691d7c2eb": {
-    "id": "486fbe04c53cee17a097f3c691d7c2eb",
-    "title": "In 2012, Alex Krizhevsky trained AlexNet with GPUs, accelerating the rise of modern AI vision",
-    "desc": "Tech News News: Discover how AlexNet, utilizing GPUs, transformed machine vision and deep learning in 2012, marking a pivotal moment for artificial intelligence advancements in computer vision and technology.",
-    "content": "A GPU by AMD based on the Curaçao XT architecture. Image Credit: Wikimedia Commons\nIn the fall of 2012, a computer program revolutionized the technology competition and changed how scientists viewed machine vision and processing. Many specialists onc... [4635 chars]",
-    "image": "https://static.toiimg.com/thumb/msid-132008952,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
-    "domain": "AI",
-    "date": "2026-06-28"
-  },
-  "ec864006b6f4f355eca9ef61258a02d8": {
-    "id": "ec864006b6f4f355eca9ef61258a02d8",
-    "title": "Adani University revamps curriculum for AI era, introduces industry",
-    "desc": "Adani University revamps curriculum for AI era, introduces industry-focused learning - Ahmedabad, June 26 As artificial intelligence (AI) continues to transform industries and reshape the future of work, Adani ... Get Latest News on National only on lokmattimes.com",
-    "content": "Ahmedabad, June 26 As artificial intelligence (AI) continues to transform industries and reshape the future of work, Adani University on Friday announced a major overhaul of its academic curriculum for the 2026–27 academic year, introducing AI-focuse... [3191 chars]",
-    "image": "https://d3pc1xvrcw35tl.cloudfront.net/ln/feedImages/1200x900/202606263840404_202606.jpg",
-    "domain": "AI",
-    "date": "2026-06-28"
-  },
-  "d9c8aa6eae45c46dd8c12fe1ddd74658": {
-    "id": "d9c8aa6eae45c46dd8c12fe1ddd74658",
-    "title": "OpenAI and Broadcom launches Jalapeño, a custom chip built for AI inference",
-    "desc": "The processor is the first series of AI accelerators with multi-generation hardware platform that could make AI systems faster, more reliable, and more accessible.",
-    "content": "OpenAI launched its first custom-built Intelligence Processor called Jalapeño on June 24, in collaboration with Broadcom. The chip is primarily designed for Large Language Model (LLM) inference, which is the process of generating responses after a mo... [2601 chars]",
-    "image": "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202606/6a3cb889b9e55-openai-ai-inference-chip-25113223-16x9.png",
-    "domain": "Electronics",
-    "date": "2026-06-28"
-  },
-  "3b03a6a932b0e2931a9d69f38c2acd64": {
-    "id": "3b03a6a932b0e2931a9d69f38c2acd64",
-    "title": "OpenAI unveils its first custom chip, built by Broadcom",
-    "desc": "Named Jalapeño, the new processor was designed specifically for the unique needs of OpenAI's inference systems.",
-    "content": "On Wednesday, OpenAI unveiled its first custom-built inference processor, designed and manufactured in collaboration with Broadcom. Named Jalapeño, the new processor was designed specifically for the unique needs of OpenAI’s inference systems. OpenAI... [2262 chars]",
-    "image": "https://techcrunch.com/wp-content/uploads/2026/06/Screenshot-2026-06-24-at-9.49.59-AM.jpg?resize=1200,670",
-    "domain": "Electronics",
-    "date": "2026-06-28"
-  },
-  "6711343f17d31cb0c952058ef945695b": {
-    "id": "6711343f17d31cb0c952058ef945695b",
-    "title": "Cerebras shares drop on earnings debut, with margins below AI chip rivals",
-    "desc": "June 23 (Reuters) - Cerebras Systems on Tuesday forecast 2026 revenue that beat Wall ⁠Street estimates, but shares sank as the company's gross margin forecast ‌confirmed it will be an uphill battle to challenge AI chip leader Nvidia in key markets.",
-    "content": "June 23 (Reuters) - Cerebras Systemson Tuesday forecast 2026 revenue that beat Wall ⁠Street estimates, but shares sank as the company's gross margin forecast ‌confirmed it will be an uphill battle to challenge AI chip leader Nvidia in key markets.\nCe... [1731 chars]",
-    "image": "https://apicms.thestar.com.my/uploads/images/2026/06/24/3974193.jpg",
-    "domain": "Electronics",
-    "date": "2026-06-28"
-  },
-  "5e52e867294902b662895e80a7ec96f4": {
-    "id": "5e52e867294902b662895e80a7ec96f4",
-    "title": "L&T share price could rise another 15% as new growth engines take shape, CLSA says",
-    "desc": "CLSA held a call with the heads of L&T's Data Centre and EMS verticals on their new growth engines, which include their own IP-electronics manufacturing, collaborative robots, fabless semiconductor chips, high voltage direct current (HVDC) systems, fabrication yards for offshore winds, the green hydrogen ecosystem, nuclear scale-up and Make In India defence products.",
-    "content": "CLSA highlighted the key differentiators of L&T's strategy that could yield the next multi-billion dollar businesses, which include largely addressable markets, IP-led growth, focus on high-margin products and globally competitive businesses.\nBy Shlo... [2016 chars]",
-    "image": "https://images.cnbctv18.com/uploads/2026/05/larsen-and-toubro-lt-2026-05-4b0e02d035e8cfc2e8bd59f5bc288698.jpg?im=FitAndFill,width=500,height=300",
-    "domain": "Electronics",
-    "date": "2026-06-28"
-  },
-  "7cfdae89a683688a3e5ee9ddb7154924": {
-    "id": "7cfdae89a683688a3e5ee9ddb7154924",
-    "title": "Fake GTA 6 early access websites are stealing gamers' money: Here's how the scam works",
-    "desc": "Cybersecurity researchers warn that scammers are exploiting GTA 6 hype by offering fake early access for cryptocurrency payments.",
-    "content": "Aman Gupta\nAman Gupta is a Digital Content Producer at LiveMint with over 3.5 years of experience covering the technology landscape. He specializes in artificial intelligence and consumer technology, reporting on everything from the ethical debates a... [539 chars]",
-    "image": "https://www.livemint.com/lm-img/img/2026/06/28/1600x900/logo/GTA_6_1782624275557_1782624275772_916fd65c-4770-46f7-bfe5-1c0126add994.jpg",
-    "domain": "AI",
-    "date": "2026-06-28"
-  },
-  "8b06871431007365c36ca6490f453aa4": {
-    "id": "8b06871431007365c36ca6490f453aa4",
-    "title": "Enterprise SaaS becomes 'condition for survival' in Indian BFSI as demand outpaces friction",
-    "desc": "Financial services in India are embracing Enterprise SaaS as a survival necessity, driven by regulatory demands and customer expectations. Banks and other institutions see B2B SaaS as vital for growth, particularly in security, compliance, and customer experience. Mid-sized players are leading adoption, recognizing scalability as key. While technology offers competitive advantages, startups face challenges with long sales cycles and implementation hurdles.",
-    "content": "Synopsis\nFinancial services in India are embracing Enterprise SaaS as a survival necessity, driven by regulatory demands and customer expectations. Banks and other institutions see B2B SaaS as vital for growth, particularly in security, compliance, a... [3503 chars]",
-    "image": "https://img.etimg.com/thumb/msid-132045965,width-1200,height-630,imgsize-104472,overlay-economictimes/articleshow.jpg",
-    "domain": "IT",
-    "date": "2026-06-28"
-  },
-  "8e4f92bbf0614241fe6ef57d6c67a327": {
-    "id": "8e4f92bbf0614241fe6ef57d6c67a327",
-    "title": "Enterprise SaaS becomes \"condition for survival\" in Indian BFSI as demand outpaces friction",
-    "desc": "Enterprise SaaS is no longer optional for India's financial services firms, it is now a 'condition for survival,' according to a Multi-Act Equity Consultancy Private Limited report, as banks, insurers, AMCs, NBFCs and distributors race to meet regulatory complexity, rising consumer expectations and distribution demands.",
-    "content": "New Delhi [India], June 28 (ANI): Enterprise Software as a Service (SaaS) is no longer optional for India's financial services firms, it is now a \"condition for survival,\" according to a Multi-Act Equity Consultancy Private Limited report, as banks, ... [2763 chars]",
-    "image": "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYWFjNDhlMzkwLTcyYWUtMTFmMS1hZmFlLTJkNzNlMTMwYzExYi5qcGc=",
-    "domain": "IT",
-    "date": "2026-06-28"
-  },
-  "9321d134ffaf78f02a7357e6f20d8cdb": {
-    "id": "9321d134ffaf78f02a7357e6f20d8cdb",
-    "title": "Cr SME IPO to Open on Tuesday – Outlook Business",
-    "desc": "Kratikal Tech's ₹39.7 crore SME IPO will open on Tuesday as the cybersecurity company looks to raise capital for growth.",
-    "content": "The three-day issue, which will close on July 2, is entirely a fresh issue of up to 29.4 lakh equity shares. The anchor portion will open for a day on June 29, the company said in a statement.\nThe company has fixed a price band at Rs 128-135 per shar... [995 chars]",
-    "image": "https://media.assettype.com/outlookbusiness/2025-05-26/bd3pvepd/initial-public-offering-icon-dark-background-ipo-share-investment-concept-3d-rendering269648-399.avif?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
-    "domain": "IT",
-    "date": "2026-06-28"
-  },
-  "d68c6391f18d048775856f567155b265": {
-    "id": "d68c6391f18d048775856f567155b265",
-    "title": "Chinese and Japanese companies launch AI models, claim they are as powerful as Anthropic’s Mythos",
-    "desc": "Tech News News: Two AI companies in Japan and China have launched AI models for cybersecurity and claim that their new software matches the power of Anthropic's restr.",
-    "content": "Two AI companies in Japan and China have launched AI models for cybersecurity and claim that their new software matches the power of Anthropic's restricted “Mythos” and “Fable 5” models even as the US government maintains its strict export ban on Ant... [2858 chars]",
-    "image": "https://static.toiimg.com/thumb/msid-132045147,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
-    "domain": "IT",
-    "date": "2026-06-28"
+    "date": "2026-06-29"
   },
   "f328b7122925d1b84759db8e1d570ee3": {
     "id": "f328b7122925d1b84759db8e1d570ee3",
@@ -134,30 +35,12 @@
     "domain": "AI",
     "date": "2026-06-29"
   },
-  "120365893d900ff1685fa4291bc32ba9": {
-    "id": "120365893d900ff1685fa4291bc32ba9",
-    "title": "Google Puts Brakes On Meta's Gemini AI Usage Over Capacity Shortfall",
-    "desc": "The reported restrictions come as tech companies race to secure computing power to fuel growing artificial intelligence ambitions.",
-    "content": "Google has reportedly scaled back Meta's access to its Gemini artificial intelligence models after Meta's demand for computing capacity surpassed what Google could provide, according to reports.\nGoogle informed Meta around March that it would be unab... [1573 chars]",
-    "image": "https://c.ndtvimg.com/2026-06/6sjbuugk_google_625x300_28_June_26.jpg?im=FeatureCrop,algorithm=dnn,width=1600,height=900",
-    "domain": "AI",
-    "date": "2026-06-29"
-  },
   "be8ee98f9b731bfe90b49a1dddaf63a3": {
     "id": "be8ee98f9b731bfe90b49a1dddaf63a3",
     "title": "I Overcame My Fear of Learning About AI and Landed a Big Tech AI Job",
     "desc": "A product designer share how embracing her inner \"mad scientist\" and experimenting with AI helped her land a job at Adobe, with no formal background in machine learning.",
     "content": "This as-told-to essay is based on a conversation with Nitya Kumar, 25, an Adobe employee who lives in India. The following has been edited for length and clarity.\nI landed a product design role at Meta straight out of college in 2022. By 2024, I saw ... [3079 chars]",
     "image": "https://i.insider.com/6a3e5d8fa25092c74cc9f9a4?width=1200&format=jpeg",
-    "domain": "AI",
-    "date": "2026-06-29"
-  },
-  "0ef7f15ae162656f6b9dd3fc60f20eab": {
-    "id": "0ef7f15ae162656f6b9dd3fc60f20eab",
-    "title": "Google Caps Meta's Use of Gemini AI Models, FT Reports",
-    "desc": "Google has placed limits on Meta Platforms Inc.’s use of its Gemini artificial intelligence models because it could not provide as much computing capacity as the social media company wanted, according to the Financial Times.",
-    "content": "Google has placed limits on Meta Platforms Inc.’s use of its Gemini artificial intelligence models because it could not provide as much computing capacity as the social media company wanted, according to the Financial Times.\nIn the latest sign of AI ... [387 chars]",
-    "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/i9DlFaz7BRJo/v0/1200x800.jpg",
     "domain": "AI",
     "date": "2026-06-29"
   },
@@ -170,174 +53,21 @@
     "domain": "AI",
     "date": "2026-06-29"
   },
-  "4f104e5416cdd7a0eec5da66f7b289b6": {
-    "id": "4f104e5416cdd7a0eec5da66f7b289b6",
-    "title": "Google restricts Meta’s access to Gemini AI capacity amid computing constraints",
-    "desc": "Google restricts Meta’s access to Gemini AI capacity amid computing constraints - New Delhi, June 28 Google has imposed limits on Meta’s use of its Gemini artificial intelligence models after ... Get Latest News on Technology only on lokmattimes.com",
-    "content": "New Delhi, June 28 Google has imposed limits on Meta’s use of its Gemini artificial intelligence models after the social media giant sought more computing capacity than the company was able to provide.\nThe restrictions, which reportedly came into eff... [2003 chars]",
-    "image": "https://d3pc1xvrcw35tl.cloudfront.net/ln/feedImages/1200x900/202606283842778_202606.jpg",
-    "domain": "AI",
-    "date": "2026-06-29"
-  },
-  "5415ff3cf45b4e689d22dc8230a11ce0": {
-    "id": "5415ff3cf45b4e689d22dc8230a11ce0",
-    "title": "OpenAI Product Updates Signal Shift Toward Infrastructure Competition In AI Race",
-    "desc": "The artificial intelligence industry has crossed a threshold. No longer confined to software labs and consumer apps, AI has become a physical infrastructure",
-    "content": "The artificial intelligence industry has crossed a threshold. No longer confined to software labs and consumer apps, AI has become a physical infrastructure challenge that rivals energy production and telecommunications in scope and strategic importa... [6110 chars]",
-    "image": "https://mashviral.com/wp-content/uploads/2026/06/artificial-intelligence-data-centers-server-room.avif",
-    "domain": "AI",
-    "date": "2026-06-29"
-  },
-  "6046e02713dae7586558f15f360d3668": {
-    "id": "6046e02713dae7586558f15f360d3668",
-    "title": "Baltimore's Sail 250 gives students an educational lesson through STEM",
-    "desc": "From robotics to drones, Baltimore's Living Classroom Foundation gave students a STEM educational experience during this weekend's Sail 250 at the Inner Harbor.",
-    "content": "From robotics to drones, Baltimore's Living Classroom Foundation gave students a STEM educational experience during this weekend's Sail 250 at the Inner Harbor.\nThe Sail 250 Maryland STEM education tent featured more than 30 STEM representatives, inc... [1060 chars]",
-    "image": "https://assets1.cbsnewsstatic.com/hub/i/r/2026/06/28/e0171c7c-ea59-4521-8353-8f2fe8f2195b/thumbnail/1200x630/0dd3c53e4b5809e8c21aa14b551c7cce/stem.png",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "af1a80d984af87ff7b3ed96befcf090a": {
-    "id": "af1a80d984af87ff7b3ed96befcf090a",
-    "title": "MoU signed for indigenous chips in CCTV cameras",
-    "desc": "MoU signed between Mindgrove Technologies and Prama India to integrate indigenous chips in CCTV cameras, boosting India's semiconductor capabilities.",
-    "content": "IIT Madras Research Park headquartered Mindgrove Technologies has signed a Memorandum of Understanding (MoU) with Prama India Private Limited to deploy indigenously designed chips in CCTV surveillance cameras and advanced video security systems.\nAcco... [1230 chars]",
-    "image": "https://www.thehindu.com/theme/images/og-image.png",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "6c3339175cf32a7444227e1d225785eb": {
-    "id": "6c3339175cf32a7444227e1d225785eb",
-    "title": "Baidu's chip unit Kunlunxin is targeting a $50 billion Hong Kong IPO and asked investors to buy its semiconductors",
-    "desc": "Kunlunxin asked IPO investors to also commit to purchasing its AI chips, The Information reported. Hong Kong raised nearly $44 billion in share sales in H1 2026.",
-    "content": "TL;DR\nBaidu’s Kunlunxin targets a $50B Hong Kong IPO and asked investors to commit to buying its chips, blurring the line between shareholder and customer.\nBaidu’s AI chip unit Kunlunxin is planning to go public in Hong Kong at a target valuation of ... [1798 chars]",
-    "image": "https://media.thenextweb.com/2026/06/baidu-kunlunxin-ipo-50-billion-investors-buy-chips.avif",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "babd19cecce13b4d97cd0aa33495c1fb": {
-    "id": "babd19cecce13b4d97cd0aa33495c1fb",
-    "title": "Apple's next Mac Studio could get a new M5 Ultra chip and a cooler upgrade",
-    "desc": "New reports claim that Apple is preparing an M5 Ultra Mac Studio this year, with an M7 Ultra model and improved cooling planned for the future.",
-    "content": "Apple’s Mac Studio may not be getting a fresh new look anytime soon, but it could be getting a meaningful upgrade where it matters most. According to Mark Gurman in the latest edition of his Power On newsletter, Apple is preparing an M5 Ultra-powered... [1804 chars]",
-    "image": "https://www.digitaltrends.com/tachyon/2026/06/Apple-Mac-Studio-Featured.jpg?resize=1200%2C630",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "a25936a88c56f7b93bf98c6ae84fab23": {
-    "id": "a25936a88c56f7b93bf98c6ae84fab23",
-    "title": "Player Previews: Why RB Darrion Dupree's Time has Come in Madison",
-    "desc": "The stars have aligned for a breakout for the former blue-chip prospect.",
-    "content": "Over the course of the summer leading up to Big Ten Media Days and fall camp, Badgers On SI will extensively preview Wisconsin football's roster with a write-up for each player expected to be remotely involved in 2026.\nWe continue the series with tru... [4042 chars]",
-    "image": "https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_93,w_1311,h_737/c_fill,w_1440,ar_1440:810,f_auto,q_auto,g_auto/images/voltaxMediaLibrary/mmsport/all_badgers/01krh28zzwhrb5j5qv16.jpg",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "6d12b3c10385bd9bfcb1b010384650db": {
-    "id": "6d12b3c10385bd9bfcb1b010384650db",
-    "title": "Baidu's AI chip unit Kunlunxin targets $50 billion Hong Kong IPO, The Information reports",
-    "desc": "Baidu's AI chip unit, Kunlunxin, is planning to go public in Hong ​Kong at a target valuation of $50 billion, The ‌Information reported on Sunday, citing two sources.",
-    "content": "Investors have been asked to buy chips with a value three to seven ​times the worth of their planned subscription ​in Kunlunxin’s initial public offering shares, the report ⁠said.\nSign up here.\nReuters could not immediately verify the report. Baidu d... [824 chars]",
-    "image": "https://www.reuters.com/resizer/v2/J2U4U4APYJIGZHYRPQ4K64BOKI.jpg?auth=dda948840e9ca98411ece9d91a0a94b97894857579e67ae5a371b6ce52c01ee6&height=1005&width=1920&quality=80&smart=true",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "3a842993c943aafaca1d5e904f45e581": {
-    "id": "3a842993c943aafaca1d5e904f45e581",
-    "title": "Don't let AI chip off the old block",
-    "desc": "The soaring demand for memory chips driven by artificial intelligence is leading to significant shortages that are affecting various industries, including automotive and smartphone production. This phenomenon, dubbed 'chipflation', triggers rising prices and prompts companies to redesign their products.",
-    "content": "Synopsis\nThe soaring demand for memory chips driven by artificial intelligence is leading to significant shortages that are affecting various industries, including automotive and smartphone production. This phenomenon, dubbed 'chipflation', triggers ... [2290 chars]",
-    "image": "https://img.etimg.com/thumb/width-1200,height-900,imgsize-39000,resizemode-75,msid-132056732/opinion/et-editorial/dont-let-ai-chip-off-the-old-block.jpg",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "b15b2cdaae9750fca2328ac326674e4c": {
-    "id": "b15b2cdaae9750fca2328ac326674e4c",
-    "title": "Business People: Best Buy CFO to depart amid top executive changes",
-    "desc": "RETAIL Richfield-based electronics retailer Best Buy Co. announced that Matt Bilunas will step down as chief financial officer and depart the company at the end of July. The company is conducting an external search for a successor in conjunction with the appointment incoming CEO Jason Bonfig. Current CEO Corie Barry, who previously served as CFO, […]",
-    "content": "To share the story of your loved one, you can submit an obituary using any of the following methods:\nEmail: Please include the information from our Obituary Checklist (referenced below) to obits@pioneerpress.com.\nOnline: Use our Self-Service Portal f... [8258 chars]",
-    "image": "https://www.twincities.com/wp-content/uploads/2025/05/Best_Buy-Results_31891.jpg?w=1024&h=685",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "ec6e2865a5597663832d2c09c29f417c": {
-    "id": "ec6e2865a5597663832d2c09c29f417c",
-    "title": "Statsguru: Electronics hit hard by surging chip prices amid AI boom",
-    "desc": "India imported memory chips worth $6.79 billion in FY26, 53.41 per cent more than in FY25",
-    "content": "India imported memory chips worth $6.79 billion in FY26, 53.41 per cent more than in FY25. The annual average unit import price rose to a six-year high of $10.96 in FY26. Imported price of memory chips started climbing since November, 2025 and reache... [284 chars]",
-    "image": "https://bsmedia.business-standard.com/_media/bs/img/article/2026-06/28/thumb/fitandfill/1200X628/1782662566-9154.jpg",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "584798ff3a1a4bd7eeb1c1811ba6ca64": {
-    "id": "584798ff3a1a4bd7eeb1c1811ba6ca64",
-    "title": "Samsung, SK hynix to unveil investment plans this week: Presidential office",
-    "desc": "Samsung, SK hynix to unveil investment plans this week: Presidential office - Seoul, June 28 Samsung Electronics and SK hynix are set to announce major investment plans early this week ... Get Latest News on Technology only on lokmattimes.com",
-    "content": "Seoul, June 28 Samsung Electronics and SK hynix are set to announce major investment plans early this week at a meeting presided over by President Lee Jae Myung, the presidential office said on Sunday.\nThe investments will be unveiled during a briefi... [1940 chars]",
-    "image": "https://d3pc1xvrcw35tl.cloudfront.net/ln/feedImages/1200x900/1670eddbe3afba8ee221fd2e5fa851df_202606.jpg",
-    "domain": "Electronics",
-    "date": "2026-06-29"
-  },
-  "9b0b81d59edb19b260ef4bf93c31c62b": {
-    "id": "9b0b81d59edb19b260ef4bf93c31c62b",
-    "title": "Google is putting a cap on Meta’s Gemini usage.",
-    "desc": "Google has struggled to keep up with demand for its cloud computing power, and Meta has grown increasingly reliant on Gemini for many of its needs. Now, Meta, along with a number of other clients, is being told that Google simply can’t provide the capacity they want. According to the Financial Times:\n> The decision by Google to cap a large customer’s access to its models offers a rare glimpse into the infrastructure pressures and bottlenecks building across the AI industry. Despite spending tens of billions of dollars on chips, data centres and power, even the largest tech companies are struggling to secure enough computing power to support surging demand for advanced models and AI services.",
-    "content": "T\nQuote\nGoogle is putting a cap on Meta’s Gemini usage.\nGoogle has struggled to keep up with demand for its cloud computing power, and Meta has grown increasingly reliant on Gemini for many of its needs. Now, Meta, along with a number of other client... [940 chars]",
-    "image": "https://platform.theverge.com/wp-content/uploads/sites/2/2025/01/verge-placeholder_f212b3.png?quality=90&strip=all&crop=0,0.13712291199202,100,99.725754176016",
-    "domain": "AI",
-    "date": "2026-06-29"
-  },
-  "3aa49db0acc809c374b26b49353f2f37": {
-    "id": "3aa49db0acc809c374b26b49353f2f37",
-    "title": "Investment in Israeli health tech startups dove 40% in 2025 - report",
-    "desc": "Data shows that while the global industry saw a resurgence in private funding, investments in Israeli startups hit a five-year low amid geopolitical uncertainty",
-    "content": "Investment in local healthcare-focused startups last year plunged to their lowest level in five years, after a slight recovery seen in 2024, according to a joint report by the Israel Advanced Technology Industries Association, the Israel Innovation A... [5233 chars]",
-    "image": "https://static-cdn.toi-media.com/www/uploads/2018/03/digital-health-1.jpg",
+  "65e9d708dd839deb8e5c2f38fc3eae10": {
+    "id": "65e9d708dd839deb8e5c2f38fc3eae10",
+    "title": "Piyush Goyal heads to Greece with business delegation to boost economic cooperation",
+    "desc": "The Commerce Minister will hold talks with Greek industry leaders, visit startups and businesses, and explore opportunities to expand trade, investment and tech",
+    "content": "LONDON: Union Minister of Commerce and Industry Piyush Goyal is leading a high-level Indian business delegation to Greece following his successful engagements in the United Kingdom, with a focus on expanding bilateral trade, investment flows and stra... [2000 chars]",
+    "image": "https://cf-images.assettype.com/newindianexpress%2F2026-06-29%2F5imqo60o%2FHL1kinia0AAar3u.jfif?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
     "domain": "IT",
     "date": "2026-06-29"
   },
-  "7f56e31a71fad3ce5c844cc9c6d0c421": {
-    "id": "7f56e31a71fad3ce5c844cc9c6d0c421",
-    "title": "A Former CIA Advisor Says This Tech Boom Is Already Bigger Than the Internet Ever Was",
-    "desc": "Jim Rickards spent years studying threats to America's financial system for the CIA and Pentagon. Now he says one industry is consuming more capital and energy than the dot-com boom ever did.",
-    "content": "Jim Rickards spent years studying threats to America's financial system for the CIA and Pentagon. Now he says one industry is consuming more capital and energy than the dot-com boom ever did.\nWashington, D.C., June 28, 2026 (GLOBE NEWSWIRE) -- During... [5661 chars]",
-    "image": "https://cdnx.premiumread.com/?url=https://www.manilatimes.net/theme_manilatimes/images/TMT_1920x1008.jpg&w=1920&q=100&f=webp&v=1",
-    "domain": "IT",
-    "date": "2026-06-29"
-  },
-  "80ee1132b7704b262cd8d52046e65255": {
-    "id": "80ee1132b7704b262cd8d52046e65255",
-    "title": "Weekend Round-Up: Tesla Lawsuit, Airfare Predictions, Bezos Vs Musk, Auto Industry Warning And Xiaomi's N",
-    "desc": "Weekend Round-Up: Tesla, Jeff Bezos, automakers, airlines and Xiaomi dominated the weekend's biggest tech and auto headlines.",
-    "content": "The weekend was a whirlwind of news in the tech and auto industries. From a fresh lawsuit against Tesla Inc. to predictions about airfare prices, there was no shortage of headlines. Here’s a quick recap of the top stories.\nTesla Faces Wrongful-Death ... [1997 chars]",
-    "image": "https://cdn.benzinga.com/cdn-cgi/image/width=1200,height=800,fit=crop/files/images/story/2026/06/28/New-York--Usa--20-Mar-2025-Selective-Foc.jpg",
-    "domain": "IT",
-    "date": "2026-06-29"
-  },
-  "e35d0bef3f2bf5377d3f814c264f1ff4": {
-    "id": "e35d0bef3f2bf5377d3f814c264f1ff4",
-    "title": "Goldman Sachs Says These 2 Software Stocks Could Surge at Least 60% From Current Levels",
-    "desc": "AI has become the defining theme across the tech sector, accounting for much of the industry’s focus while helping drive strong earnings growth ...",
-    "content": "AI has become the defining theme across the tech sector, accounting for much of the industry’s focus while helping drive strong earnings growth over the past few years. At the same time, it is also transforming the software industry, where the rise o... [8822 chars]",
-    "image": "https://blog.tipranks.com/wp-content/uploads/2026/06/image-2714-1024x545.png?utm_source=markets.businessinsider.com&utm_medium=referral",
-    "domain": "IT",
-    "date": "2026-06-29"
-  },
-  "9b58e3350159fabfa20e97d335b08ffd": {
-    "id": "9b58e3350159fabfa20e97d335b08ffd",
-    "title": "Harrier EV to XEV 9e, new MoRTH cyber rules may raise costs by ₹10,000-15,000 from October",
-    "desc": "New MoRTH cyber rules could increase connected vehicle costs by ₹10,000-15,000, enhancing safety and cybersecurity in India's automotive industry.",
-    "content": "The clock has started ticking for India’s automotive industry, and for buyers of its next generation of connected vehicles. From software-rich vehicles such as the Tata Harrier EV, Mahindra XEV 9e, BE 6, Tata Curvv.ev and Hyundai Creta Electric to co... [4786 chars]",
-    "image": "https://bl-i.thgim.com/public/incoming/neh6da/article71157454.ece/alternates/LANDSCAPE_1200/hyundai%20infotainment%20system.jpg",
-    "domain": "IT",
-    "date": "2026-06-29"
-  },
-  "2599f5415d5c30e4d5f9bdee7a63a658": {
-    "id": "2599f5415d5c30e4d5f9bdee7a63a658",
-    "title": "Israel’s military and tech industry race to counter Hezbollah’s latest threat",
-    "desc": "By Jeremy Diamond, CNN Tel Aviv (CNN) — The small drones cruise – undetected – over the skies of southern Lebanon and northern Israel, searching for",
-    "content": "By Jeremy Diamond, CNN\nTel Aviv (CNN) — The small drones cruise – undetected – over the skies of southern Lebanon and northern Israel, searching for targets.\nFootage recorded by the explosive-laden devices shows them, one after another, finding and s... [5376 chars]",
-    "image": "https://krdo.b-cdn.net/2025/01/Untitled-design-2024-02-27T104337.412.webp",
+  "73e06d0fc320a2df4d42094b0192985c": {
+    "id": "73e06d0fc320a2df4d42094b0192985c",
+    "title": "\"We Make The Algorithm, The Algorithm Doesn't Make Us\"",
+    "desc": "Sylvia Rhone was recognized as the Ultimate Icon at the 2026 BET Awards and delivered a powerful message about protecting creativity as tech disrupts the industry.",
+    "content": "Sylvia Rhone was recognized as the Ultimate Icon at the 2026 BET Awards and delivered a powerful message about protecting creativity as tech disrupts the industry.\n“We’ve seen musical ideas become movements, and what we know is this: Black creativity... [1328 chars]",
+    "image": "https://deadline.com/wp-content/uploads/2026/06/sylvia-rhone-bet-awards-2026.jpg?w=1024",
     "domain": "Electronics",
     "date": "2026-06-29"
   },
@@ -368,13 +98,346 @@
     "domain": "IT",
     "date": "2026-06-29"
   },
-  "73e06d0fc320a2df4d42094b0192985c": {
-    "id": "73e06d0fc320a2df4d42094b0192985c",
-    "title": "\"We Make The Algorithm, The Algorithm Doesn't Make Us\"",
-    "desc": "Sylvia Rhone was recognized as the Ultimate Icon at the 2026 BET Awards and delivered a powerful message about protecting creativity as tech disrupts the industry.",
-    "content": "Sylvia Rhone was recognized as the Ultimate Icon at the 2026 BET Awards and delivered a powerful message about protecting creativity as tech disrupts the industry.\n“We’ve seen musical ideas become movements, and what we know is this: Black creativity... [1328 chars]",
-    "image": "https://deadline.com/wp-content/uploads/2026/06/sylvia-rhone-bet-awards-2026.jpg?w=1024",
+  "3aa49db0acc809c374b26b49353f2f37": {
+    "id": "3aa49db0acc809c374b26b49353f2f37",
+    "title": "Investment in Israeli health tech startups dove 40% in 2025 - report",
+    "desc": "Data shows that while the global industry saw a resurgence in private funding, investments in Israeli startups hit a five-year low amid geopolitical uncertainty",
+    "content": "Investment in local healthcare-focused startups last year plunged to their lowest level in five years, after a slight recovery seen in 2024, according to a joint report by the Israel Advanced Technology Industries Association, the Israel Innovation A... [5233 chars]",
+    "image": "https://static-cdn.toi-media.com/www/uploads/2018/03/digital-health-1.jpg",
+    "domain": "IT",
+    "date": "2026-06-29"
+  },
+  "7f56e31a71fad3ce5c844cc9c6d0c421": {
+    "id": "7f56e31a71fad3ce5c844cc9c6d0c421",
+    "title": "A Former CIA Advisor Says This Tech Boom Is Already Bigger Than the Internet Ever Was",
+    "desc": "Jim Rickards spent years studying threats to America's financial system for the CIA and Pentagon. Now he says one industry is consuming more capital and energy than the dot-com boom ever did.",
+    "content": "Jim Rickards spent years studying threats to America's financial system for the CIA and Pentagon. Now he says one industry is consuming more capital and energy than the dot-com boom ever did.\nWashington, D.C., June 28, 2026 (GLOBE NEWSWIRE) -- During... [5661 chars]",
+    "image": "https://cdnx.premiumread.com/?url=https://www.manilatimes.net/theme_manilatimes/images/TMT_1920x1008.jpg&w=1920&q=100&f=webp&v=1",
+    "domain": "IT",
+    "date": "2026-06-29"
+  },
+  "80ee1132b7704b262cd8d52046e65255": {
+    "id": "80ee1132b7704b262cd8d52046e65255",
+    "title": "Weekend Round-Up: Tesla Lawsuit, Airfare Predictions, Bezos Vs Musk, Auto Industry Warning And Xiaomi's N",
+    "desc": "Weekend Round-Up: Tesla, Jeff Bezos, automakers, airlines and Xiaomi dominated the weekend's biggest tech and auto headlines.",
+    "content": "The weekend was a whirlwind of news in the tech and auto industries. From a fresh lawsuit against Tesla Inc. to predictions about airfare prices, there was no shortage of headlines. Here’s a quick recap of the top stories.\nTesla Faces Wrongful-Death ... [1997 chars]",
+    "image": "https://cdn.benzinga.com/cdn-cgi/image/width=1200,height=800,fit=crop/files/images/story/2026/06/28/New-York--Usa--20-Mar-2025-Selective-Foc.jpg",
+    "domain": "IT",
+    "date": "2026-06-29"
+  },
+  "9af105759edfee888f18c47d54611c45": {
+    "id": "9af105759edfee888f18c47d54611c45",
+    "title": "UPSC Weekly Current Affairs Pointers",
+    "desc": "UPSC Current Affairs June 22–28, 2026: LRS, REPM Scheme, FCRA Rules, Western Ghats ESA, Rakhigarhi, IBM chip, Lipulekh Pass & more.",
+    "content": "— These transactions include education, studies abroad, travel, medical treatment abroad, purchase of property and investments in foreign stocks.\nScheme to Promote Manufacturing of Sintered Rare Earth Permanent Magnet (REPM scheme)\n— The Ministry of ... [28138 chars]",
+    "image": "https://images.indianexpress.com/2026/06/upsc-current-affairs-pointers12.jpg",
     "domain": "Electronics",
     "date": "2026-06-29"
+  },
+  "1aa199363426b02bf5ebf263f1c9e291": {
+    "id": "1aa199363426b02bf5ebf263f1c9e291",
+    "title": "AI chip rally faces reality check, but bubble fears may be overdone: Adrian Mowat",
+    "desc": "South Korean chip stocks are experiencing a temporary dip, not an AI bubble burst, according to EM-Equity Strategist Adrian Mowat. He attributes the volatility to strong earnings revisions driven by tight supply and demand. The next phase requires companies to show AI-driven revenue growth and cost reductions. Indian IT firms could see sentiment improve by demonstrating AI's tangible benefits to clients.",
+    "content": "Synopsis\nSouth Korean chip stocks are experiencing a temporary dip, not an AI bubble burst, according to EM-Equity Strategist Adrian Mowat. He attributes the volatility to strong earnings revisions driven by tight supply and demand. The next phase re... [4331 chars]",
+    "image": "https://img.etimg.com/thumb/msid-132063856,width-1200,height-630,imgsize-31958,overlay-etmarkets/articleshow.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-29"
+  },
+  "ab6b09fc1b149c3796f887ab51f2bb83": {
+    "id": "ab6b09fc1b149c3796f887ab51f2bb83",
+    "title": "Apple's Reported Push To Buy Chinese Memory Chips Isn't About Lower Prices, It's About Surviving A Worsen",
+    "desc": "Analyst Ming-Chi Kuo says Apple's reported CXMT push is driven by AI-fueled memory shortages, not lower chip costs.",
+    "content": "AI Data Centers Are Reshaping The Global Memory Market\nIn a post on Sunday, Kuo said the “memory supply-demand gap will keep widening through 2027,” arguing that this is the real reason Apple is lobbying the Donald Trump administration to keep ChangX... [2940 chars]",
+    "image": "https://cdn.benzinga.com/cdn-cgi/image/width=1200,height=800,fit=crop/files/images/story/2026/06/29/Cupertino--California--September-25--202.jpg",
+    "domain": "IT",
+    "date": "2026-06-29"
+  },
+  "06116c549164d7aa6fc8285fd4c716ef": {
+    "id": "06116c549164d7aa6fc8285fd4c716ef",
+    "title": "From the Fed to chip stocks: Key events that will drive global markets this week",
+    "desc": "The first half of the year has been marked by sharp swings across global markets. As investors head into the second half, attention has shifted from geopolitical shocks to central bank decisions. The Federal Reserve is expected to play a pivotal role in determining the market's direction. (Source: Reuters) ​Markets Enter a Crucial Phase",
+    "content": "The first half of the year has been marked by sharp swings across global markets. As investors head into the second half, attention has shifted from geopolitical shocks to central bank decisions. The Federal Reserve is expected to play a pivotal role... [2931 chars]",
+    "image": "https://img.etimg.com/thumb/msid-132063865,width-1200,height-900,overlay-etmarkets/slideshow.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-29"
+  },
+  "e04cafd3e9a86eefba08d2114ff91c32": {
+    "id": "e04cafd3e9a86eefba08d2114ff91c32",
+    "title": "South Korea unveils mega-project plans for chips, AI data centres",
+    "desc": "South Korea announced plans on Monday for semiconductor, physical AI and AI data centre mega-projects.\nPresident Lee Jae Myung was joined by the leaders of Samsung Electronics and SK Hynix, the...",
+    "content": "Trader\nThis super rating is the result of a weighted average of the rankings based on the following ratings: Valuation (Composite), EPS Revisions (4 months), and Visibility (Composite). We recommend that you carefully review the associated descriptio... [1103 chars]",
+    "image": "https://www.marketscreener.com/images/twitter_MS_fdblanc.png",
+    "domain": "Electronics",
+    "date": "2026-06-29"
+  },
+  "43a23263304c2c5f063b5ac546e57ee3": {
+    "id": "43a23263304c2c5f063b5ac546e57ee3",
+    "title": "Nvidia's AI chip sales in China stall, as local chipmakers like Huawei take the lead",
+    "desc": "Nvidia's AI chip sales in China decline as Huawei and local chipmakers gain dominance amid rising self-sufficiency efforts.",
+    "content": "In the race between the US and China to develop artificial intelligence, the battle over hardware and computing power is heating up as Chinese companies like Huawei overtake global industry leaders like Nvidia in their home market.\nJensen Huang, the ... [6997 chars]",
+    "image": "https://bl-i.thgim.com/public/incoming/h1nmsh/article71160101.ece/alternates/LANDSCAPE_1200/2026-06-24T002647Z_233179107_RC2KEGA57TDY_RTRMADP_3_NVIDIA-CHINA-CHIPS.JPG",
+    "domain": "Electronics",
+    "date": "2026-06-29"
+  },
+  "8036d7bf20fa3b210d6e8760b956f81e": {
+    "id": "8036d7bf20fa3b210d6e8760b956f81e",
+    "title": "Asia shares choppy as South Korea chip push steadies sentiment; Iran truce in focus",
+    "desc": "Asian markets were choppy on Monday as ​investors weighed AI-driven growth against rising cost pressures, while South Korea's sweeping investment push into chips and AI steadied ‌sentiment after recent losses and a fragile U.S.-Iran ceasefire.",
+    "content": "Summary\nCompanies\nSouth Korea's KOSPI pares losses to end 0.2% lower\nIndonesian stocks set for worst June since 2015\nIran and U.S. agree to halt attacks and renew talks\nSouth Korea unveils $576 billion AI-chip investment powered by Samsung, SK Hynix\n... [3767 chars]",
+    "image": "https://www.reuters.com/resizer/v2/YBLFTGRKHZOCLPHJQWOOY3M4D4.jpg?auth=cd94afe62453f91f83054d679cef946cf82ceacaa551db5c8201b6e0aee74fb6&height=1005&width=1920&quality=80&smart=true",
+    "domain": "Electronics",
+    "date": "2026-06-29"
+  },
+  "f7b9fdb08cb4f648cc9e9fdca5007fe4": {
+    "id": "f7b9fdb08cb4f648cc9e9fdca5007fe4",
+    "title": "South Korea exports set to grow at strongest pace in nearly 5 decades",
+    "desc": "South Korean exports likely posted their strongest annual growth in nearly five decades in June, as semiconductor shipments broke fresh records in the wake of a boom in global AI investment, a Reuters...",
+    "content": "SEOUL, June 29 (Reuters) - South Korean exports likely posted their strongest annual growth in nearly five decades in June, as semiconductor shipments broke fresh records in the wake of a boom in global AI investment, a Reuters poll showed on Monday.... [2025 chars]",
+    "image": "https://cdn.zonebourse.com/static/resize/0/0//images/reuters/2025-04/2025-04-15T063006Z_1_LYNXMPEL3E05P_RTROPTP_4_USA-TRUMP-TARIFFS-SOUTHKOREA.JPG",
+    "domain": "Electronics",
+    "date": "2026-06-29"
+  },
+  "a24e8cc155256746a705642fd3783b30": {
+    "id": "a24e8cc155256746a705642fd3783b30",
+    "title": "Inside Qualcomm's AI Strategy: Opportunities, risks & outlook",
+    "desc": "Qualcomm is undergoing a strategic transformation, positioning itself as an AI infrastructure company rather than relying primarily on its smartphone chip business. The company has significantly raised its long-term revenue targets for businesses outside handsets, prompting analysts to reassess its growth prospects following its recent Investor Day. (Sources: Yahoo Finance, Insider Monkey) ​Why Qualcomm Is Back in Focus",
+    "content": "Qualcomm is undergoing a strategic transformation, positioning itself as an AI infrastructure company rather than relying primarily on its smartphone chip business. The company has significantly raised its long-term revenue targets for businesses out... [2784 chars]",
+    "image": "https://img.etimg.com/thumb/msid-132064003,width-1200,height-900,overlay-etmarkets/slideshow.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-29"
+  },
+  "5a1f8b08fd69395f3052e1ec666159e7": {
+    "id": "5a1f8b08fd69395f3052e1ec666159e7",
+    "title": "Optiemus Electronics partners with Quectel to manufacture wireless modules in India",
+    "desc": "Optiemus Infracom's subsidiary, Optiemus Electronics Limited, has partnered with Quectel IoT Technologies PTE LTD. to manufacture advanced wireless communication modules in Noida. The partnership covers automotive, 5G, 4G, and Cat-1 modules for sectors like IoT and telecom, aligning with the Make in India and Atmanirbhar Bharat initiatives.",
+    "content": "Optiemus Infracom has announced that its wholly owned subsidiary, Optiemus Electronics Limited (OEL), has entered into a strategic manufacturing partnership with Quectel IoT Technologies PTE LTD. (Quectel) to locally manufacture advanced wireless com... [6970 chars]",
+    "image": "http://news-images.dhan.co/optiemus-infracom-partners-with-quectel-for-local-manufacturing-of-advanced-wireless-communication-modules-in-india.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-29"
+  },
+  "f561ead654fc98153c70b4211e25b4bc": {
+    "id": "f561ead654fc98153c70b4211e25b4bc",
+    "title": "India doesn't need its own ChatGPT to become an AI powerhouse, says NetApp CEO",
+    "desc": "NetApp CEO George Kurian says India's biggest AI opportunity lies not in building the next ChatGPT, but in using artificial intelligence to solve problems in healthcare, farming, manufacturing and other sectors.",
+    "content": "NetApp CEO George Kurian says India's biggest AI opportunity lies not in building the next ChatGPT, but in using artificial intelligence to solve problems in healthcare, farming, manufacturing and other sectors.\nBy Shereen Bhan\nArtificial intelligenc... [6347 chars]",
+    "image": "https://images.cnbctv18.com/uploads/2026/06/1781842142_wReSLmhsSV-artificial-intelligence-ai-may19jpg-KveajFrDFT.jpg?im=FitAndFill,width=1200,height=675",
+    "domain": "AI",
+    "date": "2026-06-30"
+  },
+  "e4e4a53ff0794b320bcffbe4e83d035c": {
+    "id": "e4e4a53ff0794b320bcffbe4e83d035c",
+    "title": "Gemini AI Officially Rolls Out To Android Automotive",
+    "desc": "Google has officially begun deploying its Gemini artificial intelligence into vehicles equipped with Android Automotive OS. While the name is similar...",
+    "content": "Google has officially begun deploying its Gemini artificial intelligence into vehicles equipped with Android Automotive OS. While the name is similar to Android Auto, which merely projects a smartphone interface onto a car’s dashboard, Android Automo... [1908 chars]",
+    "image": "https://i0.wp.com/cdnbunny.ubergizmo.com/wp-content/uploads/2019/12/BMW-android-auto.jpg",
+    "domain": "AI",
+    "date": "2026-06-30"
+  },
+  "704756bfb9f7ce8974fe1bd7ffe29a27": {
+    "id": "704756bfb9f7ce8974fe1bd7ffe29a27",
+    "title": "Google hit by new AI brain drain as Anthropic poaches top Gemini talent",
+    "desc": "Two leading artificial intelligence researchers at Alphabet Inc.’s Google are planning to leave for rival Anthropic PBC, according to people familiar with the matter, adding to a series of high-profile departures that risk undercutting the search giant’s position in AI.",
+    "content": "Two leading artificial intelligence researchers at Alphabet Inc.’s Google are planning to leave for rival Anthropic PBC, according to people familiar with the matter, adding to a series of high-profile departures that risk undercutting the search gia... [5167 chars]",
+    "image": "https://ca-times.brightspotcdn.com/dims4/default/4c6a57d/2147483647/strip/true/crop/2000x1050+0+142/resize/1200x630!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F1f%2F5c%2Fbb646c50128e9630ac3f680808f3%2F1x-1.jpg",
+    "domain": "AI",
+    "date": "2026-06-30"
+  },
+  "d33dbd7ea1e60dbf0caacb374d9cefef": {
+    "id": "d33dbd7ea1e60dbf0caacb374d9cefef",
+    "title": "Learn How Businesses Are Using AI to Reduce Expenses With This $20 Hands-On Training",
+    "desc": "Build real-world automation skills using ChatGPT, machine learning concepts, and practical workflow strategies.",
+    "content": "For entrepreneurs looking to cut costs and actually put AI to work in their business, the ChatGPT and Automation E-Degree offers a structured place to start. Right now, you can access 25 hours of hands-on training for just $19.99 (MSRP $790) for a li... [2581 chars]",
+    "image": "https://www.entrepreneur.com/wp-content/uploads/sites/2/2026/06/1782382786-ChatGPTAutomationE-Degree1.jpg?resize=1024,682",
+    "domain": "AI",
+    "date": "2026-06-30"
+  },
+  "b7cdaaac2f922377becc411daa3f6a92": {
+    "id": "b7cdaaac2f922377becc411daa3f6a92",
+    "title": "America 250: Artificial intelligence and autonomy: The new decision advantage",
+    "desc": "Initially focused on analyzing full-motion video collected by military drones, Project Maven applied machine-learning algorithms to identify objects…",
+    "content": "Throughout military history, victory has often gone to the side that could gather information faster, understand it more clearly, and act on it more quickly than its adversaries. In the digital age, that challenge has reached unprecedented levels.\nEv... [4273 chars]",
+    "image": "https://wtop.com/wp-content/uploads/2026/06/Atom-US-Air-Froce-prototype-robot-dog-COURTESY-US-Department-of-War-scaled.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "cfaf53d76a559f3cb8039e348facfc44": {
+    "id": "cfaf53d76a559f3cb8039e348facfc44",
+    "title": "Ready Learning at Asian Business School Through AI Integration",
+    "desc": "New Delhi [India], June 29: The corporate world is evolving incredibly fast, and artificial intelligence is the front-runner of this evolution. AI is already influencing the way businesses operate; from personalized shopping recommendations to business management and streamlining workflow, organizations now heavily rely on technology to make smarter decisions. Understanding this, Asian Business School (ABS), one of the best management colleges in Delhi NCR, is reinforcing its commitment to future-ready management education by integrating Artificial Intelligence (AI) into its academic ecosystem, to help students develop the skills necessary for thriving in an increasingly technology-driven business environment.",
+    "content": "VMPL\nNew Delhi [India], June 29: The corporate world is evolving incredibly fast, and artificial intelligence is the front-runner of this evolution. AI is already influencing the way businesses operate; from personalized shopping recommendations to b... [6215 chars]",
+    "image": "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYTdmNGZjMjMwLTczYmUtMTFmMS1hZmFlLTJkNzNlMTMwYzExYi5qcGc=",
+    "domain": "AI",
+    "date": "2026-06-30"
+  },
+  "2b9e8f45a7857dea18e435bd2e3f0cd1": {
+    "id": "2b9e8f45a7857dea18e435bd2e3f0cd1",
+    "title": "Best Books to Read if You Want to Get Serious About AI",
+    "desc": "From AI safety to deep learning, explore the must-read books that help you understand artificial intelligence in depth. Read the best AI books to move beyond the hype and gain a deeper understanding of artificial intelligence and its future.",
+    "content": "Share\nShare\nShare\nShare\nEmail\nMost people encounter AI through headlines, product launches, and social media takes. None of those formats give you the depth to actually understand what is happening or where it is headed. Books do. The right ones, rea... [3644 chars]",
+    "image": "https://techbullion.com/wp-content/uploads/2026/06/Best-Books-to-Read-if-You-Want-to-Get-Serious-About-AI.jpg",
+    "domain": "AI",
+    "date": "2026-06-30"
+  },
+  "ce70469a4fbaccf260a212760c936cff": {
+    "id": "ce70469a4fbaccf260a212760c936cff",
+    "title": "STARTRADER Launches Pre-IPO Trading Products for OpenAI and",
+    "desc": "The new CFD instruments give traders early exposure to two of the world's most prominent artificial intelligence companies ahead of anticipated public...",
+    "content": "Dubai, UAE, June 29, 2026 (GLOBE NEWSWIRE) -- STARTRADER, a global multi-asset broker, today announced the launch of two new pre-IPO contracts for difference (CFD) products, OPENAIUSD (OpenAI) and ANTHUSD (Anthropic), available for trading from 29 Ju... [2056 chars]",
+    "image": "https://ml.globenewswire.com/Resource/Download/8516d38b-0b48-47e8-b8fe-8acc45b83115",
+    "domain": "AI",
+    "date": "2026-06-30"
+  },
+  "bbbe9a5e80d6fc40e8f586fcd5cf248c": {
+    "id": "bbbe9a5e80d6fc40e8f586fcd5cf248c",
+    "title": "Anthropic, OpenAI Tax-Exempt IPO Move to Stoke Congress’ Ire",
+    "desc": "The founders of major artificial intelligence companies have pledged to give away most of their wealth. Congress isn’t thrilled about it.",
+    "content": "The founders of major artificial intelligence companies have pledged to give away most of their wealth. Congress isn’t thrilled about it.\nAnthropic and OpenAI Inc., the creators of ChatGPT, have pledged to donate portions of company stock when it mak... [368 chars]",
+    "image": "https://bwrite-static.bloombergindustry.com/dims4/default/b5a3026/2147483647/strip/false/crop/7646x2947+5+0/resize/960x370!/quality/90/?url=https%3A%2F%2Fbloomberg-bna-brightspot.s3.us-east-1.amazonaws.com%2F7d%2Fbe%2F6312824e4a258cae57a7afb5e68b%2Fgettyimages-2279684918.jpg",
+    "domain": "AI",
+    "date": "2026-06-30"
+  },
+  "5af87e76f623d719e7eef220c9ee6da1": {
+    "id": "5af87e76f623d719e7eef220c9ee6da1",
+    "title": "Ford rehires 350 veteran engineers after AI fails to match human expertise",
+    "desc": "For the past few years, the AI industry has repeated a bold promise: machines will replace much of the work once reserved for highly experienced professionals. Ford Motor Company just delivered a reality check. After investing heavily in AI-powered quality systems and automated inspections, the automaker discovered that software alone couldn't replicate decades of engineering",
+    "content": "For the past few years, the AI industry has repeated a bold promise: machines will replace much of the work once reserved for highly experienced professionals. Ford Motor Company just delivered a reality check.\nAfter investing heavily in AI-powered q... [8744 chars]",
+    "image": "https://techstartups.com/wp-content/uploads/2025/12/Ford.jpg",
+    "domain": "IT",
+    "date": "2026-06-30"
+  },
+  "3be509b23af27725a4efbe43195b5fb4": {
+    "id": "3be509b23af27725a4efbe43195b5fb4",
+    "title": "Securonix Appoints Toby Weiss as Chief Executive Officer to",
+    "desc": "Veteran cyber security and enterprise software executive to accelerate the industry's transition from alert-driven security operations to AI-powered...",
+    "content": "Veteran cyber security and enterprise software executive to accelerate the industry's transition from alert-driven security operations to AI-powered execution.\nMELBOURNE, Australia. 30th June 2026 — Securonix, Inc., a six-time Leader in the Gartner® ... [6327 chars]",
+    "image": "https://ml-eu.globenewswire.com/Resource/Download/0bcda51f-59c7-4984-9487-fc966a3e6416",
+    "domain": "IT",
+    "date": "2026-06-30"
+  },
+  "5cc4c3bffdeb3b6ce3a086a508f7e8cc": {
+    "id": "5cc4c3bffdeb3b6ce3a086a508f7e8cc",
+    "title": "Eleven Infuses ₹216 Cr Into Financial Services Biz, Total Investment Rises to ₹470 Cr",
+    "desc": "Eleven invests ₹216 crore in its financial services arm, taking total funding to ₹470 crore over four years. The diversified group boosts its NBFC platform, launches tech-led venture Eleven Tech, and appoints industry veteran Monu Ratra as Co-founder and CEO to drive MSME-focused growth.",
+    "content": "Eleven, a diversified group with interests in healthcare, financial services and energy, on Monday said it has invested ₹216 crore in its financial services business, including its NBFC arm.\nWith the latest infusion, the group's total investment in t... [1311 chars]",
+    "image": "https://media.assettype.com/outlookbusiness/2026-06-29/5d5rj4n0/1383a1fdcbb51dc558b2516f1689cc3e.jpg?w=1200&ar=40%3A21&auto=format%2Ccompress&ogImage=true&mode=crop&enlarge=true&overlay=false&overlay_position=bottom&overlay_width=100",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "68d8d23dbfd9e7851bf0ce463f465aad": {
+    "id": "68d8d23dbfd9e7851bf0ce463f465aad",
+    "title": "What does 25 years in the tech industry look like for this expert?",
+    "desc": "Carol Twomey has spent 25 years in tech and she discusses her experiences navigating an industry that is under constant transformation.",
+    "content": "Carol Twomey of Fidelity Investments Ireland explores the quarter of a century that she has spent navigating the evolving technology space.\nCarol Twomey, the vice-president of software engineering at Fidelity Investments Ireland, joined the organisat... [7530 chars]",
+    "image": "https://www.siliconrepublic.com/wp-content/uploads/2026/06/Carol-Twomey.png",
+    "domain": "IT",
+    "date": "2026-06-30"
+  },
+  "40124311b4183aa203b397a52d6a6e66": {
+    "id": "40124311b4183aa203b397a52d6a6e66",
+    "title": "Police: 2 women forced entry, attacked residents of Reading home",
+    "desc": "Victims say suspects used fan base, door hardware as weapons in Buttonwood Street home invasion, police report",
+    "content": "For information on submitting an obituary, please contact Reading Eagle by phone at 610-371-5018, or email at obituaries@readingeagle.com or fax at 610-371-5193.\nMost obituaries published in the Reading Eagle are submitted through funeral homes and c... [3076 chars]",
+    "image": "https://www.readingeagle.com/wp-content/uploads/2025/01/police-lights-night-3-webstock-police.jpg?w=1024&h=576",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "d7abc3e4833025dc29d981ba340e870e": {
+    "id": "d7abc3e4833025dc29d981ba340e870e",
+    "title": "London stocks dip as mining, financial shares weigh",
+    "desc": "UK shares inched lower on Monday, led by declines in miners and financials, as renewed Middle East hostilities weighed on risk sentiment.\nThe blue-chip FTSE 100 index closed 0.2% lower,...",
+    "content": "June 29 (Reuters) - UK shares inched lower on Monday, led by declines in miners and financials, as renewed Middle East hostilities weighed on risk sentiment.\nThe blue-chip FTSE 100 index closed 0.2% lower, while the midcap FTSE 250 was off 0.6%.\no Mi... [1466 chars]",
+    "image": "https://cdn.zonebourse.com/static/resize/0/0//images/reuters/2025-05/2025-05-01T061920Z_1_LYNXMPEL401EY_RTROPTP_4_BRITAIN-ECONOMY.JPG",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "5545576a3939238f347a8f996c2bd1b4": {
+    "id": "5545576a3939238f347a8f996c2bd1b4",
+    "title": "Google Pixel Watch 5 seemingly surfaces with four variants and even more questions",
+    "desc": "As another year goes by since the last Pixel hardware launch, the Pixel Watch 5 is beginning to surface online...",
+    "content": "As another year goes by since the last Pixel hardware launch, the Pixel Watch 5 is beginning to surface online in FCC listings. This time, the leak leaves us with more questions than answers.\nGoogle’s Pixel Watch 5 has already been spotted in the wil... [1816 chars]",
+    "image": "https://i0.wp.com/9to5google.com/wp-content/uploads/sites/4/2026/02/Pixel-Watch-4-45mm-design-and-details-4.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "0b609ec770f476f06d1c6be8a3c212a0": {
+    "id": "0b609ec770f476f06d1c6be8a3c212a0",
+    "title": "\"We are carefully monitoring the market\": As Xbox prices increase, PlayStation maker Sony says it doesn't want \"to sell hardware at significant losses\"",
+    "desc": "Could we see a PlayStation price hike from Sony after Microsoft's recent Xbox price increases?",
+    "content": "Thanks to the rise of AI and its insatiable hunger for all the silicon its manufacturers can get their hands on, the last several months have been very rough for the tech industry and any consumer interested in purchasing new electronics. Ongoing RAM... [2927 chars]",
+    "image": "https://cdn.mos.cms.futurecdn.net/YXUitNN8FAdmbSDTjdHd84-970-80.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "a27d15db29c21563e41bd72580fa7c71": {
+    "id": "a27d15db29c21563e41bd72580fa7c71",
+    "title": "Chinese robotics outfits AI2 Robotics and X Square Robots each secure funding at $2.8B valuation",
+    "desc": "Chinese robotics outfits AI2 Robotics and X Square Robots each secure funding at $2.8B valuation - SiliconANGLE",
+    "content": "Two Chinese general-purpose and embodied artificial intelligence firms, AI2 Robotics and X Square Robots, today announced funding rounds that pushed their respective valuations beyond 50 billion RMB, or about $2.8 billion.\nThese Chinese firms continu... [3663 chars]",
+    "image": "https://d15shllkswkct0.cloudfront.net/wp-content/blogs.dir/1/files/2026/06/about-scaled.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "f60f17cfe5e9149da762598eddbac247": {
+    "id": "f60f17cfe5e9149da762598eddbac247",
+    "title": "AM4 CPUs are cheaper than ever, and AM5 still isn't worth the platform jump",
+    "desc": "The PC hardware industry is stuck in an odd place between the past and the future",
+    "content": "\"Is AM5 worth a platform jump from AM4?\" That is a question that has been asked and answered quite a few times over the last two years. The answer, however, seems to remain the same, but the reasons change depending on when the question is asked. To ... [5549 chars]",
+    "image": "https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2026/06/am4-cpu-image-main_upscaled.png?w=1600&h=900&fit=crop",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "54b408f23849b523bc44cb7b25459515": {
+    "id": "54b408f23849b523bc44cb7b25459515",
+    "title": "Consistent launches Atlaas gaming cabinet series with support for up to 12 fans: Price, specs and more",
+    "desc": "Gaming News: Consistent Infosystems has expanded its PC hardware portfolio by launching the ATLAAS gaming cabinet series in India. Designed for gamers, PC builders.",
+    "content": "Consistent Infosystems has expanded its PC hardware portfolio by launching the ATLAAS gaming cabinet series in India. Designed for gamers, PC builders and performance users, the new mid-tower cabinet supports up to 12 cooling fans, multiple motherboa... [1835 chars]",
+    "image": "https://static.toiimg.com/thumb/msid-132074012,width-1280,height-720,resizemode-6,overlay-toi_sw,pt-32,y_pad-600/photo.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "1edef4717756717b71d7c87545719199": {
+    "id": "1edef4717756717b71d7c87545719199",
+    "title": "Former Axiom Space CEO’s fintech startup Nebex raises $30M seed led by Google Ventures",
+    "desc": "The commercial space industry has attracted billions in investment over the past decade, yet one problem has remained stubbornly difficult to solve. Startups can build rockets, satellites, and software, but getting paid for complex government contracts often takes months or longer, creating cash flow gaps that can slow growth. Nebex wants to fix that. The",
+    "content": "The commercial space industry has attracted billions in investment over the past decade, yet one problem has remained stubbornly difficult to solve. Startups can build rockets, satellites, and software, but getting paid for complex government contrac... [4395 chars]",
+    "image": "https://techstartups.com/wp-content/uploads/2026/06/Nebex-founder-Tejpaul-Bhatia.jpg",
+    "domain": "IT",
+    "date": "2026-06-30"
+  },
+  "1561131b786a1afbf72f80598e061d4f": {
+    "id": "1561131b786a1afbf72f80598e061d4f",
+    "title": "Apple's A20 Pro Borrows Samsung's Side-by-Side DRAM Trick, And Places A Vapor Chamber On The Die, Echoing Exynos 2700's Heat Path Block Strategy",
+    "desc": "Samsung's Exynos 2700 and Apple's A20 Pro chip place the DRAM alongside the AP, and employ a thermal solution that is in contact with the AP.",
+    "content": "Apple has thoroughly established itself as a leader when it comes to designing its custom silicon. Even so, it's not above emulating innovative ideas, as it appears to be doing with the upcoming A20 Pro chip, which borrows heavily from Samsung's new ... [1525 chars]",
+    "image": "https://cdn.wccftech.com/wp-content/uploads/2026/06/A20-Pro-4.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "f2c0a890b47352c99122a6896b2b765b": {
+    "id": "f2c0a890b47352c99122a6896b2b765b",
+    "title": "Google employee earning nearly $1 million a year quits, says 'I felt some FOMO...'",
+    "desc": "Imran joined Google in 2020 after spending around 15 years working in sales. His role involved helping customers use Google's artificial intelligence and machine-learning technologies.",
+    "content": "Kanishka Singharia\nKanishka Singharia is a Senior Content Producer at Mint with a passion for news, trends, and the stories shaping the digital world. She specialises in spotting viral narratives by constantly tracking social media platforms and turn... [1236 chars]",
+    "image": "https://www.livemint.com/lm-img/img/2026/06/29/1600x900/logo/Untitled_design_-_2026-06-29T222003.666_1782751812200_1782751820027_127f304f-a6c3-4478-822f-3a7610051f9a.png",
+    "domain": "AI",
+    "date": "2026-06-30"
+  },
+  "689d87aa0e7bae2406f843a158a8d078": {
+    "id": "689d87aa0e7bae2406f843a158a8d078",
+    "title": "4 Of The Biggest Tech Industry Controversies Of 2026 (So Far)",
+    "desc": "Massive AI data centers causing issues, layoffs, and Microsoft's stance on pen testers are notable controversies within the tech industry this year.",
+    "content": "There's no other way to put it: The tech industry is on fire. Between AI data centers hoovering up hardware and increasing prices to unacceptable levels, and the continuous news of layoffs, it's a bad time. Even happier bits of news, like the launch ... [6343 chars]",
+    "image": "https://www.bgr.com/img/gallery/4-of-the-biggest-tech-failures-of-2026-so-far/l-intro-1782404047.jpg",
+    "domain": "Electronics",
+    "date": "2026-06-30"
+  },
+  "aeea7aca6b08529c3479f66698c4051c": {
+    "id": "aeea7aca6b08529c3479f66698c4051c",
+    "title": "NMIMS Launches Horizon Initiative With Coursera To Equip 40,000 Students With AI Skills And Future-Ready Competencies",
+    "desc": "NMIMS has launched NMIMS Horizon, an AI skilling initiative in partnership with Coursera to equip nearly 40,000 students with future-ready competencies. The programme integrates artificial intelligence, machine learning and data analytics into academic curricula with structured assessments and faculty support.",
+    "content": "Mumbai: With artificial intelligence reshaping workplaces across industries, SVKM's Narsee Monjee Institute of Management Studies (NMIMS) has introduced NMIMS Horizon, a university-wide initiative aimed at equipping students with AI skills and future... [2294 chars]",
+    "image": "https://media.assettype.com/freepressjournal/2026-02-20/v1gh9x1e/AI-Job.jpg",
+    "domain": "AI",
+    "date": "2026-06-30"
   }
 }

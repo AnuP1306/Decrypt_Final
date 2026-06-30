@@ -715,6 +715,7 @@ function NewsCard({ article, index, visible }) {
             title:   article.title,
             desc:    article.desc,
             content: article.content || "",
+            article_id: article.id || "",
             index
           })
         }

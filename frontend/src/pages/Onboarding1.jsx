@@ -206,7 +206,7 @@ function Onboarding1() {
                   ...styles.option,
                   ...(isActive ? styles.optionActive : {}),
                   ...(!isActive && isHovered
-                    ? { borderColor: "#3F38E8", transform: "translateY(-2px)" }
+                    ? { border: "2px solid #3F38E8", transform: "translateY(-2px)" }
                     : {}),
                 }}
                 onClick={() => setSelected(opt.value)}

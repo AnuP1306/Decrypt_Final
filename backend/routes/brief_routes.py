@@ -2,19 +2,14 @@ from flask import Blueprint, request, jsonify
 from google import genai
 from groq import Groq
 from dotenv import load_dotenv
-import os, json, requests, hashlib, time
+import os, json, requests, hashlib, time, threading, random
 from datetime import datetime, timedelta
 
-# Ensure .env is loaded before reading any keys
 load_dotenv()
 
 brief_bp = Blueprint("brief_bp", __name__)
 
 
-# =============================================
-# CLIENTS — lazy helpers so keys are always
-# read after dotenv has loaded
-# =============================================
 def _get_gemini():
     return genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
@@ -28,32 +23,62 @@ def _gnews_key():
 
 
 # =============================================
-# CACHE FILES (separate from home page cache)
+# CACHE FILES
 # =============================================
 BRIEF_NEWS_CACHE_FILE = "cache/brief_news_cache.json"
 BRIEF_CARDS_CACHE_FILE = "cache/brief_cards_cache.json"
+BRIEF_STATE_FILE = "cache/brief_state.json"  # tracks "has GNews already run today"
+
+# Single lock guarding all reads/writes to the in-memory cache dicts below.
+# Fixes: RuntimeError: dictionary changed size during iteration, caused by
+# concurrent Flask threads mutating + json.dump-ing the same dict at once.
+_cache_lock = threading.Lock()
 
 
 def _load_json(path):
     try:
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
-    except:
+    except Exception:
         return {}
 
 
 def _save_json(path, data):
-    snapshot = dict(data)
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
+    """Thread-safe, atomic save. Snapshot the dict under the lock, then
+    write to a temp file and rename — so a half-written file can never
+    be read, and concurrent mutation during dump can never happen."""
+    with _cache_lock:
+        snapshot = dict(data)
+    tmp_path = f"{path}.tmp"
+    with open(tmp_path, "w", encoding="utf-8") as f:
+        json.dump(snapshot, f, ensure_ascii=False, indent=2)
+    os.replace(tmp_path, path)
 
 
 BRIEF_NEWS_CACHE = _load_json(BRIEF_NEWS_CACHE_FILE)
 BRIEF_CARDS_CACHE = _load_json(BRIEF_CARDS_CACHE_FILE)
+BRIEF_STATE = _load_json(BRIEF_STATE_FILE)
+
+
+def _today_str():
+    return datetime.utcnow().strftime("%Y-%m-%d")
+
+
+def _is_brief_locked_today():
+    """True once today's GNews fetch attempt has already happened —
+    regardless of whether it reached the full target of 10."""
+    return BRIEF_STATE.get("date") == _today_str() and BRIEF_STATE.get("locked") is True
+
+
+def _mark_brief_locked(count):
+    BRIEF_STATE["date"] = _today_str()
+    BRIEF_STATE["locked"] = True
+    BRIEF_STATE["count"] = count
+    _save_json(BRIEF_STATE_FILE, BRIEF_STATE)
+
 
 # =============================================
-# DOMAIN AUTO-DETECT
-# Maps keyword hits → friendly domain label
+# DOMAIN AUTO-DETECT (unchanged)
 # =============================================
 DOMAIN_KEYWORDS = {
     "World Affairs": [
@@ -264,7 +289,6 @@ DOMAIN_KEYWORDS = {
 
 
 def detect_domain(title: str, desc: str) -> str:
-    """Return the best-matching domain label for an article."""
     text = (title + " " + desc).lower()
     scores = {domain: 0 for domain in DOMAIN_KEYWORDS}
     for domain, keywords in DOMAIN_KEYWORDS.items():
@@ -272,18 +296,15 @@ def detect_domain(title: str, desc: str) -> str:
             if kw in text:
                 scores[domain] += 1
     best = max(scores, key=scores.get)
-    # If nothing matched at all, default to Tech
     return best if scores[best] > 0 else "Tech"
 
 
 def generate_article_id(title: str) -> str:
+    """Canonical article ID — used as the shared key in BOTH
+    brief_news_cache.json and brief_cards_cache.json."""
     return hashlib.md5(title.lower().strip().encode()).hexdigest()
 
 
-# =============================================
-# GNEWS BROAD QUERIES
-# 3 calls cover all 10 domains → less API load
-# =============================================
 BRIEF_GNEWS_QUERIES = [
     {
         "label": "World & Society",
@@ -309,40 +330,67 @@ BRIEF_GNEWS_QUERIES = [
     },
 ]
 
+BRIEF_TARGET = 10
+
+
+def _gather_today_topped_up(today, yesterday):
+    """Today's cached articles, topped up with yesterday's if short."""
+    with _cache_lock:
+        all_today = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today]
+        combined = list(all_today)
+        seen_ids = {a.get("id") for a in combined}
+        if len(combined) < BRIEF_TARGET:
+            yesterday_articles = [
+                a
+                for a in BRIEF_NEWS_CACHE.values()
+                if a.get("date") == yesterday and a.get("id") not in seen_ids
+            ]
+            for a in yesterday_articles:
+                if len(combined) >= BRIEF_TARGET:
+                    break
+                combined.append(a)
+                seen_ids.add(a.get("id"))
+    return combined
+
 
 # =============================================
-# /get-brief  — main news endpoint for Daily Brief
+# /get-brief
+# GNews is called AT MOST ONCE PER DAY. Once today's
+# fetch attempt is marked locked, every later visit
+# is served purely from brief_news_cache.json.
 # =============================================
 @brief_bp.route("/get-brief", methods=["GET"])
 def get_brief():
     global BRIEF_NEWS_CACHE
 
-    today = datetime.utcnow().strftime("%Y-%m-%d")
+    today = _today_str()
     yesterday = (datetime.utcnow() - timedelta(days=1)).strftime("%Y-%m-%d")
 
-    # ── 1. Collect today's cached articles ──────────────────────────────
-    today_articles = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today]
+    # ── Fast path: already fetched today → cache only, never call GNews ──
+    if _is_brief_locked_today():
+        combined = _gather_today_topped_up(today, yesterday)
+        random.shuffle(combined)
+        print(
+            f"⚡ Daily Brief: serving {len(combined)} from cache — GNews already ran today"
+        )
+        return jsonify({"articles": combined[:BRIEF_TARGET], "source": "cache"})
 
-    # ── 2. If enough cached articles exist, return immediately ───────────
-    if len(today_articles) >= 10:
-        print(f"⚡ Brief: serving {len(today_articles)} articles from cache")
-        import random
+    # ── Need a fresh fetch ──
+    print("📰 Daily Brief fetch started")
 
-        random.shuffle(today_articles)
-        return jsonify({"articles": today_articles[:10], "source": "cache"})
-
-    # ── 3. Fetch fresh articles from GNews ──────────────────────────────
-    print("📰 Brief: fetching fresh articles from GNews...")
-    fresh_articles = []
+    with _cache_lock:
+        today_articles = [
+            a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today
+        ]
 
     for query_obj in BRIEF_GNEWS_QUERIES:
+        if len(today_articles) >= BRIEF_TARGET:
+            break
+
         url = (
             f"https://gnews.io/api/v4/search"
             f"?q={requests.utils.quote(query_obj['q'])}"
-            f"&lang=en"
-            f"&max=5"
-            f"&from={today}"
-            f"&sortby=publishedAt"
+            f"&lang=en&max=5&from={today}&sortby=publishedAt"
             f"&apikey={_gnews_key()}"
         )
         try:
@@ -350,12 +398,17 @@ def get_brief():
             data = res.json()
 
             for art in data.get("articles", []):
+                if len(today_articles) >= BRIEF_TARGET:
+                    break
+
                 title = art.get("title", "")
                 desc = art.get("description", "") or ""
                 art_id = generate_article_id(title)
 
-                if art_id in BRIEF_NEWS_CACHE:
-                    continue  # already cached
+                with _cache_lock:
+                    already_have = art_id in BRIEF_NEWS_CACHE
+                if already_have:
+                    continue
 
                 article = {
                     "id": art_id,
@@ -368,159 +421,85 @@ def get_brief():
                     "url": art.get("url", ""),
                 }
 
-                BRIEF_NEWS_CACHE[art_id] = article
-                fresh_articles.append(article)
+                with _cache_lock:
+                    BRIEF_NEWS_CACHE[art_id] = article
+                today_articles.append(article)
 
         except Exception as e:
             print(f"❌ Brief GNews query failed ({query_obj['label']}):", e)
 
-    # # ── 4. Midnight edge case — if today still empty, use yesterday ──────
-    # all_today = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today]
-
-    # if len(all_today) == 0:
-    #     print("⚠️  Brief: no today articles yet, silently falling back to yesterday")
-    #     all_today = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == yesterday]
-
-    # # ── 5. Save updated cache ────────────────────────────────────────────
-    # _save_json(BRIEF_NEWS_CACHE_FILE, BRIEF_NEWS_CACHE)
-    # print(f"🔵 Brief cache saved: {len(BRIEF_NEWS_CACHE)} total articles")
-
-    # # ── 6. Return 10 shuffled articles ──────────────────────────────────
-    # import random
-
-    # random.shuffle(all_today)
-    # result = all_today[:10]
-    # print(f"✅ Brief: returning {len(result)} articles")
-    # return jsonify({"articles": result, "source": "fresh"})
-
-    # ── 4. Top up to 10: today's articles first, then yesterday's ────────
-    # Fixes the case where some (but not all) GNews queries succeed —
-    # previously a partial fetch (e.g. 5 articles) just got returned as-is
-    # instead of being topped up to the full 10.
-    BRIEF_TARGET = 10
-
-    all_today = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today]
-
-    combined = list(all_today)
-    seen_ids = {a.get("id") for a in combined}
-
-    if len(combined) < BRIEF_TARGET:
-        print(
-            f"⚠️  Brief: only {len(combined)} today, topping up with yesterday's cache"
-        )
-        yesterday_articles = [
-            a
-            for a in BRIEF_NEWS_CACHE.values()
-            if a.get("date") == yesterday and a.get("id") not in seen_ids
-        ]
-        for a in yesterday_articles:
-            if len(combined) >= BRIEF_TARGET:
-                break
-            combined.append(a)
-            seen_ids.add(a.get("id"))
-
-    # If STILL short (very first run ever, empty cache) — nothing more to
-    # pull from; brief doesn't have its own fallback.json, so this is the
-    # honest floor. Logged clearly so it's never a silent mystery.
-    if len(combined) < BRIEF_TARGET:
-        print(
-            f"⚠️  Brief: only {len(combined)} articles available total (today+yesterday), returning what we have"
-        )
-
-    # ── 5. Save updated cache ────────────────────────────────────────────
     _save_json(BRIEF_NEWS_CACHE_FILE, BRIEF_NEWS_CACHE)
-    print(f"🔵 Brief cache saved: {len(BRIEF_NEWS_CACHE)} total articles")
 
-    # ── 6. Return up to 10 shuffled articles ──────────────────────────────
-    import random
+    if len(today_articles) >= BRIEF_TARGET:
+        print(f"📰 GNews target reached: {len(today_articles)}/{BRIEF_TARGET}")
+    else:
+        print(
+            f"⚠️  GNews only returned {len(today_articles)}/{BRIEF_TARGET} — topping up from yesterday's cache"
+        )
+
+    combined = _gather_today_topped_up(today, yesterday)
+
+    # Lock for the day regardless of whether we hit 10 — the requirement
+    # is "never retry GNews repeatedly," not "retry until 10 every visit."
+    _mark_brief_locked(len(combined))
+    print("🔒 Daily Brief marked complete for today")
 
     random.shuffle(combined)
     result = combined[:BRIEF_TARGET]
-    print(f"✅ Brief: returning {len(result)} articles")
+    print(f"✅ Daily Brief: returning {len(result)} articles")
     return jsonify({"articles": result, "source": "fresh"})
 
 
 # =============================================
-# /get-brief-count — lightweight count-only check
-# Used by the Home page teaser card. Does NOT call
-# GNews — just reports what's already cached so Home
-# never triggers Daily Brief's fetch logic.
+# /get-brief-count — mirrors get_brief's logic,
+# never calls GNews.
 # =============================================
-# @brief_bp.route("/get-brief-count", methods=["GET"])
-# def get_brief_count():
-#     today = datetime.utcnow().strftime("%Y-%m-%d")
-#     today_count = len([a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today])
-#     # If nothing fetched yet today, report a safe default of 10
-#     # rather than 0 — Home shouldn't say "0 stories" before
-#     # Daily Brief has ever been opened today.
-#     count = today_count if today_count > 0 else 10
-#     return jsonify({"count": min(count, 10)})
-
-
 @brief_bp.route("/get-brief-count", methods=["GET"])
 def get_brief_count():
-    """
-    Mirrors get_brief()'s own topup logic (today's articles, then
-    yesterday's as a fallback) so the count Home displays always
-    matches what /get-brief would actually deliver right now — instead
-    of an optimistic guess that later gets corrected downward and looks
-    like a regression.
-    """
-    today = datetime.utcnow().strftime("%Y-%m-%d")
+    today = _today_str()
     yesterday = (datetime.utcnow() - timedelta(days=1)).strftime("%Y-%m-%d")
-
-    today_count = len([a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today])
-
-    if today_count >= 10:
-        count = today_count
-    else:
-        # Same topup logic as get_brief(): pad with yesterday's cache
-        # to estimate what the real number would be if /get-brief ran now.
-        yesterday_count = len(
-            [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == yesterday]
-        )
-        count = min(today_count + yesterday_count, 10)
-
-    return jsonify(
-        {"count": max(count, 1)}
-    )  # never show 0 — at minimum, fallback content exists
+    combined = _gather_today_topped_up(today, yesterday)
+    count = min(len(combined), BRIEF_TARGET)
+    return jsonify({"count": max(count, 1)})
 
 
 # =============================================
-# /generate-brief-card  — single-slide B/I/A descriptions
-# Much lighter than /generate-slides (no multi-slide array)
+# /generate-brief-card
+# Lazy, per-card. Keyed by the SAME article id used
+# in brief_news_cache.json (passed from frontend; falls
+# back to recomputing from title if missing).
 # =============================================
 @brief_bp.route("/generate-brief-card", methods=["POST"])
 def generate_brief_card():
     global BRIEF_CARDS_CACHE
 
-    data = request.json
-    title = data.get("title", "").strip()
-    desc = data.get("desc", "").strip()
-    content = data.get("content", "").strip()
+    data = request.json or {}
+    title = (data.get("title") or "").strip()
+    desc = (data.get("desc") or "").strip()
+    content = (data.get("content") or "").strip()
+    article_id = data.get("id") or generate_article_id(title)
 
-    cache_key = hashlib.md5(title.lower().encode()).hexdigest()
+    with _cache_lock:
+        cached = BRIEF_CARDS_CACHE.get(article_id)
 
-    # ── Cache hit — but REJECT if all 3 levels are identical (bad prev generation) ─
-    if cache_key in BRIEF_CARDS_CACHE:
-        cached = BRIEF_CARDS_CACHE[cache_key]
-        b = cached.get("beginner", "")
-        i = cached.get("intermediate", "")
-        a = cached.get("advanced", "")
+    if cached:
+        b, i, a = (
+            cached.get("beginner", ""),
+            cached.get("intermediate", ""),
+            cached.get("advanced", ""),
+        )
         if b != i or i != a:
-            # Good cache — all 3 are different
-            print(f"🟢 Brief card cache HIT: {title[:50]}")
+            print(f"🟢 CACHE HIT — {title[:50]}")
             return jsonify({"card": cached, "source": "cache"})
         else:
-            # Bad cache — all same, delete and regenerate
-            print(
-                f"⚠️  Brief card cache had identical B/I/A, regenerating: {title[:50]}"
-            )
-            del BRIEF_CARDS_CACHE[cache_key]
+            print(f"⚠️  Bad cached card (identical levels), regenerating: {title[:50]}")
+            with _cache_lock:
+                BRIEF_CARDS_CACHE.pop(article_id, None)
+
+    print(f"🟡 CACHE MISS — {title[:50]}")
 
     full_text = f"{title}. {desc}. {content}"
 
-    # Stronger prompt — explicit example format reduces JSON failures
     prompt = f"""You are a news explainer for a youth audience (16-35 years old).
 
 Write THREE clearly DIFFERENT explanations of the news article below.
@@ -572,13 +551,11 @@ NEWS ARTICLE:
 {full_text}"""
 
     def _parse_card(raw: str):
-        """Strip markdown fences and parse JSON. Returns dict or raises."""
         raw = raw.strip()
         if raw.startswith("```"):
             raw = raw.split("```")[1]
             if raw.startswith("json"):
                 raw = raw[4:]
-        # Find first { and last } in case there's surrounding text
         start = raw.find("{")
         end = raw.rfind("}") + 1
         if start == -1 or end == 0:
@@ -586,20 +563,13 @@ NEWS ARTICLE:
         return json.loads(raw[start:end])
 
     def _is_valid(card: dict) -> bool:
-        """Card is valid if all 3 keys exist and are meaningfully different."""
         b = card.get("beginner", "")
         i = card.get("intermediate", "")
         a = card.get("advanced", "")
-        return (
-            bool(b)
-            and bool(i)
-            and bool(a)
-            and not (b == i == a)  # all identical = bad
-            and len(b) > 30  # too short = bad
-        )
+        return bool(b) and bool(i) and bool(a) and not (b == i == a) and len(b) > 30
 
-    # ── Try Gemini first ─────────────────────────────────────────────────
     card = None
+    print("🤖 Calling Gemini")
     try:
         response = _get_gemini().models.generate_content(
             model="gemini-2.5-flash", contents=prompt
@@ -607,16 +577,14 @@ NEWS ARTICLE:
         card = _parse_card(response.text)
         if not _is_valid(card):
             raise ValueError(f"Gemini returned invalid card: {card}")
-        print(f"🟢 Brief card generated by Gemini: {title[:50]}")
+        print(f"🟢 Generated by Gemini: {title[:50]}")
 
     except Exception as e:
-        print(f"❌ Gemini failed for brief card: {e} — trying Groq...")
+        print(f"❌ Gemini failed: {e} — trying Groq fallback")
         card = None
-
-        # ── Groq fallback ────────────────────────────────────────────────
         try:
             groq_response = _get_groq().chat.completions.create(
-                model="llama-3.1-8b-instant",
+                model="openai/gpt-oss-20b",
                 messages=[
                     {
                         "role": "system",
@@ -636,12 +604,10 @@ NEWS ARTICLE:
             card = _parse_card(groq_response.choices[0].message.content)
             if not _is_valid(card):
                 raise ValueError(f"Groq returned invalid card: {card}")
-            print(f"🔵 Brief card generated by Groq: {title[:50]}")
+            print(f"🔵 Generated by Groq: {title[:50]}")
 
         except Exception as e2:
             print(f"❌ Groq also failed: {e2} — using split-desc fallback")
-            # Last resort: manually create 3 versions from desc
-            # At least make them different lengths so switching feels different
             words = (desc or title).split()
             card = {
                 "beginner": " ".join(words[: min(30, len(words))]),
@@ -649,11 +615,11 @@ NEWS ARTICLE:
                 "advanced": f"{desc or title} This story is still developing.",
             }
 
-    # ── Only cache if valid — prevents bad data persisting ───────────────
     if card and _is_valid(card):
-        BRIEF_CARDS_CACHE[cache_key] = card
+        with _cache_lock:
+            BRIEF_CARDS_CACHE[article_id] = card
         _save_json(BRIEF_CARDS_CACHE_FILE, BRIEF_CARDS_CACHE)
-        print(f"💾 Cached valid card for: {title[:50]}")
+        print(f"💾 Cached explanation — {title[:50]}")
     else:
         print(f"⚠️  Not caching invalid card for: {title[:50]}")
 

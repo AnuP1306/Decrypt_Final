@@ -1,19 +1,12 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 function Sidebar() {
-  // const user =
-  // JSON.parse(
-  //   localStorage.getItem("user")
-  // ) || {
-  //   name: "Explorer",
-  //   domain: "AI",
-  //   level: "Beginner"
-  // };
-  const { currentUser } = useAuth();
+
+  const { currentUser, logout } = useAuth();
 
 const [user, setUser] = useState({
   name: "Explorer",
@@ -22,12 +15,21 @@ const [user, setUser] = useState({
 });
 
   const location = useLocation();
+  const navigate = useNavigate();
   const [collapsed, setCollapsed] =
     useState(false);
 
     useEffect(() => {
       async function loadUser() {
-        if (!currentUser) return;
+        // if (!currentUser) return;
+        if (!currentUser) {
+          setUser({
+            name: "Explorer",
+            domain: "AI",
+            level: "Beginner",
+          });
+          return;
+        }
     
         const userRef = doc(db, "users", currentUser.uid);
         const snap = await getDoc(userRef);
@@ -47,6 +49,19 @@ const [user, setUser] = useState({
     
       loadUser();
     }, [currentUser]);
+
+    async function handleLogout() {
+      try {
+        await logout();
+    
+        // Optional: remove any user-specific localStorage
+        localStorage.removeItem("userLevel");
+    
+        navigate("/");
+      } catch (err) {
+        console.error("Logout failed:", err);
+      }
+    }
 
   return (
     <div
@@ -152,10 +167,13 @@ const [user, setUser] = useState({
           <span>Settings</span>
         </div>
 
-        <Link to="/" className="menu-item logout">
-          <img src="/images/logout.png" alt="" />
-          <span>Log Out</span>
-        </Link>
+        <button
+  className="menu-item logout"
+  onClick={handleLogout}
+>
+  <img src="/images/logout.png" alt="" />
+  <span>Log Out</span>
+</button>
 
       </div>
 
