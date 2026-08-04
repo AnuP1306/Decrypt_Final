@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { API_URL } from "../config";
 
 function RightSidebar() {
 
@@ -69,7 +70,7 @@ function RightSidebar() {
   useEffect(() => {
     async function loadTools() {
       try {
-        const res = await fetch("http://127.0.0.1:5000/get-tools");
+        const res = await fetch( `${ API_URL }/get-tools`);
         const data = await res.json();
   
         if (!data.tools) return;

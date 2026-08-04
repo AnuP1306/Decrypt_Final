@@ -7,6 +7,7 @@ import { useAuth } from "../context/AuthContext";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
 import "../styles/dailyBrief.css";
+import { API_URL } from "../config.js";
 
 const MINS_PER_CARD = 1.5;
 
@@ -15,6 +16,7 @@ function DailyBrief() {
   // ── Data ──────────────────────────────────────────────────────────────────
   const [briefData,     setBriefData]     = useState([]);
   const [loading,       setLoading]       = useState(true);
+  const [fetchError,    setFetchError]    = useState(false);
   const [descriptions,  setDescriptions]  = useState({});
   const [enrichingIds,  setEnrichingIds]  = useState(new Set());
 
@@ -103,16 +105,21 @@ useEffect(() => {
 
   async function fetchBrief() {
     setLoading(true);
+    setFetchError(false);
     try {
-      const res  = await fetch("http://127.0.0.1:5000/get-brief");
+      const res  = await fetch(` ${ API_URL }/get-brief`);
       const data = await res.json();
       const articles = data.articles || [];
+      if (articles.length === 0) {
+        setFetchError(true);
+      }
       setBriefData(articles);
       setLoading(false);
       // No enrichment loop here anymore — enrichment is lazy,
       // triggered per-card by the currentIndex effect below.
     } catch (err) {
       console.error("Brief fetch failed:", err);
+      setFetchError(true);
       setLoading(false);
     }
   }
@@ -123,7 +130,7 @@ useEffect(() => {
     setEnrichingIds(prev => new Set(prev).add(id));
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/generate-brief-card", {
+      const res = await fetch(` ${ API_URL }/generate-brief-card`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -214,7 +221,7 @@ useEffect(() => {
 
     try {
       const article = briefData[currentIndex];
-      const res = await fetch("http://127.0.0.1:5000/ask-article", {
+      const res = await fetch(` ${ API_URL }/ask-article`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -317,6 +324,55 @@ useEffect(() => {
                     to { transform: rotate(360deg); }
                   }
                 `}</style>
+              </div>
+            )}
+            {/* ── ERROR STATE ─────────────────────────────────────────────── */}
+            {!loading && fetchError && (
+              <div style={{
+                textAlign: "center",
+                padding: "4rem 2rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                gap: "16px",
+              }}>
+                <div style={{ fontSize: "48px" }}>📡</div>
+                <h2 style={{
+                  fontFamily: "'Syne', sans-serif",
+                  fontSize: "22px",
+                  fontWeight: 800,
+                  color: "#1a1a1a",
+                  margin: 0,
+                }}>
+                  News is on its way
+                </h2>
+                <p style={{
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  fontSize: "15px",
+                  color: "#666",
+                  maxWidth: "320px",
+                  lineHeight: 1.6,
+                  margin: 0,
+                }}>
+                  We're having trouble fetching today's stories right now.
+                  This usually sorts itself out in a few minutes — check back shortly.
+                </p>
+                <button
+                  onClick={fetchBrief}
+                  style={{
+                    marginTop: "8px",
+                    padding: "12px 28px",
+                    border: "2px solid black",
+                    borderRadius: "12px",
+                    background: "#D0F248",
+                    cursor: "pointer",
+                    fontWeight: 700,
+                    fontFamily: "'Syne', sans-serif",
+                    fontSize: "14px",
+                  }}
+                >
+                  Try again
+                </button>
               </div>
             )}
             {/* ── CARD ────────────────────────────────────────────────────── */}

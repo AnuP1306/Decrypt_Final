@@ -1,10 +1,10 @@
-function Navbar() {
+function Navbar({ searchQuery, setSearchQuery }) {
     return (
       <nav className="navbar">
   
         <div className="nav-left">
           <img src="/images/logo.svg" alt="logo" className="logo-img" />
-          <h1 className="logo-text">Decrypt</h1>
+          <p className="logo-text">Decrypt</p>
         </div>
   
         <div className="nav-center">
@@ -15,11 +15,13 @@ function Navbar() {
               alt=""
             />
   
-            <input
-              type="text"
-              placeholder="Search topics, tools, news..."
-              className="search-input"
-            />
+  <input
+  type="text"
+  placeholder="Search news articles"
+  value={searchQuery}
+  onChange={(e) => setSearchQuery(e.target.value)}
+  className="search-input"
+/>
           </div>
         </div>
   

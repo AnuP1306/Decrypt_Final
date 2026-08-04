@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import "../styles/opportunities.css";
 import { opportunities as fallbackOpportunities } from "../data/opportunitiesData";
+import { API_URL } from "../config";
 
 function Opportunities() {
   const navigate = useNavigate();
@@ -46,7 +47,7 @@ useEffect(() => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/get-opportunities");
+      const res = await fetch(`${ API_URL }/get-opportunities`);
       const data = await res.json();
 
       if (data.opportunities?.length > 0) {

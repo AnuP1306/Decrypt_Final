@@ -82,7 +82,7 @@
 //       setLoadingSlides(true);
 
 //       const response = await fetch(
-//         "http://127.0.0.1:5000/generate-slides",
+//         " ${ API_URL }/generate-slides",
 //         {
 //           method: "POST",
 
@@ -197,7 +197,7 @@
 
 //       const response =
 //         await fetch(
-//           "http://127.0.0.1:5000/ask-article",
+//           " ${ API_URL }/ask-article",
 //           {
 //             method: "POST",
 
@@ -624,6 +624,8 @@ import { useState, useEffect, useRef } from "react";
 import { useAuth } from "../context/AuthContext";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import { API_URL } from "../config";
+
 
 function NewsCard({ article, index, visible }) {
 
@@ -707,7 +709,7 @@ function NewsCard({ article, index, visible }) {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/generate-slides",
+        `${API_URL}/generate-slides`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -783,7 +785,7 @@ function NewsCard({ article, index, visible }) {
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:5000/ask-article",
+        `${ API_URL }/ask-article`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -813,7 +815,10 @@ function NewsCard({ article, index, visible }) {
 
       <div className="card-image">
 
-        <img src={article.image} alt="" />
+      {article.image
+  ? <img src={article.image} alt="" />
+  : <div style={{ width: "100%", height: "100%", background: "linear-gradient(135deg,#3f38e8,#5a54ff)" }} />
+}
 
         <span className={`domain-pill ${article.domain?.toLowerCase()}`}>
           {article.domain}

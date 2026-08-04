@@ -70,7 +70,7 @@ h2, h3 {
   font-family: 'Syne', sans-serif;
   font-weight: 740 ; 
   font-size: 22px;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
   color: #30312c;
 }
 
@@ -521,4 +521,49 @@ gap: 9px;
 
 .menu-item {
   cursor: pointer;
+}
+
+/* ===== RESPONSIVE — SIDEBAR & MAIN CONTENT (all pages) ===== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 70px;
+    padding: 20px 10px;
+  }
+  .sidebar span,
+  .sidebar .user-text {
+    display: none;
+  }
+  .sidebar .menu-item {
+    justify-content: center;
+    padding: 10px;
+    width: 50px;
+  }
+  .sidebar .menu-item.active {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+  }
+  .sidebar .menu-item img {
+    width: 22px;
+    height: 22px;
+  }
+  .sidebar .user-info {
+    justify-content: center;
+  }
+  .main-content {
+    margin-left: 90px;
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0 12px;
+  }
+  .nav-center {
+    display: none;
+  }
+  .logo-text {
+    font-size: 18px;
+  }
 }

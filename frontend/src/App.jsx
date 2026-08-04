@@ -40,9 +40,9 @@ function App() {
 
           {/* Protected Routes */}
           <Route path="/home" element={<Home />} />
-          <Route path="/daily-brief" element={<ProtectedRoute><DailyBrief /></ProtectedRoute>} />
-          <Route path="/tools" element={<ProtectedRoute><Tools /></ProtectedRoute>} />
-          <Route path="/opportunities" element={<ProtectedRoute><Opportunities /></ProtectedRoute>} />
+          <Route path="/daily-brief" element={<DailyBrief />} />
+          <Route path="/tools" element={<Tools />} />
+          <Route path="/opportunities" element={<Opportunities />} />
           <Route path="/saved" element={<ProtectedRoute><Saved /></ProtectedRoute>} />
 
         </Routes>

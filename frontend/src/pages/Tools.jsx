@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import "../styles/tools.css";
+import { API_URL } from "../config";
 
 const FILTERS = [
   { label: "All", value: "all" },
@@ -163,7 +164,7 @@ export default function Tools() {
   const [search,  setSearch]  = useState("");
 
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/get-tools")
+    fetch(` ${ API_URL }/get-tools`)
       .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
       .then(d => { setTools(Array.isArray(d.tools) ? d.tools : []); setError(false); })
       .catch(() => { setError(true); setTools([]); })

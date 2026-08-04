@@ -456,11 +456,12 @@
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-3px); }
 }
-/* ================= STATS ================= */
+/* ================= stats-land ================= */
 
-.stats {
-  background: #30312C;
+.stats-land {
+  background: #30312C !important;
   padding: 70px 12px;
+  min-height: 300px;
 }
 
 .stats-grid {
@@ -472,13 +473,13 @@
   text-align: center;
 }
 
-.stats h2 {
+.stats-land h2 {
   color: #D0F248;
   font-size: 70px;
   margin-bottom: 10px;
 }
 
-.stats p {
+.stats-land p {
   color: rgba(255,255,255,0.6);
   font-size: 14px;
 }

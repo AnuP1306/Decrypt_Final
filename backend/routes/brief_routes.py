@@ -334,23 +334,59 @@ BRIEF_TARGET = 10
 
 
 def _gather_today_topped_up(today, yesterday):
-    """Today's cached articles, topped up with yesterday's if short."""
+    """
+    Today's cached articles, topped up with recent cache if short.
+    Looks back up to 5 days so a GNews outage lasting a few days
+    doesn't result in an empty brief — users see something real
+    rather than a blank page.
+    """
+    from datetime import timedelta
+
     with _cache_lock:
         all_today = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today]
         combined = list(all_today)
         seen_ids = {a.get("id") for a in combined}
+
         if len(combined) < BRIEF_TARGET:
-            yesterday_articles = [
-                a
-                for a in BRIEF_NEWS_CACHE.values()
-                if a.get("date") == yesterday and a.get("id") not in seen_ids
-            ]
-            for a in yesterday_articles:
+            # Walk back up to 5 days to find cached articles
+            for days_back in range(1, 6):
                 if len(combined) >= BRIEF_TARGET:
                     break
-                combined.append(a)
-                seen_ids.add(a.get("id"))
+                past_date = (datetime.utcnow() - timedelta(days=days_back)).strftime(
+                    "%Y-%m-%d"
+                )
+                past_articles = [
+                    a
+                    for a in BRIEF_NEWS_CACHE.values()
+                    if a.get("date") == past_date and a.get("id") not in seen_ids
+                ]
+                for a in past_articles:
+                    if len(combined) >= BRIEF_TARGET:
+                        break
+                    combined.append(a)
+                    seen_ids.add(a.get("id"))
+
     return combined
+
+
+# def _gather_today_topped_up(today, yesterday):
+#     """Today's cached articles, topped up with yesterday's if short."""
+#     with _cache_lock:
+#         all_today = [a for a in BRIEF_NEWS_CACHE.values() if a.get("date") == today]
+#         combined = list(all_today)
+#         seen_ids = {a.get("id") for a in combined}
+#         if len(combined) < BRIEF_TARGET:
+#             yesterday_articles = [
+#                 a
+#                 for a in BRIEF_NEWS_CACHE.values()
+#                 if a.get("date") == yesterday and a.get("id") not in seen_ids
+#             ]
+#             for a in yesterday_articles:
+#                 if len(combined) >= BRIEF_TARGET:
+#                     break
+#                 combined.append(a)
+#                 seen_ids.add(a.get("id"))
+#     return combined
 
 
 # =============================================
@@ -367,13 +403,27 @@ def get_brief():
     yesterday = (datetime.utcnow() - timedelta(days=1)).strftime("%Y-%m-%d")
 
     # ── Fast path: already fetched today → cache only, never call GNews ──
+
     if _is_brief_locked_today():
         combined = _gather_today_topped_up(today, yesterday)
-        random.shuffle(combined)
-        print(
-            f"⚡ Daily Brief: serving {len(combined)} from cache — GNews already ran today"
-        )
-        return jsonify({"articles": combined[:BRIEF_TARGET], "source": "cache"})
+        if combined:
+            random.shuffle(combined)
+            print(
+                f"⚡ Daily Brief: serving {len(combined)} from cache — GNews already ran today"
+            )
+            return jsonify({"articles": combined[:BRIEF_TARGET], "source": "cache"})
+        else:
+            print(
+                "⚠️  Brief locked but cache is empty (server likely restarted) — re-fetching"
+            )
+            # Fall through to the fresh fetch below
+    # if _is_brief_locked_today():
+    #     combined = _gather_today_topped_up(today, yesterday)
+    #     random.shuffle(combined)
+    #     print(
+    #         f"⚡ Daily Brief: serving {len(combined)} from cache — GNews already ran today"
+    #     )
+    #     return jsonify({"articles": combined[:BRIEF_TARGET], "source": "cache"})
 
     # ── Need a fresh fetch ──
     print("📰 Daily Brief fetch started")
@@ -439,15 +489,31 @@ def get_brief():
 
     combined = _gather_today_topped_up(today, yesterday)
 
-    # Lock for the day regardless of whether we hit 10 — the requirement
-    # is "never retry GNews repeatedly," not "retry until 10 every visit."
-    _mark_brief_locked(len(combined))
-    print("🔒 Daily Brief marked complete for today")
+    if len(combined) > 0:
+        # Only lock once we actually have something to serve.
+        # If GNews returned nothing AND cache is empty, don't lock —
+        # let the next visit try again instead of permanently returning 0.
+        _mark_brief_locked(len(combined))
+        print("🔒 Daily Brief marked complete for today")
+    else:
+        print("⚠️  Not locking — got 0 articles, will retry on next visit")
 
     random.shuffle(combined)
     result = combined[:BRIEF_TARGET]
     print(f"✅ Daily Brief: returning {len(result)} articles")
     return jsonify({"articles": result, "source": "fresh"})
+
+    # combined = _gather_today_topped_up(today, yesterday)
+
+    # # Lock for the day regardless of whether we hit 10 — the requirement
+    # # is "never retry GNews repeatedly," not "retry until 10 every visit."
+    # _mark_brief_locked(len(combined))
+    # print("🔒 Daily Brief marked complete for today")
+
+    # random.shuffle(combined)
+    # result = combined[:BRIEF_TARGET]
+    # print(f"✅ Daily Brief: returning {len(result)} articles")
+    # return jsonify({"articles": result, "source": "fresh"})
 
 
 # =============================================

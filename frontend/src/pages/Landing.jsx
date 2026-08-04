@@ -173,7 +173,7 @@ useEffect(() => {
 
       {/* STATS */}
 
-      <section className="stats">
+      <section className="stats-land">
 
         <div className="stats-grid">
 

@@ -8,6 +8,7 @@ import RightSidebar from "../components/RightSidebar";
 import { useAuth } from "../context/AuthContext";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../firebase";
+import { API_URL } from "../config";
 
 const MINS_PER_CARD = 1.5;
 
@@ -24,6 +25,7 @@ function Home() {
   const [loading, setLoading]             = useState(true);
   const { currentUser } = useAuth();
   const [currentFilter, setCurrentFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
 
   // ── Brief card counts (fetched separately, count-only) ──────────────────
   const [briefCount, setBriefCount] = useState(null); // null = not loaded yet
@@ -80,7 +82,7 @@ function Home() {
 
     async function fetchNews() {
       try {
-        const response = await fetch("http://127.0.0.1:5000/get-news");
+        const response = await fetch(`${API_URL}/get-news`);
         const data = await response.json();
         setArticles(data.articles || []);
         lastKnownFinishTime = data.refresh_state?.last_run_finished || null;
@@ -96,7 +98,7 @@ function Home() {
       pollCount++;
 
       try {
-        const res = await fetch("http://127.0.0.1:5000/get-refresh-status");
+        const res = await fetch(`${API_URL}/get-refresh-status`);
         const status = await res.json();
 
         const finishedNow = status.last_run_finished;
@@ -114,7 +116,7 @@ function Home() {
 
         if (somethingNewArrived) {
           lastKnownFinishTime = finishedNow;
-          const newsRes = await fetch("http://127.0.0.1:5000/get-news");
+          const newsRes = await fetch(`${API_URL}/get-news`);
           const newsData = await newsRes.json();
           const freshArticles = newsData.articles || [];
 
@@ -160,7 +162,7 @@ function Home() {
   useEffect(() => {
     async function fetchBriefCount() {
       try {
-        const res  = await fetch("http://127.0.0.1:5000/get-brief-count");
+        const res  = await fetch(`${API_URL}/get-brief-count`);
         const data = await res.json();
         setBriefCount(data.count ?? 10);
       } catch {
@@ -191,12 +193,33 @@ function Home() {
   }, [currentUser]);
 
   // ── Derived ──────────────────────────────────────────────────────────────
-  const filteredArticles =
-    currentFilter === "all"
-      ? articles
-      : articles.filter(
-          a => a.domain?.toLowerCase() === currentFilter.toLowerCase()
-        );
+  const filteredArticles = articles.filter(article => {
+    // Filter by category
+    const matchesFilter =
+      currentFilter === "all" ||
+      article.domain?.toLowerCase() === currentFilter.toLowerCase();
+  
+    // Filter by search
+    const query = searchQuery.toLowerCase().trim();
+  
+    const searchableText = [
+      article.title,
+      article.summary,
+      article.source,
+      article.domain,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+  
+    const keywords = query.split(/\s+/).filter(Boolean);
+  
+    const matchesSearch =
+      query === "" ||
+      keywords.every(word => searchableText.includes(word));
+  
+    return matchesFilter && matchesSearch;
+  });
 
   function handleFilterChange(value) {
     setCurrentFilter(value);
@@ -212,7 +235,11 @@ function Home() {
   // ── Render ───────────────────────────────────────────────────────────────
   return (
     <>
-      <Navbar />
+      <Navbar
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery} 
+      
+      />
 
       <div className="layout">
         <Sidebar />
@@ -301,7 +328,12 @@ function Home() {
               {/* ── EMPTY STATE ─────────────────────────────────────────── */}
               {!loading && filteredArticles.length === 0 && (
                 <div className="empty-state" style={{ textAlign: "center", padding: "2rem", color: "var(--color-text-secondary)" }}>
-                  <p>No {currentFilter !== "all" ? currentFilter.toUpperCase() : ""} articles available right now.</p>
+                  {/* <p>No {currentFilter !== "all" ? currentFilter.toUpperCase() : ""} articles available right now.</p> */}
+                  {searchQuery ? (
+    <p>No articles found for "{searchQuery}".</p>
+) : (
+    <p>No {currentFilter !== "all" ? currentFilter.toUpperCase() : ""} articles available right now.</p>
+)}
                   <p style={{ fontSize: "0.9rem", marginTop: "0.5rem" }}>
                     Try switching to "All" or check back later.
                   </p>
